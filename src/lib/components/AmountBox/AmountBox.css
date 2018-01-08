@@ -1,0 +1,45 @@
+@import '../../../styles/responsive.css';
+
+:root {
+  --alizarinCrimson: #E31F24;
+  --oceanGreen: #28B579;
+  --pictonBlue: #3AA6DD;
+  --white: #FFF;
+}
+
+.AmountBox {
+  color: var(--white);
+  height: 120px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.AmountBox-amount {
+  display: block;
+  font-size: 2.5vw;
+  font-weight: 100;
+  line-height: 85px;
+
+  @media(--medium) {
+    font-size: 35px;
+  }
+}
+
+.AmountBox-description {
+  display: block;
+  line-height: 35px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.AmountBox-blue {
+  background-color: var(--pictonBlue);
+}
+.AmountBox-red {
+  background-color: var(--alizarinCrimson);
+}
+.AmountBox-green {
+  background-color: var(--oceanGreen);
+}
