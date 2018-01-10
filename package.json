@@ -1,8 +1,8 @@
 {
-  "name": "create-react-library",
+  "name": "increase-components",
   "version": "1.1.0",
-  "description": "React NPM library starter kit based on Facebook's create react app",
-  "main": "build/index.js",
+  "description": "React component library for Increase design system",
+  "main": "src/lib/index.js",
   "scripts": {
     "start": "npm run storybook",
     "storybook": "start-storybook -p 6006",
@@ -10,20 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/udiliaInc/create-react-library.git"
+    "url": "git+https://github.com/IncreaseCard/increase-components.git"
   },
   "author": "Dimitri Mikadze <dimitri@udilia.com>",
   "bugs": {
-    "url": "https://github.com/udiliaInc/create-react-library/issues"
+    "url": "https://github.com/IncreaseCard/increase-components/issues"
   },
-  "homepage": "https://github.com/udiliaInc/create-react-library#readme",
-  "license": "MIT",
+  "homepage": "https://github.com/IncreaseCard/increase-components#readme",
+  "license": "None",
   "dependencies": {
+    "classnames": "^2.2.5",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^11.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.6",
+    "@storybook/addon-info": "^3.3.6",
     "@storybook/addon-links": "^3.3.6",
     "@storybook/react": "^3.3.6",
     "autoprefixer": "^7.1.6",
@@ -39,12 +41,13 @@
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
     "eslint": "4.10.0",
+    "eslint-config-eslint": "^4.0.0",
     "eslint-config-react-app": "^2.0.1",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.39.1",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
-    "eslint-plugin-react": "7.4.0",
+    "eslint-plugin-react": "^7.4.0",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",

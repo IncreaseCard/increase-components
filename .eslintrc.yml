@@ -1,5 +1,14 @@
-parserOptions:
-  ecmaVersion: 6
-  sourceType: module
+extends:
+  - eslint:recommended
+  - plugin:react/recommended
 env:
   browser: true
+  es6: true
+  node: true
+parserOptions:
+  sourceType: module
+  ecmaVersion: 6
+  ecmaFeatures:
+    jsx: true
+    modules: true
+    experimentalObjectRestSpread: true

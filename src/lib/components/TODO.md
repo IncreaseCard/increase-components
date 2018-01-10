@@ -1,14 +1,16 @@
 - [X] AmountBox
-- [ ] Button
-- [ ] Panel(Tile)
+- [X] Button
+- [X] Panel(Tile)
+- [X] Checkbox
+- [X] Link
+- [X] Select
+- [X] TextInput
 - [ ] Modal
 - [ ] Table
-- [ ] Checkbox
 - [ ] DateRangePicker
 - [ ] Dropdown
 - [ ] Tooltip
 - [ ] FileUploadButton
-- [ ] Link
 - [ ] List
 - [ ] Loading
 - [ ] Notification/Toast
@@ -16,7 +18,5 @@
 - [ ] Pagination
 - [ ] RadioButton
 - [ ] Search
-- [ ] Select
-- [ ] TextInput
 - [ ] TextArea
 - [ ] Toggle

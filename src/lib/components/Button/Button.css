@@ -1,0 +1,39 @@
+.Button {
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  font-size: 0.9rem;
+  padding: 4px 8px;
+
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.Button::-moz-focus-inner {
+  border: 0;
+}
+
+.Button--sm {
+  font-size: 0.7rem;
+}
+
+.Button--primary {
+  background-color: #5090FA;
+  color: white;
+}
+
+.Button--danger {
+  background-color: #FA3050;
+  color: white;
+}
+
+.Button--secondary {
+  background-color: #50FA70;
+  color: white;
+}
+
+.Button--ghost {
+  background-color: transparent;
+  box-shadow: none;
+}
