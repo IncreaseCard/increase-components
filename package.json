@@ -2,9 +2,9 @@
   "name": "increase-components",
   "version": "1.1.1",
   "description": "React component library for Increase design system",
-  "main": "src/lib/index.js",
   "scripts": {
     "start": "npm run storybook",
+    "prepublish": "webpack -p --progress --colors --config webpack.config.publish.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
