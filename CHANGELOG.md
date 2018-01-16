@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.1.1 ( January 9, 2018 )
+
+### Main
+
+#### New components
+
+- AmountBox
+- Currency
+
+#### Minor changes
+
+- Changes all shadows to be more visible
+
 ## 1.1.0 ( January 9, 2018 )
 
 ### Main
