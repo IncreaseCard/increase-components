@@ -1,0 +1,7 @@
+.MessageList {
+
+}
+
+.MessageList > .Message {
+  margin-bottom: 4px;
+}

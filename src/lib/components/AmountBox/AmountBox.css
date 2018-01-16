@@ -8,6 +8,7 @@
 }
 
 .AmountBox {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   color: var(--white);
   height: 120px;
   margin-bottom: 20px;
@@ -18,13 +19,9 @@
 
 .AmountBox-amount {
   display: block;
-  font-size: 2.5vw;
+  font-size: 2.5rem;
   font-weight: 100;
   line-height: 85px;
-
-  @media(--medium) {
-    font-size: 35px;
-  }
 }
 
 .AmountBox-description {
@@ -32,6 +29,10 @@
   line-height: 35px;
   margin: 0;
   background-color: rgba(0, 0, 0, 0.25);
+}
+
+.AmountBox-short {
+  height: 85px;
 }
 
 .AmountBox-blue {

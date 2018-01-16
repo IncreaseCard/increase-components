@@ -1,0 +1,22 @@
+.Message {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 8px;
+}
+
+.Message-info {
+  background-color: #6699CC;
+  color: white;
+}
+
+.Message-warning {
+  background-color: #F0F080;
+}
+
+.Message-success {
+  background-color: #99CC66;
+}
+
+.Message-danger {
+  background-color: #CC7777;
+  color: white;
+}

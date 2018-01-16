@@ -1,13 +1,19 @@
-import React from 'react';
+import './Message.css';
 
-const Message = (props) => {
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const Message = ({ text, variant = 'info' }) => {
   return(
-    <li className="list-unstyled">
-      <i className="fa fa-exclamation-circle fa-margin">
-        { props.text }
-      </i>
-    </li>
+    <div className={`Message Message-${variant}`}>
+      { text }
+    </div>
   );
+};
+
+Message.propTypes = {
+  text: PropTypes.string,
+  variant: PropTypes.oneOf(['info', 'danger', 'warning', 'success'])
 };
 
 export default Message;

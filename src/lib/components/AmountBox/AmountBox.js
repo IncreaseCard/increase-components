@@ -1,24 +1,36 @@
 import './AmountBox.css';
+
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-export const AmountBox = (props) => {
+import Currency from '../Currency/Currency';
+
+export const AmountBox = ({ amount = 0, color = 'blue', description = '' }) => {
+  const amountBoxClassNames = classNames('AmountBox', {
+    [`AmountBox-${color}`]: color,
+    'AmountBox-short': !description
+  });
   return(
-    <div className={`AmountBox AmountBox-${ props.color }`}>
+    <div className={amountBoxClassNames}>
       <span className="AmountBox-amount">
-        $ { props.amount }
+        <Currency value={amount}/>
       </span>
-      <p className="AmountBox-description">
-        { props.text }
-      </p>
+      {
+        description ?
+          <p className="AmountBox-description">
+            {description}
+          </p>
+          : null
+      }
     </div>
   );
 };
 
 AmountBox.propTypes = {
   amount: PropTypes.number,
-  text: PropTypes.string,
-  color: PropTypes.string
+  description: PropTypes.string,
+  color: PropTypes.oneOf(['blue', 'red', 'green'])
 };
 
 export default AmountBox;
