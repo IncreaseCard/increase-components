@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.1.1 ( January 9, 2018 )
+## 1.1.2 ( January 16, 2018 )
+
+#### Minor changes
+
+- Bundle library before publishing
+
+## 1.1.1 ( January 16, 2018 )
 
 ### Main
 
