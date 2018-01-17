@@ -1,5 +1,7 @@
+import '!css-loader!normalize.css';
 import { configure } from '@storybook/react';
 
+import '../src/styles/base.css';
 // automatically import all files ending in *.stories.js
 const req = require.context('../src/lib', true, /.stories.js$/);
 function loadStories() {
