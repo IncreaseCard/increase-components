@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.4 ( January 16, 2018 )
+
+#### Fixes
+
+- Fixes build
+- Fixes AmountBox when description is empty
+- Makes Currency render nothing when value is NaN
+
 ## 1.1.2 ( January 16, 2018 )
 
 #### Minor changes

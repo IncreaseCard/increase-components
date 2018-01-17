@@ -56,3 +56,21 @@ storiesOf('AmountBox', module).add('With no description', () => {
       color="green" />
   );
 });
+
+storiesOf('AmountBox', module).add('With empty amount', () => {
+  return (
+    <AmountBox
+      amount=""
+      description="Total del día"
+      color="green" />
+  );
+});
+
+storiesOf('AmountBox', module).add('With empty description', () => {
+  return (
+    <AmountBox
+      amount=""
+      description=""
+      color="green" />
+  );
+});

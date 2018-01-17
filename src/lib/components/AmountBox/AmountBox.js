@@ -6,10 +6,10 @@ import classNames from 'classnames';
 
 import Currency from '../Currency/Currency';
 
-export const AmountBox = ({ amount = 0, color = 'blue', description = '' }) => {
+export const AmountBox = ({ amount = 0, color = 'blue', description }) => {
   const amountBoxClassNames = classNames('AmountBox', {
     [`AmountBox-${color}`]: color,
-    'AmountBox-short': !description
+    'AmountBox-short': !(typeof description == 'string')
   });
   return(
     <div className={amountBoxClassNames}>
@@ -17,7 +17,7 @@ export const AmountBox = ({ amount = 0, color = 'blue', description = '' }) => {
         <Currency value={amount}/>
       </span>
       {
-        description ?
+        typeof description == 'string' ?
           <p className="AmountBox-description">
             {description}
           </p>
