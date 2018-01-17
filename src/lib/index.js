@@ -9,7 +9,7 @@ import Select from './components/Select/Select';
 import SelectItem from './components/SelectItem/SelectItem';
 import TextInput from './components/TextInput/TextInput';
 
-export {
+export default {
   AmountBox,
   Button,
   Checkbox,
