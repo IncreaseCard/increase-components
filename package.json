@@ -2,6 +2,7 @@
   "name": "increase-components",
   "version": "1.1.2",
   "description": "React component library for Increase design system",
+  "main": "index.js",
   "scripts": {
     "start": "npm run storybook",
     "prepublish": "webpack -p --progress --colors --config webpack.config.publish.js",
@@ -12,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/IncreaseCard/increase-components.git"
   },
-  "author": "Dimitri Mikadze <dimitri@udilia.com>",
+  "author": "Santiago Ocamica <santiago.ocamica@increasecard.com>",
   "bugs": {
     "url": "https://github.com/IncreaseCard/increase-components/issues"
   },
