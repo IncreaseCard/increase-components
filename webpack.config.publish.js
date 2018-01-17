@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const SRC_DIR = path.resolve(__dirname, 'src/lib');
+const SRC_DIR = path.resolve(__dirname, 'src');
 const DIST_DIR = path.resolve(__dirname, 'dist');
+const STYLES_DIR = path.resolve(__dirname, 'src/styles');
 
 module.exports = {
   entry: path.resolve(SRC_DIR, 'index.js'),
@@ -39,8 +40,15 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               plugins: (loader) => [
-                require('postcss-import')({ root: loader.resourcePath }),
-                require('postcss-cssnext')()
+                require('postcss-import')({
+                  root: loader.resourcePath,
+                  path: [STYLES_DIR]
+                }),
+                require('autoprefixer')(),
+                require('postcss-css-variables')({
+                  preserve: true
+                }),
+                require('postcss-media-minmax')()
               ]
             }
           }

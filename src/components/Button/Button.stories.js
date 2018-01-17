@@ -69,16 +69,16 @@ storiesOf('Buttons', module)
     `)(
       () => (
         <div>
-          <Button small {...buttonEvents} className="some-class">
+          <Button size="sm" {...buttonEvents} className="some-class">
             Small primary button
           </Button>
           &nbsp;
-          <Button small {...buttonEvents} kind="secondary">
+          <Button size="sm" {...buttonEvents} kind="secondary">
             Small secondary Button
           </Button>
           &nbsp;
           <Button
-            small
+            size="sm"
             {...buttonEvents}
             kind="ghost"
             icon="add--glyph"
@@ -86,15 +86,50 @@ storiesOf('Buttons', module)
             Small ghost Button
           </Button>
           &nbsp;
-          <Button small {...buttonEvents} kind="danger">
+          <Button size="sm" {...buttonEvents} kind="danger">
             Small danger Button
           </Button>
           &nbsp;
-          <Button small {...buttonEvents} href="#" className="some-class">
+          <Button size="sm" {...buttonEvents} href="#" className="some-class">
             Small primary link
           </Button>
         </div>
       )
+    )
+  )
+  .add('Big Buttons',
+  withInfo(`
+      Small buttons may be used when there is not enough vertical space for a regular sized button. This issue is most
+      commonly found in tables. Small buttons should have three words or less.
+    `)(
+    () => (
+      <div>
+        <Button size="lg" {...buttonEvents} className="some-class">
+          Small primary button
+          </Button>
+        &nbsp;
+          <Button size="lg" {...buttonEvents} kind="secondary">
+          Small secondary Button
+          </Button>
+        &nbsp;
+          <Button
+          size="lg"
+          {...buttonEvents}
+          kind="ghost"
+          icon="add--glyph"
+          iconDescription="Add">
+          Small ghost Button
+          </Button>
+        &nbsp;
+          <Button size="lg" {...buttonEvents} kind="danger">
+          Small danger Button
+          </Button>
+        &nbsp;
+          <Button size="lg" {...buttonEvents} href="#" className="some-class">
+          Small primary link
+          </Button>
+      </div>
+    )
     )
   )
   .add('Disabled Button',

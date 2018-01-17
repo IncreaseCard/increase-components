@@ -8,7 +8,7 @@ export default function Button({
   children,
   className,
   disabled,
-  small,
+  size,
   kind,
   href,
   tabIndex,
@@ -17,7 +17,7 @@ export default function Button({
 }) {
   const buttonClasses = classNames(className, {
     'Button': true,
-    'Button--sm': small,
+    [`Button--${size}`]: size,
     'Button--primary': kind === 'primary',
     'Button--danger': kind === 'danger',
     'Button--secondary': kind === 'secondary',
@@ -48,7 +48,7 @@ Button.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  small: PropTypes.bool,
+  size: PropTypes.oneOf(['sm', 'lg']),
   kind: PropTypes.oneOf(['primary', 'secondary', 'danger', 'ghost']).isRequired,
   href: PropTypes.string,
   tabIndex: PropTypes.number,

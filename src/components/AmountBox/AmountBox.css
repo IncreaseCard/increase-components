@@ -1,11 +1,5 @@
-@import '../../../styles/responsive.css';
-
-:root {
-  --alizarinCrimson: #E31F24;
-  --oceanGreen: #28B579;
-  --pictonBlue: #3AA6DD;
-  --white: #FFF;
-}
+@import 'responsive.css';
+@import 'colors.css';
 
 .AmountBox {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);

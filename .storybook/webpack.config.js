@@ -6,6 +6,10 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 
+const path = require('path');
+
+const STYLES_DIR = path.resolve(__dirname, '../src/styles');
+
 module.exports = {
   plugins: [
     // your custom plugins
@@ -29,9 +33,17 @@ module.exports = {
               loader: 'postcss-loader',
               options: {
                 plugins: (loader) => [
-                  require('postcss-import')({ root: loader.resourcePath }),
-                  require('postcss-cssnext')(),
-                  require('autoprefixer')()
+                  require('postcss-import')({
+                    root: loader.resourcePath,
+                    path: [STYLES_DIR]
+                  }),
+                  require('postcss-cssnext')({
+                    features: {
+                      customProperties: {
+                        preserve: true
+                      }
+                    }
+                  })
                 ]
               }
           }
