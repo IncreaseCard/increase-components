@@ -44,11 +44,13 @@ module.exports = {
                   root: loader.resourcePath,
                   path: [STYLES_DIR]
                 }),
-                require('autoprefixer')(),
-                require('postcss-css-variables')({
-                  preserve: true
-                }),
-                require('postcss-media-minmax')()
+                require('postcss-cssnext')({
+                  features: {
+                    customProperties: {
+                      preserve: true
+                    }
+                  }
+                })
               ]
             }
           }
