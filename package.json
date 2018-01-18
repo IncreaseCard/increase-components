@@ -21,6 +21,7 @@
   "license": "None",
   "dependencies": {},
   "devDependencies": {
+    "@storybook/addon-a11y": "^3.3.9",
     "@storybook/addon-actions": "^3.3.6",
     "@storybook/addon-info": "^3.3.6",
     "@storybook/addon-links": "^3.3.6",

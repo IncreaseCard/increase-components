@@ -3,21 +3,23 @@ import './Checkbox.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Checkbox({className, disabled, label, ...other}) {
+export default function Checkbox({id, className, disabled, label, ...other}) {
   return (
-    <React.Fragment>
+    <div>
       <input
+        id={id}
         className={className}
         type="checkbox"
         disabled={disabled}
         {...other}
       />
-      {label}
-    </React.Fragment>
+      <label htmlFor={id}>{label}</label>
+    </div>
   );
 }
 
 Checkbox.propTypes = {
+  id: PropTypes.number.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   label: PropTypes.string

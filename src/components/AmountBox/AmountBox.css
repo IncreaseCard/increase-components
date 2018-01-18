@@ -9,6 +9,7 @@
   margin-top: 20px;
   position: relative;
   text-align: center;
+  width: 400px;
 }
 
 .AmountBox-amount {
@@ -16,6 +17,7 @@
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 85px;
+  padding: 0 16px;
 }
 
 .AmountBox-description {

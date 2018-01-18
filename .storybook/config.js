@@ -1,7 +1,27 @@
 import '!css-loader!normalize.css';
-import { configure } from '@storybook/react';
-
 import '../src/styles/base.css';
+
+import React from 'react';
+import { configure, addDecorator, setAddon } from '@storybook/react';
+import infoAddon from '@storybook/addon-info';
+import { checkA11y} from '@storybook/addon-a11y';
+
+addDecorator((story) => (
+  <div
+  style={{
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    padding: '3em'
+  }}
+  >
+    {story()}
+  </div>
+  )
+);
+addDecorator(checkA11y);
+
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /.stories.js$/);
 function loadStories() {
