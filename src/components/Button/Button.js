@@ -1,44 +1,61 @@
-import './Button.css';
+import defaultTheme from '../../defaultTheme';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import styled from 'styled-components';
+
+const e = React.createElement;
+const StyledButton = styled(({tag, children, ...props}) => e(tag, props, children))`
+  display: inline-block;
+  border: none;
+  box-shadow: ${props => props.kind == 'ghost' ? 'none' : `0 1px 2px ${props.theme.colors.darkShadow}`};
+
+  &:active {
+    box-shadow: 0 0 1px ${props => props.theme.colors.darkShadow};
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  font-size: ${props => props.theme.typography.fontSizes[props.size == 'sm' ? 5 : 3]};
+  line-height: ${props => props.theme.typography.lineHeights[props.size == 'sm' ? 5 : 3]};
+  padding: ${props => props.size == 'sm' ? '4px 8px' : '8px 16px'};
+
+  background-color: ${props => props.theme.colors[props.kind]};
+  color: ${props => props.theme.colors[props.kind + 'FontColor']};
+`;
+
+StyledButton.defaultProps = {
+  tag: 'button'
+};
 
 export default function Button({
   children,
-  className,
   disabled,
-  size,
-  kind,
   href,
   tabIndex,
   type,
   ...other
 }) {
-  const buttonClasses = classNames(className, {
-    'Button': true,
-    [`Button--${size}`]: size,
-    'Button--primary': kind === 'primary',
-    'Button--danger': kind === 'danger',
-    'Button--secondary': kind === 'secondary',
-    'Button--ghost': kind === 'ghost',
-  });
-
   const commonProps = {
-    tabIndex,
-    className: buttonClasses,
+    tabIndex
   };
 
   const button = (
-    <button {...other} {...commonProps} disabled={disabled} type={type}>
+    <StyledButton {...other} {...commonProps} disabled={disabled} type={type}>
       {children}
-    </button>
+    </StyledButton>
   );
 
   const anchor = (
-    <a {...other} {...commonProps} href={href} role="button">
+    <StyledButton tag="a" {...other} {...commonProps} href={href} role="button">
       {children}
-    </a>
+    </StyledButton>
   );
 
   return href ? anchor : button;
@@ -62,4 +79,5 @@ Button.defaultProps = {
   disabled: false,
   small: false,
   kind: 'primary',
+  theme: defaultTheme
 };

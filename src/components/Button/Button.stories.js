@@ -11,17 +11,14 @@ const buttonEvents = {
 };
 
 storiesOf('Buttons', module)
-  .add('Primary Buttons',
+  .add('Buttons',
     withInfo(
       `
         Buttons are used to initialize an action, either in the background or
         foreground of an experience.
-        Primary buttons should be used for the principle call to action
-        on the page. Modify the behavior of the button by changing its event properties.
-        Small buttons may be used when there is not enough space for a
-        regular sized button. This issue is most found in tables. Small button should have three words
-        or less.
-        The example below shows Primary Button component .
+        Primary buttons should be used for the principle call to action on the page.
+        Secondary buttons should be used for secondary actions on each page.
+        Modify the behavior of the button by changing its event properties.
     `)(
       () => (
         <div>
@@ -29,34 +26,24 @@ storiesOf('Buttons', module)
             Primary button
           </Button>
           &nbsp;
-          <Button {...buttonEvents} href="#" className="some-class">
-            Primary link
-          </Button>
-          &nbsp;
-        </div>
-      )
-    )
-  )
-  .add('Secondary Buttons',
-    withInfo(
-      `
-        Buttons are used to initialize an action, either in the background or
-        foreground of an experience. Secondary buttons should be used for secondary actions on each page.
-        Modify the behavior of the button by changing its property events.
-        The example below shows a Secondary Button component.
-    `)(
-      () => (
-        <div>
-          <Button kind="secondary" {...buttonEvents} className="some-class">
-            Secondary button
+          <Button {...buttonEvents} kind="secondary">
+            Secondary Button
           </Button>
           &nbsp;
           <Button
-            kind="secondary"
             {...buttonEvents}
-            href="#"
-            className="some-class">
-            Secondary link
+            kind="ghost"
+            icon="add--glyph"
+            iconDescription="Add">
+            Ghost Button
+          </Button>
+          &nbsp;
+          <Button {...buttonEvents} kind="danger">
+            Danger Button
+          </Button>
+          &nbsp;
+          <Button {...buttonEvents} href="#" className="some-class">
+            Primary link
           </Button>
         </div>
       )
@@ -95,41 +82,6 @@ storiesOf('Buttons', module)
           </Button>
         </div>
       )
-    )
-  )
-  .add('Big Buttons',
-  withInfo(`
-      Small buttons may be used when there is not enough vertical space for a regular sized button. This issue is most
-      commonly found in tables. Small buttons should have three words or less.
-    `)(
-    () => (
-      <div>
-        <Button size="lg" {...buttonEvents} className="some-class">
-          Small primary button
-          </Button>
-        &nbsp;
-          <Button size="lg" {...buttonEvents} kind="secondary">
-          Small secondary Button
-          </Button>
-        &nbsp;
-          <Button
-          size="lg"
-          {...buttonEvents}
-          kind="ghost"
-          icon="add--glyph"
-          iconDescription="Add">
-          Small ghost Button
-          </Button>
-        &nbsp;
-          <Button size="lg" {...buttonEvents} kind="danger">
-          Small danger Button
-          </Button>
-        &nbsp;
-          <Button size="lg" {...buttonEvents} href="#" className="some-class">
-          Small primary link
-          </Button>
-      </div>
-    )
     )
   )
   .add('Disabled Button',
