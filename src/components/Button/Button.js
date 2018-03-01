@@ -22,8 +22,8 @@ const StyledButton = styled(({tag, children, ...props}) => e(tag, props, childre
     border: 0;
   }
 
-  font-size: ${props => props.theme.typography.fontSizes[props.size == 'sm' ? 4 : 3]};
-  line-height: ${props => props.theme.typography.lineHeights[props.size == 'sm' ? 4 : 3]};
+  font-size: ${props => props.theme.typography.headingFontSizes[props.size == 'sm' ? 4 : 3]};
+  line-height: ${props => props.theme.typography.headingLineHeights[props.size == 'sm' ? 4 : 3]};
   padding: ${props => props.size == 'sm' ? '4px 8px' : '8px 16px'};
 
   background-color: ${props => props.theme.colors[props.kind]};
