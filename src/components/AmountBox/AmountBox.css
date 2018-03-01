@@ -1,36 +1,4 @@
-@import 'responsive.css';
 @import 'colors.css';
-
-.AmountBox {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  color: var(--white);
-  height: 120px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  position: relative;
-  text-align: center;
-  width: 400px;
-}
-
-.AmountBox-amount {
-  display: block;
-  font-size: 3.5rem;
-  font-weight: 300;
-  line-height: 85px;
-  padding: 0 16px;
-}
-
-.AmountBox-description {
-  display: block;
-  height: 35px;
-  line-height: 35px;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.AmountBox-short {
-  height: 85px;
-}
 
 .AmountBox-blue {
   background-color: var(--pictonBlue);

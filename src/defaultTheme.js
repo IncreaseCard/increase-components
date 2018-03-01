@@ -39,6 +39,7 @@ export const defaultTheme = {
     danger: colors.alizarinCrimson,
     dangerFontColor: colors.white,
     ghost: 'transparent',
+    white: colors.white,
     warning: colors.mustard,
     // Fonts
     fontBright: colors.white,
@@ -53,10 +54,12 @@ export const defaultTheme = {
   typography: {
     bodyFontFamily: '"Roboto", sans-serif',
     titleFontFamily: '"Roboto", sans-serif',
+    bodyFontSizes: [],
+    bodyFontHeights: [],
     // Based on powers of 1.3
-    fontSizes: ['3.7rem', '2.85rem', '2.2rem', '1.7rem', '1.3rem', '1rem'],
+    headingFontSizes: ['3.7rem', '2.85rem', '2.2rem', '1.7rem', '1.3rem', '1rem'],
     // Based on a 0.4 x 0.4 rem grid
-    lineHeights: ['4.8rem', '4.4rem', '3.2rem', '3.2rem', '2.8rem', '2.8rem']
+    headingLineHeights: ['4.8rem', '4.4rem', '3.2rem', '3.2rem', '2.8rem', '2.8rem']
   }
 };
 

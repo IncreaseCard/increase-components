@@ -20,3 +20,6 @@
 - [ ] Search
 - [ ] TextArea
 - [ ] Toggle
+
+- [ ] Colors story
+- [ ] Typography story

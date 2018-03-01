@@ -1,11 +1,9 @@
-import './Link.css';
-
-import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-export default function Link(props) {
-  return <a href={props.href}>{props.children}</a>
-}
+const Link = styled.a``;
+
+export default Link;
 
 Link.propTypes = {
   href: PropTypes.string,
