@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import MessageList from './MessageList';
 
 const messages = [
-  { text: 'Hola', id: 1 },
+  { text: 'Hola', id: 1, variant: 'info' },
   { text: 'Otro mensaje', id: 10, variant: 'warning'},
   {
     text: `

@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import defaultTheme from '../../defaultTheme';
 
 const Panel = styled.div`
-  box-shadow: 0 1px 2px ${props => props.theme.colors.mediumShadow};
+  border: 1px solid ${props => props.theme.colors.gray};
+  border-radius: 3px;
   padding: 8px 16px;
 `;
 

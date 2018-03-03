@@ -6,12 +6,46 @@ import styled from 'styled-components';
 
 const e = React.createElement;
 const StyledButton = styled(({tag, children, ...props}) => e(tag, props, children))`
+  ${props => {
+      const colors = props.theme.colors;
+      if (props.primary) {
+        return `
+          background-color: ${props.danger ? colors.secondary.red : colors.secondary.blue};
+          color: ${colors.white};
+          border: none;
+        `;
+      } else {
+        return `
+          background-color: ${colors.white};
+          border: 1px solid ${props.danger ? colors.secondary.red : colors.secondary.blue};
+          color: ${props.danger ? colors.secondary.red : colors.secondary.blue};
+        `;
+      }
+    }
+  }
+  border-radius: 3px;
   display: inline-block;
-  border: none;
-  box-shadow: ${props => props.kind == 'ghost' ? 'none' : `0 1px 2px ${props.theme.colors.darkShadow}`};
 
-  &:active {
-    box-shadow: 0 0 1px ${props => props.theme.colors.darkShadow};
+  &:hover:not([disabled]) {
+    ${props => {
+        const colors = props.theme.colors;
+        if (props.primary) {
+          return `
+            background-color: ${props.danger ? colors.secondary.lightRed : colors.secondary.darkBlue};
+            border: none;
+            `;
+          } else {
+            return `
+            border: 1px solid ${props.danger ? colors.secondary.lightRed : colors.secondary.darkBlue};
+            color: ${props.danger ? colors.secondary.lightRed : colors.secondary.darkBlue};
+          `;
+        }
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: 0.2;
   }
 
   &:focus {
@@ -22,12 +56,9 @@ const StyledButton = styled(({tag, children, ...props}) => e(tag, props, childre
     border: 0;
   }
 
-  font-size: ${props => props.theme.typography.headingFontSizes[props.size == 'sm' ? 4 : 3]};
-  line-height: ${props => props.theme.typography.headingLineHeights[props.size == 'sm' ? 4 : 3]};
-  padding: ${props => props.size == 'sm' ? '4px 8px' : '8px 16px'};
-
-  background-color: ${props => props.theme.colors[props.kind]};
-  color: ${props => props.theme.colors[props.kind + 'FontColor']};
+  font-size: ${props => props.theme.typography.headingFontSizes[props.small ? 5 : 4]};
+  line-height: ${props => props.theme.typography.headingLineHeights[props.small ? 5 : 4]};
+  padding: ${props => props.small ? '4px 16px' : '4px 32px'};
 `;
 
 StyledButton.defaultProps = {
@@ -65,12 +96,12 @@ Button.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'lg']),
-  kind: PropTypes.oneOf(['primary', 'secondary', 'danger', 'ghost']).isRequired,
+  primary: PropTypes.bool,
+  small: PropTypes.bool,
+  danger: PropTypes.bool,
   href: PropTypes.string,
   tabIndex: PropTypes.number,
-  type: PropTypes.oneOf(['button', 'reset', 'submit']),
-  role: PropTypes.string,
+  type: PropTypes.oneOf(['button', 'reset', 'submit'])
 };
 
 Button.defaultProps = {
@@ -78,6 +109,7 @@ Button.defaultProps = {
   type: 'button',
   disabled: false,
   small: false,
-  kind: 'primary',
+  primary: false,
+  danger: false,
   theme: defaultTheme
 };

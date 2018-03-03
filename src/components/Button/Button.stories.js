@@ -22,27 +22,15 @@ storiesOf('Buttons', module)
     `)(
       () => (
         <div>
-          <Button {...buttonEvents} className="some-class">
+          <Button {...buttonEvents} primary>
             Primary button
           </Button>
           &nbsp;
-          <Button {...buttonEvents} kind="secondary">
+          <Button {...buttonEvents}>
             Secondary Button
           </Button>
           &nbsp;
-          <Button
-            {...buttonEvents}
-            kind="ghost"
-            icon="add--glyph"
-            iconDescription="Add">
-            Ghost Button
-          </Button>
-          &nbsp;
-          <Button {...buttonEvents} kind="danger">
-            Danger Button
-          </Button>
-          &nbsp;
-          <Button {...buttonEvents} href="#" className="some-class">
+          <Button {...buttonEvents} href="#" primary>
             Primary link
           </Button>
         </div>
@@ -56,28 +44,15 @@ storiesOf('Buttons', module)
     `)(
       () => (
         <div>
-          <Button size="sm" {...buttonEvents} className="some-class">
+          <Button small {...buttonEvents} primary>
             Small primary button
           </Button>
           &nbsp;
-          <Button size="sm" {...buttonEvents} kind="secondary">
+          <Button small {...buttonEvents}>
             Small secondary Button
           </Button>
           &nbsp;
-          <Button
-            size="sm"
-            {...buttonEvents}
-            kind="ghost"
-            icon="add--glyph"
-            iconDescription="Add">
-            Small ghost Button
-          </Button>
-          &nbsp;
-          <Button size="sm" {...buttonEvents} kind="danger">
-            Small danger Button
-          </Button>
-          &nbsp;
-          <Button size="sm" {...buttonEvents} href="#" className="some-class">
+          <Button small {...buttonEvents} href="#" primary>
             Small primary link
           </Button>
         </div>
@@ -90,39 +65,12 @@ storiesOf('Buttons', module)
     `)(
       () => (
         <div>
-          <Button {...buttonEvents} disabled>
-            Disabled button
-          </Button>
-        </div>
-      )
-    )
-  )
-  .add('Ghost Buttons',
-    withInfo(`
-      Buttons are used to initialize an action, either in the background or
-      foreground of an experience. Danger buttons should be used for a negative action (such as Delete)
-      on the page. Modify the behavior of the button by changing its event properties. The example below
-      shows an enabled Danger Button component.
-    `)(
-      () => (
-        <div>
-          <Button
-            kind="ghost"
-            className="some-class"
-            icon="add--glyph"
-            iconDescription="Add"
-            {...buttonEvents}>
-            Ghost button
+          <Button {...buttonEvents} primary disabled>
+            Disabled Primary button
           </Button>
           &nbsp;
-          <Button
-            kind="ghost"
-            href="#"
-            className="some-class"
-            icon="add--glyph"
-            iconDescription="Add"
-            {...buttonEvents}>
-            Ghost link
+          <Button {...buttonEvents} disabled>
+            Disabled Secondary Button
           </Button>
         </div>
       )
@@ -137,11 +85,15 @@ storiesOf('Buttons', module)
     `)(
       () => (
         <div>
-          <Button kind="danger" {...buttonEvents} className="some-class">
+          <Button {...buttonEvents} primary danger>
             Danger button
           </Button>
           &nbsp;
-          <Button kind="danger" {...buttonEvents} href="#" className="some-class">
+          <Button {...buttonEvents} danger>
+            Danger button
+          </Button>
+          &nbsp;
+          <Button {...buttonEvents} href="#" primary danger>
             Danger link
           </Button>
         </div>

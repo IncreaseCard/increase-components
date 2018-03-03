@@ -1,0 +1,63 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { defaultTheme } from '../../defaultTheme';
+
+export const PaginationButton = styled.button`
+  background-color: ${props => props.active ?
+                               props.theme.colors.secondary.blue
+                               : props.theme.colors.white};
+  ${props => props.active ?
+            `border: 1px solid ${props.theme.colors.secondary.blue};`
+            : `border: 1px solid ${props.theme.colors.gray};`
+  }
+  border-radius: 3px;
+  color: ${props => props.active ?
+                    props.theme.colors.white
+                    : props.theme.colors.black};
+  padding: 8px 12px;
+
+  &:hover:not([disabled]) {
+    background-color: ${props => props.theme.colors.secondary.blue};
+    color: ${props => props.theme.colors.white};
+    ${props => props.active ? null : 'cursor: pointer'};
+  }
+
+  &[disabled] {
+    opacity: 0.2;
+  }
+`;
+
+PaginationButton.propTypes = {
+  theme: PropTypes.object,
+  active: PropTypes.bool
+};
+
+PaginationButton.defaultProps = {
+  theme: defaultTheme,
+  active: false
+};
+
+export const PaginationWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  > *:not(:last-child) {
+    margin-right: 8px;
+  }
+`;
+
+export function Pagination({children}) {
+  return (
+    <PaginationWrapper>
+      {children}
+    </PaginationWrapper>
+  );
+}
+
+Pagination.propTypes = {
+  children: PropTypes.node
+};
+
+export default Pagination;

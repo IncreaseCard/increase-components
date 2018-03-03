@@ -13,7 +13,7 @@ addDecorator((story) => (
     display: 'flex',
     flexDirection: 'column',
     height: '100%',
-    padding: '3em'
+    padding: '16px'
   }}
   >
     {story()}

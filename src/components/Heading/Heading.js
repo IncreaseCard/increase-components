@@ -7,9 +7,9 @@ const e = React.createElement;
 export const Heading = styled(({size, children, ...props}) => e(`h${size}`, props, children))`
   margin: 0;
   font-family: ${props => props.theme.typography.titleFontFamily};
-  font-size: ${props => props.theme.typography.fontSizes[props.size - 1]};
-  line-height: ${props => props.theme.typography.lineHeights[props.size - 1]};
-  font-weight: ${props => props.size > 3 ? 400 : 300};
+  font-size: ${props => props.theme.typography.headingFontSizes[props.size - 1]};
+  line-height: ${props => props.theme.typography.headingLineHeights[props.size - 1]};
+  font-weight: ${props => props.bold ? 'bold' : 'normal'};
 `;
 
 Heading.propTypes = {
