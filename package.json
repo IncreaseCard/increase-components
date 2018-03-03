@@ -21,6 +21,7 @@
   "homepage": "https://github.com/IncreaseCard/increase-components#readme",
   "license": "None",
   "dependencies": {
+    "prop-types": "^15.6.1",
     "react": "^16.2.0"
   },
   "devDependencies": {

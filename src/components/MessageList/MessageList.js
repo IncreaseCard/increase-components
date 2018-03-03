@@ -13,9 +13,10 @@ export default function MessageList({ messages, className }) {
         { messages.map((message, index) => {
           return (
             <Message
-              text={message.text}
               key={message.id || index}
-              variant={message.variant}/>
+              variant={message.variant}>
+            {message.text}
+            </Message>
           );
         }) }
     </div>

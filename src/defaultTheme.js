@@ -10,56 +10,62 @@ export const colors = {
   doveGray: '#737373',
   wizardGray: '#58585B',
   mineShaft: '#333',
-  mineShaftDark: '#222',
-  alizarinCrimson: '#E31F24',
+  black: '#000',
+  alizarinCrimson: '#B52727',
   aquaHaze: '#F2F6F7',
   atlantis: '#8CC63F',
   fiord: '#3C4E64',
   frost: '#E3F3D6',
   fruitSalad: '#4CAE4C',
   mustard: '#FFDF63',
-  oceanGreen: '#28B579',
-  pictonBlue: '#3AA6DD',
+  oceanGreen: '#27B579',
+  pictonBlue: '#3B86FF',
   squirtleBlue: '#135EAC',
-  valencia: '#D43F3A',
+  valencia: '#FF6565',
   subtleWhite: 'rgba(255, 255, 255, 0.25)',
   subtleShadow: 'rgba(0, 0, 0, 0.05)',
   mediumShadow: 'rgba(0, 0, 0, 0.26)',
   darkShadow: 'rgba(0, 0, 0, 0.6)',
   //  Used in calendar.scss
   increaseLightBlue: '#2CA8DF',
-  increaseOrange: '#F79C31'
+  increaseGreen: '#00BB00',
+  increaseGrey: '#EDEDED',
+  orange: '#F79B31',
 }
 export const defaultTheme = {
   colors: {
-    primary: colors.increaseLightBlue,
-    primaryFontColor: colors.white,
-    secondary: colors.increaseOrange,
-    secondaryFontColor: colors.white,
-    danger: colors.alizarinCrimson,
-    dangerFontColor: colors.white,
+    primary: {
+      blue: colors.increaseLightBlue,
+      green: colors.increaseGreen,
+    },
+    secondary: {
+      orange: colors.orange,
+      green: colors.oceanGreen,
+      blue: colors.pictonBlue,
+      darkBlue: '#223368',
+      red: colors.alizarinCrimson,
+      lightRed: colors.valencia
+    },
+    black: colors.black,
+    gray: colors.increaseGrey,
     ghost: 'transparent',
     white: colors.white,
-    warning: colors.mustard,
-    // Fonts
-    fontBright: colors.white,
-    fontNormal: colors.silverGray,
-    fontBold: colors.dustyGray,
+    // TODO: Fonts
     subtleShadow: colors.subtleShadow,
     mediumShadow: colors.mediumShadow,
     darkShadow: colors.darkShadow,
     // Sections
-    borderColor: colors.silverGray
+    borderColor: colors.gray
   },
   typography: {
     bodyFontFamily: '"Roboto", sans-serif',
     titleFontFamily: '"Roboto", sans-serif',
-    bodyFontSizes: [],
-    bodyFontHeights: [],
+    bodyFontSizes: ['15px', '13px'],
+    bodyLineHeights: ['21px', '19px'],
     // Based on powers of 1.3
-    headingFontSizes: ['3.7rem', '2.85rem', '2.2rem', '1.7rem', '1.3rem', '1rem'],
+    headingFontSizes: ['2.85rem', '2.2rem', '1.7rem', '1.3rem', '1rem', '0.75rem'],
     // Based on a 0.4 x 0.4 rem grid
-    headingLineHeights: ['4.8rem', '4.4rem', '3.2rem', '3.2rem', '2.8rem', '2.8rem']
+    headingLineHeights: ['4.4rem', '3.2rem', '3.2rem', '2.8rem', '2rem', '1.6rem']
   }
 };
 

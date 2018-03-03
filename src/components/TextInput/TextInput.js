@@ -1,9 +1,70 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { defaultTheme } from '../../defaultTheme';
+
+const TextInputWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  ${props => props.invalid ? `
+    &::after {
+      content: '';
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      background-color: red;
+      height: 16px;
+      width: 16px;
+    }
+  ` : null}
+`;
+
+TextInputWrapper.propTypes = {
+  theme: PropTypes.object,
+  invalid: PropTypes.bool
+};
+
+TextInputWrapper.defaultProps = {
+  theme: defaultTheme,
+  invalid: false
+};
+
+const StyledTextInput = styled.input`
+  border: 1px solid ${props => props.invalid ?
+                               props.theme.colors.secondary.red
+                               : props.theme.colors.gray};
+  border-radius: 3px;
+  caret-color: ${props => props.theme.colors.black};
+  color: ${props => props.invalid ?
+                    props.theme.colors.secondary.red
+                    : props.theme.colors.black};
+  &:placeholder-shown {
+    color: ${props => props.theme.colors.gray};
+  }
+  font-size: ${props => props.theme.typography.bodyFontSizes[0]};
+  line-height: ${props => props.theme.typography.bodyLineHeights[0]};
+  padding: 4px;
+
+  &:active, &:focus {
+    border: 1px solid ${props => props.invalid ?
+                                 props.theme.colors.secondary.red
+                                 : props.theme.colors.black};
+  }
+`;
+
+StyledTextInput.propTypes = {
+  theme: PropTypes.object,
+  invalid: PropTypes.bool
+};
+
+StyledTextInput.defaultProps = {
+  theme: defaultTheme,
+  invalid: false
+};
 
 export default function TextInput({
   labelText,
-  className,
   id,
   placeholder,
   type,
@@ -32,36 +93,36 @@ export default function TextInput({
   const errorId = id + '-error-msg';
 
   const label = labelText ? (
-    <label htmlFor={id} className="TextInput-label">
+    <label htmlFor={id}>
       {labelText}
     </label>
   ) : null;
 
   const error = invalid ? (
-    <div className="TextInput-error" id={errorId}>
+    <div id={errorId}>
       {invalidText}
     </div>
   ) : null;
 
   const input = invalid ? (
-    <input
+    <StyledTextInput
       {...other}
       {...textInputProps}
+      invalid
       data-invalid
       aria-invalid
       aria-describedBy={errorId}
-      className={'TextInput-input ' + className}
     />
   ) : (
-    <input {...other} {...textInputProps} className={'TextInput-input ' + className} />
+    <StyledTextInput {...other} {...textInputProps} />
   );
 
   return (
-    <div className="TextInput">
+    <TextInputWrapper invalid={invalid}>
       {label}
       {input}
       {error}
-    </div>
+    </TextInputWrapper>
   );
 }
 
