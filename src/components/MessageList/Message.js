@@ -4,6 +4,7 @@ import { defaultTheme } from '../../defaultTheme';
 
 const Message = styled.div`
   border: 1px solid ${props => props.theme.colors.gray};
+  border-radius: 3px;
   padding: 8px;
 
   ${props => {

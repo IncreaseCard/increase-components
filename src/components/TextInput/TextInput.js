@@ -50,6 +50,7 @@ const StyledTextInput = styled.input`
     border: 1px solid ${props => props.invalid ?
                                  props.theme.colors.secondary.red
                                  : props.theme.colors.black};
+    outline: none;
   }
 `;
 

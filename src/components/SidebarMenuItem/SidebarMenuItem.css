@@ -1,5 +1,3 @@
-@import 'colors.css';
-
 .SidebarMenuItem button {
   background-color: transparent;
   border: none;
@@ -11,11 +9,11 @@
 }
 
 .SidebarMenuItem.active button {
-  background-color: var(--white);
-  color: var(--dustyGray);
+  background-color: white;
+  color: #9B9B9B;
 }
 
 .SidebarMenuItem button:hover {
-  background-color: var(--alto);
-  color: var(--dustyGray);
+  background-color: #DBDBDB;
+  color: #9B9B9B;
 }

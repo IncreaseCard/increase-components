@@ -1,5 +1,3 @@
-import './AmountBox.css';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -8,7 +6,7 @@ import defaultTheme from '../../defaultTheme';
 import Currency from '../Currency/Currency';
 
 const AmountBoxWrapper = styled.div`
-  box-shadow: 0 1px 2px ${props => props.theme.colors.darkShadow};
+  background-color: ${props => props.theme.colors.secondary[props.color]};
   color: ${props => props.theme.colors.white};
   height: ${props => props.short ? '85px' : '120px'};
   margin-bottom: 20px;
@@ -43,7 +41,7 @@ AmountBoxDescription.defaultProps = { theme: defaultTheme };
 
 export const AmountBox = ({ amount = 0, color = 'blue', description }) => {
   return(
-    <AmountBoxWrapper short={typeof description !== 'string'} className={`AmountBox-${color}`}>
+    <AmountBoxWrapper short={typeof description !== 'string'} color={color}>
       <AmountBoxAmount>
         <Currency value={amount}/>
       </AmountBoxAmount>

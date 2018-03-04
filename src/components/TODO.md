@@ -5,6 +5,8 @@
 - [X] Link
 - [X] Select
 - [X] TextInput
+- [X] RadioButton
+- [X] Pagination
 - [ ] Modal
 - [ ] Table
 - [ ] DateRangePicker
@@ -15,8 +17,6 @@
 - [ ] Loading
 - [ ] Notification/Toast
 - [ ] Notification/Inline
-- [ ] Pagination
-- [ ] RadioButton
 - [ ] Search
 - [ ] TextArea
 - [ ] Toggle
