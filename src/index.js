@@ -8,6 +8,7 @@ import Checkbox from './components/Checkbox/Checkbox';
 import Currency from './components/Currency/Currency';
 import Heading from './components/Heading/Heading';
 import Link from './components/Link/Link';
+import Loading from './components/Loading/Loading';
 import MessageList from './components/MessageList/MessageList';
 import NumberInput from './components/NumberInput/NumberInput';
 import Pagination from './components/Pagination/Pagination';
@@ -27,6 +28,7 @@ export {
   Currency,
   Heading,
   Link,
+  Loading,
   MessageList,
   NumberInput,
   Pagination,
