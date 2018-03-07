@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Pagination, PaginationButton } from './Pagination';
+import Pagination from './Pagination';
+import PaginationButton from '../PaginationButton/PaginationButton';
 
 storiesOf('Pagination', module)
   .add('pagination', () => {
