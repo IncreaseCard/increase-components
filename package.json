@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run storybook",
-    "prepublish": "webpack -p --progress --colors --config webpack.config.publish.js",
+    "prepublishOnly": "webpack -p --progress --colors --config webpack.config.publish.js",
     "build": "webpack -p --progress --colors --config webpack.config.publish.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs"
