@@ -6,6 +6,25 @@ import styled from 'styled-components';
 
 const e = React.createElement;
 const StyledButton = styled(({tag, children, ...props}) => e(tag, props, children))`
+  border: none;
+  display: inline-block;
+
+  &:disabled {
+    opacity: 0.2;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  font-size: ${props => props.theme.typography.bodyFontSizes[props.primary ? 0 : 1]};
+  line-height: ${props => props.theme.typography.bodyLineHeights[props.primary ? 0 : 1]};
+  white-space: nowrap;
+
   ${props => {
       const colors = props.theme.colors;
       if (props.primary) {
@@ -26,6 +45,8 @@ const StyledButton = styled(({tag, children, ...props}) => e(tag, props, childre
       } else {
         return `
           background-color: transparent;
+          border-bottom: 2px solid transparent;
+          border-top: 2px solid transparent;
           color: ${props.danger ? colors.secondary.red : colors.secondary.blue};
           padding: 0;
           margin: 6px 20px;
@@ -33,8 +54,6 @@ const StyledButton = styled(({tag, children, ...props}) => e(tag, props, childre
       }
     }
   }
-  border: none;
-  display: inline-block;
 
   &:hover:not([disabled]) {
     ${props => {
@@ -51,22 +70,6 @@ const StyledButton = styled(({tag, children, ...props}) => e(tag, props, childre
       }
     }
   }
-
-  &:disabled {
-    opacity: 0.2;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &::-moz-focus-inner {
-    border: 0;
-  }
-
-  font-size: ${props => props.theme.typography.bodyFontSizes[props.primary ? 0 : 1]};
-  line-height: ${props => props.theme.typography.bodyLineHeights[props.primary ? 0 : 1]};
-  white-space: nowrap;
 `;
 
 StyledButton.defaultProps = {
