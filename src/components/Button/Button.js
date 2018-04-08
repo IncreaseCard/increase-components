@@ -11,19 +11,29 @@ const StyledButton = styled(({tag, children, ...props}) => e(tag, props, childre
       if (props.primary) {
         return `
           background-color: ${props.danger ? colors.secondary.red : colors.secondary.blue};
+          border-radius: 3px;
           color: ${colors.white};
-          border: none;
+          padding: 6px 20px;
+          text-shadow: 0 1px 3px ${colors.darkShadow};
+
+          &:disabled {
+            background-color: transparent;
+            border: 1px solid ${colors.primary.blue};
+            color: ${colors.primary.blue};
+            text-shadow: 0 0 2px ${colors.mediumShadow};
+          }
         `;
       } else {
         return `
-          background-color: ${colors.white};
-          border: 1px solid ${props.danger ? colors.secondary.red : colors.secondary.blue};
+          background-color: transparent;
           color: ${props.danger ? colors.secondary.red : colors.secondary.blue};
+          padding: 0;
+          margin: 6px 20px;
         `;
       }
     }
   }
-  border-radius: 3px;
+  border: none;
   display: inline-block;
 
   &:hover:not([disabled]) {
@@ -31,13 +41,11 @@ const StyledButton = styled(({tag, children, ...props}) => e(tag, props, childre
         const colors = props.theme.colors;
         if (props.primary) {
           return `
-            background-color: ${props.danger ? colors.secondary.lightRed : colors.secondary.darkBlue};
-            border: none;
+            background-color: ${props.danger ? colors.secondary.lightRed : colors.primary.blue};
             `;
           } else {
             return `
-            border: 1px solid ${props.danger ? colors.secondary.lightRed : colors.secondary.darkBlue};
-            color: ${props.danger ? colors.secondary.lightRed : colors.secondary.darkBlue};
+              border-bottom: 2px solid ${colors.primary.green};
           `;
         }
       }
@@ -56,9 +64,9 @@ const StyledButton = styled(({tag, children, ...props}) => e(tag, props, childre
     border: 0;
   }
 
-  font-size: ${props => props.theme.typography.headingFontSizes[props.small ? 5 : 4]};
-  line-height: ${props => props.theme.typography.headingLineHeights[props.small ? 5 : 4]};
-  padding: ${props => props.small ? '4px 16px' : '4px 32px'};
+  font-size: ${props => props.theme.typography.bodyFontSizes[props.primary ? 0 : 1]};
+  line-height: ${props => props.theme.typography.bodyLineHeights[props.primary ? 0 : 1]};
+  white-space: nowrap;
 `;
 
 StyledButton.defaultProps = {
@@ -97,7 +105,6 @@ Button.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   primary: PropTypes.bool,
-  small: PropTypes.bool,
   danger: PropTypes.bool,
   href: PropTypes.string,
   tabIndex: PropTypes.number,

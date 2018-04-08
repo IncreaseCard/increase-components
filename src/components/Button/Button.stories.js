@@ -37,28 +37,6 @@ storiesOf('Buttons', module)
       )
     )
   )
-  .add('Small Buttons',
-    withInfo(`
-      Small buttons may be used when there is not enough vertical space for a regular sized button. This issue is most
-      commonly found in tables. Small buttons should have three words or less.
-    `)(
-      () => (
-        <div>
-          <Button small {...buttonEvents} primary>
-            Small primary button
-          </Button>
-          &nbsp;
-          <Button small {...buttonEvents}>
-            Small secondary Button
-          </Button>
-          &nbsp;
-          <Button small {...buttonEvents} href="#" primary>
-            Small primary link
-          </Button>
-        </div>
-      )
-    )
-  )
   .add('Disabled Button',
     withInfo(`
       Disabled Buttons may be used when the user cannot proceed until input is collected.

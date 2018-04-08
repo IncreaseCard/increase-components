@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 export default function Select({children, disabled, labelText, id, ...other}) {
   return (
     <React.Fragment>
-      <label className="Select-label" htmlFor={id}>
+      <label htmlFor={id}>
         {labelText}
       </label>
       <select
             {...other}
-            className="Select"
             disabled={disabled}
             id={id}>
             {children}

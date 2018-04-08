@@ -8,7 +8,7 @@ import { defaultTheme } from '../../defaultTheme';
 const RadioButtonWrapper = styled.label`
   font-size: ${props => props.theme.typography.bodyFontSizes[0]};
   line-height: ${props => props.theme.typography.bodyLineHeights[0]};
-  color: ${props => props.theme.colors.secondary.blue};
+  color: ${props => props.theme.colors.primary.blue};
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function SelectItem({ className, value, disabled, hidden, text, ...other }) {
+export default function SelectItem({ value, disabled, hidden, text, ...other }) {
   return (
     <option
       {...other}
-      className={className}
       value={value}
       disabled={disabled}
       hidden={hidden}>

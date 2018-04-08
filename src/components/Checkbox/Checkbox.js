@@ -5,24 +5,10 @@ import styled from 'styled-components';
 import { defaultTheme } from '../../defaultTheme';
 
 const CheckboxWrapper = styled.div`
-  color: ${props => props.theme.colors.secondary.blue};
+  color: ${props => props.theme.colors.primary.blue};
   display: flex;
   align-content: center;
-
-  ${props => {
-      if (props.disabled) {
-        return `
-          opacity: 0.2;
-        `;
-      } else {
-        return `
-          &:hover {
-            color: ${props.theme.colors.secondary.darkBlue};
-          }
-        `;
-      }
-    }
-  }
+  opacity: ${props => props.disabled ? 0.2 : 1};
 `;
 
 CheckboxWrapper.propTypes = {
@@ -47,12 +33,11 @@ CheckboxInput.defaultProps = {
   theme: defaultTheme
 };
 
-export default function Checkbox({id, className, disabled, label, ...other}) {
+export default function Checkbox({id, disabled, label, ...other}) {
   return (
     <CheckboxWrapper disabled={disabled}>
       <CheckboxInput
         id={id}
-        className={className}
         type="checkbox"
         disabled={disabled}
         {...other}
