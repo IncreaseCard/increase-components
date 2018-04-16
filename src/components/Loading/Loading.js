@@ -39,13 +39,13 @@ LoadingBar.defaultProps = {
   small: false
 };
 
-export function Loading(props) {
+export const Loading = ({ small }) => {
   return (
     <div style={{position: 'relative'}}>
-      <LoadingBar {...props} animationDelay='0' />
-      <LoadingBar {...props} animationDelay='-0.15s' />
-      <LoadingBar {...props} animationDelay='-0.3s' />
-      <LoadingBar {...props} animationDelay='-0.45s' />
+      <LoadingBar small={small} animationDelay='0' />
+      <LoadingBar small={small} animationDelay='-0.15s' />
+      <LoadingBar small={small} animationDelay='-0.3s' />
+      <LoadingBar small={small} animationDelay='-0.45s' />
     </div>
   );
 }
