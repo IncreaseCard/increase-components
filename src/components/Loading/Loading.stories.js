@@ -5,4 +5,7 @@ import { Loading } from './Loading';
 storiesOf('Loading')
   .add('normal', () => (
     <Loading/>
+  ))
+  .add('small', () => (
+    <Loading small/>
   ));
