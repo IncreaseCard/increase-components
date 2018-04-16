@@ -50,4 +50,12 @@ export function Loading(props) {
   );
 }
 
+Loading.propTypes = {
+  small: PropTypes.bool
+};
+
+Loading.defaultProps = {
+  small: false
+};
+
 export default Loading;
