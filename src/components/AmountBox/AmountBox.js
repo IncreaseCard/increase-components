@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import defaultTheme from '../../defaultTheme';
+import currentTheme from '../../currentTheme';
 import Currency from '../Currency/Currency';
 
 const AmountBoxWrapper = styled.div`
@@ -17,7 +17,7 @@ const AmountBoxWrapper = styled.div`
 `;
 
 AmountBoxWrapper.propTypes = { theme: PropTypes.object, short: PropTypes.bool };
-AmountBoxWrapper.defaultProps = { theme: defaultTheme };
+AmountBoxWrapper.defaultProps = { theme: currentTheme };
 
 const AmountBoxAmount = styled.span`
   display: block;
@@ -36,7 +36,7 @@ const AmountBoxDescription = styled.p`
 `;
 
 AmountBoxDescription.propTypes = { theme: PropTypes.object };
-AmountBoxDescription.defaultProps = { theme: defaultTheme };
+AmountBoxDescription.defaultProps = { theme: currentTheme };
 
 
 export const AmountBox = ({ amount = 0, color = 'blue', description }) => {

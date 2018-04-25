@@ -1,4 +1,4 @@
-import defaultTheme from '../../defaultTheme';
+import newTheme from '../../newTheme';
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -121,5 +121,5 @@ Button.defaultProps = {
   small: false,
   primary: false,
   danger: false,
-  theme: defaultTheme
+  theme: newTheme
 };

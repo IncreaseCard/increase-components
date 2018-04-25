@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { defaultTheme } from '../../defaultTheme';
+import { newTheme } from '../../newTheme';
 
 const CheckboxWrapper = styled.div`
   color: ${props => props.theme.colors.primary.blue};
@@ -18,7 +18,7 @@ CheckboxWrapper.propTypes = {
 
 CheckboxWrapper.defaultProps = {
   disabled: false,
-  theme: defaultTheme
+  theme: newTheme
 };
 
 const CheckboxInput = styled.input`
@@ -30,7 +30,7 @@ CheckboxInput.propTypes = {
 };
 
 CheckboxInput.defaultProps = {
-  theme: defaultTheme
+  theme: newTheme
 };
 
 export default function Checkbox({id, disabled, label, ...other}) {

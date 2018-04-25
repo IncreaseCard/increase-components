@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from "styled-components";
-import { defaultTheme } from '../../defaultTheme';
+import { newTheme } from '../../newTheme';
 
 const rotate360Forever = keyframes`
   from {
@@ -34,7 +34,7 @@ LoadingBar.propTypes = {
 };
 
 LoadingBar.defaultProps = {
-  theme: defaultTheme,
+  theme: newTheme,
   animationDelay: '0',
   small: false
 };

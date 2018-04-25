@@ -16,7 +16,7 @@ export const colors = {
   //  Used in calendar.scss
   orange: '#F79B31',
 }
-export const defaultTheme = {
+export const newTheme = {
   colors: {
     primary: {
       blue: colors.cello,
@@ -53,4 +53,4 @@ export const defaultTheme = {
   }
 };
 
-export default defaultTheme;
+export default newTheme;

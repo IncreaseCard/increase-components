@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import defaultTheme from '../../defaultTheme';
+import newTheme from '../../newTheme';
 
 export const NumberInput = styled.input.attrs({
   type: 'number'
@@ -20,7 +20,7 @@ NumberInput.propTypes = {
 };
 
 NumberInput.defaultProps = {
-  theme: defaultTheme
+  theme: newTheme
 };
 
 export default NumberInput;

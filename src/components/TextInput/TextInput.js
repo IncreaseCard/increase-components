@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { defaultTheme } from '../../defaultTheme';
+import { newTheme } from '../../newTheme';
 
 const TextInputWrapper = styled.div`
   position: relative;
@@ -26,7 +26,7 @@ TextInputWrapper.propTypes = {
 };
 
 TextInputWrapper.defaultProps = {
-  theme: defaultTheme,
+  theme: newTheme,
   invalid: false
 };
 
@@ -60,7 +60,7 @@ StyledTextInput.propTypes = {
 };
 
 StyledTextInput.defaultProps = {
-  theme: defaultTheme,
+  theme: newTheme,
   invalid: false
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
-import { defaultTheme } from '../../defaultTheme';
+import { newTheme } from '../../newTheme';
 
 const e = React.createElement;
 export const Heading = styled(({size, children, ...props}) => e(`h${size}`, props, children))`
@@ -17,7 +17,7 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
-  theme: defaultTheme
+  theme: newTheme
 };
 
 export default Heading;

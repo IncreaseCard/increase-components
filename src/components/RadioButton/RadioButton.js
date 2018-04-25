@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
-import { defaultTheme } from '../../defaultTheme';
+import { newTheme } from '../../newTheme';
 
 // const RadioButtonInput = styled.input.attrs({type: 'radio'})``;
 
@@ -34,7 +34,7 @@ RadioButtonWrapper.propTypes = {
 };
 
 RadioButtonWrapper.defaultProps = {
-  theme: defaultTheme
+  theme: newTheme
 };
 
 const RadioButtonInput = styled.input.attrs({type: 'radio'})`

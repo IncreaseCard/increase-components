@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from "styled-components";
 
-import { defaultTheme } from '../../defaultTheme';
+import { newTheme } from '../../newTheme';
 
 export const PaginationButton = styled.button`
   background-color: ${props => props.active ?
@@ -34,7 +34,7 @@ PaginationButton.propTypes = {
 };
 
 PaginationButton.defaultProps = {
-  theme: defaultTheme,
+  theme: newTheme,
   active: false
 };
 

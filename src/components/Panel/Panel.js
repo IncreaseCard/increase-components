@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import defaultTheme from '../../defaultTheme';
+import newTheme from '../../newTheme';
 
 const Panel = styled.div`
   border: 1px solid ${props => props.theme.colors.gray};
@@ -15,7 +15,7 @@ Panel.propTypes = {
 };
 
 Panel.defaultProps = {
-  theme: defaultTheme
+  theme: newTheme
 };
 
 export default Panel;

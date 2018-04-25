@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { defaultTheme } from '../../defaultTheme';
+import { newTheme } from '../../newTheme';
 
 const Message = styled.div`
   border: 1px solid ${props => props.theme.colors.gray};
@@ -37,7 +37,7 @@ Message.propTypes = {
 };
 
 Message.defaultProps = {
-  theme: defaultTheme
+  theme: newTheme
 };
 
 export default Message;
