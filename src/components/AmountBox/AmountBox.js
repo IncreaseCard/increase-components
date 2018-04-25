@@ -14,6 +14,7 @@ const AmountBoxWrapper = styled.div`
   position: relative;
   text-align: center;
   width: 400px;
+  max-width: 100%;
 `;
 
 AmountBoxWrapper.propTypes = { theme: PropTypes.object, short: PropTypes.bool };
