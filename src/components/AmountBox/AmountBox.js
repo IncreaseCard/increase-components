@@ -21,7 +21,7 @@ AmountBoxWrapper.defaultProps = { theme: currentTheme };
 
 const AmountBoxAmount = styled.span`
   display: block;
-  font-size: 2.85rem;
+  font-size: 3.5rem;
   font-weight: 300;
   line-height: 85px;
   padding: 0 16px;
