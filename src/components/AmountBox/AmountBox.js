@@ -13,7 +13,7 @@ const AmountBoxWrapper = styled.div`
   margin-top: 20px;
   position: relative;
   text-align: center;
-  width: 400px;
+  width: 100%;
   max-width: 100%;
 `;
 
