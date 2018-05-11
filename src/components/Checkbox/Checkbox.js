@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-import { newTheme } from '../../newTheme';
+import { newTheme } from "../../themes/new";
 
 const CheckboxWrapper = styled.div`
   color: ${props => props.theme.colors.primary.blue};
   display: flex;
   align-content: center;
-  opacity: ${props => props.disabled ? 0.2 : 1};
+  opacity: ${props => (props.disabled ? 0.2 : 1)};
 `;
 
 CheckboxWrapper.propTypes = {
@@ -33,15 +33,10 @@ CheckboxInput.defaultProps = {
   theme: newTheme
 };
 
-export default function Checkbox({id, disabled, label, ...other}) {
+export default function Checkbox({ id, disabled, label, ...other }) {
   return (
     <CheckboxWrapper disabled={disabled}>
-      <CheckboxInput
-        id={id}
-        type="checkbox"
-        disabled={disabled}
-        {...other}
-      />
+      <CheckboxInput id={id} type="checkbox" disabled={disabled} {...other} />
       <label htmlFor={id}>{label}</label>
     </CheckboxWrapper>
   );

@@ -1,13 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { newTheme } from '../../newTheme';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { newTheme } from "../../themes/new";
 
 const TextInputWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  ${props => props.invalid ? `
+  ${props =>
+    props.invalid
+      ? `
     &::after {
       content: '';
       position: absolute;
@@ -17,7 +19,8 @@ const TextInputWrapper = styled.div`
       height: 16px;
       width: 16px;
     }
-  ` : null}
+  `
+      : null};
 `;
 
 TextInputWrapper.propTypes = {
@@ -31,14 +34,17 @@ TextInputWrapper.defaultProps = {
 };
 
 const StyledTextInput = styled.input`
-  border: 1px solid ${props => props.invalid ?
-                               props.theme.colors.secondary.red
-                               : props.theme.colors.gray};
+  border: 1px solid
+    ${props =>
+      props.invalid
+        ? props.theme.colors.secondary.red
+        : props.theme.colors.gray};
   border-radius: 3px;
   caret-color: ${props => props.theme.colors.black};
-  color: ${props => props.invalid ?
-                    props.theme.colors.secondary.red
-                    : props.theme.colors.black};
+  color: ${props =>
+    props.invalid
+      ? props.theme.colors.secondary.red
+      : props.theme.colors.black};
   &:placeholder-shown {
     color: ${props => props.theme.colors.gray};
   }
@@ -46,10 +52,13 @@ const StyledTextInput = styled.input`
   line-height: ${props => props.theme.typography.bodyLineHeights[0]};
   padding: 4px;
 
-  &:active, &:focus {
-    border: 1px solid ${props => props.invalid ?
-                                 props.theme.colors.secondary.red
-                                 : props.theme.colors.black};
+  &:active,
+  &:focus {
+    border: 1px solid
+      ${props =>
+        props.invalid
+          ? props.theme.colors.secondary.red
+          : props.theme.colors.black};
     outline: none;
   }
 `;
@@ -88,22 +97,14 @@ export default function TextInput({
       }
     },
     placeholder,
-    type,
+    type
   };
 
-  const errorId = id + '-error-msg';
+  const errorId = id + "-error-msg";
 
-  const label = labelText ? (
-    <label htmlFor={id}>
-      {labelText}
-    </label>
-  ) : null;
+  const label = labelText ? <label htmlFor={id}>{labelText}</label> : null;
 
-  const error = invalid ? (
-    <div id={errorId}>
-      {invalidText}
-    </div>
-  ) : null;
+  const error = invalid ? <div id={errorId}>{invalidText}</div> : null;
 
   const input = invalid ? (
     <StyledTextInput
@@ -139,15 +140,15 @@ TextInput.propTypes = {
   type: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   invalid: PropTypes.bool,
-  invalidText: PropTypes.string,
+  invalidText: PropTypes.string
 };
 
 TextInput.defaultProps = {
-  className: 'bx--text__input',
+  className: "bx--text__input",
   disabled: false,
-  type: 'text',
+  type: "text",
   onChange: () => {},
   onClick: () => {},
   invalid: false,
-  invalidText: '',
+  invalidText: ""
 };

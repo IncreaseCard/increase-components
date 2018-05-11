@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import { newTheme } from '../../newTheme';
+import { newTheme } from "../../themes/new";
 
 // const RadioButtonInput = styled.input.attrs({type: 'radio'})``;
 
@@ -14,19 +14,18 @@ const RadioButtonWrapper = styled.label`
   align-items: center;
 
   ${props => {
-      if (props.disabled) {
-        return `
+    if (props.disabled) {
+      return `
             opacity: 0.2;
           `;
-      } else {
-        return `
+    } else {
+      return `
             &:hover {
               color: ${props.theme.colors.secondary.darkBlue};
             }
           `;
-      }
     }
-  }
+  }};
 `;
 
 RadioButtonWrapper.propTypes = {
@@ -37,14 +36,14 @@ RadioButtonWrapper.defaultProps = {
   theme: newTheme
 };
 
-const RadioButtonInput = styled.input.attrs({type: 'radio'})`
+const RadioButtonInput = styled.input.attrs({ type: "radio" })`
   margin: 0 6px 0 0;
 `;
 
 export const RadioButton = function({ label, name, disabled, ...other }) {
   return (
     <RadioButtonWrapper disabled={disabled}>
-      <RadioButtonInput name={name} disabled={disabled} {...other}/>
+      <RadioButtonInput name={name} disabled={disabled} {...other} />
       {label}
     </RadioButtonWrapper>
   );

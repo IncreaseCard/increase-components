@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-import currentTheme from '../../currentTheme';
-import Currency from '../Currency/Currency';
+import currentTheme from "../../themes/current";
+import Currency from "../Currency/Currency";
 
 const AmountBoxWrapper = styled.div`
   background-color: ${props => props.theme.colors.secondary[props.color]};
   color: ${props => props.theme.colors.white};
-  height: ${props => props.short ? '85px' : '120px'};
+  height: ${props => (props.short ? "85px" : "120px")};
   margin-bottom: 20px;
   margin-top: 20px;
   position: relative;
@@ -22,11 +22,19 @@ AmountBoxWrapper.defaultProps = { theme: currentTheme };
 
 const AmountBoxAmount = styled.span`
   display: block;
-  font-size: 3.5rem;
+  font-size: ${props => props.theme.typography.headingFontSizes[0]};
   font-weight: 300;
   line-height: 85px;
   padding: 0 16px;
 `;
+
+AmountBoxAmount.propTypes = {
+  theme: PropTypes.object
+};
+
+AmountBoxAmount.defaultProps = {
+  theme: currentTheme
+};
 
 const AmountBoxDescription = styled.p`
   display: block;
@@ -39,20 +47,15 @@ const AmountBoxDescription = styled.p`
 AmountBoxDescription.propTypes = { theme: PropTypes.object };
 AmountBoxDescription.defaultProps = { theme: currentTheme };
 
-
-export const AmountBox = ({ amount = 0, color = 'blue', description }) => {
-  return(
-    <AmountBoxWrapper short={typeof description !== 'string'} color={color}>
+export const AmountBox = ({ amount = 0, color = "blue", description }) => {
+  return (
+    <AmountBoxWrapper short={typeof description !== "string"} color={color}>
       <AmountBoxAmount>
-        <Currency value={amount}/>
+        <Currency value={amount} />
       </AmountBoxAmount>
-      {
-        typeof description === 'string' ?
-          <AmountBoxDescription>
-            {description}
-          </AmountBoxDescription>
-          : null
-      }
+      {typeof description === "string" ? (
+        <AmountBoxDescription>{description}</AmountBoxDescription>
+      ) : null}
     </AmountBoxWrapper>
   );
 };
@@ -60,7 +63,7 @@ export const AmountBox = ({ amount = 0, color = 'blue', description }) => {
 AmountBox.propTypes = {
   amount: PropTypes.number,
   description: PropTypes.string,
-  color: PropTypes.oneOf(['blue', 'red', 'green'])
+  color: PropTypes.oneOf(["blue", "red", "green"])
 };
 
 export default AmountBox;

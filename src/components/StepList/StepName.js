@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import defaultTheme from "../../newTheme";
+import defaultTheme from "../../themes/new";
 
 const propTypes = {
   theme: PropTypes.object,

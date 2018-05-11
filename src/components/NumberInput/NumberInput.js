@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import newTheme from '../../newTheme';
+import newTheme from "../../themes/new";
 
 export const NumberInput = styled.input.attrs({
-  type: 'number'
+  type: "number"
 })`
   background-color: ${props => props.theme.colors.white};
   border: 1px solid ${props => props.theme.colors.gray};

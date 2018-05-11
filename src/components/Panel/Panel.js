@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
-import newTheme from '../../newTheme';
+import newTheme from "../../themes/new";
 
 const Panel = styled.div`
   border: 1px solid ${props => props.theme.colors.gray};
