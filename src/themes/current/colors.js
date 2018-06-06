@@ -1,4 +1,4 @@
-import colorPalette from "../colorPalette";
+import colorPalette from '../colorPalette';
 
 export default {
   primary: {
@@ -8,14 +8,14 @@ export default {
   secondary: {
     orange: colorPalette.orange,
     green: colorPalette.oceanGreen,
-    blue: colorPalette.dodgerBlue,
+    blue: colorPalette.pictonBlue,
     darkBlue: colorPalette.cello,
     red: colorPalette.tallPoppy,
     lightRed: colorPalette.bittersweet
   },
   black: colorPalette.black,
   gray: colorPalette.increaseGrey,
-  ghost: "transparent",
+  ghost: 'transparent',
   white: colorPalette.white,
   // TODO: Fonts
   subtleShadow: colorPalette.subtleShadow,
