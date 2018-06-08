@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { newTheme } from "../../themes/new";
+import newTheme from "../../themes/new";
 
 export const PaginationButton = styled.button`
   background-color: ${props =>

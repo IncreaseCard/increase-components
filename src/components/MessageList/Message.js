@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { newTheme } from "../../themes/new";
+import newTheme from "../../themes/new";
 
 const Message = styled.div`
   border: 1px solid ${props => props.theme.colors.gray};

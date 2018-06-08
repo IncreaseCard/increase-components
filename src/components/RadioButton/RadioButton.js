@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { newTheme } from "../../themes/new";
+import newTheme from "../../themes/new";
 
 // const RadioButtonInput = styled.input.attrs({type: 'radio'})``;
 

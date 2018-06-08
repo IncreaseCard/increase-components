@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { newTheme } from "../../themes/new";
+import newTheme from "../../themes/new";
 
 const CheckboxWrapper = styled.div`
   color: ${props => props.theme.colors.primary.blue};

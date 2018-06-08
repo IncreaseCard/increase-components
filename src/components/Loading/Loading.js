@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
-import { newTheme } from "../../themes/new";
+import newTheme from "../../themes/new";
 
 const rotate360Forever = keyframes`
   from {
