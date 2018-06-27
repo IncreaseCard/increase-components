@@ -7,17 +7,11 @@ import CalendarWrapper from './CalendarWrapper';
 import CalendarHeader from './CalendarHeader';
 import CalendarDay from './CalendarDay';
 import DayNumber from './DayNumber';
-import Loading from '../Loading/Loading';
 
 const propTypes = {
   renderDay: PropTypes.func,
   month: PropTypes.number,
-  year: PropTypes.number,
-  isLoading: PropTypes.bool
-};
-
-const defaultProps = {
-  isLoading: false
+  year: PropTypes.number
 };
 
 moment.defineLocale('es-AR', {
@@ -28,7 +22,7 @@ moment.defineLocale('es-AR', {
 });
 moment.locale('es-AR');
 
-function Calendar({ renderDay, month, year, isLoading }) {
+function Calendar({ renderDay, month, year }) {
   const startDate = moment({ month, year }).startOf('week');
   const endDate = moment({ month, year })
     .endOf('month')
@@ -45,11 +39,7 @@ function Calendar({ renderDay, month, year, isLoading }) {
           inMonth={date.month() === month}
         >
           <DayNumber today={date.isSame(moment(), 'date')}>{date.date()}</DayNumber>
-          {isLoading ? (
-            <Loading small color={'#AAA'} />
-          ) : (
-            renderDay(date, date.month() === month, date.isSame(moment(), 'date'))
-          )}
+          {renderDay(date, date.month() === month, date.isSame(moment(), 'date'))}
         </CalendarDay>
       ))}
     </CalendarWrapper>
@@ -57,6 +47,5 @@ function Calendar({ renderDay, month, year, isLoading }) {
 }
 
 Calendar.propTypes = propTypes;
-Calendar.defaultProps = defaultProps;
 
 export default Calendar;
