@@ -9,6 +9,8 @@ const CalendarDay = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.colors.gray};
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 11px;
   text-align: center;
   height: 80px;
