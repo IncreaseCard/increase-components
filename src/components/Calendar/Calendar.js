@@ -11,7 +11,13 @@ import DayNumber from './DayNumber';
 const propTypes = {
   renderDay: PropTypes.func,
   month: PropTypes.number,
-  year: PropTypes.number
+  year: PropTypes.number,
+  hasWeeklySummary: PropTypes.bool,
+  renderWeeklySummary: PropTypes.func
+};
+
+const defaultProps = {
+  hasWeeklySummary: false
 };
 
 moment.defineLocale('es-AR', {
@@ -22,7 +28,7 @@ moment.defineLocale('es-AR', {
 });
 moment.locale('es-AR');
 
-function Calendar({ renderDay, month, year }) {
+function Calendar({ renderDay, month, year, hasWeeklySummary, renderWeeklySummary }) {
   const startDate = moment({ month, year }).startOf('week');
   const endDate = moment({ month, year })
     .endOf('month')
@@ -31,21 +37,35 @@ function Calendar({ renderDay, month, year }) {
   const days = Array.from(momentExtended.range(startDate, endDate).by('days'));
   return (
     <CalendarWrapper>
-      {moment.weekdays().map((weekday) => <CalendarHeader key={weekday}>{weekday}</CalendarHeader>)}
+      {moment.weekdays().map((weekday) => (
+        <CalendarHeader key={weekday} hasWeeklySummary={hasWeeklySummary}>
+          {weekday}
+        </CalendarHeader>
+      ))}
+      {hasWeeklySummary && <CalendarHeader hasWeeklySummary={true}>Total</CalendarHeader>}
       {days.map((date) => (
-        <CalendarDay
-          key={date}
-          today={date.isSame(moment(), 'date')}
-          inMonth={date.month() === month}
-        >
-          <DayNumber today={date.isSame(moment(), 'date')}>{date.date()}</DayNumber>
-          {renderDay(date, date.month() === month, date.isSame(moment(), 'date'))}
-        </CalendarDay>
+        <React.Fragment key={date}>
+          <CalendarDay
+            today={date.isSame(moment(), 'date')}
+            inMonth={date.month() === month}
+            hasWeeklySummary={hasWeeklySummary}
+          >
+            <DayNumber today={date.isSame(moment(), 'date')}>{date.date()}</DayNumber>
+            {renderDay(date, date.month() === month, date.isSame(moment(), 'date'))}
+          </CalendarDay>
+          {hasWeeklySummary &&
+            date.day() === 6 && (
+              <CalendarDay inMonth={true} today={false} hasWeeklySummary={true}>
+                {renderWeeklySummary(moment(date).startOf('week'), moment(date).endOf('week'))}
+              </CalendarDay>
+            )}
+        </React.Fragment>
       ))}
     </CalendarWrapper>
   );
 }
 
 Calendar.propTypes = propTypes;
+Calendar.defaultProps = defaultProps;
 
 export default Calendar;

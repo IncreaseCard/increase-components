@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import currentTheme from '../../themes/current';
 
@@ -7,16 +8,20 @@ const CalendarHeader = styled.div`
   color: #333;
   border: 1px solid #ddd;
   padding: 8px;
-  width: calc(100% / 7);
+  width: calc(100% / ${(props) => (props.hasWeeklySummary ? 8 : 7)});
   font-size: 11px;
   font-weight: normal;
   text-align: center;
   text-transform: capitalize;
 
-  &:not(:nth-child(7n)) {
+  &:not(:nth-child(${(props) => (props.hasWeeklySummary ? 8 : 7)}n)) {
     border-right: none;
   }
 `;
+
+CalendarHeader.propTypes = {
+  hasWeeklySummary: PropTypes.bool
+};
 
 CalendarHeader.defaultProps = {
   theme: currentTheme
