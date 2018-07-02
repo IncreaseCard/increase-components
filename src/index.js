@@ -23,6 +23,15 @@ import Tab from './components/Tab/Tab';
 import TabGroup from './components/TabGroup/TabGroup';
 import TextInput from './components/TextInput/TextInput';
 
+import newTheme from './themes/new';
+import currentTheme from './themes/current';
+import colorPalette from './themes/colorPalette';
+
+const themes = {
+  new: newTheme,
+  current: currentTheme
+};
+
 export {
   AmountBox,
   Button,
@@ -43,5 +52,7 @@ export {
   StepList,
   Tab,
   TabGroup,
-  TextInput
+  TextInput,
+  colorPalette,
+  themes
 };
