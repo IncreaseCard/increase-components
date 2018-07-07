@@ -10,7 +10,7 @@ export default {
     green: colorPalette.oceanGreen,
     blue: colorPalette.pictonBlue,
     darkBlue: colorPalette.cello,
-    red: colorPalette.tallPoppy,
+    red: colorPalette.crimson,
     lightRed: colorPalette.bittersweet
   },
   black: colorPalette.black,
