@@ -20,14 +20,12 @@ import Select from './components/Select/Select';
 import SelectItem from './components/SelectItem/SelectItem';
 import StepList from './components/StepList/StepList';
 import Tab from './components/Tab/Tab';
-import {
-  Table,
-  TableData,
-  TableHead,
-  TableHeader,
-  TableRow,
-  TableRowExpandable
-} from './components/Table/Table';
+import Table from './components/Table/Table';
+import TableData from './components/TableData/TableData';
+import TableHead from './components/TableHead/TableHead';
+import TableHeader from './components/TableHeader/TableHeader';
+import TableRow from './components/TableRow/TableRow';
+import TableRowExpandable from './components/TableRowExpandable/TableRowExpandable';
 import TabGroup from './components/TabGroup/TabGroup';
 import TextInput from './components/TextInput/TextInput';
 
