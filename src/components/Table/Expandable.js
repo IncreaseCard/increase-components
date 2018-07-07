@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const propTypes = { children: PropTypes.func };
 const defaultProps = {};
 
-class Expandable extends React.Component {
+export class Expandable extends React.Component {
   constructor(props) {
     super(props);
     this.state = { expanded: false };

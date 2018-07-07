@@ -20,6 +20,14 @@ import Select from './components/Select/Select';
 import SelectItem from './components/SelectItem/SelectItem';
 import StepList from './components/StepList/StepList';
 import Tab from './components/Tab/Tab';
+import {
+  Table,
+  TableData,
+  TableHead,
+  TableHeader,
+  TableRow,
+  TableRowExpandable
+} from './components/Table/Table';
 import TabGroup from './components/TabGroup/TabGroup';
 import TextInput from './components/TextInput/TextInput';
 
@@ -51,6 +59,12 @@ export {
   SelectItem,
   StepList,
   Tab,
+  Table,
+  TableRow,
+  TableRowExpandable,
+  TableHead,
+  TableHeader,
+  TableData,
   TabGroup,
   TextInput,
   colorPalette,

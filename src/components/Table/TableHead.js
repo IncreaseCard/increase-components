@@ -13,7 +13,7 @@ const defaultProps = {
   number: false
 };
 
-const TableHead = styled.th`
+export const TableHead = styled.th`
   border-bottom: 1px solid ${(props) => props.theme.colors.gray};
   padding: 20px 10px;
 

@@ -11,7 +11,7 @@ const defaultProps = {
   theme: newTheme
 };
 
-const TableHeader = styled.thead`
+export const TableHeader = styled.thead`
   background-color: #f2f6f7;
   color: ${(props) => props.theme.colors.primary.blue};
   font-weight: bold;

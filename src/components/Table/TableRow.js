@@ -18,7 +18,7 @@ const fontColor = (props) =>
 const insetBorderColor = (props) =>
   props.red ? props.theme.colors.secondary.red : props.theme.colors.secondary.blue;
 
-const TableRow = styled.tr`
+export const TableRow = styled.tr`
   color: ${fontColor};
   height: 60px;
   ${(props) =>

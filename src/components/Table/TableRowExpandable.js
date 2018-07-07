@@ -52,7 +52,7 @@ NDhxMTkgMTkgMTkgNDV6Ii8+PC9zdmc+);
 Wrapper.propTypes = { expanded: PropTypes.bool, theme: PropTypes.object };
 Wrapper.defaultProps = { expanded: false, theme: newTheme };
 
-export default function TableRowExpandable({ children, collapse, ...other }) {
+export function TableRowExpandable({ children, collapse, ...other }) {
   return (
     <Expandable>
       {(expanded, toggleExpand) => (
@@ -69,3 +69,5 @@ export default function TableRowExpandable({ children, collapse, ...other }) {
 
 TableRowExpandable.propTypes = propTypes;
 TableRowExpandable.defaultProps = defaultProps;
+
+export default TableRowExpandable;
