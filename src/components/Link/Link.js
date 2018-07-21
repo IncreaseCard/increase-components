@@ -7,5 +7,5 @@ export default Link;
 
 Link.propTypes = {
   href: PropTypes.string,
-  children: PropTypes.object
+  children: PropTypes.node
 };

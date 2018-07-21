@@ -4,7 +4,7 @@ import MessageList from './MessageList';
 
 const messages = [
   { text: 'Hola', id: 1, variant: 'info' },
-  { text: 'Otro mensaje', id: 10, variant: 'warning'},
+  { text: 'Otro mensaje', id: 10, variant: 'warning' },
   {
     text: `
       Este es un mensaje mucho más largo, cuidado!
@@ -14,7 +14,7 @@ const messages = [
     id: 11,
     variant: 'danger'
   },
-  { text: 'Otro mensaje', id: 10, variant: 'success' },
+  { text: 'Otro mensaje', id: 15, variant: 'success' }
 ];
 
 storiesOf('MessageList', module).add('with messages', () => <MessageList messages={messages} />);

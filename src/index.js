@@ -19,6 +19,7 @@ import RadioButton from './components/RadioButton/RadioButton';
 import Select from './components/Select/Select';
 import SelectItem from './components/SelectItem/SelectItem';
 import StepList from './components/StepList/StepList';
+import Switch from './components/Switch/Switch';
 import Tab from './components/Tab/Tab';
 import Table from './components/Table/Table';
 import TableData from './components/Table/TableData';
@@ -56,6 +57,7 @@ export {
   Select,
   SelectItem,
   StepList,
+  Switch,
   Tab,
   Table,
   TableRow,

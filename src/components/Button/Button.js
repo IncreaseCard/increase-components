@@ -1,13 +1,32 @@
-import newTheme from "../../themes/new";
+import newTheme from '../../themes/new';
 
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  primary: PropTypes.bool,
+  danger: PropTypes.bool,
+  href: PropTypes.string,
+  tabIndex: PropTypes.number,
+  type: PropTypes.oneOf(['button', 'reset', 'submit'])
+};
+
+const defaultProps = {
+  tabIndex: 0,
+  type: 'button',
+  disabled: false,
+  small: false,
+  primary: false,
+  danger: false,
+  theme: newTheme
+};
 
 const e = React.createElement;
-const StyledButton = styled(({ tag, children, ...props }) =>
-  e(tag, props, children)
-)`
+const StyledButton = styled(({ tag, children, ...props }) => e(tag, props, children))`
   border: none;
   display: inline-block;
 
@@ -23,19 +42,15 @@ const StyledButton = styled(({ tag, children, ...props }) =>
     border: 0;
   }
 
-  font-size: ${props =>
-    props.theme.typography.bodyFontSizes[props.primary ? 0 : 1]};
-  line-height: ${props =>
-    props.theme.typography.bodyLineHeights[props.primary ? 0 : 1]};
+  font-size: ${(props) => props.theme.typography.bodyFontSizes[props.primary ? 0 : 1]};
+  line-height: ${(props) => props.theme.typography.bodyLineHeights[props.primary ? 0 : 1]};
   white-space: nowrap;
 
-  ${props => {
+  ${(props) => {
     const colors = props.theme.colors;
     if (props.primary) {
       return `
-          background-color: ${
-            props.danger ? colors.secondary.red : colors.secondary.blue
-          };
+          background-color: ${props.danger ? colors.secondary.red : colors.secondary.blue};
           border-radius: 3px;
           color: ${colors.white};
           padding: 6px 20px;
@@ -59,13 +74,11 @@ const StyledButton = styled(({ tag, children, ...props }) =>
         `;
     }
   }} &:hover:not([disabled]) {
-    ${props => {
+    ${(props) => {
       const colors = props.theme.colors;
       if (props.primary) {
         return `
-            background-color: ${
-              props.danger ? colors.secondary.lightRed : colors.primary.blue
-            };
+            background-color: ${props.danger ? colors.secondary.lightRed : colors.primary.blue};
             `;
       } else {
         return `
@@ -76,18 +89,12 @@ const StyledButton = styled(({ tag, children, ...props }) =>
   }
 `;
 
+StyledButton.propTypes = propTypes;
 StyledButton.defaultProps = {
-  tag: "button"
+  tag: 'button'
 };
 
-export default function Button({
-  children,
-  disabled,
-  href,
-  tabIndex,
-  type,
-  ...other
-}) {
+function Button({ children, disabled, href, tabIndex, type, ...other }) {
   const commonProps = {
     tabIndex
   };
@@ -107,23 +114,8 @@ export default function Button({
   return href ? anchor : button;
 }
 
-Button.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  primary: PropTypes.bool,
-  danger: PropTypes.bool,
-  href: PropTypes.string,
-  tabIndex: PropTypes.number,
-  type: PropTypes.oneOf(["button", "reset", "submit"])
-};
+Button.propTypes = propTypes;
 
-Button.defaultProps = {
-  tabIndex: 0,
-  type: "button",
-  disabled: false,
-  small: false,
-  primary: false,
-  danger: false,
-  theme: newTheme
-};
+Button.defaultProps = defaultProps;
+
+export default Button;
