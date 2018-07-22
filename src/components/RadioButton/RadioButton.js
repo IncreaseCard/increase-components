@@ -1,19 +1,23 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import newTheme from "../../themes/new";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-// const RadioButtonInput = styled.input.attrs({type: 'radio'})``;
+import newTheme from '../../themes/new';
+import RadioButtonFill from './RadioButtonFill';
+import RadioButtonControl from './RadioButtonControl';
+import RadioButtonControlWrapper from './RadioButtonControlWrapper';
 
 const RadioButtonWrapper = styled.label`
-  font-size: ${props => props.theme.typography.bodyFontSizes[0]};
-  line-height: ${props => props.theme.typography.bodyLineHeights[0]};
-  color: ${props => props.theme.colors.primary.blue};
+  font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
+  line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
+  color: ${(props) => props.theme.colors.primary.blue};
+  font-family: ${(props) => props.theme.typography.bodyFontFamily};
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 
-  ${props => {
+  ${(props) => {
     if (props.disabled) {
       return `
             opacity: 0.2;
@@ -33,17 +37,18 @@ RadioButtonWrapper.propTypes = {
 };
 
 RadioButtonWrapper.defaultProps = {
-  theme: newTheme
+  theme: newTheme,
+  checked: false,
+  readOnly: true
 };
-
-const RadioButtonInput = styled.input.attrs({ type: "radio" })`
-  margin: 0 6px 0 0;
-`;
 
 export const RadioButton = function({ label, name, disabled, ...other }) {
   return (
     <RadioButtonWrapper disabled={disabled}>
-      <RadioButtonInput name={name} disabled={disabled} {...other} />
+      <RadioButtonControlWrapper>
+        <RadioButtonControl name={name} disabled={disabled} {...other} />
+        <RadioButtonFill />
+      </RadioButtonControlWrapper>
       {label}
     </RadioButtonWrapper>
   );

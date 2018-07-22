@@ -2,10 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Loading } from './Loading';
 
-storiesOf('Loading')
-  .add('normal', () => (
-    <Loading/>
-  ))
-  .add('small', () => (
-    <Loading small/>
-  ));
+storiesOf('Loading', module)
+  .add('normal', () => <Loading />)
+  .add('small', () => <Loading small />);

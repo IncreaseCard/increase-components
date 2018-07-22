@@ -22,5 +22,5 @@ export default {
   mediumShadow: colorPalette.mediumShadow,
   darkShadow: colorPalette.darkShadow,
   // Sections
-  borderColor: colorPalette.gray
+  borderColor: colorPalette.grey
 };
