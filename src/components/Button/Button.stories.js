@@ -2,16 +2,19 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import Button from './Button';
+import PrimaryButton from './PrimaryButton';
+import SecondaryButton from './SecondaryButton';
+import InvisibleButton from './InvisibleButton';
 
 const buttonEvents = {
   onClick: action('onClick'),
   onFocus: action('onFocus'),
-  className: 'some-class',
+  className: 'some-class'
 };
 
 storiesOf('Buttons', module)
-  .add('Buttons',
+  .add(
+    'Buttons',
     withInfo(
       `
         Buttons are used to initialize an action, either in the background or
@@ -19,62 +22,33 @@ storiesOf('Buttons', module)
         Primary buttons should be used for the principle call to action on the page.
         Secondary buttons should be used for secondary actions on each page.
         Modify the behavior of the button by changing its event properties.
-    `)(
-      () => (
-        <div>
-          <Button {...buttonEvents} primary>
-            Primary button
-          </Button>
-          &nbsp;
-          <Button {...buttonEvents}>
-            Secondary Button
-          </Button>
-          &nbsp;
-          <Button {...buttonEvents} href="#" primary>
-            Primary link
-          </Button>
-        </div>
-      )
-    )
+    `
+    )(() => (
+      <div>
+        <PrimaryButton {...buttonEvents}>Primary button</PrimaryButton>
+        &nbsp;
+        <SecondaryButton {...buttonEvents}>Secondary Button</SecondaryButton>
+        <InvisibleButton {...buttonEvents}>Invisible Button</InvisibleButton>
+      </div>
+    ))
   )
-  .add('Disabled Button',
+  .add(
+    'Disabled Button',
     withInfo(`
       Disabled Buttons may be used when the user cannot proceed until input is collected.
-    `)(
-      () => (
-        <div>
-          <Button {...buttonEvents} primary disabled>
-            Disabled Primary button
-          </Button>
-          &nbsp;
-          <Button {...buttonEvents} disabled>
-            Disabled Secondary Button
-          </Button>
-        </div>
-      )
-    )
-  )
-  .add('Danger Buttons',
-    withInfo(`
-      Buttons are used to initialize an action, either in the background or
-      foreground of an experience. Danger buttons should be used for a negative action (such as Delete)
-      on the page. Modify the behavior of the button by changing its event properties. The example below
-      shows an enabled Danger Button component.
-    `)(
-      () => (
-        <div>
-          <Button {...buttonEvents} primary danger>
-            Danger button
-          </Button>
-          &nbsp;
-          <Button {...buttonEvents} danger>
-            Danger button
-          </Button>
-          &nbsp;
-          <Button {...buttonEvents} href="#" primary danger>
-            Danger link
-          </Button>
-        </div>
-      )
-    )
+    `)(() => (
+      <div>
+        <PrimaryButton {...buttonEvents} disabled>
+          Disabled Primary button
+        </PrimaryButton>
+        &nbsp;
+        <SecondaryButton {...buttonEvents} disabled>
+          Disabled Secondary Button
+        </SecondaryButton>
+        &nbsp;
+        <InvisibleButton {...buttonEvents} disabled>
+          Disabled Invisible Button
+        </InvisibleButton>
+      </div>
+    ))
   );
