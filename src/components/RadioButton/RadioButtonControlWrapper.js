@@ -19,7 +19,7 @@ const RadioButtonControlWrapper = styled.div`
 
   &::before {
     content: '';
-    border: 1px solid ${(props) => props.theme.colors.primary.blue};
+    border: 1px solid ${(props) => props.theme.colors.brand.blue[500]};
     border-radius: 100%;
     box-sizing: border-box;
     z-index: 0;

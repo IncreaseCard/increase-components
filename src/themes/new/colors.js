@@ -1,26 +1,68 @@
-import colorPalette from '../colorPalette';
-
 export default {
-  primary: {
-    blue: colorPalette.cello,
-    green: colorPalette.increaseGreen
+  brand: {
+    blue: {
+      100: '#667296',
+      300: '#404B6F',
+      500: '#243568',
+      700: '#192448'
+    },
+    green: {
+      100: '#4DE74D',
+      300: '#27C027',
+      500: '#00DD00',
+      700: '#009900'
+    }
   },
-  secondary: {
-    orange: colorPalette.orange,
-    green: colorPalette.oceanGreen,
-    blue: colorPalette.dodgerBlue,
-    darkBlue: colorPalette.cello,
-    red: colorPalette.crimson,
-    lightRed: colorPalette.bittersweet
+  orange: {
+    100: '#F9B96F',
+    300: '#D29249',
+    500: '#F79B31',
+    700: '#AB6B22'
   },
-  black: colorPalette.black,
-  gray: colorPalette.increaseGrey,
+  lightBlue: {
+    100: '#76AAFF',
+    300: '#5084D8',
+    500: '#3B86FF',
+    700: '#295DB1'
+  },
+  darkBlue: {
+    100: '#61687C',
+    300: '#3A4156',
+    500: '#1C2644',
+    700: '#131A2F'
+  },
+  darkRed: {
+    100: '#B66E77',
+    300: '#8F4750',
+    500: '#972F3C',
+    700: '#682029'
+  },
+  red: {
+    100: '#F2666F',
+    300: '#ED2331',
+    500: '#CB3F49',
+    700: '#A41822'
+  },
+  black: {
+    100: '#4D4D4D',
+    300: '#272727',
+    500: '#000000',
+    700: '#000000'
+  },
+  gray: {
+    100: '#F2F2F2',
+    300: '#EDEDED',
+    500: '#CBCBCB',
+    700: '#A4A4A4'
+  },
   ghost: 'transparent',
-  white: colorPalette.white,
-  // TODO: Fonts
-  subtleShadow: colorPalette.subtleShadow,
-  mediumShadow: colorPalette.mediumShadow,
-  darkShadow: colorPalette.darkShadow,
-  // Sections
-  borderColor: colorPalette.grey
+  white: {
+    100: '#FFFFFF',
+    300: '#FFFFFF',
+    500: '#D8D8D8',
+    700: '#B1B1B1'
+  },
+  subtleShadow: 'rgba(0, 0, 0, 0.05)',
+  mediumShadow: 'rgba(0, 0, 0, 0.3)',
+  darkShadow: 'rgba(0, 0, 0, 0.5)',
 };

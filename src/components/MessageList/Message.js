@@ -3,7 +3,7 @@ import styled from "styled-components";
 import newTheme from "../../themes/new";
 
 const Message = styled.div`
-  border: 1px solid ${props => props.theme.colors.gray};
+  border: 1px solid ${props => props.theme.colors.gray[500]};
   border-radius: 3px;
   padding: 8px;
 
@@ -12,23 +12,23 @@ const Message = styled.div`
     switch (props.variant) {
       case "info":
         return `
-        background-color: ${colors.secondary.blue};
-        color: ${colors.white};
+        background-color: ${colors.lightBlue[500]};
+        color: ${colors.white[100]};
       `;
       case "warning":
         return `
-        background-color: ${colors.secondary.orange};
-        color: ${colors.white};
+        background-color: ${colors.orange[500]};
+        color: ${colors.white[100]};
       `;
       case "success":
         return `
-        background-color: ${colors.secondary.green};
-        color: ${colors.white};
+        background-color: ${colors.brand.green[700]};
+        color: ${colors.white[100]};
       `;
       case "danger":
         return `
-        background-color: ${colors.secondary.red};
-        color: ${colors.white};
+        background-color: ${colors.red[500]};
+        color: ${colors.white[100]};
       `;
     }
   }};

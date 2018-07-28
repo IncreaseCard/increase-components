@@ -5,7 +5,7 @@ import currentTheme from '../../themes/current';
 
 const DayNumber = styled.div`
   background-color: ${(props) => (props.today ? '#8cc63f' : 'transparent')};
-  color: ${(props) => (props.today ? props.theme.colors.white : '#A3A3A3')};
+  color: ${(props) => (props.today ? props.theme.colors.white[100] : '#A3A3A3')};
   position: absolute;
   right: ${(props) => (props.today ? '2px' : '4px')};
   top: ${(props) => (props.today ? '2px' : '4px')};

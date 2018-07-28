@@ -12,7 +12,7 @@ const defaultProps = {
 };
 
 export const Table = styled.table`
-  border: 1px solid ${(props) => props.theme.colors.gray};
+  border: 1px solid ${(props) => props.theme.colors.gray[500]};
   border-collapse: collapse;
   font-family: 'Open Sans';
 `;

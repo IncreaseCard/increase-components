@@ -20,7 +20,7 @@ export const StepName = styled.span`
   ${props =>
     props.isActive &&
     `
-      color: ${props.theme.colors.primary.green};
+      color: ${props.theme.colors.brand.green[500]};
       font-weight: bold;
     `};
 `;

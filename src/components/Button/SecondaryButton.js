@@ -1,16 +1,16 @@
 import PrimaryButton from './PrimaryButton';
 
 const SecondaryButton = PrimaryButton.extend`
-  background-color: ${(props) => props.theme.colors.gray};
-  color: ${(props) => props.theme.colors.black};
+  background-color: ${(props) => props.theme.colors.gray[500]};
+  color: ${(props) => props.theme.colors.black[700]};
   text-shadow: none;
 
   &:hover:not([disabled]) {
-    background-color: ${(props) => props.theme.colors.borderColor};
+    background-color: ${(props) => props.theme.colors.gray[300]};
   }
   &:disabled {
-    border: 1px solid ${(props) => props.theme.colors.borderColor};
-    color: ${(props) => props.theme.colors.borderColor};
+    border: 1px solid ${(props) => props.theme.colors.gray[700]};
+    color: ${(props) => props.theme.colors.gray[700]};
     text-shadow: none;
   }
 `;

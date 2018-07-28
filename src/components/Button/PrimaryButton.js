@@ -34,20 +34,20 @@ const PrimaryButton = styled.button`
   line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
   white-space: nowrap;
 
-  background-color: ${(props) => props.theme.colors.secondary.blue};
+  background-color: ${(props) => props.theme.colors.lightBlue[500]};
   border-radius: 3px;
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.white[100]};
   padding: 6px 20px;
   text-shadow: 0 1px 3px ${(props) => props.theme.colors.darkShadow};
 
   &:disabled {
     background-color: transparent;
-    border: 1px solid ${(props) => props.theme.colors.primary.blue};
-    color: ${(props) => props.theme.colors.primary.blue};
+    border: 1px solid ${(props) => props.theme.colors.brand.blue[500]};
+    color: ${(props) => props.theme.colors.brand.blue[500]};
     text-shadow: none;
   }
   &:hover:not([disabled]) {
-    background-color: ${(props) => props.theme.colors.primary.blue};
+    background-color: ${(props) => props.theme.colors.brand.blue[500]};
   }
 `;
 

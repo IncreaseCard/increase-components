@@ -37,16 +37,16 @@ const StyledTextInput = styled.input`
   border: 1px solid
     ${props =>
       props.invalid
-        ? props.theme.colors.secondary.red
-        : props.theme.colors.gray};
+        ? props.theme.colors.red[500]
+        : props.theme.colors.gray[500]};
   border-radius: 3px;
-  caret-color: ${props => props.theme.colors.black};
+  caret-color: ${props => props.theme.colors.black[700]};
   color: ${props =>
     props.invalid
-      ? props.theme.colors.secondary.red
-      : props.theme.colors.black};
+      ? props.theme.colors.red[500]
+      : props.theme.colors.black[700]};
   &:placeholder-shown {
-    color: ${props => props.theme.colors.gray};
+    color: ${props => props.theme.colors.gray[500]};
   }
   font-size: ${props => props.theme.typography.bodyFontSizes[0]};
   line-height: ${props => props.theme.typography.bodyLineHeights[0]};
@@ -57,8 +57,8 @@ const StyledTextInput = styled.input`
     border: 1px solid
       ${props =>
         props.invalid
-          ? props.theme.colors.secondary.red
-          : props.theme.colors.black};
+          ? props.theme.colors.red[500]
+          : props.theme.colors.black[700]};
     outline: none;
   }
 `;

@@ -14,7 +14,7 @@ const defaultProps = {
 };
 
 export const TableData = styled.td`
-  border-bottom: 1px solid ${(props) => props.theme.colors.gray};
+  border-bottom: 1px solid ${(props) => props.theme.colors.gray[500]};
   padding: 20px 10px;
 
   ${(props) =>

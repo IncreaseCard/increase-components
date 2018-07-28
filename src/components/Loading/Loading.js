@@ -16,7 +16,7 @@ const rotate360Forever = keyframes`
 const LoadingBar = styled.div`
   position: absolute;
   border-width: ${props => (props.small ? "2px" : "4px")};
-  border-color: ${props => props.theme.colors.black} transparent transparent
+  border-color: ${props => props.theme.colors.black[700]} transparent transparent
     transparent;
   border-style: solid;
   border-radius: 50%;

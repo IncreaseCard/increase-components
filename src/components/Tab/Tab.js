@@ -7,15 +7,15 @@ export const Tab = styled.button`
   ${props => {
     const colors = props.theme.colors;
     if (props.disabled) {
-      return `color: ${colors.gray};`;
+      return `color: ${colors.gray[500]};`;
     } else if (props.active) {
-      return `color: ${colors.secondary.blue};`;
+      return `color: ${colors.lightBlue[500]};`;
     } else {
-      return `color: ${colors.black};`;
+      return `color: ${colors.black[700]};`;
     }
   }}
-  background-color: ${props => props.theme.colors.white};
-  border: 1px solid ${props => props.theme.colors.gray};
+  background-color: ${props => props.theme.colors.white[100]};
+  border: 1px solid ${props => props.theme.colors.gray[500]};
   ${props => (props.disabled ? null : `cursor: pointer;`)}
   font-size: ${props => props.theme.typography.bodyFontSizes[1]};
   line-height: ${props => props.theme.typography.bodyLineHeights[1]};

@@ -6,7 +6,7 @@ import newTheme from '../../themes/new';
 import CheckboxInput from './CheckboxInput';
 
 const CheckboxWrapper = styled.div`
-  color: ${(props) => props.theme.colors.primary.blue};
+  color: ${(props) => props.theme.colors.brand.blue[500]};
   font-family: ${(props) => props.theme.typography.bodyFontFamily};
   display: flex;
   align-items: center;

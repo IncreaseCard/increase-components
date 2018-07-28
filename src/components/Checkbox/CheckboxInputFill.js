@@ -17,7 +17,7 @@ const defaultProps = {
 const CheckboxInputFill = styled.div`
   width: calc(100% - 4px);
   height: calc(100% - 4px);
-  background-color: ${(props) => props.theme.colors.primary.blue};
+  background-color: ${(props) => props.theme.colors.brand.blue[500]};
   mask: url(${check});
   mask-size: cover;
   position: absolute;

@@ -62,7 +62,7 @@ storiesOf('Calendar', module)
       </React.Fragment>
     );
     return (
-      <div style={{ 'background-color': '#FAFAFA', padding: '8px' }}>
+      <div style={{ backgroundColor: '#FAFAFA', padding: '8px' }}>
         <div style={{ width: '90%', margin: '0 auto' }}>
           <Calendar
             month={5}

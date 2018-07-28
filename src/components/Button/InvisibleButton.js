@@ -36,12 +36,12 @@ const InvisibleButton = styled.button`
   background-color: transparent;
   border-bottom: 2px solid transparent;
   border-top: 2px solid transparent;
-  color: ${(props) => props.theme.colors.secondary.blue};
+  color: ${(props) => props.theme.colors.lightBlue[500]};
   padding: 0;
   margin: 6px 20px;
 
   &:hover:not([disabled]) {
-    border-bottom: 2px solid ${(props) => props.theme.colors.primary.green};
+    border-bottom: 2px solid ${(props) => props.theme.colors.brand.green[500]};
   }
 `;
 

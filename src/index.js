@@ -3,7 +3,9 @@ import '!css-loader!normalize.css';
 import './styles/base.css';
 
 import AmountBox from './components/AmountBox/AmountBox';
-import Button from './components/Button/Button';
+import PrimaryButton from './components/Button/PrimaryButton';
+import SecondaryButton from './components/Button/SecondaryButton';
+import InvisibleButton from './components/Button/InvisibleButton';
 import Calendar from './components/Calendar/Calendar';
 import Checkbox from './components/Checkbox/Checkbox';
 import Currency from './components/Currency/Currency';
@@ -41,11 +43,11 @@ const themes = {
 
 export {
   AmountBox,
-  Button,
   Calendar,
   Checkbox,
   Currency,
   Heading,
+  InvisibleButton,
   Link,
   Loading,
   MessageList,
@@ -53,7 +55,9 @@ export {
   Pagination,
   PaginationButton,
   Panel,
+  PrimaryButton,
   RadioButton,
+  SecondaryButton,
   Select,
   SelectItem,
   StepList,
