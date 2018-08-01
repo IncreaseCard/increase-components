@@ -8,16 +8,15 @@ import SelectItem from '../SelectItem/SelectItem';
 storiesOf('Select', module)
   .add('with some text', () => (
     <Select labelText="Elija un número" id="number">
-      <SelectItem text="1"></SelectItem>
-      <SelectItem text="2"></SelectItem>
-      <SelectItem text="3"></SelectItem>
+      <SelectItem text="One Option" />
+      <SelectItem text="Another Option" />
+      <SelectItem text="Yet Another Option" />
     </Select>
-  )
-).add('disabled', () => (
+  ))
+  .add('disabled', () => (
     <Select labelText="Elija un número" id="number" disabled>
-      <SelectItem text="1"></SelectItem>
-      <SelectItem text="2"></SelectItem>
-      <SelectItem text="3"></SelectItem>
+      <SelectItem text="One Option" />
+      <SelectItem text="Another Option" />
+      <SelectItem text="Yet Another Option" />
     </Select>
-  )
-);
+  ));

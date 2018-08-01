@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Select({children, disabled, labelText, id, ...other}) {
+import SelectControl from './SelectControl';
+import SelectControlWrapper from './SelectControlWrapper';
+
+export default function Select({ children, disabled, labelText, id, ...other }) {
   return (
     <React.Fragment>
-      <label htmlFor={id}>
-        {labelText}
-      </label>
-      <select
-            {...other}
-            disabled={disabled}
-            id={id}>
-            {children}
-      </select>
+      <label htmlFor={id}>{labelText}</label>
+      <SelectControlWrapper>
+        <SelectControl {...other} disabled={disabled} id={id}>
+          {children}
+        </SelectControl>
+      </SelectControlWrapper>
     </React.Fragment>
   );
 }
