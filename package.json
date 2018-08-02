@@ -2,7 +2,12 @@
   "name": "increase-components",
   "version": "3.1.0",
   "description": "React component library for Increase design system",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "start": "npm run storybook",
     "prepublishOnly": "webpack -p --progress --colors --config webpack.config.publish.js",
@@ -20,12 +25,7 @@
   },
   "homepage": "https://github.com/IncreaseCard/increase-components#readme",
   "license": "None",
-  "dependencies": {
-    "moment": "^2.22.0",
-    "moment-range": "^3.1.1",
-    "prop-types": "^15.6.1",
-    "react": "^16.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@storybook/addon-a11y": "^3.4.8",
     "@storybook/addon-actions": "^3.4.8",
@@ -62,6 +62,8 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "material-design-icons": "^3.0.1",
+    "moment": "^2.22.0",
+    "moment-range": "^3.1.1",
     "normalize.css": "^7.0.0",
     "object-assign": "4.1.1",
     "postcss-css-variables": "^0.8.0",
@@ -72,11 +74,13 @@
     "postcss-loader": "^2.0.8",
     "postcss-media-minmax": "^3.0.0",
     "promise": "8.0.1",
+    "prop-types": "^15.6.1",
     "raf": "3.4.0",
+    "react": "^16.4.2",
     "react-dev-utils": "^4.2.1",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.4.2",
     "style-loader": "0.19.0",
-    "styled-components": "^3.1.6",
+    "styled-components": "^3.4.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
@@ -85,8 +89,12 @@
     "whatwg-fetch": "2.0.3"
   },
   "peerDependencies": {
+    "styled-components": "^3.2.3",
     "react": ">=0.14",
-    "react-dom": ">=0.14"
+    "react-dom": ">=0.14",
+    "prop-types": "^15.6.1",
+    "moment": "^2.22.0",
+    "moment-range": "^3.1.1"
   },
   "jest": {
     "collectCoverageFrom": [
