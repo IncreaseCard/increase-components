@@ -6,7 +6,8 @@
   "module": "dist/index.js",
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "index.js"
   ],
   "scripts": {
     "start": "npm run storybook",
