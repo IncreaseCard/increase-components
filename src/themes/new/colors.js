@@ -55,6 +55,12 @@ export default {
     500: '#CBCBCB',
     700: '#A4A4A4'
   },
+  paleGray: {
+    100: '#D0D3DE',
+    300: '#BCC1D0',
+    500: '#A9ADB7',
+    700: '#828690'
+  },
   ghost: 'transparent',
   white: {
     100: '#FFFFFF',

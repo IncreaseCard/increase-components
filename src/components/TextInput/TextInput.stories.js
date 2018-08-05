@@ -9,7 +9,13 @@ storiesOf('TextInput', module)
     <div>
       <TextInput labelText="Nombre" id="first_name" placeholder="Juan" />
       <TextInput labelText="Apellido" id="last_name" placeholder="Pérez" />
-      <TextInput labelText="Apellido" id="last_name" placeholder="Pérez" value="1234" invalid />
+      <TextInput
+        labelText="Apellido"
+        id="last_name2"
+        placeholder="Pérez"
+        value="1234"
+        invalidText="El apellido no debe contener números"
+        invalid />
     </div>
   )
 ).add('disabled', () => (

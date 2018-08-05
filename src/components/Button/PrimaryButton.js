@@ -38,7 +38,6 @@ const PrimaryButton = styled.button`
   border-radius: 3px;
   color: ${(props) => props.theme.colors.white[100]};
   padding: 6px 20px;
-  text-shadow: 0 1px 3px ${(props) => props.theme.colors.darkShadow};
 
   &:disabled {
     background-color: transparent;

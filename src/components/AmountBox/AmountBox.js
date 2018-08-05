@@ -5,6 +5,19 @@ import styled from 'styled-components';
 import currentTheme from '../../themes/current';
 import Currency from '../Currency/Currency';
 
+const propTypes = {
+  amount: PropTypes.number,
+  description: PropTypes.string,
+  color: PropTypes.oneOf(['blue', 'red', 'green']).isRequired,
+  currency: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+  amount: 0,
+  currency: 'ARS',
+  color: 'blue'
+};
+
 const AmountBoxWrapper = styled.div`
   background-color: ${(props) => props.theme.colors.secondary[props.color]};
   color: ${(props) => props.theme.colors.white};
@@ -47,11 +60,11 @@ const AmountBoxDescription = styled.p`
 AmountBoxDescription.propTypes = { theme: PropTypes.object };
 AmountBoxDescription.defaultProps = { theme: currentTheme };
 
-export const AmountBox = ({ amount = 0, color = 'blue', description }) => {
+export const AmountBox = ({ amount, color, description, currency }) => {
   return (
     <AmountBoxWrapper short={typeof description !== 'string'} color={color}>
       <AmountBoxAmount>
-        <Currency value={amount} />
+        <Currency value={amount} currency={currency} />
       </AmountBoxAmount>
       {typeof description === 'string' ? (
         <AmountBoxDescription>{description}</AmountBoxDescription>
@@ -60,10 +73,7 @@ export const AmountBox = ({ amount = 0, color = 'blue', description }) => {
   );
 };
 
-AmountBox.propTypes = {
-  amount: PropTypes.number,
-  description: PropTypes.string,
-  color: PropTypes.oneOf(['blue', 'red', 'green'])
-};
+AmountBox.propTypes = propTypes;
+AmountBox.defaultProps = defaultProps;
 
 export default AmountBox;

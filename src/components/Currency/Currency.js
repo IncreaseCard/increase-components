@@ -1,6 +1,17 @@
 import PropTypes from 'prop-types';
 
-export default function Currency({ value, currency = 'ARS', language = navigator.language }) {
+const propTypes = {
+  value: PropTypes.number,
+  currency: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired
+};
+
+const defaultProps = {
+  currency: 'ARS',
+  language: navigator.language
+};
+
+export default function Currency({ value, currency, language }) {
   if (isNaN(value)) {
     return null;
   }
@@ -13,12 +24,6 @@ export default function Currency({ value, currency = 'ARS', language = navigator
   return numberFormatter.format(value);
 }
 
-Currency.propTypes = {
-  value: PropTypes.number,
-  currency: PropTypes.string,
-  language: PropTypes.string
-};
+Currency.propTypes = propTypes;
 
-Currency.defaultProps = {
-  currency: 'ARS'
-};
+Currency.defaultProps = defaultProps;

@@ -1,25 +1,53 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import newTheme from "../../themes/new";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import newTheme from '../../themes/new';
+import alertIcon from 'file-loader!material-design-icons/alert/svg/production/ic_warning_24px.svg';
+
+const propTypes = {
+  className: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  disabled: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+  labelText: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  invalid: PropTypes.bool,
+  invalidText: PropTypes.string
+};
+
+const defaultProps = {
+  disabled: false,
+  type: 'text',
+  onChange: () => {},
+  onClick: () => {},
+  invalid: false,
+  invalidText: ''
+};
 
 const TextInputWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  ${props =>
+  ${(props) =>
     props.invalid
-      ? `
-    &::after {
-      content: '';
-      position: absolute;
-      right: 8px;
-      bottom: 8px;
-      background-color: red;
-      height: 16px;
-      width: 16px;
-    }
-  `
+      ? css`
+          &::after {
+            content: '';
+            position: absolute;
+            right: 8px;
+            top: 23px;
+            background-color: ${(props) => props.theme.colors.red[300]};
+            mask: url(${alertIcon});
+            mask-position: center;
+            mask-size: contain;
+            height: 24px;
+            width: 24px;
+          }
+        `
       : null};
 `;
 
@@ -35,30 +63,22 @@ TextInputWrapper.defaultProps = {
 
 const StyledTextInput = styled.input`
   border: 1px solid
-    ${props =>
-      props.invalid
-        ? props.theme.colors.red[500]
-        : props.theme.colors.gray[500]};
+    ${(props) => (props.invalid ? props.theme.colors.red[300] : props.theme.colors.gray[500])};
   border-radius: 3px;
-  caret-color: ${props => props.theme.colors.black[700]};
-  color: ${props =>
-    props.invalid
-      ? props.theme.colors.red[500]
-      : props.theme.colors.black[700]};
+  caret-color: ${(props) => props.theme.colors.black[700]};
+  color: ${(props) =>
+    props.invalid ? props.theme.colors.red[300] : props.theme.colors.black[700]};
   &:placeholder-shown {
-    color: ${props => props.theme.colors.gray[500]};
+    color: ${(props) => props.theme.colors.gray[500]};
   }
-  font-size: ${props => props.theme.typography.bodyFontSizes[0]};
-  line-height: ${props => props.theme.typography.bodyLineHeights[0]};
+  font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
+  line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
   padding: 4px;
 
   &:active,
   &:focus {
     border: 1px solid
-      ${props =>
-        props.invalid
-          ? props.theme.colors.red[500]
-          : props.theme.colors.black[700]};
+      ${(props) => (props.invalid ? props.theme.colors.red[500] : props.theme.colors.black[700])};
     outline: none;
   }
 `;
@@ -86,12 +106,12 @@ export default function TextInput({
 }) {
   const textInputProps = {
     id,
-    onChange: evt => {
+    onChange: (evt) => {
       if (!other.disabled) {
         onChange(evt);
       }
     },
-    onClick: evt => {
+    onClick: (evt) => {
       if (!other.disabled) {
         onClick(evt);
       }
@@ -100,55 +120,28 @@ export default function TextInput({
     type
   };
 
-  const errorId = id + "-error-msg";
-
-  const label = labelText ? <label htmlFor={id}>{labelText}</label> : null;
-
-  const error = invalid ? <div id={errorId}>{invalidText}</div> : null;
-
-  const input = invalid ? (
-    <StyledTextInput
-      {...other}
-      {...textInputProps}
-      invalid
-      data-invalid
-      aria-invalid
-      aria-describedBy={errorId}
-    />
-  ) : (
-    <StyledTextInput {...other} {...textInputProps} />
-  );
+  const errorId = id + '-error-msg';
 
   return (
     <TextInputWrapper invalid={invalid}>
-      {label}
-      {input}
-      {error}
+      {labelText ? <label htmlFor={id}>{labelText}</label> : null}
+      {invalid ? (
+        <StyledTextInput
+          {...other}
+          {...textInputProps}
+          invalid
+          data-invalid
+          aria-invalid
+          aria-describedby={errorId}
+        />
+      ) : (
+        <StyledTextInput {...other} {...textInputProps} />
+      )}
+      {invalid ? <div id={`${id}-error-msg`}><small>{invalidText}</small></div> : null}
     </TextInputWrapper>
   );
 }
 
-TextInput.propTypes = {
-  className: PropTypes.string,
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  disabled: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-  labelText: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  placeholder: PropTypes.string,
-  type: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  invalid: PropTypes.bool,
-  invalidText: PropTypes.string
-};
+TextInput.propTypes = propTypes;
 
-TextInput.defaultProps = {
-  className: "bx--text__input",
-  disabled: false,
-  type: "text",
-  onChange: () => {},
-  onClick: () => {},
-  invalid: false,
-  invalidText: ""
-};
+TextInput.defaultProps = defaultProps;
