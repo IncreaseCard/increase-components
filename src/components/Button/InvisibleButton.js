@@ -17,6 +17,10 @@ const InvisibleButton = styled.button`
   border: none;
   display: inline-block;
 
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
   &:disabled {
     opacity: 0.2;
   }
