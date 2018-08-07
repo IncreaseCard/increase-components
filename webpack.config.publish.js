@@ -35,24 +35,6 @@ module.exports = {
             options: {
               importLoaders: 1
             }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: (loader) => [
-                require('postcss-import')({
-                  root: loader.resourcePath,
-                  path: [STYLES_DIR]
-                }),
-                require('postcss-cssnext')({
-                  features: {
-                    customProperties: {
-                      preserve: true
-                    }
-                  }
-                })
-              ]
-            }
           }
         ]
       }
@@ -94,6 +76,12 @@ module.exports = {
       commonjs: 'moment-range',
       commonjs2: 'moment-range',
       amd: 'moment-range',
+      root: '_'
+    },
+    'normalize.css': {
+      commonjs: 'normalize.css',
+      commonjs2: 'normalize.css',
+      amd: 'normalize.css',
       root: '_'
     }
   }

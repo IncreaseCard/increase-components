@@ -76,10 +76,9 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web',
+      'react-native': 'react-native-web'
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -87,8 +86,8 @@ module.exports = {
       // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
-      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
-    ],
+      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson])
+    ]
   },
   module: {
     strictExportPresence: true,
@@ -106,13 +105,12 @@ module.exports = {
           {
             options: {
               formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
-
+              eslintPath: require.resolve('eslint')
             },
-            loader: require.resolve('eslint-loader'),
-          },
+            loader: require.resolve('eslint-loader')
+          }
         ],
-        include: paths.appLibSrc, // CRL: updated with library src folder
+        include: paths.appLibSrc // CRL: updated with library src folder
       },
       {
         // "oneOf" will traverse all following loaders until one will
@@ -126,8 +124,8 @@ module.exports = {
             loader: require.resolve('url-loader'),
             options: {
               limit: 10000,
-              name: 'media/[name].[ext]',
-            },
+              name: 'media/[name].[ext]'
+            }
           },
           // Process JS with Babel.
           {
@@ -135,9 +133,8 @@ module.exports = {
             include: paths.appLibSrc, // CRL: updated with library src folder
             loader: require.resolve('babel-loader'),
             options: {
-
-              compact: true,
-            },
+              compact: true
+            }
           },
           // The notation here is somewhat confusing.
           // "postcss" loader applies autoprefixer to our CSS.
@@ -159,8 +156,8 @@ module.exports = {
                   fallback: {
                     loader: require.resolve('style-loader'),
                     options: {
-                      hmr: false,
-                    },
+                      hmr: false
+                    }
                   },
                   use: [
                     {
@@ -168,34 +165,14 @@ module.exports = {
                       options: {
                         importLoaders: 1,
                         minimize: true,
-                        sourceMap: shouldUseSourceMap,
-                      },
-                    },
-                    {
-                      loader: require.resolve('postcss-loader'),
-                      options: {
-                        // Necessary for external CSS imports to work
-                        // https://github.com/facebookincubator/create-react-app/issues/2677
-                        ident: 'postcss',
-                        plugins: () => [
-                          require('postcss-flexbugs-fixes'),
-                          autoprefixer({
-                            browsers: [
-                              '>1%',
-                              'last 4 versions',
-                              'Firefox ESR',
-                              'not ie < 9', // React doesn't support IE8 anyway
-                            ],
-                            flexbox: 'no-2009',
-                          }),
-                        ],
-                      },
-                    },
-                  ],
+                        sourceMap: shouldUseSourceMap
+                      }
+                    }
+                  ]
                 },
                 extractTextPluginOptions
               )
-            ),
+            )
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
           },
           // "file" loader makes sure assets end up in the `build` folder.
@@ -210,14 +187,14 @@ module.exports = {
             // by webpacks internal loaders.
             exclude: [/\.js$/, /\.html$/, /\.json$/],
             options: {
-              name: 'media/[name].[ext]',
-            },
-          },
+              name: 'media/[name].[ext]'
+            }
+          }
           // ** STOP ** Are you adding a new loader?
           // Make sure to add the new loader(s) before the "file" loader.
-        ],
-      },
-    ],
+        ]
+      }
+    ]
   },
   plugins: [
     // Makes some environment variables available to the JS code, for example:
@@ -233,34 +210,34 @@ module.exports = {
         // https://github.com/facebookincubator/create-react-app/issues/2376
         // Pending further investigation:
         // https://github.com/mishoo/UglifyJS2/issues/2011
-        comparisons: false,
+        comparisons: false
       },
       mangle: {
-        safari10: true,
+        safari10: true
       },
       output: {
         comments: false,
         // Turned on because emoji and regex is not minified properly using default
         // https://github.com/facebookincubator/create-react-app/issues/2488
-        ascii_only: true,
+        ascii_only: true
       },
-      sourceMap: shouldUseSourceMap,
+      sourceMap: shouldUseSourceMap
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
-      filename: cssFilename,
+      filename: cssFilename
     }),
     // Moment.js is an extremely popular library that bundles large locale files
     // by default due to how Webpack interprets its code. This is a practical
     // solution that requires the user to opt into importing specific locales.
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ],
   // CRL: added externals block for library
   externals: {
-   'react': 'react',
-   'react-dom': 'react-dom'
+    react: 'react',
+    'react-dom': 'react-dom'
   },
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
@@ -269,6 +246,6 @@ module.exports = {
     fs: 'empty',
     net: 'empty',
     tls: 'empty',
-    child_process: 'empty',
-  },
+    child_process: 'empty'
+  }
 };
