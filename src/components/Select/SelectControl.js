@@ -13,6 +13,7 @@ const defaultProps = {
 
 const SelectControl = styled.select`
   -moz-appearance: none;
+  -webkit-appearance: none;
   background-color: white;
   border: 1px solid ${(props) => props.theme.colors.gray[300]};
   border-radius: 3px;
