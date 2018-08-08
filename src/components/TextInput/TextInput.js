@@ -137,7 +137,11 @@ export default function TextInput({
       ) : (
         <StyledTextInput {...other} {...textInputProps} />
       )}
-      {invalid ? <div id={`${id}-error-msg`}><small>{invalidText}</small></div> : null}
+      {invalid ? (
+        <div id={`${id}-error-msg`}>
+          <small>{invalidText}</small>
+        </div>
+      ) : null}
     </TextInputWrapper>
   );
 }

@@ -22,6 +22,7 @@ const SelectControlWrapper = styled.div`
     mask: url(${dropdownMore});
     mask-position: center;
     background-color: ${(props) => props.theme.colors.brand.blue[500]};
+    pointer-events: none;
     width: 12px;
     height: 8px;
     position: absolute;

@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Select from './Select';
-import SelectItem from '../SelectItem/SelectItem';
+import SelectItem from './SelectItem';
 
 storiesOf('Select', module)
   .add('with some text', () => (

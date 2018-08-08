@@ -4,10 +4,24 @@ import PropTypes from 'prop-types';
 import SelectControl from './SelectControl';
 import SelectControlWrapper from './SelectControlWrapper';
 
-export default function Select({ children, disabled, labelText, id, ...other }) {
+const propTypes = {
+  children: PropTypes.node,
+  disabled: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+  labelText: PropTypes.string.isRequired,
+  labelHidden: PropTypes.bool
+};
+
+const defaultProps = {
+  disabled: false
+};
+
+export default function Select({ children, disabled, labelText, labelHidden, id, ...other }) {
   return (
     <React.Fragment>
-      <label htmlFor={id}>{labelText}</label>
+      <label htmlFor={id} hidden={labelHidden}>
+        {labelText}
+      </label>
       <SelectControlWrapper>
         <SelectControl {...other} disabled={disabled} id={id}>
           {children}
@@ -17,14 +31,5 @@ export default function Select({ children, disabled, labelText, id, ...other }) 
   );
 }
 
-Select.propTypes = {
-  children: PropTypes.node,
-  disabled: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-  labelText: PropTypes.string
-};
-
-Select.defaultProps = {
-  disabled: false,
-  labelText: 'Select'
-};
+Select.propTypes = propTypes;
+Select.defaultProps = defaultProps;
