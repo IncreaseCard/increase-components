@@ -18,6 +18,7 @@ import Pagination from './components/Pagination/Pagination';
 import Panel from './components/Panel/Panel';
 import RadioButton from './components/RadioButton/RadioButton';
 import Select from './components/Select/Select';
+import SelectItem from './components/Select/SelectItem';
 import StepList from './components/StepList/StepList';
 import Switch from './components/Switch/Switch';
 import Tab from './components/Tab/Tab';
@@ -52,7 +53,6 @@ export {
   MessageList,
   NumberInput,
   Pagination,
-  PaginationButton,
   Panel,
   PrimaryButton,
   RadioButton,
@@ -69,6 +69,7 @@ export {
   TableHeader,
   TableData,
   TabGroup,
+  TaxesTable,
   TextInput,
   colorPalette,
   themes
