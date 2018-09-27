@@ -8,8 +8,11 @@ const taxes = [
   { categories: ['Impuestos', 'Retenciones', 'IIBB'], amount: 12200 }
 ];
 
-storiesOf('TaxesTable', module).add('ecuador', () => (
-  <div style={{ width: '1000px' }}>
-    <TaxesTable taxes={taxes} currency="USD" />
-  </div>
-));
+storiesOf('TaxesTable', module)
+  .add('ecuador', () => (
+    <div style={{ width: '1000px' }}>
+      <TaxesTable taxes={taxes} currency="USD" />
+    </div>
+  ))
+  .add('emptyTaxes', () => <TaxesTable taxes={[]} currency="USD" />)
+  .add('undefinedTaxes', () => <TaxesTable currency="USD" />);

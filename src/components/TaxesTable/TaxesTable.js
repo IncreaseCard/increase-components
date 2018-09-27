@@ -17,13 +17,16 @@ const propTypes = {
 const defaultProps = {};
 
 function TaxesTable({ taxes, className, currency }) {
+  if (taxes === undefined) {
+    return null;
+  }
   const groupedTaxes = groupBy(taxes, (tax) => tax.categories[1]);
   return (
     <table className={className}>
       <tbody>
         {Object.keys(groupedTaxes).map((category) =>
           groupedTaxes[category].map((tax, index) => (
-            <tr key={category}>
+            <tr key={tax.categories}>
               {index === 0 && <th rowSpan={groupedTaxes[category].length}>{category}</th>}
               <td>{tax.categories[2]}</td>
               <td style={{ textAlign: 'right' }}>
