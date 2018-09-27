@@ -22,10 +22,10 @@ storiesOf('Calendar', module)
             renderDay={(date, inMonth) => (
               <React.Fragment>
                 <CalendarData style={{ color: '#f79c31' }} inMonth={inMonth}>
-                  <Currency value={200 * Math.random()} />
+                  <Currency value={200 * Math.random()} currency="ARS" />
                 </CalendarData>
                 <CalendarData style={{ color: '#2ca8df' }} inMonth={inMonth}>
-                  <Currency value={200 * Math.random()} />
+                  <Currency value={200 * Math.random()} currency="ARS" />
                 </CalendarData>
               </React.Fragment>
             )}
@@ -43,10 +43,10 @@ storiesOf('Calendar', module)
     const renderDay = (date, inMonth) => (
       <React.Fragment>
         <CalendarData style={{ color: '#f79c31' }} inMonth={inMonth}>
-          <Currency value={200 * Math.random()} />
+          <Currency value={200 * Math.random()} currency="ARS" />
         </CalendarData>
         <CalendarData style={{ color: '#2ca8df' }} inMonth={inMonth}>
-          <Currency value={250 * Math.random()} />
+          <Currency value={250 * Math.random()} currency="ARS" />
         </CalendarData>
       </React.Fragment>
     );
@@ -54,10 +54,10 @@ storiesOf('Calendar', module)
     const renderWeeklySummary = () => (
       <React.Fragment>
         <CalendarData style={{ color: '#f79c31' }} inMonth={true}>
-          <Currency value={7 * 200 * Math.random()} />
+          <Currency value={7 * 200 * Math.random()} currency="ARS" />
         </CalendarData>
         <CalendarData style={{ color: '#2ca8df' }} inMonth={true}>
-          <Currency value={5 * 250 * Math.random()} />
+          <Currency value={5 * 250 * Math.random()} currency="ARS" />
         </CalendarData>
       </React.Fragment>
     );

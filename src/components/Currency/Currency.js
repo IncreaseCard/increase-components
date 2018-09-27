@@ -7,7 +7,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  currency: 'ARS',
   language: navigator.language
 };
 
