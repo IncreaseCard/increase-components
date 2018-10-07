@@ -8,8 +8,7 @@ import InvisibleButton from './InvisibleButton';
 
 const buttonEvents = {
   onClick: action('onClick'),
-  onFocus: action('onFocus'),
-  className: 'some-class'
+  onFocus: action('onFocus')
 };
 
 storiesOf('Buttons', module)
@@ -25,9 +24,8 @@ storiesOf('Buttons', module)
     `
     )(() => (
       <div>
-        <PrimaryButton {...buttonEvents}>Primary button</PrimaryButton>
-        &nbsp;
-        <SecondaryButton {...buttonEvents}>Secondary Button</SecondaryButton>
+        <PrimaryButton {...buttonEvents}>Primary button</PrimaryButton>{' '}
+        <SecondaryButton {...buttonEvents}>Secondary Button</SecondaryButton>{' '}
         <InvisibleButton {...buttonEvents}>Invisible Button</InvisibleButton>
       </div>
     ))
@@ -40,12 +38,10 @@ storiesOf('Buttons', module)
       <div>
         <PrimaryButton {...buttonEvents} disabled>
           Disabled Primary button
-        </PrimaryButton>
-        &nbsp;
+        </PrimaryButton>{' '}
         <SecondaryButton {...buttonEvents} disabled>
           Disabled Secondary Button
-        </SecondaryButton>
-        &nbsp;
+        </SecondaryButton>{' '}
         <InvisibleButton {...buttonEvents} disabled>
           Disabled Invisible Button
         </InvisibleButton>

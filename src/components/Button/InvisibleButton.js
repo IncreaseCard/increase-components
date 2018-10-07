@@ -1,7 +1,9 @@
-import newTheme from '../../themes/new';
-
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
+import { ButtonBase } from './ButtonBase';
+import newTheme from '../../themes/new';
 
 const propTypes = {
   disabled: PropTypes.bool,
@@ -13,44 +15,34 @@ const defaultProps = {
   theme: newTheme
 };
 
-const InvisibleButton = styled.button`
-  border: none;
-  display: inline-block;
+const InvisibleButtonChildren = styled.div`
+  box-sizing: border-box;
+`;
 
-  &:not(:disabled) {
-    cursor: pointer;
-  }
-
-  &:disabled {
-    opacity: 0.2;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &::-moz-focus-inner {
-    border: 0;
-  }
-
-  font-size: ${(props) => props.theme.typography.bodyFontSizes[props.primary ? 0 : 1]};
-  line-height: ${(props) => props.theme.typography.bodyLineHeights[props.primary ? 0 : 1]};
-  white-space: nowrap;
-
+const InvisibleButtonWrapper = ButtonBase.extend`
   background-color: transparent;
-  border-bottom: 2px solid transparent;
-  border-top: 2px solid transparent;
   color: ${(props) => props.theme.colors.lightBlue[500]};
-  padding: 0;
-  margin: 6px 20px;
 
   &:hover:not([disabled]) {
-    border-bottom: 2px solid ${(props) => props.theme.colors.brand.green[500]};
+    background-color: ${(props) => props.theme.colors.gray[300]};
+    ${InvisibleButtonChildren} {
+      border-bottom: 2px solid ${(props) => props.theme.colors.brand.green[500]};
+    }
   }
 `;
 
-InvisibleButton.propTypes = propTypes;
+InvisibleButtonWrapper.propTypes = propTypes;
 
+InvisibleButtonWrapper.defaultProps = defaultProps;
+
+function InvisibleButton({ children, ...rest }) {
+  return (
+    <InvisibleButtonWrapper {...rest}>
+      <InvisibleButtonChildren>{children}</InvisibleButtonChildren>
+    </InvisibleButtonWrapper>
+  );
+}
+
+InvisibleButton.propTypes = { ...propTypes, children: PropTypes.node };
 InvisibleButton.defaultProps = defaultProps;
-
 export default InvisibleButton;
