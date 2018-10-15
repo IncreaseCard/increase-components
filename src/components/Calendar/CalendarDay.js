@@ -14,6 +14,7 @@ const CalendarDay = styled.div`
   text-align: center;
   height: 80px;
   width: calc(100% / ${(props) => (props.hasWeeklySummary ? 8 : 7)});
+  box-sizing: border-box;
   position: relative;
   padding: 16px;
 

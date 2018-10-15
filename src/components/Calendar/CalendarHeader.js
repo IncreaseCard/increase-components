@@ -9,6 +9,7 @@ const CalendarHeader = styled.div`
   border: 1px solid #ddd;
   padding: 8px;
   width: calc(100% / ${(props) => (props.hasWeeklySummary ? 8 : 7)});
+  box-sizing: border-box;
   font-size: 11px;
   font-weight: normal;
   text-align: center;

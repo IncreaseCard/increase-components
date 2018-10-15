@@ -13,6 +13,7 @@ const DayNumber = styled.div`
   padding: ${(props) => (props.today ? '5px' : '3px')};
   height: ${(props) => (props.today ? '25px' : '20px')};
   width: ${(props) => (props.today ? '25px' : '20px')};
+  box-sizing: border-box;
   text-align: center;
 `;
 
