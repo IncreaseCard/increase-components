@@ -46,6 +46,7 @@ export default styled(ApplicationHeader)`
   font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-direction: row;
+  box-sizing: border-box;
   width: 100%;
   padding: 10px 100px;
   background-color: white;
