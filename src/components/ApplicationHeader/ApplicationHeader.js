@@ -43,6 +43,7 @@ ApplicationHeader.propTypes = propTypes;
 ApplicationHeader.defaultProps = defaultProps;
 
 export default styled(ApplicationHeader)`
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-direction: row;
   width: 100%;
