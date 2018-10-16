@@ -2,6 +2,7 @@ import '!css-loader!normalize.css';
 
 import './styles/base.css';
 
+import ApplicationHeader from './components/ApplicationHeader/ApplicationHeader';
 import AmountBox from './components/AmountBox/AmountBox';
 import PrimaryButton from './components/Button/PrimaryButton';
 import SecondaryButton from './components/Button/SecondaryButton';
@@ -42,6 +43,7 @@ const themes = {
 };
 
 export {
+  ApplicationHeader,
   AmountBox,
   Calendar,
   Checkbox,

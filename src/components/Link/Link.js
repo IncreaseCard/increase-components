@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Link = styled.a``;
+const Link = styled.a`
+  color: #3b86ff;
+`;
 
 export default Link;
 
