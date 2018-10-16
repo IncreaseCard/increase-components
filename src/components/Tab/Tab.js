@@ -15,7 +15,6 @@ export const Tab = styled.button`
     }
   }}
   box-sizing: border-box;
-  background-color: ${(props) => props.theme.colors.white[100]};
   border: none;
   ${(props) => (props.disabled ? null : `cursor: pointer;`)}
   font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};

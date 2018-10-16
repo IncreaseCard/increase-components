@@ -5,6 +5,7 @@ import newTheme from '../../themes/new';
 export const TabGroup = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 100%;
   border-bottom: 1px solid ${(props) => props.theme.colors.paleGray[300]};
 `;
