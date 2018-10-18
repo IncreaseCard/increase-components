@@ -15,11 +15,13 @@ export const Tab = styled.button`
     }
   }}
   box-sizing: border-box;
+  background: transparent;
   border: none;
   ${(props) => (props.disabled ? null : `cursor: pointer;`)}
   font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
   line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
-  padding: 10px 20px;
+  height: 100%;
+  padding: 0 20px;
 
   &:hover:not(:disabled) {
     color: ${(props) => props.theme.colors.lightBlue[500]};

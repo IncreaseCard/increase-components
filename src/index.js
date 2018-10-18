@@ -22,7 +22,7 @@ import Select from './components/Select/Select';
 import SelectItem from './components/Select/SelectItem';
 import StepList from './components/StepList/StepList';
 import Switch from './components/Switch/Switch';
-import Tab from './components/Tab/Tab';
+import Tab from './components/TabGroup/Tab';
 import Table from './components/Table/Table';
 import TableData from './components/Table/TableData';
 import TableHead from './components/Table/TableHead';
