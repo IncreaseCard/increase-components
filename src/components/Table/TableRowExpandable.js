@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'styled-components';
@@ -14,7 +15,7 @@ const propTypes = {
 
 const defaultProps = {};
 
-const Wrapper = TableRow.extend`
+const Wrapper = styled(TableRow)`
   height: 60px;
   position: relative;
 

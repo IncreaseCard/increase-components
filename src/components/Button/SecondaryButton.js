@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import PropTypes from 'prop-types';
 import { ButtonBase } from './ButtonBase';
 import newTheme from '../../themes/new';
@@ -13,7 +14,7 @@ const defaultProps = {
   theme: newTheme
 };
 
-const SecondaryButton = ButtonBase.extend`
+const SecondaryButton = styled(ButtonBase)`
   background-color: ${(props) => props.theme.colors.gray[300]};
   border: 1px solid ${(props) => props.theme.colors.gray[500]};
   color: ${(props) => props.theme.colors.black[700]};

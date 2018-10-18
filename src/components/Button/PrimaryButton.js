@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import PropTypes from 'prop-types';
 
 import newTheme from '../../themes/new';
@@ -14,7 +15,7 @@ const defaultProps = {
   theme: newTheme
 };
 
-const PrimaryButton = ButtonBase.extend`
+const PrimaryButton = styled(ButtonBase)`
   background-color: ${(props) => props.theme.colors.lightBlue[500]};
   color: ${(props) => props.theme.colors.white[100]};
 

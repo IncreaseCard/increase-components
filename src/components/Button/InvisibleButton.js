@@ -19,7 +19,7 @@ const InvisibleButtonChildren = styled.div`
   box-sizing: border-box;
 `;
 
-const InvisibleButtonWrapper = ButtonBase.extend`
+const InvisibleButtonWrapper = styled(ButtonBase)`
   background-color: transparent;
   color: ${(props) => props.theme.colors.lightBlue[500]};
 
