@@ -7,8 +7,8 @@ export const Tab = styled.button`
   box-sizing: border-box;
   background: transparent;
   border: none;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid
     ${(props) => (props.active ? props.theme.colors.lightBlue[500] : 'transparent')};
   font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
   line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
