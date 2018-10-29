@@ -30,6 +30,7 @@ import TableHeader from './components/Table/TableHeader';
 import TableRow from './components/Table/TableRow';
 import TableRowExpandable from './components/Table/TableRowExpandable';
 import TabGroup from './components/TabGroup/TabGroup';
+import Tag from './components/Tag/Tag';
 import TaxesTable from './components/TaxesTable/TaxesTable';
 import TextInput from './components/TextInput/TextInput';
 
@@ -71,6 +72,7 @@ export {
   TableHeader,
   TableData,
   TabGroup,
+  Tag,
   TaxesTable,
   TextInput,
   colorPalette,
