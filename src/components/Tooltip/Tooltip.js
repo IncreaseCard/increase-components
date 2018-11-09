@@ -13,11 +13,11 @@ const drawArrow = (props) => {
   switch (props.direction) {
     case 'down':
       return css`
-        bottom: -8px;
-        left: calc(50% - 8px);
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-top: 8px solid #d0d3de;
+        bottom: -5px;
+        left: calc(50% - 7.5px);
+        border-left: 7.5px solid transparent;
+        border-right: 7.5px solid transparent;
+        border-top: 5px solid #d0d3de;
       `;
     case 'up':
       return css`
@@ -50,10 +50,10 @@ export const Tooltip = styled.div`
   position: relative;
   font-size: 13px;
   padding: 12px 9px;
-  height: 40px;
   width: 148px;
   background-color: #d0d3de;
   box-shadow: 0 1px 3px #828690;
+  border-radius: 3px;
 
   ::after {
     content: '';
