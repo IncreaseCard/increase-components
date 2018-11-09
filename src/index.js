@@ -33,6 +33,7 @@ import TabGroup from './components/TabGroup/TabGroup';
 import Tag from './components/Tag/Tag';
 import TaxesTable from './components/TaxesTable/TaxesTable';
 import TextInput from './components/TextInput/TextInput';
+import Tooltip from './components/Tooltip/Tooltip';
 
 import newTheme from './themes/new';
 import currentTheme from './themes/current';
@@ -75,6 +76,7 @@ export {
   Tag,
   TaxesTable,
   TextInput,
+  Tooltip,
   colorPalette,
   themes
 };
