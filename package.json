@@ -1,6 +1,6 @@
 {
   "name": "increase-components",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "React component library for Increase design system",
   "sideEffects": false,
   "main": "dist/index.js",
