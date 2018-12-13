@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import increaseIsotype from '../../icons/increase-isotype.svg';
 
 const propTypes = {
-  logoUrl: PropTypes.string,
+  appName: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string
 };
@@ -30,10 +31,24 @@ const Actions = styled.div`
   }
 `;
 
-function ApplicationHeader({ className, logoUrl, children }) {
+const ApplicationName = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+
+  > * {
+    margin-right: 15px;
+  }
+`;
+
+function ApplicationHeader({ className, appName, children }) {
   return (
     <div className={className}>
-      <img src={logoUrl} style={{ height: '40px' }} />
+      <ApplicationName>
+        <img src={increaseIsotype} style={{ height: '40px' }} />
+        {appName}
+      </ApplicationName>
       <Actions>{children}</Actions>
     </div>
   );
