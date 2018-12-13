@@ -46,7 +46,7 @@ function ApplicationHeader({ className, appName, children }) {
   return (
     <div className={className}>
       <ApplicationName>
-        <img src={increaseIsotype} style={{ height: '40px' }} />
+        <img src={increaseIsotype} style={{ height: '25px' }} />
         {appName}
       </ApplicationName>
       <Actions>{children}</Actions>
