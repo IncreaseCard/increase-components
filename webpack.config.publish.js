@@ -73,6 +73,16 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        sideEffects: true,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
       }
     ]
   },
