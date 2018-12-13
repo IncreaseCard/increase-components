@@ -80,7 +80,7 @@ module.exports = {
         sideEffects: true,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'url-loader'
           }
         ]
       }
