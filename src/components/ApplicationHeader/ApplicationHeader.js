@@ -36,9 +36,10 @@ const ApplicationName = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: bold;
+  color: #192448;
 
   > * {
-    margin-right: 15px;
+    margin-right: 10px;
   }
 `;
 
