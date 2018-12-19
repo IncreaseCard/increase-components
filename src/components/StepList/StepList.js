@@ -1,11 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import icDone from 'material-design-icons/action/svg/production/ic_done_24px.svg';
 
-import Step from "./Step";
-import StepNumber from "./StepNumber";
-import StepName from "./StepName";
-import StepSeparator from "./StepSeparator";
-import styled from "styled-components";
+import Step from './Step';
+import StepNumber from './StepNumber';
+import StepName from './StepName';
+import StepSeparator from './StepSeparator';
+import styled from 'styled-components';
 
 const propTypes = {
   steps: PropTypes.arrayOf(PropTypes.string),
@@ -17,48 +18,38 @@ const defaultProps = {
   hasIntroStep: false
 };
 
+const IcDone = styled.div`
+  mask: url(${icDone});
+  background-color: white;
+  height: 24px;
+  width: 24px;
+`;
+
 const StepListWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: flex-start;
 `;
 
 export default function StepList({ steps, activeStep, hasIntroStep }) {
-  const introStep = steps[0];
-  const numberedSteps = (hasIntroStep && steps.slice(1)) || steps;
-  const activeNumberedStep = activeStep - (hasIntroStep ? 1 : 0);
   return (
     <StepListWrapper>
-      {hasIntroStep && (
-        <React.Fragment>
-          <Step isActive={activeStep === 0} isDone={0 < activeStep}>
-            <StepName isActive={activeStep === 0}>{introStep}</StepName>
-          </Step>
-          <StepSeparator />
-        </React.Fragment>
-      )}
-      {numberedSteps.map((name, index) => (
-        <React.Fragment key={index}>
-          <Step
-            isActive={index === activeNumberedStep}
-            isDone={index < activeNumberedStep}
-          >
-            <StepNumber
-              isActive={index === activeNumberedStep}
-              isDone={index < activeNumberedStep}
-            >
-              {index + 1}
-            </StepNumber>
-            <StepName
-              isActive={index === activeNumberedStep}
-              isDone={index < activeNumberedStep}
-            >
-              {name}
-            </StepName>
-          </Step>
-          {index < numberedSteps.length - 1 && <StepSeparator />}
-        </React.Fragment>
-      ))}
+      {steps.map((name, index) => {
+        const isActive = index === activeStep;
+        return (
+          <React.Fragment key={index}>
+            <Step isActive={isActive} isDone={index < activeStep}>
+              <StepNumber isActive={isActive} isDone={index < activeStep}>
+                {isActive ? <IcDone /> : index + 1}
+              </StepNumber>
+              <StepName isActive={isActive} isDone={index < activeStep}>
+                {name}
+              </StepName>
+            </Step>
+            {index < steps.length - 1 && <StepSeparator />}
+          </React.Fragment>
+        );
+      })}
     </StepListWrapper>
   );
 }

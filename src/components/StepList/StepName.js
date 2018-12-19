@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import defaultTheme from "../../themes/new";
+import defaultTheme from '../../themes/new';
 
 const propTypes = {
   theme: PropTypes.object,
@@ -16,17 +16,13 @@ const defaultProps = {
 };
 
 export const StepName = styled.span`
-  font-size: 15px;
-  ${props =>
-    props.isActive &&
-    `
-      color: ${props.theme.colors.brand.green[500]};
-      font-weight: bold;
-    `};
+  font-size: 13px;
+  color: ${(props) => props.theme.colors.lightBlue[700]};
+  white-space: nowrap;
 `;
 
 StepName.propTypes = propTypes;
 StepName.defaultProps = defaultProps;
-StepName.displayName = "StepName";
+StepName.displayName = 'StepName';
 
 export default StepName;

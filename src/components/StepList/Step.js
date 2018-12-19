@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const propTypes = {
   isActive: PropTypes.bool,
@@ -16,10 +16,14 @@ export const Step = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  opacity: ${props => (props.isDone ? "0.3" : props.isActive ? "1" : "0.2")};
+  width: 38px;
+
+  > *:not(:last-child) {
+    margin-bottom: 6px;
+  }
 `;
 
-Step.displayName = "Step";
+Step.displayName = 'Step';
 
 Step.propTypes = propTypes;
 Step.defaultProps = defaultProps;

@@ -1,17 +1,23 @@
-import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
+import newTheme from '../../themes/new';
+
+const propTypes = { theme: PropTypes.object };
+
+const defaultProps = { theme: newTheme };
 
 export const StepSeparatorBox = styled.span`
   font-size: 8px;
-  width: 45px;
-  height: 15px;
-  margin: 0 9px;
-  opacity: 0.2;
-  white-space: nowrap;
+  width: 180px;
+  height: calc(38px / 2);
+  margin: 0 10px;
   letter-spacing: 3.5px;
   user-select: none;
+  border-bottom: 1px solid ${(props) => props.theme.colors.lightBlue[700]};
 `;
 
-export default function StepSeparator() {
-  return <StepSeparatorBox>.........</StepSeparatorBox>;
-}
+StepSeparatorBox.propTypes = propTypes;
+StepSeparatorBox.defaultProps = defaultProps;
+
+export default StepSeparatorBox;
