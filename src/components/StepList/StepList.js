@@ -10,13 +10,10 @@ import styled from 'styled-components';
 
 const propTypes = {
   steps: PropTypes.arrayOf(PropTypes.string),
-  activeStep: PropTypes.number,
-  hasIntroStep: PropTypes.bool
+  activeStep: PropTypes.number
 };
 
-const defaultProps = {
-  hasIntroStep: false
-};
+const defaultProps = {};
 
 const IcDone = styled.div`
   mask: url(${icDone});
@@ -33,7 +30,7 @@ const StepListWrapper = styled.div`
   width: 100%;
 `;
 
-export default function StepList({ steps, activeStep, hasIntroStep }) {
+function StepList({ steps, activeStep }) {
   return (
     <StepListWrapper>
       {steps.map((name, index) => {
@@ -59,3 +56,5 @@ export default function StepList({ steps, activeStep, hasIntroStep }) {
 
 StepList.propTypes = propTypes;
 StepList.defaultProps = defaultProps;
+
+export default StepList;
