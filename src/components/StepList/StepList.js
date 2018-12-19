@@ -36,13 +36,14 @@ export default function StepList({ steps, activeStep, hasIntroStep }) {
     <StepListWrapper>
       {steps.map((name, index) => {
         const isActive = index === activeStep;
+        const isDone = index < activeStep;
         return (
           <React.Fragment key={index}>
-            <Step isActive={isActive} isDone={index < activeStep}>
-              <StepNumber isActive={isActive} isDone={index < activeStep}>
-                {isActive ? <IcDone /> : index + 1}
+            <Step isActive={isActive} isDone={isDone}>
+              <StepNumber isActive={isActive} isDone={isDone}>
+                {isDone ? <IcDone /> : index + 1}
               </StepNumber>
-              <StepName isActive={isActive} isDone={index < activeStep}>
+              <StepName isActive={isActive} isDone={isDone}>
                 {name}
               </StepName>
             </Step>
