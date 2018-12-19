@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import icDone from 'material-design-icons/action/svg/production/ic_done_24px.svg';
+import icDone from 'file-loader!material-design-icons/action/svg/production/ic_done_24px.svg';
 
 import Step from './Step';
 import StepNumber from './StepNumber';
