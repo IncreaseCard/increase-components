@@ -14,7 +14,7 @@ export const Tab = styled.button`
   line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
   height: calc(100% + 1px); /* 1px correction for TabGroup bottom border */
   margin-bottom: -1px;
-  padding: 0 20px;
+  margin: 0 10px;
 
   &:hover:not(:disabled) {
     color: ${(props) => props.theme.colors.lightBlue[500]};
