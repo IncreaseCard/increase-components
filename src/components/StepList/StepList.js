@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import icDone from 'file-loader!material-design-icons/action/svg/production/ic_done_24px.svg';
+import icDone from 'material-design-icons/action/svg/production/ic_done_24px.svg';
 
 import Step from './Step';
 import StepNumber from './StepNumber';
@@ -29,6 +29,8 @@ const StepListWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: center;
+  width: 100%;
 `;
 
 export default function StepList({ steps, activeStep, hasIntroStep }) {

@@ -9,7 +9,8 @@ const defaultProps = { theme: newTheme };
 
 export const StepSeparatorBox = styled.span`
   font-size: 8px;
-  width: 180px;
+  max-width: 180px;
+  flex: 1;
   height: calc(38px / 2);
   margin: 0 10px;
   letter-spacing: 3.5px;
