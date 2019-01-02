@@ -10,7 +10,7 @@ import RadioButtonControlWrapper from './RadioButtonControlWrapper';
 const RadioButtonWrapper = styled.label`
   font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
   line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
-  color: ${(props) => props.theme.colors.brand.blue[500]};
+  color: ${(props) => props.theme.colors.brandBlueRegular};
   font-family: ${(props) => props.theme.typography.bodyFontFamily};
   display: flex;
   flex-direction: row;
@@ -25,7 +25,7 @@ const RadioButtonWrapper = styled.label`
     } else {
       return `
             &:hover {
-              color: ${props.theme.colors.darkBlue[500]};
+              color: ${props.theme.colors.darkBlueRegular};
             }
           `;
     }

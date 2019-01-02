@@ -8,9 +8,10 @@ const SwitchWrapper = styled.div`
   height: 15px;
   width: 25px;
   border: 1px solid
-    ${(props) => (props.value ? props.theme.colors.brand.green[500] : props.theme.colors.gray[300])};
+    ${(props) =>
+      props.value ? props.theme.colors.brandGreenRegular : props.theme.colors.whiteTone};
   background-color: ${(props) =>
-    props.value ? props.theme.colors.brand.green[500] : props.theme.colors.white[100]};
+    props.value ? props.theme.colors.brandGreenRegular : props.theme.colors.whiteRegular};
   border-radius: 8px;
   box-sizing: border-box;
   margin: 1px;

@@ -15,16 +15,16 @@ const SelectControl = styled.select`
   -moz-appearance: none;
   -webkit-appearance: none;
   background-color: white;
-  border: 1px solid ${(props) => props.theme.colors.gray[300]};
+  border: 1px solid ${(props) => props.theme.colors.grayShade};
   border-radius: 3px;
-  color: ${(props) => props.theme.colors.brand.blue[500]};
+  color: ${(props) => props.theme.colors.brandBlueRegular};
   height: 32px;
   padding-left: 12px;
   padding-right: 24px;
   position: relative;
 
   &:focus {
-    border: 1px solid ${(props) => props.theme.colors.brand.blue[500]};
+    border: 1px solid ${(props) => props.theme.colors.brandBlueRegular};
   }
 `;
 

@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import PrimaryButton from './PrimaryButton';
-import SecondaryButton from './SecondaryButton';
 import InvisibleButton from './InvisibleButton';
 
 const buttonEvents = {
@@ -25,7 +24,6 @@ storiesOf('Buttons', module)
     )(() => (
       <div>
         <PrimaryButton {...buttonEvents}>Primary button</PrimaryButton>{' '}
-        <SecondaryButton {...buttonEvents}>Secondary Button</SecondaryButton>{' '}
         <InvisibleButton {...buttonEvents}>Invisible Button</InvisibleButton>
       </div>
     ))
@@ -39,9 +37,6 @@ storiesOf('Buttons', module)
         <PrimaryButton {...buttonEvents} disabled>
           Disabled Primary button
         </PrimaryButton>{' '}
-        <SecondaryButton {...buttonEvents} disabled>
-          Disabled Secondary Button
-        </SecondaryButton>{' '}
         <InvisibleButton {...buttonEvents} disabled>
           Disabled Invisible Button
         </InvisibleButton>

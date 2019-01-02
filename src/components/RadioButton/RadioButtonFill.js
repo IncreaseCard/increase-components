@@ -14,7 +14,7 @@ const defaultProps = {
 };
 
 const RadioButtonFill = styled.div`
-  background: ${(props) => props.theme.colors.brand.blue[500]};
+  background: ${(props) => props.theme.colors.brandBlueRegular};
   width: calc(100% - 8px);
   height: calc(100% - 8px);
   position: absolute;

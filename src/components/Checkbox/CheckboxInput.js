@@ -21,7 +21,7 @@ const defaultProps = {
 const CheckboxInputWrapper = styled.div`
   height: 15px;
   width: 15px;
-  border: 1px solid ${(props) => props.theme.colors.brand.blue[500]};
+  border: 1px solid ${(props) => props.theme.colors.brandBlueRegular};
   border-radius: 2px;
   position: relative;
   box-sizing: border-box;

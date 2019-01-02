@@ -7,19 +7,19 @@
 - [X] TextInput
 - [X] RadioButton
 - [X] Pagination
+- [X] Table
+- [X] Tooltip
+- [X] Loading
+- [X] Toggle
 - [ ] Modal
-- [ ] Table
 - [ ] DateRangePicker
 - [ ] Dropdown
-- [ ] Tooltip
 - [ ] FileUploadButton
 - [ ] List
-- [ ] Loading
 - [ ] Notification/Toast
 - [ ] Notification/Inline
 - [ ] Search
 - [ ] TextArea
-- [ ] Toggle
 
 - [ ] Colors story
 - [ ] Typography story

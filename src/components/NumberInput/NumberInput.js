@@ -1,16 +1,16 @@
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import newTheme from "../../themes/new";
+import newTheme from '../../themes/new';
 
 export const NumberInput = styled.input.attrs({
-  type: "number"
+  type: 'number'
 })`
-  background-color: ${props => props.theme.colors.white[100]};
-  border: 1px solid ${props => props.theme.colors.gray[500]};
+  background-color: ${(props) => props.theme.colors.whiteRegular};
+  border: 1px solid ${(props) => props.theme.colors.whiteShade};
   border-radius: 3px;
-  font-size: ${props => props.theme.typography.bodyFontSizes[0]};
-  line-height: ${props => props.theme.typography.bodyLineHeights[0]};
+  font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
+  line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
   width: 4rem;
 `;
 

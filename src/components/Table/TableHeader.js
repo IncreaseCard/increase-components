@@ -13,7 +13,7 @@ const defaultProps = {
 
 export const TableHeader = styled.thead`
   background-color: #f2f6f7;
-  color: ${(props) => props.theme.colors.brand.blue[500]};
+  color: ${(props) => props.theme.colors.brandBlueRegular};
   font-weight: bold;
 `;
 

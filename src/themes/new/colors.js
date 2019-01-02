@@ -1,73 +1,45 @@
 export default {
-  brand: {
-    blue: {
-      100: '#667296',
-      300: '#404B6F',
-      500: '#243568',
-      700: '#192448'
-    },
-    green: {
-      100: '#4DE74D',
-      300: '#27C027',
-      500: '#00DD00',
-      700: '#009900'
-    }
-  },
-  orange: {
-    100: '#F9B96F',
-    300: '#D29249',
-    500: '#F79B31',
-    700: '#AB6B22'
-  },
-  lightBlue: {
-    100: '#76AAFF',
-    300: '#5084D8',
-    500: '#3B86FF',
-    700: '#295DB1'
-  },
-  darkBlue: {
-    100: '#61687C',
-    300: '#3A4156',
-    500: '#1C2644',
-    700: '#131A2F'
-  },
-  darkRed: {
-    100: '#B66E77',
-    300: '#8F4750',
-    500: '#972F3C',
-    700: '#682029'
-  },
-  red: {
-    100: '#F2666F',
-    300: '#ED2331',
-    500: '#CB3F49',
-    700: '#A41822'
-  },
-  black: {
-    100: '#4D4D4D',
-    300: '#272727',
-    500: '#000000',
-    700: '#000000'
-  },
-  gray: {
-    100: '#F2F2F2',
-    300: '#EDEDED',
-    500: '#CBCBCB',
-    700: '#A4A4A4'
-  },
-  paleGray: {
-    100: '#D0D3DE',
-    300: '#BCC1D0',
-    500: '#A9ADB7',
-    700: '#828690'
-  },
+  brandBlueTint: '#667296',
+  brandBlueTone: '#404B6F',
+  brandBlueRegular: '#243568',
+  brandBlueShade: '#192448',
+  brandGreenTint: '#4DE74D',
+  brandGreenTone: '#27C027',
+  brandGreenRegular: '#00DD00',
+  brandGreenShade: '#009900',
+  orangeTint: '#F9B96F',
+  orangeTone: '#D29249',
+  orangeRegular: '#F79B31',
+  orangeShade: '#AB6B22',
+  lightBlueTint: '#76AAFF',
+  lightBlueTone: '#5084D8',
+  lightBlueRegular: '#3B86FF',
+  lightBlueShade: '#295DB1',
+  darkBlueLight: '#61687C',
+  darkBlueTone: '#3A4156',
+  darkBlueRegular: '#1C2644',
+  darkBlueShade: '#131A2F',
+  darkRedTint: '#B66E77',
+  darkRedTone: '#8F4750',
+  darkRedRegular: '#972F3C',
+  darkRedShade: '#682029',
+  redTint: '#F2666F',
+  redRegular: '#ED2331',
+  redTone: '#CB3F49',
+  redShade: '#A41822',
+  blackTint: '#4D4D4D',
+  blackTone: '#272727',
+  blackRegular: '#1C1C1C',
+  blackShade: '#000000',
+  grayTint: '#D0D3DE',
+  grayTone: '#A9ADB7',
+  grayRegular: '#BCC1D0',
+  grayShade: '#828690',
   ghost: 'transparent',
-  white: {
-    100: '#FFFFFF',
-    300: '#FFFFFF',
-    500: '#D8D8D8',
-    700: '#B1B1B1'
-  },
+  whiteRegular: '#FFFFFF',
+  whiteTint: '#F2F2F2',
+  whiteTone: '#D8D8D8',
+  whiteShade: '#B1B1B1',
   subtleShadow: 'rgba(0, 0, 0, 0.05)',
   mediumShadow: 'rgba(0, 0, 0, 0.3)',
   darkShadow: 'rgba(0, 0, 0, 0.5)',

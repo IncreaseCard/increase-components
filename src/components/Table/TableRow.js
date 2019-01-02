@@ -13,10 +13,10 @@ const defaultProps = {
 };
 
 const fontColor = (props) =>
-  props.red ? props.theme.colors.red[500] : props.theme.colors.brand.blue[500];
+  props.red ? props.theme.colors.redRegular : props.theme.colors.brandBlueRegular;
 
 const insetBorderColor = (props) =>
-  props.red ? props.theme.colors.red[500] : props.theme.colors.lightBlue[500];
+  props.red ? props.theme.colors.redRegular : props.theme.colors.lightBlueRegular;
 
 export const TableRow = styled.tr`
   color: ${fontColor};

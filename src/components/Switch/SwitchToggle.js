@@ -21,7 +21,7 @@ const SwitchToggle = styled.div`
   top: 1px;
   left: 1px;
   background-color: ${(props) =>
-    props.value ? props.theme.colors.white[100] : props.theme.colors.gray[300]};
+    props.value ? props.theme.colors.whiteRegular : props.theme.colors.grayShade};
   border-radius: 100%;
   transition: transform 200ms cubic-bezier(0.22, 0.61, 0.36, 1);
   pointer-events: none;

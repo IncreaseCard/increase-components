@@ -17,7 +17,7 @@ const defaultProps = {
 
 export const StepName = styled.span`
   font-size: 13px;
-  color: ${(props) => props.theme.colors.lightBlue[700]};
+  color: ${(props) => props.theme.colors.lightBlueShade};
   white-space: nowrap;
 `;
 

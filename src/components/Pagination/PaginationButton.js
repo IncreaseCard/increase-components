@@ -5,11 +5,11 @@ import newTheme from '../../themes/new';
 
 export const PaginationButton = styled.button`
   background-color: ${(props) =>
-    props.active ? props.theme.colors.lightBlue[500] : props.theme.colors.white[100]};
-  border: 1px solid ${(props) => props.theme.colors.gray[300]};
+    props.active ? props.theme.colors.lightBlueRegular : props.theme.colors.whiteRegular};
+  border: 1px solid ${(props) => props.theme.colors.grayShade};
   border-radius: 3px;
   color: ${(props) =>
-    props.active ? props.theme.colors.white[100] : props.theme.colors.black[700]};
+    props.active ? props.theme.colors.whiteRegular : props.theme.colors.blackShade};
   padding: 8px 12px;
   height: 32px;
   cursor: pointer;

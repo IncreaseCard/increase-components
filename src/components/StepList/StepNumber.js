@@ -28,7 +28,7 @@ export const StepNumber = styled.span`
 
   background-color: ${(props) => {
     if (props.isDone || props.isActive) {
-      return props.theme.colors.lightBlue[700];
+      return props.theme.colors.lightBlueShade;
     } else {
       return props.theme.colors.transparent;
     }
@@ -37,11 +37,11 @@ export const StepNumber = styled.span`
   ${(props) =>
     props.isDone || props.isActive
       ? `
-      color: ${props.theme.colors.white[100]};
+      color: ${props.theme.colors.whiteRegular};
     `
       : `
-      border: 1px solid ${props.theme.colors.lightBlue[700]};
-      color: ${props.theme.colors.lightBlue[700]};
+      border: 1px solid ${props.theme.colors.lightBlueShade};
+      color: ${props.theme.colors.lightBlueShade};
     `};
 `;
 

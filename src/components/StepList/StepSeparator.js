@@ -15,7 +15,7 @@ export const StepSeparatorBox = styled.span`
   margin: 0 10px;
   letter-spacing: 3.5px;
   user-select: none;
-  border-bottom: 1px solid ${(props) => props.theme.colors.lightBlue[700]};
+  border-bottom: 1px solid ${(props) => props.theme.colors.lightBlueShade};
 `;
 
 StepSeparatorBox.propTypes = propTypes;

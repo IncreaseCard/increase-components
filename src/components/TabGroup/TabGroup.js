@@ -7,8 +7,9 @@ export const TabGroup = styled.div`
   flex-direction: row;
   align-items: center;
   width: 100%;
+  min-height: 40px;
   height: 100%;
-  border-bottom: 1px solid ${(props) => props.theme.colors.paleGray[300]};
+  border-bottom: 1px solid ${(props) => props.theme.colors.grayRegular};
 `;
 
 TabGroup.propTypes = {

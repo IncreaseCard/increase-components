@@ -21,12 +21,12 @@ const InvisibleButtonChildren = styled.div`
 
 const InvisibleButtonWrapper = styled(ButtonBase)`
   background-color: transparent;
-  color: ${(props) => props.theme.colors.lightBlue[500]};
+  color: ${(props) => props.theme.colors.lightBlueRegular};
 
   &:hover:not([disabled]) {
-    background-color: ${(props) => props.theme.colors.gray[300]};
+    background-color: ${(props) => props.theme.colors.whiteTint};
     ${InvisibleButtonChildren} {
-      border-bottom: 2px solid ${(props) => props.theme.colors.brand.green[500]};
+      border-bottom: 2px solid ${(props) => props.theme.colors.brandGreenRegular};
     }
   }
 `;

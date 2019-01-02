@@ -40,7 +40,7 @@ const TextInputWrapper = styled.div`
             position: absolute;
             right: 8px;
             top: 23px;
-            background-color: ${(props) => props.theme.colors.red[300]};
+            background-color: ${(props) => props.theme.colors.redRegular};
             mask: url(${alertIcon});
             mask-position: center;
             mask-size: contain;
@@ -63,13 +63,13 @@ TextInputWrapper.defaultProps = {
 
 const StyledTextInput = styled.input`
   border: 1px solid
-    ${(props) => (props.invalid ? props.theme.colors.red[300] : props.theme.colors.gray[500])};
+    ${(props) => (props.invalid ? props.theme.colors.redRegular : props.theme.colors.whiteShade)};
   border-radius: 3px;
-  caret-color: ${(props) => props.theme.colors.black[700]};
+  caret-color: ${(props) => props.theme.colors.blackShade};
   color: ${(props) =>
-    props.invalid ? props.theme.colors.red[300] : props.theme.colors.black[700]};
+    props.invalid ? props.theme.colors.redRegular : props.theme.colors.blackShade};
   &:placeholder-shown {
-    color: ${(props) => props.theme.colors.gray[500]};
+    color: ${(props) => props.theme.colors.whiteShade};
   }
   font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
   line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
@@ -78,7 +78,7 @@ const StyledTextInput = styled.input`
   &:active,
   &:focus {
     border: 1px solid
-      ${(props) => (props.invalid ? props.theme.colors.red[500] : props.theme.colors.black[700])};
+      ${(props) => (props.invalid ? props.theme.colors.redRegular : props.theme.colors.blackShade)};
     outline: none;
   }
 `;
