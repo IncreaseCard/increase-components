@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import NewTheme from '../../themes/new';
 import Link from '../Link/Link';
 import increaseIsotype from '../../icons/increase-isotype.svg';
 
@@ -15,22 +16,29 @@ const ButtonWrapper = styled.div`
     .text {
       margin-left: 12px;
       .increase {
-        color: ${(props) => (props.disabled ? '#D8D8D8' : '#000')};
+        color: ${(props) =>
+          props.disabled ? props.theme.colors.whiteTone : props.theme.colors.blackShade};
         font-size: 0.5rem;
         font-weight: 700;
         text-transform: uppercase;
       }
       .product {
-        color: ${(props) => (props.disabled ? '#D8D8D8' : '#223368')};
+        color: ${(props) =>
+          props.disabled ? props.theme.colors.whiteTone : props.theme.colors.brandBlueRegular};
         font-size: 1.5rem;
         font-weight: 700;
       }
     }
   }
-  .cta {
-    margin-top: 1rem;
-  }
 `;
+
+ButtonWrapper.defaultProps = { theme: NewTheme };
+
+const CTALink = styled(Link)`
+  display: inline-block;
+  margin-top: 1rem;
+`;
+
 
 const CrossButton = ({ productName, CTA, linkCTA, disabled }) => {
   return (
@@ -42,9 +50,7 @@ const CrossButton = ({ productName, CTA, linkCTA, disabled }) => {
           <div className="product">{productName}</div>
         </div>
       </div>
-      <div className="cta">
-        <Link href={linkCTA}>{CTA}</Link>
-      </div>
+      <CTALink href={linkCTA}>{CTA}</CTALink>
     </ButtonWrapper>
   );
 };
