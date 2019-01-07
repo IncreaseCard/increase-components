@@ -5,23 +5,20 @@ import styled from 'styled-components';
 import Select from '../Select/Select';
 import SelectItem from '../Select/SelectItem';
 import PaginationButton from './PaginationButton';
-import newTheme from '../../themes/new';
 
 const propTypes = {
   className: PropTypes.string,
-  totalPages: PropTypes.number,
-  totalItems: PropTypes.number,
   currentPage: PropTypes.number,
-  onPageChanged: PropTypes.func,
   itemsPerPage: PropTypes.number,
-  onItemsPerPageChanged: PropTypes.func,
   itemsPerPageOptions: PropTypes.arrayOf(PropTypes.number),
-  theme: PropTypes.object
+  onItemsPerPageChanged: PropTypes.func,
+  onPageChanged: PropTypes.func,
+  totalItems: PropTypes.number,
+  totalPages: PropTypes.number
 };
 
 const defaultProps = {
-  itemsPerPageOptions: [10, 20, 50, 100],
-  theme: newTheme
+  itemsPerPageOptions: [10, 20, 50, 100]
 };
 
 const PaginationTotals = styled.div``;
@@ -46,16 +43,16 @@ export function Pagination({
     <div className={className}>
       <Select
         id="itemsPerPage"
-        name="itemsPerPage"
         labelText="Items por página:"
+        name="itemsPerPage"
         onChange={onItemsPerPageChanged}
       >
         {itemsPerPageOptions.map((number) => (
           <SelectItem
-            value={number}
             key={number}
-            text={number}
             selected={itemsPerPage === number}
+            text={number}
+            value={number}
           />
         ))}
       </Select>
@@ -69,14 +66,14 @@ export function Pagination({
       </PaginationTotals>
       <PaginationControls>
         <PaginationButton>&lt;</PaginationButton>
-        <Select id="page" name="page" labelText="Página" labelHidden={true}>
+        <Select id="page" labelHidden={true} labelText="Página" name="page">
           {pages.map((page) => (
             <SelectItem
               key={page}
-              value={page}
               onChange={onPageChanged}
-              text={page}
               selected={page === currentPage}
+              text={page}
+              value={page}
             />
           ))}
         </Select>

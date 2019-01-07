@@ -9,6 +9,6 @@ const Link = styled.a`
 export default Link;
 
 Link.propTypes = {
-  href: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  href: PropTypes.string
 };

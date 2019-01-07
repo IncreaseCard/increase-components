@@ -7,11 +7,11 @@ import currentTheme from '../../themes/current';
 import Currency from '../Currency/Currency';
 
 const propTypes = {
+  className: PropTypes.string,
+  currency: PropTypes.string.isRequired,
   taxes: PropTypes.arrayOf(
     PropTypes.shape({ categories: PropTypes.arrayOf(PropTypes.string), amount: PropTypes.number })
-  ),
-  className: PropTypes.string,
-  currency: PropTypes.string.isRequired
+  )
 };
 
 const defaultProps = {};
@@ -30,7 +30,7 @@ function TaxesTable({ taxes, className, currency }) {
               {index === 0 && <th rowSpan={groupedTaxes[category].length}>{category}</th>}
               <td>{tax.categories[2]}</td>
               <td style={{ textAlign: 'right' }}>
-                <Currency value={tax.amount} currency={currency} />
+                <Currency currency={currency} value={tax.amount} />
               </td>
             </tr>
           ))

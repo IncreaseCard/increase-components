@@ -5,9 +5,11 @@ import { storiesOf } from '@storybook/react';
 import Switch from './Switch';
 
 class SwitchContainer extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: this.props.defaultValue
+    };
     this.toggle = () => {
       this.setState((prevState) => ({
         value: !prevState.value
@@ -15,13 +17,9 @@ class SwitchContainer extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({ value: this.props.defaultValue });
-  }
-
   render() {
     const { name, id } = this.props;
-    return <Switch name={name} id={id} onChange={this.toggle} value={this.state.value} />;
+    return <Switch id={id} name={name} onChange={this.toggle} value={this.state.value} />;
   }
 }
 
@@ -37,7 +35,7 @@ SwitchContainer.defaultProps = {
 
 storiesOf('Switch', module).add('normal', () => (
   <div>
-    <SwitchContainer name="myFlag" id="sw1" defaultValue={false} />
-    <SwitchContainer name="myFlag2" id="sw2" defaultValue={true} />
+    <SwitchContainer defaultValue={false} id="sw1" name="myFlag" />
+    <SwitchContainer defaultValue={true} id="sw2" name="myFlag2" />
   </div>
 ));

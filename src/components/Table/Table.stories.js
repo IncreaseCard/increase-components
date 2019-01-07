@@ -105,7 +105,6 @@ storiesOf('Table', module)
           <TableData number>$ 0,00</TableData>
         </TableRowExpandable>
         <TableRowExpandable
-          red
           collapse={
             <React.Fragment>
               <TableRow inset red>
@@ -140,6 +139,7 @@ storiesOf('Table', module)
               </TableRow>
             </React.Fragment>
           }
+          red
         >
           <TableHead>Descontado</TableHead>
           <TableData number>$ 0,00</TableData>

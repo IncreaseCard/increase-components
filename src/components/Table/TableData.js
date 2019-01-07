@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import newTheme from '../../themes/new';
 
 const propTypes = {
-  theme: PropTypes.object,
-  number: PropTypes.bool
+  number: PropTypes.bool,
+  theme: PropTypes.object
 };
 
 const defaultProps = {

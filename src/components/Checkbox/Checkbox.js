@@ -22,8 +22,8 @@ const CheckboxWrapper = styled.div`
 `;
 
 CheckboxWrapper.propTypes = {
-  theme: PropTypes.object,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  theme: PropTypes.object
 };
 
 CheckboxWrapper.defaultProps = {
@@ -34,15 +34,15 @@ CheckboxWrapper.defaultProps = {
 export default function Checkbox({ id, disabled, label, ...other }) {
   return (
     <CheckboxWrapper disabled={disabled}>
-      <CheckboxInput id={id} type="checkbox" disabled={disabled} {...other} />
+      <CheckboxInput disabled={disabled} id={id} type="checkbox" {...other} />
       <label htmlFor={id}>{label}</label>
     </CheckboxWrapper>
   );
 }
 
 Checkbox.propTypes = {
-  id: PropTypes.string.isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired
 };

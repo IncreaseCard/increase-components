@@ -9,14 +9,14 @@ const propTypes = {
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
+  invalid: PropTypes.bool,
+  invalidText: PropTypes.string,
   labelText: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   onClick: PropTypes.func,
   placeholder: PropTypes.string,
   type: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  invalid: PropTypes.bool,
-  invalidText: PropTypes.string
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 const defaultProps = {
@@ -52,8 +52,8 @@ const TextInputWrapper = styled.div`
 `;
 
 TextInputWrapper.propTypes = {
-  theme: PropTypes.object,
-  invalid: PropTypes.bool
+  invalid: PropTypes.bool,
+  theme: PropTypes.object
 };
 
 TextInputWrapper.defaultProps = {
@@ -84,8 +84,8 @@ const StyledTextInput = styled.input`
 `;
 
 StyledTextInput.propTypes = {
-  theme: PropTypes.object,
-  invalid: PropTypes.bool
+  invalid: PropTypes.bool,
+  theme: PropTypes.object
 };
 
 StyledTextInput.defaultProps = {
@@ -120,7 +120,7 @@ export default function TextInput({
     type
   };
 
-  const errorId = id + '-error-msg';
+  const errorId = `${id  }-error-msg`;
 
   return (
     <TextInputWrapper invalid={invalid}>
@@ -129,10 +129,10 @@ export default function TextInput({
         <StyledTextInput
           {...other}
           {...textInputProps}
-          invalid
-          data-invalid
-          aria-invalid
           aria-describedby={errorId}
+          aria-invalid
+          data-invalid
+          invalid
         />
       ) : (
         <StyledTextInput {...other} {...textInputProps} />

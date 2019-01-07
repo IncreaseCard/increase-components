@@ -9,8 +9,8 @@ import StepSeparator from './StepSeparator';
 import styled from 'styled-components';
 
 const propTypes = {
-  steps: PropTypes.arrayOf(PropTypes.string),
-  activeStep: PropTypes.number
+  activeStep: PropTypes.number,
+  steps: PropTypes.arrayOf(PropTypes.string)
 };
 
 const defaultProps = {};

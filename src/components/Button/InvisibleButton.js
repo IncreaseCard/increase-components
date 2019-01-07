@@ -6,8 +6,10 @@ import { ButtonBase } from './ButtonBase';
 import newTheme from '../../themes/new';
 
 const propTypes = {
+  children: PropTypes.node,
   disabled: PropTypes.bool,
-  tabIndex: PropTypes.number
+  tabIndex: PropTypes.number,
+  theme: PropTypes.object
 };
 
 const defaultProps = {
@@ -43,6 +45,6 @@ function InvisibleButton({ children, ...rest }) {
   );
 }
 
-InvisibleButton.propTypes = { ...propTypes, children: PropTypes.node };
+InvisibleButton.propTypes = propTypes;
 InvisibleButton.defaultProps = defaultProps;
 export default InvisibleButton;

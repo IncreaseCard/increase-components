@@ -7,16 +7,16 @@ import SelectItem from './SelectItem';
 
 storiesOf('Select', module)
   .add('with some text', () => (
-    <Select labelText="Elija un número" id="number">
-      <SelectItem text="One Option" />
-      <SelectItem text="Another Option" />
-      <SelectItem text="Yet Another Option" />
+    <Select id="number" labelText="Elija un número">
+      <SelectItem text="One Option" value="1" />
+      <SelectItem text="Another Option" value="2" />
+      <SelectItem text="Yet Another Option" value="3" />
     </Select>
   ))
   .add('disabled', () => (
-    <Select labelText="Elija un número" id="number" disabled>
-      <SelectItem text="One Option" />
-      <SelectItem text="Another Option" />
-      <SelectItem text="Yet Another Option" />
+    <Select disabled id="number" labelText="Elija un número">
+      <SelectItem text="One Option" value="1" />
+      <SelectItem text="Another Option" value="2" />
+      <SelectItem text="Yet Another Option" value="3" />
     </Select>
   ));

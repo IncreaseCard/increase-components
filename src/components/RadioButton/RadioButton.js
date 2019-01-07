@@ -22,13 +22,13 @@ const RadioButtonWrapper = styled.label`
       return `
             opacity: 0.2;
           `;
-    } else {
+    } 
       return `
             &:hover {
               color: ${props.theme.colors.darkBlueRegular};
             }
           `;
-    }
+    
   }};
 `;
 
@@ -46,7 +46,7 @@ export const RadioButton = function({ label, name, disabled, ...other }) {
   return (
     <RadioButtonWrapper disabled={disabled}>
       <RadioButtonControlWrapper>
-        <RadioButtonControl name={name} disabled={disabled} {...other} />
+        <RadioButtonControl disabled={disabled} name={name} {...other} />
         <RadioButtonFill />
       </RadioButtonControlWrapper>
       {label}
@@ -55,9 +55,9 @@ export const RadioButton = function({ label, name, disabled, ...other }) {
 };
 
 RadioButton.propTypes = {
+  disabled: PropTypes.bool,
   label: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  disabled: PropTypes.bool
+  name: PropTypes.string.isRequired
 };
 
 RadioButton.defaultProps = {

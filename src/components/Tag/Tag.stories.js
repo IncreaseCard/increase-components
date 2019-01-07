@@ -15,22 +15,22 @@ storiesOf('Tag', module)
         width: '800px'
       }}
     >
-      <Tag icon={icCheckCircle} color="#27C027">
+      <Tag color="#27C027" icon={icCheckCircle}>
         Habilitada
       </Tag>
-      <Tag icon={icAccessAlarm} color="#F79B31">
+      <Tag color="#F79B31" icon={icAccessAlarm}>
         Vencida
       </Tag>
-      <Tag icon={icRemoveCircle} color="#ED2331">
+      <Tag color="#ED2331" icon={icRemoveCircle}>
         Bloqueada
       </Tag>
-      <Tag icon={icCheckCircle} color="#27C027" variant="whiteOnColor">
+      <Tag color="#27C027" icon={icCheckCircle} variant="whiteOnColor">
         Habilitada
       </Tag>
-      <Tag icon={icAccessAlarm} color="#F79B31" variant="whiteOnColor">
+      <Tag color="#F79B31" icon={icAccessAlarm} variant="whiteOnColor">
         Vencida
       </Tag>
-      <Tag icon={icRemoveCircle} color="#ED2331" variant="whiteOnColor">
+      <Tag color="#ED2331" icon={icRemoveCircle} variant="whiteOnColor">
         Bloqueada
       </Tag>
     </div>

@@ -20,8 +20,8 @@ export const PaginationButton = styled.button`
 `;
 
 PaginationButton.propTypes = {
-  theme: PropTypes.object,
-  active: PropTypes.bool
+  active: PropTypes.bool,
+  theme: PropTypes.object
 };
 
 PaginationButton.defaultProps = {

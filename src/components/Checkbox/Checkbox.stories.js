@@ -7,6 +7,6 @@ storiesOf('Checkbox', module)
   .add('normal', () => (
     <div>
       <Checkbox id="cb1" label="Enabled"/>
-      <Checkbox id="cb2" label="Disabled" disabled />
+      <Checkbox disabled id="cb2" label="Disabled" />
     </div>
   ));

@@ -8,8 +8,8 @@ const propTypes = {
   children: PropTypes.node,
   disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
-  labelText: PropTypes.string.isRequired,
-  labelHidden: PropTypes.bool
+  labelHidden: PropTypes.bool,
+  labelText: PropTypes.string.isRequired
 };
 
 const defaultProps = {
@@ -19,7 +19,7 @@ const defaultProps = {
 export default function Select({ children, disabled, labelText, labelHidden, id, ...other }) {
   return (
     <React.Fragment>
-      <label htmlFor={id} hidden={labelHidden}>
+      <label hidden={labelHidden} htmlFor={id}>
         {labelText}
       </label>
       <SelectControlWrapper>

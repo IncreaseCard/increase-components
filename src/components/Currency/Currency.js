@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  value: PropTypes.number,
   currency: PropTypes.string.isRequired,
-  language: PropTypes.string.isRequired
+  language: PropTypes.string.isRequired,
+  value: PropTypes.number
 };
 
 const defaultProps = {

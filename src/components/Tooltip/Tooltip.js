@@ -43,6 +43,8 @@ const drawArrow = (props) => {
         border-bottom: 8px solid transparent;
         border-left: 8px solid #d0d3de;
       `;
+    default:
+      return null;
   }
 };
 

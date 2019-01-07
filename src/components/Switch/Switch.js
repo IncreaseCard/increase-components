@@ -8,8 +8,8 @@ import SwitchToggle from './SwitchToggle';
 const propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.bool,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  value: PropTypes.bool
 };
 
 const defaultProps = {
@@ -19,7 +19,7 @@ const defaultProps = {
 export default function Switch({ id, name, value, onChange }) {
   return (
     <SwitchWrapper value={value}>
-      <SwitchControl title={name} id={id} name={name} checked={value} onChange={onChange} />
+      <SwitchControl checked={value} id={id} name={name} onChange={onChange} title={name} />
       <SwitchToggle value={value} />
     </SwitchWrapper>
   );

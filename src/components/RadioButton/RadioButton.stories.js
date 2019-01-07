@@ -19,22 +19,22 @@ class Radio extends React.Component {
       <fieldset style={{ margin: 0, border: 'none' }}>
         <legend id="radioExampleLabel">Opciones</legend>
         <RadioButton
+          checked={this.state.option === 'deshabilitado'}
+          disabled
           label="Deshabilitado"
           name="radioExample"
-          disabled
-          checked={this.state.option == 'deshabilitado'}
           onChange={() => this.setOption('deshabilitado')}
         />
         <RadioButton
+          checked={this.state.option === 'normal'}
           label="Normal"
           name="radioExample"
-          checked={this.state.option == 'normal'}
           onChange={() => this.setOption('normal')}
         />
         <RadioButton
+          checked={this.state.option === 'seleccionado'}
           label="Seleccionado"
           name="radioExample"
-          checked={this.state.option == 'seleccionado'}
           onChange={() => this.setOption('seleccionado')}
         />
       </fieldset>

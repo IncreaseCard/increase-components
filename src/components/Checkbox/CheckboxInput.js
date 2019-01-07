@@ -8,13 +8,12 @@ import newTheme from '../../themes/new';
 
 const propTypes = {
   checked: PropTypes.bool,
-  onChange: PropTypes.func,
+  disabled: PropTypes.bool,
   id: PropTypes.string,
-  disabled: PropTypes.bool
+  onChange: PropTypes.func
 };
 
 const defaultProps = {
-  theme: newTheme,
   disabled: false
 };
 
@@ -34,7 +33,7 @@ CheckboxInputWrapper.defaultProps = { theme: newTheme };
 function CheckboxInput({ checked, onChange, id, disabled }) {
   return (
     <CheckboxInputWrapper>
-      <CheckboxInputControl checked={checked} onChange={onChange} id={id} disabled={disabled} />
+      <CheckboxInputControl checked={checked} disabled={disabled} id={id} onChange={onChange} />
       <CheckboxInputFill />
     </CheckboxInputWrapper>
   );

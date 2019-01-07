@@ -7,18 +7,18 @@ import TextInput from './TextInput';
 storiesOf('TextInput', module)
   .add('with some text', () => (
     <div>
-      <TextInput labelText="Nombre" id="first_name" placeholder="Juan" />
-      <TextInput labelText="Apellido" id="last_name" placeholder="Pérez" />
+      <TextInput id="first_name" labelText="Nombre" placeholder="Juan" />
+      <TextInput id="last_name" labelText="Apellido" placeholder="Pérez" />
       <TextInput
-        labelText="Apellido"
         id="last_name2"
-        placeholder="Pérez"
-        value="1234"
+        invalid
         invalidText="El apellido no debe contener números"
-        invalid />
+        labelText="Apellido"
+        placeholder="Pérez"
+        value="1234" />
     </div>
   )
 ).add('disabled', () => (
-    <TextInput labelText="Ingrese un número" id="number" disabled/>
+  <TextInput disabled id="number" labelText="Ingrese un número"/>
   )
 );

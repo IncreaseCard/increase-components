@@ -7,7 +7,7 @@ import AmountBox from "./AmountBox";
 storiesOf("AmountBox", module).add("Green", () => {
   return (
     <div style={{ width: "400px" }}>
-      <AmountBox amount={100} description="Total del día" color="green" />
+      <AmountBox amount={100} color="green" description="Total del día" />
     </div>
   );
 });
@@ -15,7 +15,7 @@ storiesOf("AmountBox", module).add("Green", () => {
 storiesOf("AmountBox", module).add("Blue", () => {
   return (
     <div style={{ width: "400px" }}>
-      <AmountBox amount={100} description="Total del día" color="blue" />
+      <AmountBox amount={100} color="blue" description="Total del día" />
     </div>
   );
 });
@@ -23,7 +23,7 @@ storiesOf("AmountBox", module).add("Blue", () => {
 storiesOf("AmountBox", module).add("Red", () => {
   return (
     <div style={{ width: "400px" }}>
-      <AmountBox amount={100} description="Total del día" color="red" />
+      <AmountBox amount={100} color="red" description="Total del día" />
     </div>
   );
 });
@@ -33,8 +33,8 @@ storiesOf("AmountBox", module).add("With big number", () => {
     <div style={{ width: "400px" }}>
       <AmountBox
         amount={9999000000}
-        description="Total del día"
         color="green"
+        description="Total del día"
       />
     </div>
   );
@@ -45,8 +45,8 @@ storiesOf("AmountBox", module).add("With long text", () => {
     <div style={{ width: "400px" }}>
       <AmountBox
         amount={100}
-        description="Total del día miércoles 20/12/2017"
         color="green"
+        description="Total del día miércoles 20/12/2017"
       />
     </div>
   );
@@ -63,7 +63,7 @@ storiesOf("AmountBox", module).add("With no description", () => {
 storiesOf("AmountBox", module).add("With empty amount", () => {
   return (
     <div style={{ width: "400px" }}>
-      <AmountBox description="Total del día" color="green" />
+      <AmountBox color="green" description="Total del día" />
     </div>
   );
 });
@@ -71,13 +71,13 @@ storiesOf("AmountBox", module).add("With empty amount", () => {
 storiesOf("AmountBox", module).add("With empty description", () => {
   return (
     <div style={{ width: "400px" }}>
-      <AmountBox amount={10} description="" color="green" />
+      <AmountBox amount={10} color="green" description="" />
     </div>
   );
 });
 
 storiesOf("AmountBox", module).add("With big container", () => {
   return (
-    <AmountBox amount={10} description="Total de transacciones" color="blue" />
+    <AmountBox amount={10} color="blue" description="Total de transacciones" />
   );
 });

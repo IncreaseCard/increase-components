@@ -7,9 +7,9 @@ import Currency from '../Currency/Currency';
 
 const propTypes = {
   amount: PropTypes.number,
-  description: PropTypes.string,
-  color: PropTypes.oneOf(['blue', 'red', 'green']).isRequired,
-  currency: PropTypes.string.isRequired
+  color: PropTypes.oneOf(['blue', 'red', 'green']),
+  currency: PropTypes.string,
+  description: PropTypes.string
 };
 
 const defaultProps = {
@@ -30,7 +30,7 @@ const AmountBoxWrapper = styled.div`
   max-width: 100%;
 `;
 
-AmountBoxWrapper.propTypes = { theme: PropTypes.object, short: PropTypes.bool };
+AmountBoxWrapper.propTypes = { short: PropTypes.bool, theme: PropTypes.object };
 AmountBoxWrapper.defaultProps = { theme: currentTheme };
 
 const AmountBoxAmount = styled.span`
@@ -62,9 +62,9 @@ AmountBoxDescription.defaultProps = { theme: currentTheme };
 
 export const AmountBox = ({ amount, color, description, currency }) => {
   return (
-    <AmountBoxWrapper short={typeof description !== 'string'} color={color}>
+    <AmountBoxWrapper color={color} short={typeof description !== 'string'}>
       <AmountBoxAmount>
-        <Currency value={amount} currency={currency} />
+        <Currency currency={currency} value={amount} />
       </AmountBoxAmount>
       {typeof description === 'string' ? (
         <AmountBoxDescription>{description}</AmountBoxDescription>

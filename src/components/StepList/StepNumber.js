@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import defaultTheme from '../../themes/new';
 
 const propTypes = {
-  theme: PropTypes.object,
   isActive: PropTypes.bool,
-  isDone: PropTypes.bool
+  isDone: PropTypes.bool,
+  theme: PropTypes.object
 };
 
 const defaultProps = {
@@ -29,9 +29,9 @@ export const StepNumber = styled.span`
   background-color: ${(props) => {
     if (props.isDone || props.isActive) {
       return props.theme.colors.lightBlueShade;
-    } else {
+    } 
       return props.theme.colors.transparent;
-    }
+    
   }};
 
   ${(props) =>

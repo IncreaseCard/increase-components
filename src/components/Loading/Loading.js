@@ -28,9 +28,9 @@ const LoadingBar = styled.div`
 `;
 
 LoadingBar.propTypes = {
+  animationDelay: PropTypes.string,
   small: PropTypes.bool,
-  theme: PropTypes.object,
-  animationDelay: PropTypes.string
+  theme: PropTypes.object
 };
 
 LoadingBar.defaultProps = {
@@ -42,10 +42,10 @@ LoadingBar.defaultProps = {
 export const Loading = ({ small }) => {
   return (
     <div style={{ position: 'relative' }}>
-      <LoadingBar small={small} animationDelay="0" />
-      <LoadingBar small={small} animationDelay="-0.15s" />
-      <LoadingBar small={small} animationDelay="-0.3s" />
-      <LoadingBar small={small} animationDelay="-0.45s" />
+      <LoadingBar animationDelay="0" small={small} />
+      <LoadingBar animationDelay="-0.15s" small={small} />
+      <LoadingBar animationDelay="-0.3s" small={small} />
+      <LoadingBar animationDelay="-0.45s" small={small} />
     </div>
   );
 };

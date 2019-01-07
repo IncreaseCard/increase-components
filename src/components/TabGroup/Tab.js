@@ -32,9 +32,9 @@ export const Tab = styled.button`
       return `color: ${colors.grayShade};`;
     } else if (props.active) {
       return `color: ${colors.lightBlueRegular};`;
-    } else {
+    } 
       return `color: ${colors.brandBlueRegular};`;
-    }
+    
   }};
 `;
 
