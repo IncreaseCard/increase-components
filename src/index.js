@@ -5,6 +5,7 @@ import './styles/base.css';
 import ApplicationHeader from './components/ApplicationHeader/ApplicationHeader';
 import AmountBox from './components/AmountBox/AmountBox';
 import PrimaryButton from './components/Button/PrimaryButton';
+import ProductButton from './components/ProductButton/ProductButton';
 import InvisibleButton from './components/Button/InvisibleButton';
 import Calendar from './components/Calendar/Calendar';
 import Checkbox from './components/Checkbox/Checkbox';
@@ -54,6 +55,7 @@ export {
   NumberInput,
   Pagination,
   PrimaryButton,
+  ProductButton,
   RadioButton,
   Select,
   SelectItem,
