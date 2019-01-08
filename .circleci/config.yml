@@ -24,4 +24,4 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       # run linters
-      - run: npx eslint src/**/*.js
+      - run: npm run lint

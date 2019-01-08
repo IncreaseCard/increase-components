@@ -15,7 +15,8 @@
     "prepublishOnly": "npm run build",
     "build": "webpack -p --progress --colors --config webpack.config.publish.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs"
+    "build-storybook": "build-storybook -o docs",
+    "lint": "eslint \"src/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -42,14 +43,17 @@
     "babel-loader": "^8.0.4",
     "babel-preset-react-app": "^7.0.0",
     "eslint": "5.11.1",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-loader": "2.1.1",
     "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.1",
     "jest": "23.6.0",
     "material-design-icons": "^3.0.1",
     "moment": "^2.23.0",
     "moment-range": "^4.0.1",
     "normalize.css": "^8.0.1",
+    "prettier": "^1.15.3",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
