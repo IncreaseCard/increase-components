@@ -39,8 +39,7 @@ const CTALink = styled(Link)`
   margin-top: 1rem;
 `;
 
-
-const CrossButton = ({ productName, CTA, linkCTA, disabled }) => {
+const ProductButton = ({ productName, CTA, linkCTA, disabled }) => {
   return (
     <ButtonWrapper disabled={disabled}>
       <div className="logoWrapper">
@@ -55,11 +54,11 @@ const CrossButton = ({ productName, CTA, linkCTA, disabled }) => {
   );
 };
 
-CrossButton.propTypes = {
+ProductButton.propTypes = {
   productName: PropTypes.string.isRequired,
   CTA: PropTypes.string,
   linkCTA: PropTypes.string,
   disabled: PropTypes.bool
 };
 
-export default CrossButton;
+export default ProductButton;
