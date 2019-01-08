@@ -120,7 +120,7 @@ export default function TextInput({
     type
   };
 
-  const errorId = `${id  }-error-msg`;
+  const errorId = `${id}-error-msg`;
 
   return (
     <TextInputWrapper invalid={invalid}>

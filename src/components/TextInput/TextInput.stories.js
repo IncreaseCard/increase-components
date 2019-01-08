@@ -15,10 +15,8 @@ storiesOf('TextInput', module)
         invalidText="El apellido no debe contener números"
         labelText="Apellido"
         placeholder="Pérez"
-        value="1234" />
+        value="1234"
+      />
     </div>
-  )
-).add('disabled', () => (
-  <TextInput disabled id="number" labelText="Ingrese un número"/>
-  )
-);
+  ))
+  .add('disabled', () => <TextInput disabled id="number" labelText="Ingrese un número" />);

@@ -22,13 +22,12 @@ const RadioButtonWrapper = styled.label`
       return `
             opacity: 0.2;
           `;
-    } 
-      return `
+    }
+    return `
             &:hover {
               color: ${props.theme.colors.darkBlueRegular};
             }
           `;
-    
   }};
 `;
 

@@ -42,5 +42,5 @@ export default {
   whiteShade: '#B1B1B1',
   subtleShadow: 'rgba(0, 0, 0, 0.05)',
   mediumShadow: 'rgba(0, 0, 0, 0.3)',
-  darkShadow: 'rgba(0, 0, 0, 0.5)',
+  darkShadow: 'rgba(0, 0, 0, 0.5)'
 };

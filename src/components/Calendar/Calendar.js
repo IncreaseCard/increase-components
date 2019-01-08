@@ -53,12 +53,11 @@ function Calendar({ renderDay, month, year, hasWeeklySummary, renderWeeklySummar
             <DayNumber today={date.isSame(moment(), 'date')}>{date.date()}</DayNumber>
             {renderDay(date, date.month() === month, date.isSame(moment(), 'date'))}
           </CalendarDay>
-          {hasWeeklySummary &&
-            date.day() === 6 && (
-              <CalendarDay hasWeeklySummary={true} inMonth={true} today={false}>
-                {renderWeeklySummary(moment(date).startOf('week'), moment(date).endOf('week'))}
-              </CalendarDay>
-            )}
+          {hasWeeklySummary && date.day() === 6 && (
+            <CalendarDay hasWeeklySummary={true} inMonth={true} today={false}>
+              {renderWeeklySummary(moment(date).startOf('week'), moment(date).endOf('week'))}
+            </CalendarDay>
+          )}
         </React.Fragment>
       ))}
     </CalendarWrapper>

@@ -29,9 +29,8 @@ export const StepNumber = styled.span`
   background-color: ${(props) => {
     if (props.isDone || props.isActive) {
       return props.theme.colors.lightBlueShade;
-    } 
-      return props.theme.colors.transparent;
-    
+    }
+    return props.theme.colors.transparent;
   }};
 
   ${(props) =>
