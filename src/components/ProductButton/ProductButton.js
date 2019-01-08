@@ -55,10 +55,10 @@ const ProductButton = ({ productName, CTA, linkCTA, disabled }) => {
 };
 
 ProductButton.propTypes = {
-  productName: PropTypes.string.isRequired,
   CTA: PropTypes.string,
+  disabled: PropTypes.bool,
   linkCTA: PropTypes.string,
-  disabled: PropTypes.bool
+  productName: PropTypes.string.isRequired
 };
 
 export default ProductButton;
