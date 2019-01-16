@@ -49,7 +49,7 @@ const ProductButton = ({ productName, CTA, linkCTA, disabled }) => {
           <div className="product">{productName}</div>
         </div>
       </div>
-      <CTALink href={linkCTA}>{CTA}</CTALink>
+      {linkCTA ? <CTALink href={linkCTA}>{CTA}</CTALink> : ''}
     </ButtonWrapper>
   );
 };
