@@ -35,7 +35,7 @@ AmountBoxWrapper.defaultProps = { theme: currentTheme };
 
 const AmountBoxAmount = styled.span`
   display: block;
-  font-size: ${(props) => props.theme.typography.headingFontSizes[0]};
+  font-size: ${(props) => props.theme.typography.headingFontSizes[1]};
   font-weight: 300;
   line-height: 85px;
   padding: 0 16px;
