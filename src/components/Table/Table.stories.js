@@ -6,6 +6,9 @@ import TableRowExpandable from './TableRowExpandable';
 import TableData from './TableData';
 import TableHeader from './TableHeader';
 import TableHead from './TableHead';
+import Select from '../Select/Select';
+import SelectItem from '../Select/SelectItem';
+import Link from '../Link/Link';
 
 storiesOf('Table', module)
   .add('normal', () => (
@@ -35,7 +38,21 @@ storiesOf('Table', module)
           <TableData number>1685</TableData>
           <TableData number>586</TableData>
           <TableData number>0284</TableData>
-          <TableData>Imaginación</TableData>
+          <TableData>
+            <Select id="number">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Select id="number">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Link variant="alert" href="https://A link">
+              A link
+            </Link>
+          </TableData>
         </TableRow>
         <TableRow>
           <TableData>19/03/2018</TableData>
@@ -47,7 +64,21 @@ storiesOf('Table', module)
           <TableData number>1685</TableData>
           <TableData number>586</TableData>
           <TableData number>0284</TableData>
-          <TableData>Imaginación</TableData>
+          <TableData>
+            <Select id="number">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Select id="number">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Link variant="alert" href="https://A link">
+              A link
+            </Link>
+          </TableData>
         </TableRow>
         <TableRow>
           <TableData>19/03/2018</TableData>
@@ -59,7 +90,21 @@ storiesOf('Table', module)
           <TableData number>1685</TableData>
           <TableData number>586</TableData>
           <TableData number>0284</TableData>
-          <TableData>Imaginación</TableData>
+          <TableData>
+            <Select id="number">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Select id="number">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Link variant="alert" href="https://A link">
+              A link
+            </Link>
+          </TableData>
         </TableRow>
       </tbody>
     </Table>
