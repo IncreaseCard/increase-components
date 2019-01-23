@@ -14,6 +14,7 @@ const defaultProps = {
 export const TableHeader = styled.thead`
   color: ${(props) => props.theme.colors.brandBlueRegular};
   font-weight: bold;
+  vertical-align: bottom;
 `;
 
 export default TableHeader;
