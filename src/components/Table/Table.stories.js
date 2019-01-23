@@ -11,8 +11,8 @@ import SelectItem from '../Select/SelectItem';
 import Link from '../Link/Link';
 
 storiesOf('Table', module)
-  .add('normal', () => (
-    <Table style={{ width: '1000px' }}>
+  .add('Normal', () => (
+    <Table style={{ width: '100%' }}>
       <TableHeader>
         <TableRow>
           <TableHead>Fecha de venta</TableHead>
@@ -38,21 +38,7 @@ storiesOf('Table', module)
           <TableData number>1685</TableData>
           <TableData number>586</TableData>
           <TableData number>0284</TableData>
-          <TableData>
-            <Select id="number">
-              <SelectItem text="One Option" value="1" />
-              <SelectItem text="Another Option" value="2" />
-              <SelectItem text="Yet Another Option" value="3" />
-            </Select>
-            <Select id="number">
-              <SelectItem text="One Option" value="1" />
-              <SelectItem text="Another Option" value="2" />
-              <SelectItem text="Yet Another Option" value="3" />
-            </Select>
-            <Link variant="alert" href="https://A link">
-              A link
-            </Link>
-          </TableData>
+          <TableData>Imaginación</TableData>
         </TableRow>
         <TableRow>
           <TableData>19/03/2018</TableData>
@@ -64,21 +50,7 @@ storiesOf('Table', module)
           <TableData number>1685</TableData>
           <TableData number>586</TableData>
           <TableData number>0284</TableData>
-          <TableData>
-            <Select id="number">
-              <SelectItem text="One Option" value="1" />
-              <SelectItem text="Another Option" value="2" />
-              <SelectItem text="Yet Another Option" value="3" />
-            </Select>
-            <Select id="number">
-              <SelectItem text="One Option" value="1" />
-              <SelectItem text="Another Option" value="2" />
-              <SelectItem text="Yet Another Option" value="3" />
-            </Select>
-            <Link variant="alert" href="https://A link">
-              A link
-            </Link>
-          </TableData>
+          <TableData>Imaginación</TableData>
         </TableRow>
         <TableRow>
           <TableData>19/03/2018</TableData>
@@ -90,13 +62,69 @@ storiesOf('Table', module)
           <TableData number>1685</TableData>
           <TableData number>586</TableData>
           <TableData number>0284</TableData>
-          <TableData>
-            <Select id="number">
+          <TableData>Imaginación</TableData>
+        </TableRow>
+      </tbody>
+    </Table>
+  ))
+  .add('Inline Elements', () => (
+    <Table style={{ width: '100%' }}>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Producto</TableHead>
+          <TableHead>Valor mensual</TableHead>
+          <TableHead>Forma de pago</TableHead>
+        </TableRow>
+      </TableHeader>
+      <tbody>
+        <TableRow>
+          <TableData>Card</TableData>
+          <TableData>$320 + IVA</TableData>
+          <TableData inline>
+            <Select id="number" labelHidden>
               <SelectItem text="One Option" value="1" />
               <SelectItem text="Another Option" value="2" />
               <SelectItem text="Yet Another Option" value="3" />
             </Select>
-            <Select id="number">
+            <Select id="number" labelHidden>
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Link variant="alert" href="https://A link">
+              A link
+            </Link>
+          </TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Card</TableData>
+          <TableData>$320 + IVA</TableData>
+          <TableData inline>
+            <Select id="number" labelHidden>
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Select id="number" labelHidden>
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Link variant="alert" href="https://A link">
+              A link
+            </Link>
+          </TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Card</TableData>
+          <TableData>$320 + IVA</TableData>
+          <TableData inline>
+            <Select id="number" labelHidden>
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Select id="number" labelHidden>
               <SelectItem text="One Option" value="1" />
               <SelectItem text="Another Option" value="2" />
               <SelectItem text="Yet Another Option" value="3" />
@@ -109,8 +137,8 @@ storiesOf('Table', module)
       </tbody>
     </Table>
   ))
-  .add('expandable', () => (
-    <Table style={{ width: '800px' }}>
+  .add('Expandable', () => (
+    <Table style={{ width: '100%' }}>
       <TableHeader>
         <TableRow>
           <TableHead />

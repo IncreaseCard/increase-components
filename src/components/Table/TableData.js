@@ -14,9 +14,13 @@ const defaultProps = {
 };
 
 export const TableData = styled.td`
-  border-bottom: 1px solid ${(props) => props.theme.colors.brandBlueRegular};
   padding: 20px 10px;
   text-align: ${(props) => (props.number ? 'right' : 'left')};
+  display: ${(props) => (props.inline ? 'flex' : 'table-cell')};
+  align-items: center;
+  & > * {
+    margin-right: 1rem;
+  }
 `;
 
 export default TableData;

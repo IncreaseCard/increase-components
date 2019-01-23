@@ -20,7 +20,7 @@ const insetBorderColor = (props) =>
 
 export const TableRow = styled.tr`
   color: ${fontColor};
-  height: 60px;
+  border-bottom: 1px solid ${(props) => (props.theme.colors.brandBlueRegular)};
   ${(props) =>
     props.inset &&
     css`
@@ -31,14 +31,6 @@ export const TableRow = styled.tr`
       }
     `} &:hover {
     background-color: #f7f7f7;
-  }
-  & > th:first-child,
-  & > td:first-child {
-    padding-left: 26px;
-  }
-  & > th:last-child,
-  & > td:last-child {
-    padding-right: 26px;
   }
 `;
 
