@@ -14,7 +14,7 @@ const defaultProps = {
 };
 
 export const TableHead = styled.th`
-  border-bottom: 1px solid ${(props) => props.theme.colors.grayShade};
+  border-bottom: 1px solid ${(props) => props.theme.colors.brandBlueRegular};
   padding: 20px 10px;
   text-align: ${(props) => (props.number ? 'right' : 'left')};
 `;
