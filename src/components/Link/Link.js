@@ -1,14 +1,29 @@
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import NewTheme from '../../themes/new';
 
-const Link = styled.a`
-  color: #3b86ff;
+const LinkStyles = styled.a`
+  color: ${(props) =>
+    props.variant === 'alert' ? props.theme.colors.redTint : props.theme.colors.lightBlueRegular};
   text-decoration: none;
+  pointer-events: ${(props) => (props.disabled ? 'none' : '')};
+  opacity: ${(props) => (props.disabled ? '.25' : '1')};
 `;
+LinkStyles.defaultProps = { theme: NewTheme };
 
-export default Link;
+const Link = ({ variant, disabled, href, children }) => (
+  <LinkStyles disabled={disabled} href={href} variant={variant}>
+    {children}
+  </LinkStyles>
+);
 
 Link.propTypes = {
   children: PropTypes.node,
-  href: PropTypes.string
+  href: PropTypes.string,
+  variant: PropTypes.oneOf(['normal', 'alert'])
 };
+
+Link.defaultProps = { variant: 'normal' };
+
+export default Link;

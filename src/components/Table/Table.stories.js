@@ -6,10 +6,13 @@ import TableRowExpandable from './TableRowExpandable';
 import TableData from './TableData';
 import TableHeader from './TableHeader';
 import TableHead from './TableHead';
+import Select from '../Select/Select';
+import SelectItem from '../Select/SelectItem';
+import Link from '../Link/Link';
 
 storiesOf('Table', module)
-  .add('normal', () => (
-    <Table style={{ width: '1000px' }}>
+  .add('Normal', () => (
+    <Table style={{ width: '100%' }}>
       <TableHeader>
         <TableRow>
           <TableHead>Fecha de venta</TableHead>
@@ -64,8 +67,78 @@ storiesOf('Table', module)
       </tbody>
     </Table>
   ))
-  .add('expandable', () => (
-    <Table style={{ width: '800px' }}>
+  .add('Inline Elements', () => (
+    <Table style={{ width: '100%' }}>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Producto</TableHead>
+          <TableHead>Valor mensual</TableHead>
+          <TableHead>Forma de pago</TableHead>
+        </TableRow>
+      </TableHeader>
+      <tbody>
+        <TableRow>
+          <TableData>Card</TableData>
+          <TableData>$320 + IVA</TableData>
+          <TableData inline>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Link href="#" variant="alert">
+              A link
+            </Link>
+          </TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Card</TableData>
+          <TableData>$320 + IVA</TableData>
+          <TableData inline>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Link href="#" variant="alert">
+              A link
+            </Link>
+          </TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Card</TableData>
+          <TableData>$320 + IVA</TableData>
+          <TableData inline>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Link href="#" variant="alert">
+              A link
+            </Link>
+          </TableData>
+        </TableRow>
+      </tbody>
+    </Table>
+  ))
+  .add('Expandable', () => (
+    <Table style={{ width: '100%' }}>
       <TableHeader>
         <TableRow>
           <TableHead />
@@ -146,7 +219,7 @@ storiesOf('Table', module)
           <TableData number>$ 0,00</TableData>
           <TableData number>$ 0,00</TableData>
         </TableRowExpandable>
-        <TableRow style={{ backgroundColor: '#008000', color: 'white' }}>
+        <TableRow style={{ backgroundColor: '#295DB1', color: 'white' }}>
           <TableHead style={{ paddingLeft: '38px' }}>Acreditado</TableHead>
           <TableData number>$ 0,00</TableData>
           <TableData number>$ 0,00</TableData>

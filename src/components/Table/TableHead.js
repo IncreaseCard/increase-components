@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import newTheme from '../../themes/new';
@@ -14,17 +14,8 @@ const defaultProps = {
 };
 
 export const TableHead = styled.th`
-  border-bottom: 1px solid ${(props) => props.theme.colors.grayShade};
   padding: 20px 10px;
-
-  ${(props) =>
-    props.number
-      ? css`
-          text-align: right;
-        `
-      : css`
-          text-align: left;
-        `};
+  text-align: ${(props) => (props.number ? 'right' : 'left')};
 `;
 
 export default TableHead;
