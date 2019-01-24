@@ -20,7 +20,7 @@ const insetBorderColor = (props) =>
 
 export const TableRow = styled.tr`
   color: ${fontColor};
-  border-bottom: 1px solid ${(props) => (props.theme.colors.brandBlueRegular)};
+  border-bottom: 1px solid ${(props) => props.theme.colors.brandBlueRegular};
   ${(props) =>
     props.inset &&
     css`

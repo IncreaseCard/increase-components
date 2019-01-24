@@ -91,7 +91,7 @@ storiesOf('Table', module)
               <SelectItem text="Another Option" value="2" />
               <SelectItem text="Yet Another Option" value="3" />
             </Select>
-            <Link variant="alert" href="https://A link">
+            <Link href="#" variant="alert">
               A link
             </Link>
           </TableData>
@@ -110,7 +110,7 @@ storiesOf('Table', module)
               <SelectItem text="Another Option" value="2" />
               <SelectItem text="Yet Another Option" value="3" />
             </Select>
-            <Link variant="alert" href="https://A link">
+            <Link href="#" variant="alert">
               A link
             </Link>
           </TableData>
@@ -129,7 +129,7 @@ storiesOf('Table', module)
               <SelectItem text="Another Option" value="2" />
               <SelectItem text="Yet Another Option" value="3" />
             </Select>
-            <Link variant="alert" href="https://A link">
+            <Link href="#" variant="alert">
               A link
             </Link>
           </TableData>
