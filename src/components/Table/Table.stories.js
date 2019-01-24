@@ -219,7 +219,7 @@ storiesOf('Table', module)
           <TableData number>$ 0,00</TableData>
           <TableData number>$ 0,00</TableData>
         </TableRowExpandable>
-        <TableRow style={{ backgroundColor: '#008000', color: 'white' }}>
+        <TableRow style={{ backgroundColor: '#295DB1', color: 'white' }}>
           <TableHead style={{ paddingLeft: '38px' }}>Acreditado</TableHead>
           <TableData number>$ 0,00</TableData>
           <TableData number>$ 0,00</TableData>

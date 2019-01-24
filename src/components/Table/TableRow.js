@@ -24,7 +24,6 @@ export const TableRow = styled.tr`
   ${(props) =>
     props.inset &&
     css`
-      background-color: #f7f7f7;
       border-left: 2px solid ${insetBorderColor};
       & > td:first-child {
         padding-left: 38px;
