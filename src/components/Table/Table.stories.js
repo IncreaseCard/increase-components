@@ -81,31 +81,12 @@ storiesOf('Table', module)
           <TableData>Card</TableData>
           <TableData>$320 + IVA</TableData>
           <TableData inline>
-            <Select id="number" labelHidden>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
               <SelectItem text="One Option" value="1" />
               <SelectItem text="Another Option" value="2" />
               <SelectItem text="Yet Another Option" value="3" />
             </Select>
-            <Select id="number" labelHidden>
-              <SelectItem text="One Option" value="1" />
-              <SelectItem text="Another Option" value="2" />
-              <SelectItem text="Yet Another Option" value="3" />
-            </Select>
-            <Link href="#" variant="alert">
-              A link
-            </Link>
-          </TableData>
-        </TableRow>
-        <TableRow>
-          <TableData>Card</TableData>
-          <TableData>$320 + IVA</TableData>
-          <TableData inline>
-            <Select id="number" labelHidden>
-              <SelectItem text="One Option" value="1" />
-              <SelectItem text="Another Option" value="2" />
-              <SelectItem text="Yet Another Option" value="3" />
-            </Select>
-            <Select id="number" labelHidden>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
               <SelectItem text="One Option" value="1" />
               <SelectItem text="Another Option" value="2" />
               <SelectItem text="Yet Another Option" value="3" />
@@ -119,12 +100,31 @@ storiesOf('Table', module)
           <TableData>Card</TableData>
           <TableData>$320 + IVA</TableData>
           <TableData inline>
-            <Select id="number" labelHidden>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
               <SelectItem text="One Option" value="1" />
               <SelectItem text="Another Option" value="2" />
               <SelectItem text="Yet Another Option" value="3" />
             </Select>
-            <Select id="number" labelHidden>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Link href="#" variant="alert">
+              A link
+            </Link>
+          </TableData>
+        </TableRow>
+        <TableRow>
+          <TableData>Card</TableData>
+          <TableData>$320 + IVA</TableData>
+          <TableData inline>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
+              <SelectItem text="One Option" value="1" />
+              <SelectItem text="Another Option" value="2" />
+              <SelectItem text="Yet Another Option" value="3" />
+            </Select>
+            <Select id="number" labelHidden labelText="Selector de ejemplo">
               <SelectItem text="One Option" value="1" />
               <SelectItem text="Another Option" value="2" />
               <SelectItem text="Yet Another Option" value="3" />
