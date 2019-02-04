@@ -10,6 +10,7 @@ const ButtonWrapper = styled.div`
     display: flex;
     align-items: flex-start;
     img {
+      height: 44px;
       filter: ${(props) => (props.disabled ? 'grayscale(100%)' : '')};
       opacity: ${(props) => (props.disabled ? '0.5' : '1')};
     }
@@ -43,7 +44,7 @@ const ProductButton = ({ productName, CTA, linkCTA, disabled }) => {
   return (
     <ButtonWrapper disabled={disabled}>
       <div className="logoWrapper">
-        <img src={increaseIsotype} style={{ height: '25px' }} />
+        <img src={increaseIsotype} />
         <div className="text">
           <div className="increase">Increase</div>
           <div className="product">{productName}</div>
