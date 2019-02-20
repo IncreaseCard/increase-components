@@ -5,8 +5,11 @@ import './styles/base.css';
 import ApplicationHeader from './components/ApplicationHeader/ApplicationHeader';
 import AmountBox from './components/AmountBox/AmountBox';
 import PrimaryButton from './components/Button/PrimaryButton';
-import ProductButton from './components/ProductButton/ProductButton';
+import BlueButton from './components/Button/BlueButton';
+import GreenButton from './components/Button/GreenButton';
+import RedButton from './components/Button/RedButton';
 import InvisibleButton from './components/Button/InvisibleButton';
+import ProductButton from './components/ProductButton/ProductButton';
 import Calendar from './components/Calendar/Calendar';
 import Checkbox from './components/Checkbox/Checkbox';
 import Currency from './components/Currency/Currency';
@@ -49,12 +52,15 @@ export {
   Checkbox,
   Currency,
   Heading,
-  InvisibleButton,
   Link,
   Loading,
   NumberInput,
   Pagination,
   PrimaryButton,
+  BlueButton,
+  GreenButton,
+  RedButton,
+  InvisibleButton,
   ProductButton,
   RadioButton,
   Select,
