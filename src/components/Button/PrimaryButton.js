@@ -16,17 +16,21 @@ const defaultProps = {
 };
 
 const PrimaryButton = styled(ButtonBase)`
-  background-color: ${(props) => props.theme.colors.lightBlueRegular};
-  color: ${(props) => props.theme.colors.whiteRegular};
-
-  &:disabled {
-    background-color: transparent;
-    border: 1px solid ${(props) => props.theme.colors.brandBlueRegular};
-    color: ${(props) => props.theme.colors.brandBlueRegular};
-    text-shadow: none;
+  background: ${(props) => props.theme.colors.whiteTint};
+  color: ${(props) => props.theme.colors.brandBlueRegular};
+  border: 1px solid ${(props) => props.theme.colors.whiteTone};
+  &:hover {
+    background-image: linear-gradient(
+      to bottom,
+      ${(props) => props.theme.colors.whiteTint} 0%,
+      ${(props) => props.theme.colors.whiteRegular} 100%
+    );
+    box-shadow: 0 2px 6px ${(props) => props.theme.colors.whiteTone};
   }
-  &:hover:not([disabled]) {
-    background-color: ${(props) => props.theme.colors.brandBlueRegular};
+  &:active {
+    background-image: none;
+    background: ${(props) => props.theme.colors.whiteTone};
+    border: 1px solid ${(props) => props.theme.colors.whiteShade};
   }
 `;
 

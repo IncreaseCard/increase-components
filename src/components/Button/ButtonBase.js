@@ -17,7 +17,7 @@ export const ButtonBase = styled.button`
   height: 40px;
   font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
   line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
-  padding: 8px 20px;
+  padding: 0 20px;
   white-space: nowrap;
   border-radius: 3px;
 
@@ -26,7 +26,8 @@ export const ButtonBase = styled.button`
   }
 
   &:disabled {
-    opacity: 0.2;
+    opacity: 0.5;
+    pointer-events: none;
   }
 
   &:focus {
