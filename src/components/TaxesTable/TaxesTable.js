@@ -28,7 +28,7 @@ function TaxesTable({ taxes, className, currency }) {
           groupedTaxes[category].map((tax, index) => (
             <tr key={tax.categories}>
               {index === 0 && <th rowSpan={groupedTaxes[category].length}>{category}</th>}
-              <td>{tax.categories[2]}</td>
+              <td>{`${tax.categories[2]} ${tax.categories[3] || ''}`}</td>
               <td style={{ textAlign: 'right' }}>
                 <Currency currency={currency} value={tax.amount} />
               </td>
