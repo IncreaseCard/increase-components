@@ -16,23 +16,54 @@ const propTypes = {
 
 const defaultProps = {};
 
+function TaxesRegions({regions, currency}){
+  if (regions == undefined){
+    return false;
+  }else{
+  return(
+      Object.keys(regions).map((name) => (
+        <tr>
+          <td>{name}</td>
+          <td style={{ textAlign: 'right' }}><Currency currency={currency} value={regions[name]} /></td>
+        </tr>
+      ))
+    );
+  }
+}
+
 function TaxesTable({ taxes, className, currency }) {
   if (taxes === undefined) {
     return null;
   }
+  
   const groupedTaxes = groupBy(taxes, (tax) => tax.categories[1]);
+  const groupedTaxesRowSpan = {}
+  Object.keys(groupedTaxes).map((category) => {
+    groupedTaxesRowSpan[category] = groupedTaxes[category].length;
+    groupedTaxes[category].map((tax) =>{
+      if (tax['regions']){
+        groupedTaxesRowSpan[category] += Object.keys(tax['regions']).length;
+      }
+    })
+  }); 
+
   return (
     <table className={className}>
       <tbody>
         {Object.keys(groupedTaxes).map((category) =>
           groupedTaxes[category].map((tax, index) => (
-            <tr key={tax.categories}>
-              {index === 0 && <th rowSpan={groupedTaxes[category].length}>{category}</th>}
-              <td>{`${tax.categories[2]} ${tax.categories[3] || ''}`}</td>
-              <td style={{ textAlign: 'right' }}>
-                <Currency currency={currency} value={tax.amount} />
-              </td>
-            </tr>
+            <React.Fragment>
+              <tr key={tax.categories}>
+                {index === 0 && <th rowSpan={groupedTaxesRowSpan[category]}>{category}</th>}
+                <td>
+                  {`${tax.categories[2]} ${tax.categories[3] || ''}`}
+                </td>
+                <td style={{ textAlign: 'right' }}>
+                  <Currency currency={currency} value={tax.amount} />
+                </td>
+              </tr>
+              <TaxesRegions currency={currency} regions={tax['regions']}></TaxesRegions>
+            </React.Fragment>
           ))
         )}
       </tbody>
