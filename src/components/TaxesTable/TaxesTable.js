@@ -16,23 +16,69 @@ const propTypes = {
 
 const defaultProps = {};
 
+const InsetTableData = styled.td`
+  border: 1px black inset;
+  background-color: rgba(0, 0, 0, 0.25);
+`;
+
+const ArrowDown = styled.div`
+  display: inline-block;
+  height: 6px;
+  margin-left: 5px;
+  width: 10px;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiA3LjQxIj48cGF0aCBkPSJNMS40MSAwTDYgNC41OCAxMC41OSAwIDEyIDEuNDFsLTYgNi02LTZ6Ii8+PC9zdmc+);
+  background-repeat: no-repeat;
+  background-size: auto;
+`;
+function TaxesRegions({ regions, currency }) {
+  let regions_table = null;
+  if (regions !== undefined) {
+    regions_table = Object.keys(regions).map((name, index) => (
+      <tr key={index}>
+        <InsetTableData>{name}</InsetTableData>
+        <InsetTableData style={{ textAlign: 'right' }}>
+          <Currency currency={currency} value={regions[name]} />
+        </InsetTableData>
+      </tr>
+    ));
+  }
+  return regions_table;
+}
+
 function TaxesTable({ taxes, className, currency }) {
   if (taxes === undefined) {
     return null;
   }
+
   const groupedTaxes = groupBy(taxes, (tax) => tax.categories[1]);
+  const groupedTaxesRowSpan = {};
+  Object.keys(groupedTaxes).map((category) => {
+    groupedTaxesRowSpan[category] = groupedTaxes[category].length;
+    groupedTaxes[category].map((tax) => {
+      if (tax['regions']) {
+        groupedTaxesRowSpan[category] += Object.keys(tax['regions']).length;
+      }
+    });
+  });
+
   return (
     <table className={className}>
       <tbody>
         {Object.keys(groupedTaxes).map((category) =>
           groupedTaxes[category].map((tax, index) => (
-            <tr key={tax.categories}>
-              {index === 0 && <th rowSpan={groupedTaxes[category].length}>{category}</th>}
-              <td>{tax.categories[2]}</td>
-              <td style={{ textAlign: 'right' }}>
-                <Currency currency={currency} value={tax.amount} />
-              </td>
-            </tr>
+            <React.Fragment key={`${category}-${index}`}>
+              <tr key={`${category}-${index}`}>
+                {index === 0 && <th rowSpan={groupedTaxesRowSpan[category]}>{category}</th>}
+                <td>
+                  {`${tax.categories[2]} ${tax.categories[3] || ''}`}
+                  {tax['regions'] !== undefined && <ArrowDown />}
+                </td>
+                <td style={{ textAlign: 'right' }}>
+                  <Currency currency={currency} value={tax.amount} />
+                </td>
+              </tr>
+              <TaxesRegions category={category} currency={currency} regions={tax['regions']} />
+            </React.Fragment>
           ))
         )}
       </tbody>
