@@ -9,7 +9,11 @@ const taxes = [
   { categories: ['Impuestos', 'Retenciones', 'IIBB'], amount: 12200 },
   { categories: ['Impuestos', 'Percepciones', 'IRF'], amount: 12200 },
   { categories: ['Impuestos', 'Percepciones', 'IIBB'], amount: 12200 },
-  { categories: ["Impuestos", "Retenciones", "Ingresos brutos"], amount: 12200, regions: {'ba': 12000, 'bb': 200} }
+  {
+    categories: ['Impuestos', 'Retenciones', 'Ingresos brutos'],
+    amount: 12200,
+    regions: { 'Buenos Aires': 12000, Chubut: 200 }
+  }
 ];
 
 storiesOf('TaxesTable', module)
