@@ -8,7 +8,7 @@ const taxes = [
   { categories: ['Impuestos', 'Retenciones', 'IRF'], amount: 12200 },
   { categories: ['Impuestos', 'Retenciones', 'IIBB'], amount: 12200 },
   { categories: ['Impuestos', 'Percepciones', 'IRF'], amount: 12200 },
-  { categories: ['Impuestos', 'Percepciones', 'IIBB'], amount: 12200 },
+  { categories: ['Impuestos', 'Percepciones', 'IIBB'], amount: 12200, regions: {} },
   {
     categories: ['Impuestos', 'Retenciones', 'Ingresos brutos'],
     amount: 12200,

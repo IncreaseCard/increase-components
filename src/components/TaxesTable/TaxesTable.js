@@ -54,7 +54,9 @@ function TaxesTable({ taxes, className, currency, language }) {
                 {index === 0 && <th rowSpan={groupedTaxesRowSpan[category]}>{category}</th>}
                 <td>
                   {`${tax.categories[2]} ${tax.categories[3] || ''}`}
-                  {tax['regions'] !== undefined && <ArrowDown />}
+                  {tax['regions'] !== undefined && Object.keys(tax['regions']).length !== 0 && (
+                    <ArrowDown />
+                  )}
                 </td>
                 <td style={{ textAlign: 'right' }}>
                   <Currency currency={currency} language={language} value={tax.amount} />
