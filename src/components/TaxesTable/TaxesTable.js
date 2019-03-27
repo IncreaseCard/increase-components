@@ -5,10 +5,12 @@ import styled from 'styled-components';
 
 import currentTheme from '../../themes/current';
 import Currency from '../Currency/Currency';
+import { TaxesRegions } from './TaxesRegions';
 
 const propTypes = {
   className: PropTypes.string,
   currency: PropTypes.string.isRequired,
+  language: PropTypes.string,
   taxes: PropTypes.arrayOf(
     PropTypes.shape({ categories: PropTypes.arrayOf(PropTypes.string), amount: PropTypes.number })
   )
@@ -16,12 +18,7 @@ const propTypes = {
 
 const defaultProps = {};
 
-const InsetTableData = styled.td`
-  border: 1px black inset;
-  background-color: rgba(0, 0, 0, 0.25);
-`;
-
-const ArrowDown = styled.div`
+export const ArrowDown = styled.div`
   display: inline-block;
   height: 6px;
   margin-left: 5px;
@@ -30,22 +27,8 @@ const ArrowDown = styled.div`
   background-repeat: no-repeat;
   background-size: auto;
 `;
-function TaxesRegions({ regions, currency }) {
-  let regions_table = null;
-  if (regions !== undefined) {
-    regions_table = Object.keys(regions).map((name, index) => (
-      <tr key={index}>
-        <InsetTableData>{name}</InsetTableData>
-        <InsetTableData style={{ textAlign: 'right' }}>
-          <Currency currency={currency} value={regions[name]} />
-        </InsetTableData>
-      </tr>
-    ));
-  }
-  return regions_table;
-}
 
-function TaxesTable({ taxes, className, currency }) {
+function TaxesTable({ taxes, className, currency, language }) {
   if (taxes === undefined) {
     return null;
   }
@@ -74,10 +57,15 @@ function TaxesTable({ taxes, className, currency }) {
                   {tax['regions'] !== undefined && <ArrowDown />}
                 </td>
                 <td style={{ textAlign: 'right' }}>
-                  <Currency currency={currency} value={tax.amount} />
+                  <Currency currency={currency} language={language} value={tax.amount} />
                 </td>
               </tr>
-              <TaxesRegions category={category} currency={currency} regions={tax['regions']} />
+              <TaxesRegions
+                category={category}
+                currency={currency}
+                language={language}
+                regions={tax['regions']}
+              />
             </React.Fragment>
           ))
         )}

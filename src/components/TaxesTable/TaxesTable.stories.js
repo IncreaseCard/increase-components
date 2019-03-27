@@ -19,7 +19,12 @@ const taxes = [
 storiesOf('TaxesTable', module)
   .add('ecuador', () => (
     <div style={{ width: '1000px' }}>
-      <TaxesTable currency="USD" taxes={taxes} />
+      <TaxesTable currency="USD" language="es-EC" taxes={taxes} />
+    </div>
+  ))
+  .add('dominicana', () => (
+    <div style={{ width: '1000px' }}>
+      <TaxesTable currency="DOP" language="es-DO" taxes={taxes} />
     </div>
   ))
   .add('emptyTaxes', () => <TaxesTable currency="USD" taxes={[]} />)

@@ -71,3 +71,15 @@ storiesOf('AmountBox', module).add('With empty description', () => {
 storiesOf('AmountBox', module).add('With big container', () => {
   return <AmountBox amount={10} color="blue" description="Total de transacciones" />;
 });
+
+storiesOf('AmountBox', module).add('In es-DO locale with DOP currency', () => {
+  return (
+    <AmountBox
+      amount={10}
+      color="blue"
+      currency="DOP"
+      description="Total de transacciones"
+      language="es-DO"
+    />
+  );
+});

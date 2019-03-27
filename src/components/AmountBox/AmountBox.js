@@ -9,13 +9,15 @@ const propTypes = {
   amount: PropTypes.number,
   color: PropTypes.oneOf(['blue', 'red', 'green']),
   currency: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  language: PropTypes.string
 };
 
 const defaultProps = {
   amount: 0,
   currency: 'ARS',
-  color: 'blue'
+  color: 'blue',
+  language: navigator.language
 };
 
 const AmountBoxWrapper = styled.div`
@@ -60,11 +62,11 @@ const AmountBoxDescription = styled.p`
 AmountBoxDescription.propTypes = { theme: PropTypes.object };
 AmountBoxDescription.defaultProps = { theme: currentTheme };
 
-export const AmountBox = ({ amount, color, description, currency }) => {
+export const AmountBox = ({ amount, color, description, currency, language }) => {
   return (
     <AmountBoxWrapper color={color} short={typeof description !== 'string'}>
       <AmountBoxAmount>
-        <Currency currency={currency} value={amount} />
+        <Currency currency={currency} language={language} value={amount} />
       </AmountBoxAmount>
       {typeof description === 'string' ? (
         <AmountBoxDescription>{description}</AmountBoxDescription>
