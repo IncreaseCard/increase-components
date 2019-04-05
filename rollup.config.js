@@ -1,4 +1,4 @@
-import embedCSS from 'rollup-plugin-embed-css';
+import css from 'rollup-plugin-css-porter';
 import url from 'rollup-plugin-url';
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
@@ -9,7 +9,7 @@ import { terser } from 'rollup-plugin-terser';
 module.exports = {
   input: 'src/index.js',
   plugins: [
-    embedCSS(),
+    css(),
     url(),
     babel({
       exclude: 'node_modules/**',
