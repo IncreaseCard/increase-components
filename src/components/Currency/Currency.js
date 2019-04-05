@@ -6,9 +6,7 @@ const propTypes = {
   value: PropTypes.number
 };
 
-const defaultProps = {
-  language: navigator && navigator.language
-};
+const defaultProps = {};
 
 export default function Currency({ value, currency, language }) {
   if (isNaN(value)) {
