@@ -31,6 +31,7 @@ const RedButton = styled(ButtonBase)`
     background-image: none;
     background: ${(props) => props.theme.colors.redShade};
     border: 1px solid ${(props) => props.theme.colors.redShade};
+    box-shadow: 0 0 2px ${(props) => props.theme.colors.redShade};
   }
 `;
 

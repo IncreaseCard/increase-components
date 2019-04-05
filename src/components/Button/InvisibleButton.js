@@ -20,8 +20,17 @@ const InvisibleButton = styled(ButtonBase)`
   background-color: transparent;
   color: ${(props) => props.theme.colors.lightBlueRegular};
   border: 1px solid transparent;
+  position: relative;
   &:hover {
-    border: 1px solid ${(props) => props.theme.colors.lightBlueRegular};
+    background-color: ${(props) => props.theme.colors.whiteTint};
+  }
+  &:hover::after {
+    border-bottom: 2px solid ${(props) => props.theme.colors.brandGreenRegular};
+    content: '';
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 8px;
   }
 `;
 

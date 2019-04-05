@@ -30,6 +30,7 @@ const GreenButton = styled(ButtonBase)`
   &:active {
     background: ${(props) => props.theme.colors.brandGreenTone};
     border: 1px solid ${(props) => props.theme.colors.brandGreenShade};
+    box-shadow: 0 0 2px ${(props) => props.theme.colors.brandGreenShade};
   }
 `;
 

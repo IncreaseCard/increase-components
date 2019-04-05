@@ -31,6 +31,7 @@ const PrimaryButton = styled(ButtonBase)`
     background-image: none;
     background: ${(props) => props.theme.colors.whiteTone};
     border: 1px solid ${(props) => props.theme.colors.whiteShade};
+    box-shadow: 0 0 2px ${(props) => props.theme.colors.whiteShade};
   }
 `;
 

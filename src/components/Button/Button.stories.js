@@ -7,6 +7,7 @@ import BlueButton from './BlueButton';
 import GreenButton from './GreenButton';
 import RedButton from './RedButton';
 import InvisibleButton from './InvisibleButton';
+import Link from '../Link/Link';
 import styled from 'styled-components';
 
 const Buttons = styled.div`
@@ -15,7 +16,8 @@ const Buttons = styled.div`
     margin: 0 0 0.5rem;
     font-size: 1.25rem;
   }
-  button {
+  button,
+  a {
     margin-right: 1rem;
     &:last-of-type {
       margin-right: 0;
@@ -78,4 +80,26 @@ storiesOf('Buttons', module)
         </Buttons>
       </>
     ))
-  );
+  )
+  .add('As links', () => (
+    <React.Fragment>
+      <Buttons>
+        <h1>Buttons using "a" elements</h1>
+        <PrimaryButton {...buttonEvents} as={Link}>
+          PrimaryButton
+        </PrimaryButton>
+        <BlueButton {...buttonEvents} as={Link}>
+          BlueButton
+        </BlueButton>
+        <GreenButton {...buttonEvents} as={Link}>
+          GreenButton
+        </GreenButton>
+        <RedButton {...buttonEvents} as={Link}>
+          RedButton
+        </RedButton>
+        <InvisibleButton {...buttonEvents} as={Link}>
+          InvisibleButton
+        </InvisibleButton>
+      </Buttons>
+    </React.Fragment>
+  ));

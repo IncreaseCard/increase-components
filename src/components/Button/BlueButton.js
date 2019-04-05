@@ -16,21 +16,22 @@ const defaultProps = {
 };
 
 const BlueButton = styled(ButtonBase)`
-  background: ${(props) => props.theme.colors.lightBlueTint};
+  background: ${(props) => props.theme.colors.lightBlueRegular};
   color: ${(props) => props.theme.colors.whiteRegular};
-  border: 1px solid ${(props) => props.theme.colors.lightBlueTone};
+  border: 1px solid ${(props) => props.theme.colors.lightBlueShade};
   &:hover {
     background-image: linear-gradient(
       to bottom,
       ${(props) => props.theme.colors.lightBlueTone} 0%,
       ${(props) => props.theme.colors.lightBlueTint} 100%
     );
+    border-color: ${(props) => props.theme.colors.lightBlueTone}
     box-shadow: 0 2px 6px ${(props) => props.theme.colors.lightBlueShade};
   }
   &:active {
     background-image: none;
     background: ${(props) => props.theme.colors.lightBlueTone};
-    border: 1px solid ${(props) => props.theme.colors.lightBlueShade};
+    box-shadow: 0 0 2px ${(props) => props.theme.colors.lightBlueShade};
   }
 `;
 

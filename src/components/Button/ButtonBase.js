@@ -12,7 +12,11 @@ const defaultProps = {
 };
 
 export const ButtonBase = styled.button`
+  display: inline-flex;
+  align-items: center;
   box-sizing: border-box;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
   border: none;
   height: 40px;
   font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
