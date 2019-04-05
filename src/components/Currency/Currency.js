@@ -7,7 +7,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  language: navigator.language
+  language: navigator && navigator.language
 };
 
 export default function Currency({ value, currency, language }) {

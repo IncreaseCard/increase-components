@@ -17,7 +17,7 @@ const defaultProps = {
   amount: 0,
   currency: 'ARS',
   color: 'blue',
-  language: navigator.language
+  language: navigator && navigator.language
 };
 
 const AmountBoxWrapper = styled.div`
