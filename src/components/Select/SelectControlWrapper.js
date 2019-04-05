@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import dropdownMore from 'file-loader!material-design-icons/navigation/svg/production/ic_expand_more_18px.svg';
+import dropdownMore from 'material-design-icons/navigation/svg/production/ic_expand_more_18px.svg';
 
 import newTheme from '../../themes/new';
 
