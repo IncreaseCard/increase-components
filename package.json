@@ -1,6 +1,6 @@
 {
   "name": "increase-components",
-  "version": "7.2.1-rollup.4",
+  "version": "7.2.1",
   "description": "React component library for Increase design system",
   "sideEffects": false,
   "main": "dist/index.js",
