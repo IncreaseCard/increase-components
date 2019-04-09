@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import newTheme from '../../themes/new';
-import alertIcon from 'file-loader!material-design-icons/alert/svg/production/ic_warning_24px.svg';
+import alertIcon from 'material-design-icons/alert/svg/production/ic_warning_24px.svg';
 
 const propTypes = {
   className: PropTypes.string,

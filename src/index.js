@@ -1,4 +1,4 @@
-import '!css-loader!normalize.css';
+import 'normalize.css';
 
 import './styles/base.css';
 
@@ -36,8 +36,8 @@ import TaxesTable from './components/TaxesTable/TaxesTable';
 import TextInput from './components/TextInput/TextInput';
 import Tooltip from './components/Tooltip/Tooltip';
 
-import newTheme from './themes/new';
-import currentTheme from './themes/current';
+import newTheme from './themes/new/index';
+import currentTheme from './themes/current/index';
 import colorPalette from './themes/colorPalette';
 
 const themes = {

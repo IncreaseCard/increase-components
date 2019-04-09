@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import newTheme from '../../themes/new';
-import check from 'file-loader!../../icons/check.svg';
+import check from '../../icons/check.svg';
 import naturalGrow from '../../animations/naturalGrow';
 import CheckboxInputControl from './CheckboxInputControl';
 
