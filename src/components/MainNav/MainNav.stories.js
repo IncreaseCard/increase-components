@@ -7,4 +7,6 @@ const MainNavStyled = styled(MainNav)`
   width: 1000px;
 `;
 
-storiesOf('Main Navigation', module).add('with text', () => <MainNavStyled />);
+storiesOf('Main Navigation', module).add('with text', () => (
+  <MainNavStyled country="country" products="productos" user="user" />
+));

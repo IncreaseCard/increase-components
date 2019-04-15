@@ -94,7 +94,12 @@ class MainNav extends React.Component {
 
   render() {
     return (
-      <div className={this.props.className}>
+      <div
+        className={this.props.className}
+        country={this.props.country}
+        products={this.props.products}
+        user={this.props.user}
+      >
         <MainNavWrapper>
           <MainNavContent>
             <div className="logo">

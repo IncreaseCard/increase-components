@@ -96,15 +96,15 @@ class MainNavMenu extends Component {
 
           <ButtonDrawer
             cta="Ingresar"
+            href="/"
             image={CardLogo}
             selected={this.props.section === 'card'}
-            href="/"
           />
           <ButtonDrawer
             cta="Quiero saber más"
+            href="/"
             image={ConciliacionLogo}
             selected={this.props.section === 'conciliacion'}
-            href="/"
           />
           <ButtonDrawer cta="Contratar" disabled href="/" image={CreditosLogo} target="blank" />
         </div>
