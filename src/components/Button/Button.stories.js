@@ -84,7 +84,7 @@ storiesOf('Buttons', module)
   .add('As links', () => (
     <React.Fragment>
       <Buttons>
-        <h1>Buttons using "a" elements</h1>
+        <h1>Buttons using &quot;a&quot; elements</h1>
         <PrimaryButton {...buttonEvents} as={Link}>
           PrimaryButton
         </PrimaryButton>
