@@ -12,8 +12,8 @@ const LinkStyles = styled.a`
 `;
 LinkStyles.defaultProps = { theme: NewTheme };
 
-const Link = ({ variant, disabled, href, children, className }) => (
-  <LinkStyles className={className} disabled={disabled} href={href} variant={variant}>
+const Link = ({ variant, disabled, href, children, className, ...rest }) => (
+  <LinkStyles className={className} disabled={disabled} href={href} variant={variant} {...rest}>
     {children}
   </LinkStyles>
 );
