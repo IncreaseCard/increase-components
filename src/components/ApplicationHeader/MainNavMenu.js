@@ -100,6 +100,7 @@ export default function MainNavMenu({ country, currentProduct, products, user, v
                 href={productData[enabled ? 'uri' : 'acquire_uri'][country]}
                 image={productData.logo}
                 key={name}
+                name={name}
                 selected={currentProduct === name}
               />
             );
