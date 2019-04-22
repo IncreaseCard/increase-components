@@ -2,6 +2,8 @@
 
 Increase design system components for building user interfaces
 
+**View demo** https://increasecard.github.io/increase-design-components/
+
 ## Getting Started
 
 Clone repo
