@@ -4,7 +4,7 @@ import NewTheme from '../../themes/new';
 import MainNavMenu from './MainNavMenu';
 import MenuProfile from './MenuProfile';
 import Icon from '../../icons/Icon';
-import { Notifications, LogoVerde, ArrowDown, ArrowUp } from '../../icons/icons';
+import { LogoVerde, ArrowDown, ArrowUp } from '../../icons/icons';
 import { defaultProducts } from './defaultProducts';
 
 const ApplicationHeaderWrapper = styled.div`
@@ -89,7 +89,7 @@ export default function ApplicationHeader({
   country,
   currentProduct,
   products,
-  firstName
+  userName
 }) {
   const [isOpen, setOpen] = useState(false);
 
@@ -113,7 +113,7 @@ export default function ApplicationHeader({
           </div>
           <RightContent>
             <div className="account">
-              <MenuProfile firstName={firstName} />
+              <MenuProfile userName={userName} />
             </div>
           </RightContent>
         </ApplicationHeaderContent>

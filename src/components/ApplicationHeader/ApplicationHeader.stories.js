@@ -4,8 +4,7 @@ import { storiesOf } from '@storybook/react';
 import ApplicationHeader from './ApplicationHeader';
 
 const user = {
-  firstName: 'Juan',
-  lastName: 'Pérez',
+  userName: 'Juan Pérez',
   activeProducts: {
     argentina: ['card', 'conciliation'],
     ecuador: ['card'],
@@ -20,7 +19,7 @@ storiesOf('ApplicationHeader', module)
         activeProducts={user.activeProducts}
         country="ecuador"
         currentProduct=""
-        firstName={user.firstName}
+        userName={user.userName}
       />
     </div>
   ))
@@ -30,7 +29,7 @@ storiesOf('ApplicationHeader', module)
         activeProducts={user.activeProducts}
         country="argentina"
         currentProduct=""
-        firstName={user.firstName}
+        userName={user.userName}
       />
     </div>
   ))
@@ -40,7 +39,7 @@ storiesOf('ApplicationHeader', module)
         activeProducts={user.activeProducts}
         country="dominicana"
         currentProduct=""
-        firstName={user.firstName}
+        userName={user.userName}
       />
     </div>
   ))
@@ -50,7 +49,7 @@ storiesOf('ApplicationHeader', module)
         activeProducts={user.activeProducts}
         country="argentina"
         currentProduct="card"
-        firstName={user.firstName}
+        userName={user.userName}
       />
     </div>
   ))
@@ -60,7 +59,7 @@ storiesOf('ApplicationHeader', module)
         activeProducts={user.activeProducts}
         country="argentina"
         currentProduct="conciliation"
-        firstName={user.firstName}
+        userName={user.userName}
       />
     </div>
   ));
