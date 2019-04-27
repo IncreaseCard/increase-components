@@ -47,7 +47,7 @@ const PopupStyled = styled(Popup)`
 `;
 PopupStyled.defaultProps = { theme: NewTheme };
 
-export default function MenuProfile({ user }) {
+export default function MenuProfile({ firstName }) {
   return (
     <PopupStyled
       closeOnDocumentClick
@@ -59,7 +59,7 @@ export default function MenuProfile({ user }) {
         </ProfileButton>
       )}
     >
-      <div className="user">{user.firstName}</div>
+      <div className="user">{firstName}</div>
       <Link href="https://platform.increase.app">Ajustes de cuenta</Link>
       <hr />
       <Link href="https://soporte.increasecard.com/hc/es">Ayuda y Soporte</Link>

@@ -74,7 +74,13 @@ const Sidebar = styled.div`
 
 Sidebar.defaultProps = { theme: NewTheme };
 
-export default function MainNavMenu({ country, currentProduct, products, user, visible }) {
+export default function MainNavMenu({
+  country,
+  currentProduct,
+  products,
+  activeProducts,
+  visible
+}) {
   return (
     <NavMenu visible={visible}>
       <div className="container">
@@ -93,7 +99,7 @@ export default function MainNavMenu({ country, currentProduct, products, user, v
         {Object.entries(products)
           .filter(([, productData]) => productData.countries.includes(country))
           .map(([name, productData]) => {
-            const enabled = user.activeProducts[country].includes(name);
+            const enabled = activeProducts[country].includes(name);
             return (
               <ButtonDrawer
                 enabled={enabled}
