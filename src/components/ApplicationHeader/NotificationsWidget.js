@@ -48,7 +48,7 @@ function NotificationsWidget({ className, notifications }) {
         </div>
         {notifications &&
           notifications.map((notification) => (
-            <Notification key={notification.message} {...notification} />
+            <Notification key={notification.id} {...notification} />
           ))}
       </div>
     </StyledPopup>

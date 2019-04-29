@@ -6,7 +6,7 @@ import Link from '../Link/Link';
 const propTypes = {
   action: PropTypes.shape({ href: PropTypes.string, text: PropTypes.string }),
   className: PropTypes.string,
-  createdAt: PropTypes.date,
+  createdAt: PropTypes.string,
   message: PropTypes.string
 };
 

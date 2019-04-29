@@ -86,17 +86,10 @@ export default function ApplicationHeader({
   country,
   currentProduct,
   products,
-  userName
+  userName,
+  notifications
 }) {
   const [isOpen, setOpen] = useState(false);
-  const [notifications, setNotifications] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:5000/').then((response) => {
-      response.json().then((data) => setNotifications(data.notifications));
-    });
-  }, []);
-
   const productName = products[currentProduct] ? products[currentProduct].name : 'Increase';
   const handleClick = () => setOpen((open) => !open);
   const renderArrow = () =>
@@ -133,5 +126,6 @@ export default function ApplicationHeader({
 }
 
 ApplicationHeader.defaultProps = {
-  products: defaultProducts
+  products: defaultProducts,
+  notifications: []
 };
