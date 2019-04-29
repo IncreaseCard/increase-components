@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import NewTheme from '../../themes/new';
 import MainNavMenu from './MainNavMenu';
 import MenuProfile from './MenuProfile';
+import NotificationsWidget from './NotificationsWidget';
 import Icon from '../../icons/Icon';
 import { LogoVerde, ArrowDown, ArrowUp } from '../../icons/icons';
 import { defaultProducts } from './defaultProducts';
@@ -63,14 +64,10 @@ LogoWrapper.displayName = 'LogoWrapper';
 const RightContent = styled.div`
   display: flex;
   align-items: center;
-  .alerts,
   .country {
     margin-right: 1rem;
     padding-right: 1rem;
     border-right: 1px solid ${(props) => props.theme.colors.whiteTone};
-  }
-  .alerts {
-    color: ${(props) => props.theme.colors.whiteTone};
   }
   .country {
     display: flex;
@@ -92,9 +89,18 @@ export default function ApplicationHeader({
   userName
 }) {
   const [isOpen, setOpen] = useState(false);
+  const [notifications, setNotifications] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/').then((response) => {
+      response.json().then((data) => setNotifications(data.notifications));
+    });
+  }, []);
 
   const productName = products[currentProduct] ? products[currentProduct].name : 'Increase';
   const handleClick = () => setOpen((open) => !open);
+  const renderArrow = () =>
+    isOpen ? <Icon className="caret" src={ArrowDown} /> : <Icon className="caret" src={ArrowUp} />;
 
   return (
     <React.Fragment>
@@ -104,14 +110,11 @@ export default function ApplicationHeader({
             <LogoWrapper onClick={handleClick}>
               <Icon className="logo" src={LogoVerde} />
               <span className="brandName">{productName}</span>
-              {isOpen ? (
-                <Icon className="caret" src={ArrowDown} />
-              ) : (
-                <Icon className="caret" src={ArrowUp} />
-              )}
+              {renderArrow()}
             </LogoWrapper>
           </div>
           <RightContent>
+            <NotificationsWidget notifications={notifications} />
             <div className="account">
               <MenuProfile userName={userName} />
             </div>

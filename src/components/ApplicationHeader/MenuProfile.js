@@ -7,6 +7,7 @@ import { Account } from '../../icons/icons';
 import Icon from '../../icons/Icon';
 
 const ProfileButton = styled.button`
+  cursor: pointer;
   margin: 0px;
   padding: 0px;
   border: none;
