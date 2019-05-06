@@ -88,11 +88,7 @@ export default function ApplicationHeader({ country, currentProduct, products, u
             <LogoWrapper onClick={handleClick}>
               <Icon className="logo" src={LogoVerde} />
               <span className="brandName">Increase</span>
-              {isOpen ? (
-                <StyledCaret src={ArrowDown} />
-              ) : (
-                <StyledCaret src={ArrowUp} />
-              )}
+              {isOpen ? <StyledCaret src={ArrowDown} /> : <StyledCaret src={ArrowUp} />}
             </LogoWrapper>
           </div>
           <RightContent>
