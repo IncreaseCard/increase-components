@@ -12,8 +12,9 @@ const ApplicationHeaderWrapper = styled.div`
   z-index: 10;
   border-bottom: 1px solid ${(props) => props.theme.colors.whiteTone};
   padding: 10px;
+  font-size: 15px;
   @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
-    padding: 1rem;
+    padding: 15px;
   }
 `;
 
@@ -49,11 +50,6 @@ const LogoWrapper = styled.div`
     font-weight: 600;
     margin: 0 9px 0 12px;
   }
-  .caret {
-    height: 100%;
-    width: 100%;
-    margin-top: 3px;
-  }
 `;
 
 LogoWrapper.defaultProps = { theme: NewTheme };
@@ -62,26 +58,22 @@ LogoWrapper.displayName = 'LogoWrapper';
 const RightContent = styled.div`
   display: flex;
   align-items: center;
-  .alerts,
-  .country {
-    margin-right: 1rem;
-    padding-right: 1rem;
-    border-right: 1px solid ${(props) => props.theme.colors.whiteTone};
-  }
   .alerts {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid ${(props) => props.theme.colors.whiteTone};
     color: ${(props) => props.theme.colors.whiteTone};
-  }
-  .country {
-    display: flex;
-    .caret {
-      margin-left: 0.75rem;
-      color: ${(props) => props.theme.colors.brandBlueShade};
-    }
   }
 `;
 
 RightContent.defaultProps = { theme: NewTheme };
 RightContent.displayName = 'RightContent';
+
+const StyledCaret = styled(Icon)`
+  height: 100%;
+  width: 100%;
+  margin-top: 3px;
+`;
 
 export default function ApplicationHeader({ country, currentProduct, products, user }) {
   const [isOpen, setOpen] = useState(false);
@@ -96,11 +88,7 @@ export default function ApplicationHeader({ country, currentProduct, products, u
             <LogoWrapper onClick={handleClick}>
               <Icon className="logo" src={LogoVerde} />
               <span className="brandName">Increase</span>
-              {isOpen ? (
-                <Icon className="caret" src={ArrowDown} />
-              ) : (
-                <Icon className="caret" src={ArrowUp} />
-              )}
+              {isOpen ? <StyledCaret src={ArrowDown} /> : <StyledCaret src={ArrowUp} />}
             </LogoWrapper>
           </div>
           <RightContent>

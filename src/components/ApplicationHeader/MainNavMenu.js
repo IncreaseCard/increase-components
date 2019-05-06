@@ -34,26 +34,26 @@ NavMenu.defaultProps = { theme: NewTheme };
 
 const Sidebar = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.colors.whiteTone};
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
   a {
     display: block;
     line-height: 21px;
-    padding: 1rem;
+    padding: 15px;
     text-decoration: none;
     text-align: center;
     color: ${(props) => props.theme.colors.brandBlueRegular};
     &:first-child {
-      margin-top: 1rem;
+      margin-top: 15px;
     }
     &:last-child {
-      margin-bottom: 1rem;
+      margin-bottom: 15px;
     }
   }
   @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
     position: relative;
     border-bottom: none;
-    padding: 0 1rem 0 0;
+    padding: 0 15px 0 0;
     margin-bottom: 0;
     a {
       padding: 0;
@@ -65,9 +65,9 @@ const Sidebar = styled.div`
       content: '';
       background-color: ${(props) => props.theme.colors.whiteTone};
       width: 1px;
-      top: 1rem;
+      top: 15px;
       right: 0;
-      bottom: 1rem;
+      bottom: 15px;
     }
   }
 `;

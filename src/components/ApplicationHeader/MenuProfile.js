@@ -11,7 +11,7 @@ const ProfileButton = styled.button`
   padding: 0px;
   border: none;
   background: transparent;
-  font-size: 1rem;
+  font-size: 15px;
   span {
     font-size: ${(props) => props.theme.typography.bodyFontSizes[1]};
   }
@@ -27,12 +27,12 @@ ProfileButton.defaultProps = { theme: NewTheme };
 const PopupStyled = styled(Popup)`
   padding: 1rem 1rem 0.5rem !important;
   .user {
-    font-size: 1rem;
+    font-size: 15px;
     font-weight: 700;
     color: ${(props) => props.theme.colors.darkBlueRegular};
   }
   a {
-    padding: 0.5rem 0;
+    padding: 8px 0;
     display: block;
     color: ${(props) => props.theme.colors.brandBlueRegular};
     text-decoration: none;
@@ -40,7 +40,7 @@ const PopupStyled = styled(Popup)`
   hr {
     background: transparent;
     margin: 0;
-    padding: 0.5rem 0 0;
+    padding: 8px 0 0;
     border: none;
     border-bottom: 1px solid ${(props) => props.theme.colors.whiteTone};
   }

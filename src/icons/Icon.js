@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Icon = styled.img`
-  width: 1rem;
-  height: 1rem;
+  width: 15px;
+  height: 15px;
   display: inline-block;
   vertical-align: baseline;
   margin-top: ${(props) => (props.mt ? `${props.mt}rem` : '')};

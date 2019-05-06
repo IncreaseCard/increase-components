@@ -23,13 +23,13 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 1rem;
+  padding: 30px 15px;
   border-bottom: 3px solid ${(props) => props.theme.colors.lightBlueRegular};
   transition: 0.25s;
   height: 140px;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
   p {
-    margin: 0;
+    margin: 15px 0 0;
     font-size: 13px;
     color: #38f;
     text-decoration: underline;
@@ -65,7 +65,7 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
     `}
   @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
     border-bottom: 3px solid ${(props) => props.theme.colors.whiteRegular};
-    margin: 0 1rem;
+    margin: 0 15px;
     height: auto;
     .container {
       flex-direction: row;
