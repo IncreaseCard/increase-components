@@ -59,11 +59,9 @@ const RightContent = styled.div`
   display: flex;
   align-items: center;
   .alerts {
-    margin-right: 1rem;
-    padding-right: 1rem;
+    margin-right: 15px;
+    padding-right: 15px;
     border-right: 1px solid ${(props) => props.theme.colors.whiteTone};
-  }
-  .alerts {
     color: ${(props) => props.theme.colors.whiteTone};
   }
 `;
