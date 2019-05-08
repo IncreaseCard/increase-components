@@ -37,6 +37,7 @@ const LogoWrapper = styled.div`
   background: transparent;
   border: none;
   cursor: pointer;
+  user-select: none;
   color: ${(props) => props.theme.colors.brandBlueRegular};
   :focus {
     outline: none;

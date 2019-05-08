@@ -12,7 +12,7 @@ const NavMenu = styled.div`
   min-height: 100px;
   transition: 0.25s;
   transform: translateY(${(props) => (props.visible ? '46px' : '-100%')});
-  z-index: 1;
+  z-index: 1000;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   .container {
