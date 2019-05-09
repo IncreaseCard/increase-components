@@ -4,12 +4,13 @@ import NewTheme from '../../themes/new';
 import MainNavMenu from './MainNavMenu';
 import MenuProfile from './MenuProfile';
 import Icon from '../../icons/Icon';
-import { Notifications, LogoVerde, ArrowDown, ArrowUp } from '../../icons/icons';
+import { LogoVerde, ArrowDown, ArrowUp } from '../../icons/icons';
+import { defaultProducts } from './defaultProducts';
 
 const ApplicationHeaderWrapper = styled.div`
   background: ${(props) => props.theme.colors.whiteRegular};
   position: relative;
-  z-index: 10;
+  z-index: 1001;
   border-bottom: 1px solid ${(props) => props.theme.colors.whiteTone};
   padding: 10px;
   font-size: 15px;
@@ -76,9 +77,16 @@ const StyledCaret = styled(Icon)`
   margin-top: 3px;
 `;
 
-export default function ApplicationHeader({ country, currentProduct, products, user }) {
+export default function ApplicationHeader({
+  activeProducts,
+  country,
+  currentProduct,
+  products,
+  userName
+}) {
   const [isOpen, setOpen] = useState(false);
 
+  const productName = products[currentProduct] ? products[currentProduct].name : 'Increase';
   const handleClick = () => setOpen((open) => !open);
 
   return (
@@ -88,27 +96,28 @@ export default function ApplicationHeader({ country, currentProduct, products, u
           <div className="logo">
             <LogoWrapper onClick={handleClick}>
               <Icon className="logo" src={LogoVerde} />
-              <span className="brandName">Increase</span>
+              <span className="brandName">{productName}</span>
               {isOpen ? <StyledCaret src={ArrowDown} /> : <StyledCaret src={ArrowUp} />}
             </LogoWrapper>
           </div>
           <RightContent>
-            <div className="alerts">
-              <Icon src={Notifications} />
-            </div>
             <div className="account">
-              <MenuProfile user={user} />
+              <MenuProfile userName={userName} />
             </div>
           </RightContent>
         </ApplicationHeaderContent>
       </ApplicationHeaderWrapper>
       <MainNavMenu
+        activeProducts={activeProducts}
         country={country}
         currentProduct={currentProduct}
         products={products}
-        user={user}
         visible={isOpen}
       />
     </React.Fragment>
   );
 }
+
+ApplicationHeader.defaultProps = {
+  products: defaultProducts
+};
