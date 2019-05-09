@@ -10,7 +10,7 @@ import { defaultProducts } from './defaultProducts';
 const ApplicationHeaderWrapper = styled.div`
   background: ${(props) => props.theme.colors.whiteRegular};
   position: relative;
-  z-index: 10;
+  z-index: 1001;
   border-bottom: 1px solid ${(props) => props.theme.colors.whiteTone};
   padding: 10px;
   font-size: 15px;
