@@ -1,24 +1,25 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import styled, { css } from 'styled-components';
 
-const StyledCard = styled.div`
+const Card = styled.div`
+  height: 150px;
+  justify-content: center;
   width: 100%;
 
   ${(props) =>
-    props.state === 'error' &&
+    props.state === 'disabled' &&
     css`
-      border-color: #ff3b3b;
+      opacity: 0.5;
     `};
 `;
 
-function Card(props) {
-  return <StyledCard {...props}> {props.children} </StyledCard>;
-}
-
 Card.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  state: PropTypes.oneOf(['error', 'disabled']),
+  children: PropTypes.node,
+  state: PropTypes.oneOf(['error', 'disabled', 'ok'])
+};
+
+Card.defaultProps = {
+  state: 'ok'
 };
 
 export default Card;

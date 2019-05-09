@@ -1,45 +1,85 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
+import styled from 'styled-components';
 
-import ClearingsUploaderInfo from './ClearingsUploaderInfo';
+import Select from '../Select/Select';
+import SelectItem from '../Select/SelectItem';
 import FileUpload from '../FileUpload/FileUpload';
 import newTheme from '../../themes/new';
 
+const EMPTY = 'EMPTY';
+const UPLOADING = 'UPLOADING';
+const COMPLETED = 'COMPLETED';
+const UPLOAD_ERROR = 'UPLOAD_ERROR';
+const FILE_TYPE_ERROR = 'FILE_TYPE_ERROR';
+
 const propTypes = {
-  text: PropTypes.object
+  messages: PropTypes.shape({
+    step_1: PropTypes.string,
+    step_2: PropTypes.string,
+    modal: PropTypes.string,
+    action_text_1: PropTypes.string,
+    action_text_2: PropTypes.string,
+    link: PropTypes.string,
+    drag_here: PropTypes.string,
+    or: PropTypes.string,
+    click_here: PropTypes.string,
+    manual_text: PropTypes.string,
+    uploading: PropTypes.string,
+    upload_success: PropTypes.string,
+    upload_failure: PropTypes.string,
+    format_error: PropTypes.string,
+    retry: PropTypes.string
+  }).isRequired,
+  options: PropTypes.array.isRequired,
+  disabled: PropTypes.bool,
+  format: PropTypes.array.isRequired,
+  onDropAccepted: PropTypes.func,
+  onDropRejected: PropTypes.func,
+  onRetry: PropTypes.func,
+  openModal: PropTypes.func,
+  progress: PropTypes.number,
+  status: PropTypes.oneOf([COMPLETED, EMPTY, UPLOADING, UPLOAD_ERROR, FILE_TYPE_ERROR]).isRequired
 };
 
 const defaultProps = {
-  text: {
-    info: {
-      title: 'Subí tu liquidacion manualmente para:',
-      list_1: 'Incorporar información si detectas un faltante.',
-      list_2: 'Recuperar información previa a tu inicio como cliente de IncreaseCard.',
-      info: 'La información ya existente no se sobreescribirá'
-    },
-    input: {
-      action_text_1: 'Arrastrá acá el archivo',
-      action_text_2: 'o hace click acá y subilo manualmente',
-      link: 'Conocé los formatos permitidos'
-    }
-  }
+  disabled: true
 };
 
 const ClearingsUploaderWrapper = styled.div`
   align-items: center;
-  border: 1px solid #E5E5E5;
   display: flex;
+  flex-direction: column;
   font-family: ${(props) => props.theme.typography.bodyFontFamily};
-  height: 270px;
-  width: 840px;
 `;
 
 const FileUploadWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #e5e5e5;
+  justify-content: center;
   width: 350px;
-  height: 230px;
-  margin: 0 20px 0 20px;
+  padding: 20px;
+  margin: 10px;
+`;
+
+const StyledP = styled.p`
+  color: #243568;
+  display: inline;
+  font-size: 20px;
+  margin: 0 0 20px 0;
+`;
+
+const StyledA = styled.button`
+  background: none;
+  border: none;
+  color: #3b86ff;
+  text-decoration: underline;
+  outline: none;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 10px;
 `;
 
 ClearingsUploaderWrapper.propTypes = {
@@ -50,21 +90,44 @@ ClearingsUploaderWrapper.defaultProps = {
   theme: newTheme
 };
 
-export const ClearingsUploader = ({ text }) => {
+export const ClearingsUploader = ({
+  messages,
+  options,
+  disabled,
+  format,
+  onDropAccepted,
+  onDropRejected,
+  onRetry,
+  openModal,
+  progress,
+  status
+}) => {
+  const ListItems = options.map((item) => {
+    return <SelectItem text={item.text} value={item.value} key={item.value} />;
+  });
   return (
     <ClearingsUploaderWrapper>
-      <ClearingsUploaderInfo text={text.info}/>
       <FileUploadWrapper>
+        <StyledP>{messages.step_1}</StyledP>
+        <Select id="provider">{ListItems}</Select>
+      </FileUploadWrapper>
+      <FileUploadWrapper>
+        <StyledP>{messages.step_2}</StyledP>
         <FileUpload
-          onDropAccepted={action('onDropAccepted file')}
-          onDropRejected={action('onDropRejected file')}
-          progress={0}
-          status={FileUpload.EMPTY}
+          format={format}
+          messages={messages}
+          onDropAccepted={onDropAccepted}
+          onDropRejected={onDropRejected}
+          onRetry={onRetry}
+          progress={progress}
+          status={status}
+          disabled={disabled}
         />
+        <StyledA onClick={openModal}>{messages.modal}</StyledA>
       </FileUploadWrapper>
     </ClearingsUploaderWrapper>
   );
-}
+};
 
 ClearingsUploader.propTypes = propTypes;
 ClearingsUploader.defaultProps = defaultProps;

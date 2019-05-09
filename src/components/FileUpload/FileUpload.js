@@ -10,11 +10,6 @@ import styled from 'styled-components';
 import ProgressBar from './ProgressBar';
 import Card from './Card';
 import LinkButton from './LinkButton';
-import classnames from 'classnames';
-
-const CenteredH2 = styled.h2`
-  text-align: center;
-`;
 
 const UploadImg = styled.img`
   width: 85px;
@@ -51,12 +46,6 @@ const CenterDiv = styled.div`
   text-align: center;
 `;
 
-const StyledCard = styled(Card)`
-  &.disabled {
-    opacity: 0.5;
-  }
-`;
-
 FileUpload.EMPTY = 'EMPTY';
 FileUpload.UPLOADING = 'UPLOADING';
 FileUpload.COMPLETED = 'COMPLETED';
@@ -64,7 +53,9 @@ FileUpload.UPLOAD_ERROR = 'UPLOAD_ERROR';
 FileUpload.FILE_TYPE_ERROR = 'FILE_TYPE_ERROR';
 
 const propTypes = {
+  messages: PropTypes.objectOf(PropTypes.string).isRequired,
   disabled: PropTypes.bool,
+  format: PropTypes.array.isRequired,
   onDropAccepted: PropTypes.func.isRequired,
   onDropRejected: PropTypes.func.isRequired,
   onRetry: PropTypes.func.isRequired,
@@ -74,22 +65,25 @@ const propTypes = {
     FileUpload.EMPTY,
     FileUpload.UPLOADING,
     FileUpload.UPLOAD_ERROR,
-    FileUpload.FILE_TYPE_ERROR,
-  ]),
+    FileUpload.FILE_TYPE_ERROR
+  ]).isRequired
 };
 
 const defaultProps = {
+  format: ['.csv', '.txt'],
   progress: 0,
-  status: FileUpload.EMPTY,
+  status: FileUpload.EMPTY
 };
 
 function FileUpload({
+  messages,
   disabled,
   status,
+  format,
   onDropAccepted,
   onDropRejected,
   progress,
-  onRetry,
+  onRetry
 }) {
   const handleDropAccepted = (event) => {
     onDropAccepted(event[0]);
@@ -99,85 +93,80 @@ function FileUpload({
     onDropRejected(event);
   };
 
-  const UploadMessage = <CenteredH2>{'step_1_upload_file'}</CenteredH2>;
   const UploadImage = <UploadImg alt="upload arrow" src={uploadArrow} />;
-  const cardClassNames = classnames({ disabled: disabled });
+  const cardState = disabled ? 'disabled' : 'ok';
 
   switch (status) {
     case FileUpload.EMPTY:
       return (
-        <StyledCard className={cardClassNames}>
+        <Card state={cardState}>
           <Dropzone
-            accept={['.csv', '.txt']}
+            accept={format}
             disableClick={true}
             multiple={false}
             onDropAccepted={handleDropAccepted}
             onDropRejected={handleDropRejected}
             style={{}}
           >
-            {UploadMessage}
             {UploadImage}
             <div>
-              <ActionMessage>{'drag_file_to_conciliate'}</ActionMessage>
+              <ActionMessage>{messages.drag_here}</ActionMessage>
               <CenterDiv>
-                <ManualMessage>{'step_1_or_do'}</ManualMessage>
+                <ManualMessage>{messages.or}</ManualMessage>
                 <DropZoneFile
-                  accept={['.csv', '.txt']}
+                  accept={format}
                   disabled={disabled}
                   multiple={false}
                   onDropAccepted={handleDropAccepted}
                   onDropRejected={handleDropRejected}
                 >
-                  {'step_1_click_here'}
+                  {messages.click_here}
                 </DropZoneFile>
+                <ManualMessage>{messages.manual_text}</ManualMessage>
               </CenterDiv>
             </div>
           </Dropzone>
-        </StyledCard>
+        </Card>
       );
 
     case FileUpload.UPLOADING:
       return (
-        <StyledCard className={cardClassNames}>
-          {UploadMessage}
+        <Card state={cardState}>
           {UploadImage}
-          <ActionMessage>{'file_uploading'}</ActionMessage>
+          <ActionMessage>{messages.uploading}</ActionMessage>
           <ProgressBar progress={progress} />
-        </StyledCard>
+        </Card>
       );
 
     case FileUpload.COMPLETED:
       return (
-        <StyledCard className={cardClassNames}>
-          {UploadMessage}
+        <Card state={cardState}>
           <UploadImg alt="complete" src={complete} />
-          <ActionMessage>{'file_upload_complete'}</ActionMessage>
+          <ActionMessage>{messages.upload_success}</ActionMessage>
           <ProgressBar progress={100} />
-        </StyledCard>
+        </Card>
       );
 
     case FileUpload.UPLOAD_ERROR:
       return (
-        <StyledCard className={cardClassNames} state="error">
-          {UploadMessage}
+        <Card state="error">
           {UploadImage}
-          <ErrorMessage>{'file_upload_error'}</ErrorMessage>
+          <ErrorMessage>{messages.upload_failure}</ErrorMessage>
           <CenterDiv>
-            <LinkButton onClick={onRetry}>{'file_upload_retry'}</LinkButton>
+            <LinkButton onClick={onRetry}>{messages.retry}</LinkButton>
           </CenterDiv>
-        </StyledCard>
+        </Card>
       );
 
     case FileUpload.FILE_TYPE_ERROR:
       return (
-        <StyledCard className={cardClassNames} state="error">
-          {UploadMessage}
+        <Card state="error">
           {UploadImage}
-          <ErrorMessage>{'file_upload_invalid_file_type'}</ErrorMessage>
+          <ErrorMessage>{messages.format_error}</ErrorMessage>
           <CenterDiv>
-            <LinkButton onClick={onRetry}>{'file_upload_retry'}</LinkButton>
+            <LinkButton onClick={onRetry}>{messages.retry}</LinkButton>
           </CenterDiv>
-        </StyledCard>
+        </Card>
       );
 
     default:
