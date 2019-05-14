@@ -1,6 +1,6 @@
 export default {
-  bodyFontFamily: '"Open Sans", sans-serif',
-  titleFontFamily: '"Open Sans", sans-serif',
+  bodyFontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+  titleFontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
   bodyFontSizes: ['16px', '13px'],
   bodyLineHeights: ['21px', '19px'],
   // Based on powers of 1.3
