@@ -12,6 +12,7 @@ import InvisibleButton from './components/Button/InvisibleButton';
 import ProductButton from './components/ProductButton/ProductButton';
 import Calendar from './components/Calendar/Calendar';
 import Checkbox from './components/Checkbox/Checkbox';
+import ClearingsUploader from './components/Currency/ClearingsUploader';
 import Currency from './components/Currency/Currency';
 import Heading from './components/Heading/Heading';
 import Link from './components/Link/Link';
@@ -49,6 +50,7 @@ export {
   ApplicationHeader,
   AmountBox,
   Calendar,
+  ClearingsUploader,
   Checkbox,
   Currency,
   Heading,
