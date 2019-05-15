@@ -31,9 +31,11 @@ const propTypes = {
     format_error: PropTypes.string,
     retry: PropTypes.string
   }).isRequired,
-  options: PropTypes.array.isRequired,
+  provider: PropTypes.string,
+  providers: PropTypes.array.isRequired,
   disabled: PropTypes.bool,
   format: PropTypes.array.isRequired,
+  onSelect: PropTypes.func,
   onDropAccepted: PropTypes.func,
   onDropRejected: PropTypes.func,
   onRetry: PropTypes.func,
@@ -43,6 +45,24 @@ const propTypes = {
 };
 
 const defaultProps = {
+  messages: {
+    step_1: '1. Elegí la procesadora',
+    step_2: '2. Subí tu archivo',
+    modal: 'Conocé los formatos permitidos',
+    action_text_1: 'Arrastrá acá el archivo',
+    action_text_2: 'o hace click acá y subilo manualmente',
+    link: 'Conocé los formatos permitidos',
+    drag_here: 'Arrastrá acá el archivo',
+    or: 'o hace ',
+    click_here: 'click acá',
+    manual_text: ' y subilo manualmente',
+    uploading: 'Subiendo archivo',
+    upload_success: 'Archivo subido',
+    upload_failure: 'El archivo no subió correctamente',
+    format_error: 'El tipo de archivo no es valido',
+    retry: 'Intentar de nuevo'
+  },
+  providers: [],
   disabled: true
 };
 
@@ -92,24 +112,28 @@ ClearingsUploaderWrapper.defaultProps = {
 
 export const ClearingsUploader = ({
   messages,
-  options,
+  providers,
   disabled,
   format,
+  onSelect,
   onDropAccepted,
   onDropRejected,
   onRetry,
+  provider,
   openModal,
   progress,
   status
 }) => {
-  const ListItems = options.map((item) => {
-    return <SelectItem text={item.text} value={item.value} key={item.value} />;
+  const ListItems = providers.map((item) => {
+    return <SelectItem text={item} value={item} key={item} />;
   });
   return (
     <ClearingsUploaderWrapper>
       <FileUploadWrapper>
         <StyledP>{messages.step_1}</StyledP>
-        <Select id="provider">{ListItems}</Select>
+        <Select id="provider" onChange={onSelect} provider={provider}>
+          {ListItems}
+        </Select>
       </FileUploadWrapper>
       <FileUploadWrapper>
         <StyledP>{messages.step_2}</StyledP>
