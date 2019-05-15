@@ -1,6 +1,6 @@
 export default {
-  bodyFontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-  titleFontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+  bodyFontFamily: 'neue-haas-unica, sans-serif',
+  titleFontFamily: 'neue-haas-unica, sans-serif',
   titleFontSizes: ['25px'],
   titleLineHeights: ['31px'],
   bodyFontSizes: ['15px', '12px'],
