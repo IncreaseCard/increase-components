@@ -9,7 +9,7 @@ export const Heading = styled(({ size, children, ...props }) => e(`h${size}`, pr
   font-family: ${(props) => props.theme.typography.titleFontFamily};
   font-size: ${(props) => props.theme.typography.headingFontSizes[props.size - 1]};
   line-height: ${(props) => props.theme.typography.headingLineHeights[props.size - 1]};
-  font-weight: bold;
+  font-weight: 600;
 `;
 
 Heading.propTypes = {

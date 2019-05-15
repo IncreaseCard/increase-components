@@ -20,14 +20,14 @@ const ButtonWrapper = styled.div`
         color: ${(props) =>
           props.disabled ? props.theme.colors.whiteTone : props.theme.colors.blackShade};
         font-size: 0.5rem;
-        font-weight: 700;
+        font-weight: 600;
         text-transform: uppercase;
       }
       .product {
         color: ${(props) =>
           props.disabled ? props.theme.colors.whiteTone : props.theme.colors.brandBlueRegular};
         font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: 600;
       }
     }
   }

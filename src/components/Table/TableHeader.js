@@ -13,7 +13,7 @@ const defaultProps = {
 
 export const TableHeader = styled.thead`
   color: ${(props) => props.theme.colors.brandBlueRegular};
-  font-weight: bold;
+  font-weight: 600;
   vertical-align: bottom;
   tr:hover {
     background-color: initial;

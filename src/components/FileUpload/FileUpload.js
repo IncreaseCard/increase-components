@@ -23,7 +23,7 @@ const P = styled.p`
 `;
 
 const ActionMessage = styled(P)`
-  font-weight: bold;
+  font-weight: 600;
 `;
 
 const ErrorMessage = styled(P)`
