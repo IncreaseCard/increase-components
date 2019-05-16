@@ -49,7 +49,7 @@ const LogoWrapper = styled.div`
   }
   .brandName {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     margin: 0 9px 0 12px;
   }
 `;

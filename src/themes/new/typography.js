@@ -1,6 +1,6 @@
 export default {
-  bodyFontFamily: '"Open Sans", sans-serif',
-  titleFontFamily: '"Lato", sans-serif',
+  bodyFontFamily: 'neue-haas-unica, sans-serif',
+  titleFontFamily: 'neue-haas-unica, sans-serif',
   titleFontSizes: ['25px'],
   titleLineHeights: ['31px'],
   bodyFontSizes: ['15px', '12px'],

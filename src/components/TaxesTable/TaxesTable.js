@@ -91,7 +91,7 @@ const StyledTaxesTable = styled(TaxesTable)`
   }
 
   th {
-    font-weight: 700;
+    font-weight: 600;
     color: white;
     background-color: ${(props) => props.theme.colors.secondary.blue};
     text-transform: uppercase;

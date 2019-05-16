@@ -28,7 +28,7 @@ const PopupStyled = styled(Popup)`
   padding: 1rem 1rem 0.5rem !important;
   .user {
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     color: ${(props) => props.theme.colors.darkBlueRegular};
   }
   a {
