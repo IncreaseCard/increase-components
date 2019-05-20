@@ -25,7 +25,7 @@ const ProfileButton = styled.button`
 `;
 ProfileButton.defaultProps = { theme: NewTheme };
 
-const PopupStyled = styled(Popup)`
+const PopupMenu = styled.div`
   padding: 1rem 1rem 0.5rem !important;
   .user {
     font-size: 15px;
@@ -46,11 +46,11 @@ const PopupStyled = styled(Popup)`
     border-bottom: 1px solid ${(props) => props.theme.colors.whiteTone};
   }
 `;
-PopupStyled.defaultProps = { theme: NewTheme };
+PopupMenu.defaultProps = { theme: NewTheme };
 
 export default function MenuProfile({ userName }) {
   return (
-    <PopupStyled
+    <Popup
       closeOnDocumentClick
       position="bottom right"
       trigger={() => (
@@ -60,14 +60,18 @@ export default function MenuProfile({ userName }) {
         </ProfileButton>
       )}
     >
-      <div className="user">{userName}</div>
-      <Link href="https://platform.increase.app">Ajustes de cuenta</Link>
-      <hr />
-      <Link href="https://soporte.increasecard.com/hc/es">Ayuda y Soporte</Link>
-      <Link href="https://soporte.increasecard.com/hc/es/community/topics">Comunidad Increase</Link>
-      <Link href="https://increase.app/blog">Novedades</Link>
-      <hr />
-      <Link href="https://auth.increase.app/logout">Cerrar Sesión</Link>
-    </PopupStyled>
+      <PopupMenu>
+        <div className="user">{userName}</div>
+        <Link href="https://platform.increase.app">Ajustes de cuenta</Link>
+        <hr />
+        <Link href="https://soporte.increasecard.com/hc/es">Ayuda y Soporte</Link>
+        <Link href="https://soporte.increasecard.com/hc/es/community/topics">
+          Comunidad Increase
+        </Link>
+        <Link href="https://increase.app/blog">Novedades</Link>
+        <hr />
+        <Link href="https://auth.increase.app/logout">Cerrar Sesión</Link>
+      </PopupMenu>
+    </Popup>
   );
 }
