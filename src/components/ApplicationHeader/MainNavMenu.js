@@ -103,7 +103,7 @@ export default function MainNavMenu({
             return (
               <ButtonDrawer
                 enabled={enabled}
-                href={productData[enabled ? 'uri' : 'acquire_uri'][country]}
+                href={productData[enabled ? 'uri' : 'acquire_uri']}
                 image={productData.logo}
                 key={name}
                 name={name}
