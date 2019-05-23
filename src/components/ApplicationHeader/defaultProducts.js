@@ -5,32 +5,29 @@ export const defaultProducts = {
     logo: CardLogo,
     name: 'Card',
     codeName: 'card',
-    uri: {
-      argentina: 'https://card.increase.app',
-      ecuador: 'https://card.increase.app',
-      dominicana: 'https://card.increase.app'
-    },
-    acquire_uri: {
-      argentina: 'https://increase.app',
-      ecuador: 'https://increase.app',
-      dominicana: 'https://increase.app'
-    },
+    uri: 'https://card.increase.app',
+    acquire_uri: 'https://increase.app',
     countries: ['argentina', 'ecuador', 'dominicana']
   },
   conciliation: {
     logo: ConciliacionLogo,
     name: 'Conciliación',
     codeName: 'conciliation',
-    uri: {
-      argentina: 'https://conciliation.increase.app',
-      ecuador: 'https://conciliation.increase.app',
-      dominicana: 'https://conciliation.increase.app'
-    },
-    acquire_uri: {
-      argentina: 'https://increase.app/conciliacion',
-      ecuador: 'https://increase.app/conciliacion',
-      dominicana: 'https://increase.app/conciliacion'
-    },
-    countries: ['argentina']
+    uri: 'https://v2.conciliation.increase.app',
+    acquire_uri: 'https://increase.app/conciliacion',
+    countries: [
+      'argentina',
+      'ecuador',
+      'dominicana',
+      'chile',
+      'uruguay',
+      'paraguay',
+      'colombia',
+      'panama',
+      'peru',
+      'costa_rica',
+      'mexico',
+      'usa'
+    ]
   }
 };
