@@ -7,7 +7,7 @@ import Profile from './ic_person_profile.svg';
 import Receipt from './ic_receipt.svg';
 import NotificationsActive from './ic_notifications_active.svg';
 import LogoRelleno from './ic_logo_relleno.svg';
-import Help from './ic_logo_relleno.svg';
+import Help from './ic_live_help.svg';
 import Contact from './ic_headset_mic.svg';
 import Community from './ic_forum.svg';
 import Voice from './ic_record_voice_over.svg';

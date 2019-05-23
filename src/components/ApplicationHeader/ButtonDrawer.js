@@ -11,7 +11,7 @@ function ButtonDrawer({ alt, className, href, image, enabled, selected, ...rest 
   return (
     <a className={className} href={href} {...rest}>
       <img alt={alt} src={image} />
-      {!selected && <p>{enabled ? 'Ingresar' : 'Contratalo ahora'}</p>}
+      <p>{enabled ? 'Ingresar' : 'Contratalo ahora'}</p>
     </a>
   );
 }
@@ -22,8 +22,8 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 30px 15px;
+  justify-content: center;
+  padding: .75rem;
   border-bottom: 6px solid #def;
   transition: 0.25s;
   height: 140px;
@@ -64,7 +64,7 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
       pointer-events: none;
     `}
   @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
-    margin: 0 15px;
+    margin: 0 0 0 1.25rem;
     height: auto;
     .container {
       flex-direction: row;
