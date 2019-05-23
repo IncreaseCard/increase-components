@@ -24,7 +24,7 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
   align-items: center;
   justify-content: space-between;
   padding: 30px 15px;
-  border-bottom: 3px solid ${(props) => props.theme.colors.lightBlueRegular};
+  border-bottom: 6px solid #def;
   transition: 0.25s;
   height: 140px;
   margin-bottom: 30px;
@@ -41,7 +41,7 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
       ${(props) => props.theme.colors.whiteTint} 100%
     );
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-    border-bottom: 3px solid ${(props) => props.theme.colors.lightBlueRegular};
+    border-bottom-color: #06F;
   }
 
   img {
@@ -60,16 +60,10 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
   ${(props) =>
     props.selected &&
     css`
-      background: linear-gradient(
-        to bottom,
-        ${(props) => props.theme.colors.whiteRegular} 0%,
-        ${(props) => props.theme.colors.whiteTint} 100%
-      );
-      border-bottom: 3px solid ${(props) => props.theme.colors.lightBlueRegular};
+      border-bottom-color: #06f;
       pointer-events: none;
     `}
   @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
-    border-bottom: 3px solid ${(props) => props.theme.colors.whiteRegular};
     margin: 0 15px;
     height: auto;
     .container {
