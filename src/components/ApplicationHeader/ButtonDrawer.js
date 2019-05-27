@@ -7,7 +7,7 @@ import NewTheme from '../../themes/new';
 const propTypes = { theme: PropTypes.object };
 const defaultProps = {};
 
-function ButtonDrawer({ alt, className, href, image, enabled, selected, ...rest }) {
+function ButtonDrawer({ alt, className, href, image, enabled, ...rest }) {
   return (
     <a className={className} href={href} {...rest}>
       <img alt={alt} src={image} />

@@ -44,7 +44,7 @@ const Sidebar = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 
-  a {
+  .sidebar-link {
     display: block;
     line-height: 21px;
     padding: 1.25rem;
@@ -59,9 +59,13 @@ const Sidebar = styled.div`
     padding: 0 1.25rem 0 0;
     margin-bottom: 0;
     width: 160px;
-    a {
+    .sidebar-link {
       padding: 0;
+      margin-bottom: 6px;
       text-align: left;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
     &::after {
       position: absolute;
@@ -96,7 +100,7 @@ const SecondLevelActions = styled.div`
     align-items: center;
     height: 100%;
     width: 148px;
-    padding: 2rem .25rem 0;
+    padding: 2rem 0.25rem 0;
     margin-left: 1.25rem;
     transition: 0.25s;
     cursor: pointer;
@@ -131,26 +135,36 @@ MainNavMenu.defaultProps = {
 };
 
 export default function MainNavMenu({
+  activeProducts,
   country,
   currentProduct,
   products,
-  activeProducts,
-  visible,
-  secondLevel
+  secondLevel,
+  visible
 }) {
   return (
     <NavMenu visible={visible}>
       <div className="container">
         <Sidebar>
-          <Link href="https://increase.app" target="blank">
-            Home Increase
-          </Link>
-          <Link href="https://soporte.increasecard.com/hc/es" target="blank">
-            Ayuda y Soporte
-          </Link>
-          <Link href="https://soporte.increasecard.com/hc/es/community/topics" target="blank">
-            Comunidad Increase
-          </Link>
+          <div>
+            <Link className="sidebar-link" href="https://increase.app" target="blank">
+              Home Increase
+            </Link>
+            <Link
+              className="sidebar-link"
+              href="https://soporte.increasecard.com/hc/es"
+              target="blank"
+            >
+              Ayuda y Soporte
+            </Link>
+            <Link
+              className="sidebar-link"
+              href="https://soporte.increasecard.com/hc/es/community/topics"
+              target="blank"
+            >
+              Comunidad Increase
+            </Link>
+          </div>
         </Sidebar>
 
         {products
@@ -170,7 +184,6 @@ export default function MainNavMenu({
           })}
         <SecondLevelActions>
           {secondLevel.map((item, i) => {
-            console.log(item, i);
             return (
               <div className="sl-container" key={i}>
                 <IconStyled src={item.logo} />
