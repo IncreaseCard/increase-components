@@ -44,6 +44,11 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
     border-bottom: 3px solid ${(props) => props.theme.colors.lightBlueRegular};
   }
 
+  img {
+    height: 34px;
+    width: auto;
+  }
+
   ${(props) =>
     !props.enabled &&
     css`

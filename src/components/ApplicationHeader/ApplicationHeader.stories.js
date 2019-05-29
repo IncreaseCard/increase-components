@@ -26,7 +26,7 @@ storiesOf('ApplicationHeader', module)
   .add('in platform argentina', () => (
     <div style={{ width: '1000px' }}>
       <ApplicationHeader
-        activeProducts={user.activeProducts}
+        activeProducts={{ argentina: ['card'] }}
         country="argentina"
         currentProduct=""
         userName={user.userName}
