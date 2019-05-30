@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 import NewTheme from '../../themes/new';
 import MainNavMenu from './MainNavMenu';
 import MenuProfile from './MenuProfile';
 import Icon from '../../icons/Icon';
 import { LogoVerde, ArrowDown, ArrowUp } from '../../icons/icons';
-import { defaultProducts } from './defaultProducts';
 
 const ApplicationHeaderWrapper = styled.div`
   background: ${(props) => props.theme.colors.whiteRegular};
@@ -118,6 +119,9 @@ export default function ApplicationHeader({
   );
 }
 
+ApplicationHeader.propTypes = {
+  products: PropTypes.array.isRequired
+}
+
 ApplicationHeader.defaultProps = {
-  products: defaultProducts
 };
