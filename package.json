@@ -1,6 +1,6 @@
 {
   "name": "@increase/components",
-  "version": "0.2.0-0",
+  "version": "0.2.0-1",
   "description": "React component library for Increase design system",
   "sideEffects": false,
   "main": "index.js",
@@ -17,7 +17,7 @@
     "storybook": "start-storybook -p 6006",
     "prebuild-storybook": "rimraf docs/*",
     "build-storybook": "build-storybook -o docs",
-    "lint": "eslint \"src/**/*.js\""
+    "lint": "eslint \"src/**/*.js\" --max-warnings=0"
   },
   "repository": {
     "type": "git",

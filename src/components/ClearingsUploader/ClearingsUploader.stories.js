@@ -15,79 +15,79 @@ const PROVIDERS = ['visa', 'mastercard', 'cabal'];
 storiesOf('ClearingsUploader', module)
   .add('Initial State (EMPTY - Disabled)', () => (
     <ClearingsUploader
-      format={FORMAT}
       disabled={true}
-      onSelect={action('Selected')}
+      format={FORMAT}
       onDropAccepted={action('onDropAccepted file')}
       onDropRejected={action('onDropRejected file')}
+      onSelect={action('Selected')}
       openModal={action('openModal')}
-      providers={PROVIDERS}
       progress={0}
+      providers={PROVIDERS}
       status={EMPTY}
     />
   ))
   .add('Enabled DropZone (EMPTY - Enabled)', () => (
     <ClearingsUploader
-      format={FORMAT}
       disabled={false}
-      onSelect={action('Selected')}
+      format={FORMAT}
       onDropAccepted={action('onDropAccepted file')}
       onDropRejected={action('onDropRejected file')}
+      onSelect={action('Selected')}
       openModal={action('openModal')}
-      providers={PROVIDERS}
       progress={0}
+      providers={PROVIDERS}
       status={EMPTY}
     />
   ))
   .add('Uploading File (UPLOADING)', () => (
     <ClearingsUploader
-      format={FORMAT}
       disabled={false}
-      onSelect={action('Selected')}
+      format={FORMAT}
       onDropAccepted={action('onDropAccepted file')}
       onDropRejected={action('onDropRejected file')}
+      onSelect={action('Selected')}
       openModal={action('openModal')}
-      providers={PROVIDERS}
       progress={33}
+      providers={PROVIDERS}
       status={UPLOADING}
     />
   ))
   .add('Upload Complete (COMPLETED)', () => (
     <ClearingsUploader
-      format={FORMAT}
       disabled={false}
-      onSelect={action('Selected')}
+      format={FORMAT}
       onDropAccepted={action('onDropAccepted file')}
       onDropRejected={action('onDropRejected file')}
+      onSelect={action('Selected')}
       openModal={action('openModal')}
-      providers={PROVIDERS}
       progress={100}
+      providers={PROVIDERS}
       status={COMPLETED}
     />
   ))
   .add('Upload Error (UPLOAD_ERROR)', () => (
     <ClearingsUploader
-      format={FORMAT}
       disabled={false}
-      onSelect={action('Selected')}
+      format={FORMAT}
       onDropAccepted={action('onDropAccepted file')}
       onDropRejected={action('onDropRejected file')}
+      onSelect={action('Selected')}
       openModal={action('openModal')}
-      providers={PROVIDERS}
       progress={0}
+      providers={PROVIDERS}
       status={UPLOAD_ERROR}
     />
   ))
   .add('Upload Error (FILE_TYPE_ERROR)', () => (
     <ClearingsUploader
-      format={FORMAT}
       disabled={false}
-      onSelect={action('Selected')}
+      format={FORMAT}
       onDropAccepted={action('onDropAccepted file')}
       onDropRejected={action('onDropRejected file')}
+      onSelect={action('Selected')}
       openModal={action('openModal')}
-      providers={PROVIDERS}
       progress={0}
+      providers={PROVIDERS}
       status={FILE_TYPE_ERROR}
     />
   ));

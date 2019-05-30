@@ -121,7 +121,6 @@ export default function ApplicationHeader({
 
 ApplicationHeader.propTypes = {
   products: PropTypes.array.isRequired
-}
-
-ApplicationHeader.defaultProps = {
 };
+
+ApplicationHeader.defaultProps = {};
