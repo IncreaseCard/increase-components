@@ -96,18 +96,18 @@ export default function MainNavMenu({
           </Link>
         </Sidebar>
 
-        {Object.entries(products)
-          .filter(([, productData]) => productData.countries.includes(country))
-          .map(([name, productData]) => {
-            const enabled = activeProducts[country].includes(name);
+        {products
+          .filter(({ countries }) => countries.includes(country))
+          .map((product) => {
+            const enabled = product.is_free || activeProducts[country].includes(product.name);
             return (
               <ButtonDrawer
                 enabled={enabled}
-                href={productData[enabled ? 'uri' : 'acquire_uri']}
-                image={productData.logo}
-                key={name}
-                name={name}
-                selected={currentProduct === name}
+                href={product[enabled ? 'uri' : 'acquire_uri']}
+                image={product.logo}
+                key={product.name}
+                name={product.display_name}
+                selected={currentProduct === product.name}
               />
             );
           })}
