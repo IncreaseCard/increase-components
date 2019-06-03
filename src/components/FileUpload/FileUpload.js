@@ -53,9 +53,9 @@ FileUpload.UPLOAD_ERROR = 'UPLOAD_ERROR';
 FileUpload.FILE_TYPE_ERROR = 'FILE_TYPE_ERROR';
 
 const propTypes = {
-  messages: PropTypes.objectOf(PropTypes.string).isRequired,
   disabled: PropTypes.bool,
   format: PropTypes.array.isRequired,
+  messages: PropTypes.objectOf(PropTypes.string).isRequired,
   onDropAccepted: PropTypes.func.isRequired,
   onDropRejected: PropTypes.func.isRequired,
   onRetry: PropTypes.func.isRequired,

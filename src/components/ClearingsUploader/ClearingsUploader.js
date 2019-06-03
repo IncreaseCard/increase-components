@@ -14,6 +14,8 @@ const UPLOAD_ERROR = 'UPLOAD_ERROR';
 const FILE_TYPE_ERROR = 'FILE_TYPE_ERROR';
 
 const propTypes = {
+  disabled: PropTypes.bool,
+  format: PropTypes.array.isRequired,
   messages: PropTypes.shape({
     step_1: PropTypes.string,
     step_2: PropTypes.string,
@@ -30,17 +32,15 @@ const propTypes = {
     upload_failure: PropTypes.string,
     format_error: PropTypes.string,
     retry: PropTypes.string
-  }).isRequired,
-  provider: PropTypes.string,
-  providers: PropTypes.array.isRequired,
-  disabled: PropTypes.bool,
-  format: PropTypes.array.isRequired,
-  onSelect: PropTypes.func,
+  }),
   onDropAccepted: PropTypes.func,
   onDropRejected: PropTypes.func,
   onRetry: PropTypes.func,
+  onSelect: PropTypes.func,
   openModal: PropTypes.func,
   progress: PropTypes.number,
+  provider: PropTypes.string,
+  providers: PropTypes.array,
   status: PropTypes.oneOf([COMPLETED, EMPTY, UPLOADING, UPLOAD_ERROR, FILE_TYPE_ERROR]).isRequired
 };
 
@@ -125,7 +125,7 @@ export const ClearingsUploader = ({
   status
 }) => {
   const ListItems = providers.map((item) => {
-    return <SelectItem text={item} value={item} key={item} />;
+    return <SelectItem key={item} text={item} value={item} />;
   });
   return (
     <ClearingsUploaderWrapper>
@@ -138,6 +138,7 @@ export const ClearingsUploader = ({
       <FileUploadWrapper>
         <StyledP>{messages.step_2}</StyledP>
         <FileUpload
+          disabled={disabled}
           format={format}
           messages={messages}
           onDropAccepted={onDropAccepted}
@@ -145,7 +146,6 @@ export const ClearingsUploader = ({
           onRetry={onRetry}
           progress={progress}
           status={status}
-          disabled={disabled}
         />
         <StyledA onClick={openModal}>{messages.modal}</StyledA>
       </FileUploadWrapper>

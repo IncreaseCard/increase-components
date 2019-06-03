@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import ApplicationHeader from './ApplicationHeader';
+import { defaultProducts } from './defaultProducts';
 
 const user = {
   userName: 'Juan Pérez',
@@ -19,6 +20,7 @@ storiesOf('ApplicationHeader', module)
         activeProducts={user.activeProducts}
         country="ecuador"
         currentProduct=""
+        products={defaultProducts}
         userName={user.userName}
       />
     </div>
@@ -29,6 +31,7 @@ storiesOf('ApplicationHeader', module)
         activeProducts={{ argentina: ['card'] }}
         country="argentina"
         currentProduct=""
+        products={defaultProducts}
         userName={user.userName}
       />
     </div>
@@ -39,6 +42,7 @@ storiesOf('ApplicationHeader', module)
         activeProducts={user.activeProducts}
         country="dominicana"
         currentProduct=""
+        products={defaultProducts}
         userName={user.userName}
       />
     </div>
@@ -49,6 +53,7 @@ storiesOf('ApplicationHeader', module)
         activeProducts={user.activeProducts}
         country="argentina"
         currentProduct="card"
+        products={defaultProducts}
         userName={user.userName}
       />
     </div>
@@ -59,6 +64,7 @@ storiesOf('ApplicationHeader', module)
         activeProducts={user.activeProducts}
         country="argentina"
         currentProduct="conciliation"
+        products={defaultProducts}
         userName={user.userName}
       />
     </div>
