@@ -51,6 +51,7 @@ const Sidebar = styled.div`
     font-size: 15px;
     text-decoration: none;
     text-align: center;
+    white-space: nowrap;
     color: ${(props) => props.theme.colors.brandBlueRegular};
   }
   @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
