@@ -106,6 +106,7 @@ const SecondLevelActions = styled.div`
     margin-left: 1.25rem;
     transition: 0.25s;
     cursor: pointer;
+    text-decoration: none;
     &:hover {
       background-color: #f5f5f5;
     }
@@ -117,6 +118,7 @@ const SecondLevelActions = styled.div`
       text-align: center;
     }
     .sl-text {
+      color: #124;
       margin: 0;
       font-size: 0.75rem;
       line-height: 18px;
@@ -177,17 +179,15 @@ export default function MainNavMenu({
             );
           })}
         <SecondLevelActions>
-          {secondLevel.map((item, i) => {
-            return (
-              <div className="sl-container" key={i}>
-                <IconStyled src={item.logo} />
-                <div>
-                  <h2 className="sl-title">{item.name}</h2>
-                  <p className="sl-text">{item.text}</p>
-                </div>
+          {secondLevel.map((item, i) => (
+            <a className="sl-container" key={i} href={item.url} target="blank">
+              <IconStyled src={item.logo} />
+              <div>
+                <h2 className="sl-title">{item.name}</h2>
+                <p className="sl-text">{item.text}</p>
               </div>
-            );
-          })}
+            </a>
+          ))}
         </SecondLevelActions>
       </div>
     </NavMenu>
