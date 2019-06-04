@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import ApplicationHeader from './ApplicationHeader';
 import { defaultProducts } from './defaultProducts';
+import { defaultSidebarLinks } from './defaultSidebarLinks';
 
 const user = {
   userName: 'Juan Pérez',
@@ -21,6 +22,7 @@ storiesOf('ApplicationHeader', module)
         country="ecuador"
         currentProduct=""
         products={defaultProducts}
+        sidebar={defaultSidebarLinks}
         userName={user.userName}
       />
     </div>
@@ -32,6 +34,7 @@ storiesOf('ApplicationHeader', module)
         country="argentina"
         currentProduct=""
         products={defaultProducts}
+        sidebar={defaultSidebarLinks}
         userName={user.userName}
       />
     </div>
@@ -43,6 +46,7 @@ storiesOf('ApplicationHeader', module)
         country="dominicana"
         currentProduct=""
         products={defaultProducts}
+        sidebar={defaultSidebarLinks}
         userName={user.userName}
       />
     </div>
@@ -54,6 +58,7 @@ storiesOf('ApplicationHeader', module)
         country="argentina"
         currentProduct="card"
         products={defaultProducts}
+        sidebar={defaultSidebarLinks}
         userName={user.userName}
       />
     </div>
@@ -65,6 +70,7 @@ storiesOf('ApplicationHeader', module)
         country="argentina"
         currentProduct="conciliation"
         products={defaultProducts}
+        sidebar={defaultSidebarLinks}
         userName={user.userName}
       />
     </div>

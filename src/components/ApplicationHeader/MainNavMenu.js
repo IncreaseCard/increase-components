@@ -139,6 +139,7 @@ export default function MainNavMenu({
   activeProducts,
   country,
   currentProduct,
+  sidebar,
   products,
   secondLevel,
   visible
@@ -148,23 +149,18 @@ export default function MainNavMenu({
       <div className="container">
         <Sidebar>
           <div>
-            <Link className="sidebar-link" href="https://increase.app" target="blank">
-              Home Increase
-            </Link>
-            <Link
-              className="sidebar-link"
-              href="https://soporte.increasecard.com/hc/es"
-              target="blank"
-            >
-              Ayuda y Soporte
-            </Link>
-            <Link
-              className="sidebar-link"
-              href="https://soporte.increasecard.com/hc/es/community/topics"
-              target="blank"
-            >
-              Comunidad Increase
-            </Link>
+            {sidebar.map((sidebar, i) => {
+              return (
+                <Link
+                  className="sidebar-link"
+                  href={sidebar.url}
+                  key={i}
+                  target={sidebar.blank ? 'blank' : null}
+                >
+                  {sidebar.label}
+                </Link>
+              );
+            })}
           </div>
         </Sidebar>
 

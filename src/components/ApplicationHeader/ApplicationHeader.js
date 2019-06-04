@@ -83,6 +83,7 @@ export default function ApplicationHeader({
   country,
   currentProduct,
   products,
+  sidebar,
   secondLevel,
   userName
 }) {
@@ -115,6 +116,7 @@ export default function ApplicationHeader({
         currentProduct={currentProduct}
         products={products}
         secondLevel={secondLevel}
+        sidebar={sidebar}
         visible={isOpen}
       />
     </React.Fragment>
