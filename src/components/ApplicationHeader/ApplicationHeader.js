@@ -83,8 +83,8 @@ export default function ApplicationHeader({
   country,
   currentProduct,
   products,
-  sidebar,
   secondLevel,
+  sidebar,
   userName
 }) {
   const [isOpen, setOpen] = useState(false);

@@ -7,10 +7,10 @@ import NewTheme from '../../themes/new';
 const propTypes = { theme: PropTypes.object };
 const defaultProps = {};
 
-function ButtonDrawer({ alt, className, href, image, enabled, selected, ...rest }) {
+function ButtonDrawer({ alt, className, href, image, selected, ...rest }) {
   return (
     <a className={className} href={href} {...rest}>
-      <img className="drawer-image" alt={alt} src={image} />
+      <img alt={alt} className="drawer-image" src={image} />
       {!selected ? <p>Contratalo ahora</p> : null}
     </a>
   );

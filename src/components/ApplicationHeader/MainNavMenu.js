@@ -1,12 +1,10 @@
 import React from 'react';
-import Link from '../Link/Link';
-import NewTheme from '../../themes/new';
 import styled from 'styled-components';
+import NewTheme from '../../themes/new';
 import ButtonDrawer from './ButtonDrawer';
-
+import SideBarLinks from './SideBarLinks';
 import Icon from '../../icons/Icon';
 import { defaultSecondLevelActions } from './defaultSecondLevelActions';
-import { defaultSidebarLinks } from './defaultSidebarLinks';
 
 const NavMenu = styled.div`
   background: ${(props) => props.theme.colors.whiteRegular};
@@ -36,52 +34,6 @@ const NavMenu = styled.div`
 `;
 
 NavMenu.defaultProps = { theme: NewTheme };
-
-const Sidebar = styled.div`
-  border-bottom: 1px solid ${(props) => props.theme.colors.whiteTone};
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-
-  .sidebar-link {
-    display: block;
-    line-height: 21px;
-    padding: 1.25rem;
-    font-size: 15px;
-    text-decoration: none;
-    text-align: center;
-    white-space: nowrap;
-    color: ${(props) => props.theme.colors.brandBlueRegular};
-  }
-  @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
-    position: relative;
-    border-bottom: none;
-    padding: 0 1.25rem 0 0;
-    margin-bottom: 0;
-    width: 160px;
-    .sidebar-link {
-      padding: 0;
-      margin-bottom: 6px;
-      text-align: left;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    &::after {
-      position: absolute;
-      content: '';
-      background-color: ${(props) => props.theme.colors.whiteTone};
-      width: 1px;
-      top: 15px;
-      right: 0;
-      bottom: 15px;
-    }
-  }
-`;
-
-Sidebar.defaultProps = { theme: NewTheme };
 
 const SecondLevelActions = styled.div`
   display: flex;
@@ -138,31 +90,15 @@ export default function MainNavMenu({
   activeProducts,
   country,
   currentProduct,
-  sidebar,
   products,
   secondLevel,
+  sidebar,
   visible
 }) {
   return (
     <NavMenu visible={visible}>
       <div className="container">
-        <Sidebar>
-          <div>
-            {sidebar.map((sidebar, i) => {
-              return (
-                <Link
-                  className="sidebar-link"
-                  href={sidebar.url}
-                  key={i}
-                  target={sidebar.blank ? 'blank' : null}
-                >
-                  {sidebar.label}
-                </Link>
-              );
-            })}
-          </div>
-        </Sidebar>
-
+        <SideBarLinks sidebar={sidebar} />
         {products
           .filter(({ countries }) => countries.includes(country))
           .map((product) => {
@@ -180,7 +116,7 @@ export default function MainNavMenu({
           })}
         <SecondLevelActions>
           {secondLevel.map((item, i) => (
-            <a className="sl-container" key={i} href={item.url} target="blank">
+            <a className="sl-container" href={item.url} key={i} target="blank">
               <IconStyled src={item.logo} />
               <div>
                 <h2 className="sl-title">{item.name}</h2>
@@ -195,6 +131,5 @@ export default function MainNavMenu({
 }
 
 MainNavMenu.defaultProps = {
-  secondLevel: defaultSecondLevelActions,
-  sidebar: defaultSidebarLinks
+  secondLevel: defaultSecondLevelActions
 };
