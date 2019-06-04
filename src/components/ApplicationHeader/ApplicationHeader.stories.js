@@ -14,6 +14,19 @@ const user = {
   }
 };
 
+const customSidebarLinks = [
+  {
+    label: 'Internal Link',
+    url: 'https://increase.app',
+    blank: false
+  },
+  {
+    label: 'External Link',
+    url: 'https://increase.app',
+    blank: true
+  }
+];
+
 storiesOf('ApplicationHeader', module)
   .add('in platform ecuador', () => (
     <div style={{ width: '1000px' }}>
@@ -71,6 +84,18 @@ storiesOf('ApplicationHeader', module)
         currentProduct="conciliation"
         products={defaultProducts}
         sidebar={defaultSidebarLinks}
+        userName={user.userName}
+      />
+    </div>
+  ))
+  .add('custom sidebar links', () => (
+    <div style={{ width: '1000px' }}>
+      <ApplicationHeader
+        activeProducts={user.activeProducts}
+        country="argentina"
+        currentProduct="conciliation"
+        products={defaultProducts}
+        sidebar={customSidebarLinks}
         userName={user.userName}
       />
     </div>

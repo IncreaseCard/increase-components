@@ -4,8 +4,9 @@ import NewTheme from '../../themes/new';
 import styled from 'styled-components';
 import ButtonDrawer from './ButtonDrawer';
 
-import { defaultSecondLevelActions } from './defaultSecondLevelActions';
 import Icon from '../../icons/Icon';
+import { defaultSecondLevelActions } from './defaultSecondLevelActions';
+import { defaultSidebarLinks } from './defaultSidebarLinks';
 
 const NavMenu = styled.div`
   background: ${(props) => props.theme.colors.whiteRegular};
@@ -131,10 +132,6 @@ const IconStyled = styled(Icon)`
   color: #a9adb7;
 `;
 
-MainNavMenu.defaultProps = {
-  secondLevel: defaultSecondLevelActions
-};
-
 export default function MainNavMenu({
   activeProducts,
   country,
@@ -196,3 +193,8 @@ export default function MainNavMenu({
     </NavMenu>
   );
 }
+
+MainNavMenu.defaultProps = {
+  secondLevel: defaultSecondLevelActions,
+  sidebar: defaultSidebarLinks
+};

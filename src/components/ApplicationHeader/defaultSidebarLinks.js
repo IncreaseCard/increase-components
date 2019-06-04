@@ -16,7 +16,7 @@ export const defaultSidebarLinks = [
   },
   {
     label: 'Comunidad',
-    url: 'https://increasecard.com/bienvenidos-la-comunidadincrease/',
+    url: 'https://increasecard.com/comunidad/',
     blank: true
   }
 ];
