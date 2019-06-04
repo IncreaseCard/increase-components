@@ -7,11 +7,11 @@ import NewTheme from '../../themes/new';
 const propTypes = { theme: PropTypes.object };
 const defaultProps = {};
 
-function ButtonDrawer({ alt, className, href, image, enabled, ...rest }) {
+function ButtonDrawer({ alt, className, href, image, enabled, selected, ...rest }) {
   return (
     <a className={className} href={href} {...rest}>
-      <img alt={alt} src={image} />
-      <p>{enabled ? 'Ingresar' : 'Contratalo ahora'}</p>
+      <img className="drawer-image" alt={alt} src={image} />
+      {!selected ? <p>Contratalo ahora</p> : null}
     </a>
   );
 }
@@ -22,12 +22,14 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: .75rem;
+  padding: 0 0.75rem;
   border-bottom: 6px solid #def;
   transition: 0.25s;
   height: 140px;
   margin-bottom: 30px;
+  .drawer-image {
+    margin-top: 2.5rem
+  }
   p {
     margin: 15px 0 0;
     font-size: 13px;
