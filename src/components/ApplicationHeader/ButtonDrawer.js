@@ -7,11 +7,11 @@ import NewTheme from '../../themes/new';
 const propTypes = { theme: PropTypes.object };
 const defaultProps = {};
 
-function ButtonDrawer({ alt, className, href, image, enabled, selected, ...rest }) {
+function ButtonDrawer({ alt, className, href, image, selected, ...rest }) {
   return (
     <a className={className} href={href} {...rest}>
-      <img alt={alt} src={image} />
-      {!selected && <p>{enabled ? 'Ingresar' : 'Contratalo ahora'}</p>}
+      <img alt={alt} className="drawer-image" src={image} />
+      {!selected ? <p>Contratalo ahora</p> : null}
     </a>
   );
 }
@@ -22,12 +22,14 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 30px 15px;
-  border-bottom: 3px solid ${(props) => props.theme.colors.lightBlueRegular};
+  padding: 0 0.75rem;
+  border-bottom: 6px solid #def;
   transition: 0.25s;
   height: 140px;
   margin-bottom: 30px;
+  .drawer-image {
+    margin-top: 2.5rem
+  }
   p {
     margin: 15px 0 0;
     font-size: 13px;
@@ -41,7 +43,7 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
       ${(props) => props.theme.colors.whiteTint} 100%
     );
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-    border-bottom: 3px solid ${(props) => props.theme.colors.lightBlueRegular};
+    border-bottom-color: #06F;
   }
 
   img {
@@ -60,17 +62,11 @@ const StyledButtonDrawer = styled(ButtonDrawer)`
   ${(props) =>
     props.selected &&
     css`
-      background: linear-gradient(
-        to bottom,
-        ${(props) => props.theme.colors.whiteRegular} 0%,
-        ${(props) => props.theme.colors.whiteTint} 100%
-      );
-      border-bottom: 3px solid ${(props) => props.theme.colors.lightBlueRegular};
+      border-bottom-color: #06f;
       pointer-events: none;
     `}
   @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
-    border-bottom: 3px solid ${(props) => props.theme.colors.whiteRegular};
-    margin: 0 15px;
+    margin: 0 0 0 1.25rem;
     height: auto;
     .container {
       flex-direction: row;

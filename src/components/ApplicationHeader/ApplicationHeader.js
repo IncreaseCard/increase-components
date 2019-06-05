@@ -83,6 +83,8 @@ export default function ApplicationHeader({
   country,
   currentProduct,
   products,
+  secondLevel,
+  sidebar,
   userName
 }) {
   const [isOpen, setOpen] = useState(false);
@@ -113,6 +115,8 @@ export default function ApplicationHeader({
         country={country}
         currentProduct={currentProduct}
         products={products}
+        secondLevel={secondLevel}
+        sidebar={sidebar}
         visible={isOpen}
       />
     </React.Fragment>
