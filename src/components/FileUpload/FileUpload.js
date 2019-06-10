@@ -70,7 +70,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  format: ['.csv', '.txt'],
+  format: [],
   progress: 0,
   status: FileUpload.EMPTY
 };
