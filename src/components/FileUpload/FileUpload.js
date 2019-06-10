@@ -103,6 +103,7 @@ function FileUpload({
           <Dropzone
             accept={format}
             disableClick={true}
+            disabled={disabled}
             multiple={false}
             onDropAccepted={handleDropAccepted}
             onDropRejected={handleDropRejected}
