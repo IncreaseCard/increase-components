@@ -12,6 +12,7 @@ import Contact from './ic_headset_mic.svg';
 import Community from './ic_forum.svg';
 import Voice from './ic_record_voice_over.svg';
 import Settings from './ic_settings.svg';
+import Close from './ic_close.svg';
 
 export {
   Account,
@@ -27,5 +28,6 @@ export {
   Contact,
   Community,
   Voice,
-  Settings
+  Settings,
+  Close
 };
