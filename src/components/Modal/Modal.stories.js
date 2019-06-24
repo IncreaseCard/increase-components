@@ -4,30 +4,39 @@ import Modal from './Modal';
 import Button from '../Button/BlueButton';
 
 const ModalLauncher = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showStandard, setShowStandard] = useState(false);
+  const [showC2A, setShowC2A] = useState(false);
 
-  const toggleModal = () => {
-    setShowModal(!showModal);
+  const toggleStandard = () => {
+    setShowStandard(!showStandard);
+  };
+
+  const toggleC2A = () => {
+    setShowC2A(!showC2A);
   };
 
   return (
     <React.Fragment>
-      <Button onClick={toggleModal}>Show modal</Button>
+      <Button onClick={toggleStandard}>Standard modal</Button>
+      <Button onClick={toggleC2A}>C2A modal</Button>
       <Modal
         align="left"
-        customActions={[
-          <Button key="test" onClick={toggleModal}>
-            botoni
-          </Button>
-        ]}
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua."
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunts ut labore et dolore magna aliqua."
+        headerText="Este es el header"
+        onCancel={toggleStandard}
+        onClose={toggleStandard}
+        onOk={toggleStandard}
+        visible={showStandard}
+      />
+      <Modal
+        align="left"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         fullWidthActionButtons
         headerText="Este es el header"
-        onCancel={toggleModal}
-        onClose={toggleModal}
-        onOk={toggleModal}
-        visible={showModal}
+        onCancel={toggleC2A}
+        onClose={toggleC2A}
+        onOk={toggleC2A}
+        visible={showC2A}
       />
     </React.Fragment>
   );
