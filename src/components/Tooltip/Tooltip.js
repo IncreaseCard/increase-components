@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  direction: PropTypes.oneOf('up', 'down', 'left', 'right')
+  direction: PropTypes.oneOf(['up', 'down', 'left', 'right'])
 };
 
 const defaultProps = {
