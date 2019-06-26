@@ -9,8 +9,8 @@ import ModalFooter from './ModalFooter';
 import IconWrapper from '../../icons/Icon';
 import { Close as closeIcon } from '../../icons/icons';
 
-import Button from '../Button/BlueButton';
-import InvisibleButton from '../Button/InvisibleButton';
+import OkButton from '../Button/BlueButton';
+import CancelButton from '../Button/ButtonBase';
 
 const propTypes = {
   align: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
@@ -86,15 +86,15 @@ const ActionButtons = ({ fullWidthActionButtons, align, okLabel, onOk, onCancel,
   if (fullWidthActionButtons || align !== 'left') {
     return (
       <React.Fragment>
-        <InvisibleButton onClick={onOk}>{okLabel}</InvisibleButton>
-        <Button onClick={onCancel}>{cancelLabel}</Button>
+        <CancelButton onClick={onCancel}>{cancelLabel}</CancelButton>
+        <OkButton onClick={onOk}>{okLabel}</OkButton>
       </React.Fragment>
     );
   }
   return (
     <React.Fragment>
-      <Button onClick={onCancel}>{cancelLabel}</Button>
-      <InvisibleButton onClick={onOk}>{okLabel}</InvisibleButton>
+      <OkButton onClick={onOk}>{okLabel}</OkButton>
+      <CancelButton onClick={onCancel}>{cancelLabel}</CancelButton>
     </React.Fragment>
   );
 };
