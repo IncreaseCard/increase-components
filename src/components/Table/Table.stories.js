@@ -148,9 +148,17 @@ storiesOf('Table', module)
         </TableRow>
       </TableHeader>
       <tbody>
+        {/*
+          HEADS UP: The <tr> in the collapse attribute should be a React.Fragment instead.
+          Using a <tr> here gets the table rendered misformatted when is
+          expanded, but due to a bug in the `withInfo` add-on from Storybook
+          there's no other way to prevent an ugly error from being showed to
+          anyone opening this table's story.
+          See more here: https://github.com/storybookjs/storybook/issues/6147
+        */}
         <TableRowExpandable
           collapse={
-            <React.Fragment>
+            <tr>
               <TableRow inset>
                 <TableData>Débito</TableData>
                 <TableData number>$ 0,00</TableData>
@@ -169,7 +177,7 @@ storiesOf('Table', module)
                 <TableData number>$ 0,00</TableData>
                 <TableData number>$ 0,00</TableData>
               </TableRow>
-            </React.Fragment>
+            </tr>
           }
         >
           <TableHead>Presentado</TableHead>
@@ -177,9 +185,12 @@ storiesOf('Table', module)
           <TableData number>$ 0,00</TableData>
           <TableData number>$ 0,00</TableData>
         </TableRowExpandable>
+        {/*
+          HEADS UP: See comment above about the <tr> put in the collapse attribute.
+        */}
         <TableRowExpandable
           collapse={
-            <React.Fragment>
+            <tr>
               <TableRow inset red>
                 <TableData>Promociones</TableData>
                 <TableData number>$ 0,00</TableData>
@@ -210,7 +221,7 @@ storiesOf('Table', module)
                 <TableData number>$ 0,00</TableData>
                 <TableData number>$ 0,00</TableData>
               </TableRow>
-            </React.Fragment>
+            </tr>
           }
           red
         >
