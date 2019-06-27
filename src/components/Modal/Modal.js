@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -151,4 +152,6 @@ Modal.defaultProps = defaultProps;
 
 Modal.propTypes = propTypes;
 
-export default Modal;
+export default (props) => {
+  return ReactDOM.createPortal(<Modal {...props} />, document.body);
+};
