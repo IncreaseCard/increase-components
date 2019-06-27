@@ -15,6 +15,7 @@ import CancelButton from '../Button/ButtonBase';
 const propTypes = {
   align: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
   cancelLabel: PropTypes.string,
+  closeOnEscape: PropTypes.bool,
   customFooter: PropTypes.array,
   description: PropTypes.string,
   fullWidthActionButtons: PropTypes.bool,
@@ -30,6 +31,7 @@ const defaultProps = {
   align: 'left',
   okLabel: 'Continuar',
   cancelLabel: 'Cancelar',
+  closeOnEscape: true,
   fullWidthActionButtons: false,
   shadeClosable: true,
   shade: true
@@ -82,70 +84,73 @@ const CloseButton = ({ onClick }) => {
   );
 };
 
-const ActionButtons = ({ fullWidthActionButtons, align, okLabel, onOk, onCancel, cancelLabel }) => {
-  if (fullWidthActionButtons || align !== 'left') {
-    return (
-      <React.Fragment>
-        <CancelButton onClick={onCancel}>{cancelLabel}</CancelButton>
-        <OkButton onClick={onOk}>{okLabel}</OkButton>
-      </React.Fragment>
-    );
-  }
-  return (
-    <React.Fragment>
-      <OkButton onClick={onOk}>{okLabel}</OkButton>
-      <CancelButton onClick={onCancel}>{cancelLabel}</CancelButton>
-    </React.Fragment>
-  );
-};
+class Modal extends React.Component {
+  getOrderedButtons = () => {
+    const { fullWidthActionButtons, align, okLabel, onOk, onCancel, cancelLabel } = this.props;
+    const buttons = [
+      <CancelButton key="cancelButton" onClick={onCancel} ref={this.setFocus} tabIndex="1">
+        {cancelLabel}
+      </CancelButton>,
+      <OkButton key="okButton" onClick={onOk} tabIndex="2">
+        {okLabel}
+      </OkButton>
+    ];
+    if (fullWidthActionButtons || align !== 'left') {
+      return buttons;
+    }
+    return buttons.reverse();
+  };
 
-const Modal = ({
-  align,
-  children,
-  onClose,
-  onOk,
-  okLabel,
-  cancelLabel,
-  customFooter,
-  description,
-  fullWidthActionButtons,
-  headerText,
-  shadeClosable,
-  shade,
-  visible
-}) => {
-  return visible ? (
-    <ModalWrapper
-      onClick={() => {
-        if (shadeClosable) {
-          onClose();
-        }
-      }}
-    >
-      {shade && <Shade />}
-      <ModalBody onClick={(e) => e.stopPropagation()}>
-        <CloseButton onClick={onClose} />
-        <ModalHeader align={align}>{headerText}</ModalHeader>
-        <ModalContent align={align}>
-          {description}
-          {children}
-        </ModalContent>
-        <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
-          {customFooter || (
-            <ActionButtons
-              align={align}
-              cancelLabel={cancelLabel}
-              fullWidthActionButtons={fullWidthActionButtons}
-              okLabel={okLabel}
-              onCancel={onClose}
-              onOk={onOk}
-            />
-          )}
-        </ModalFooter>
-      </ModalBody>
-    </ModalWrapper>
-  ) : null;
-};
+  setFocus(elem) {
+    if (elem) {
+      elem.focus();
+    }
+  }
+
+  render() {
+    const {
+      align,
+      children,
+      onClose,
+      closeOnEscape,
+      customFooter,
+      description,
+      fullWidthActionButtons,
+      headerText,
+      shadeClosable,
+      shade,
+      visible
+    } = this.props;
+    return visible ? (
+      <ModalWrapper
+        onClick={() => {
+          if (shadeClosable) {
+            onClose();
+          }
+        }}
+        onKeyDown={(e) => {
+          if (closeOnEscape && e.key === 'Escape') {
+            onClose();
+          }
+        }}
+        tabIndex="-1"
+      >
+        {shade && <Shade />}
+        <ModalBody onClick={(e) => e.stopPropagation()}>
+          <CloseButton onClick={onClose} />
+          <ModalHeader align={align}>{headerText}</ModalHeader>
+          <ModalContent align={align}>
+            {description}
+            {children}
+          </ModalContent>
+          <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
+            {customFooter || this.getOrderedButtons()}
+          </ModalFooter>
+        </ModalBody>
+      </ModalWrapper>
+    ) : null;
+  }
+}
 
 Modal.defaultProps = defaultProps;
 
