@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
 import ModalFooter from './ModalFooter';
-// eslint-disable-next-line no-unused-vars
 import IconWrapper from '../../icons/Icon';
 import { Close as closeIcon } from '../../icons/icons';
 
