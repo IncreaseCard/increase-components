@@ -30,7 +30,7 @@ const propTypes = {
 const defaultProps = {
   align: 'left',
   okLabel: 'Continuar',
-  cancelLabel: 'Cancel',
+  cancelLabel: 'Cancelar',
   fullWidthActionButtons: false,
   shadeClosable: true,
   shade: true
