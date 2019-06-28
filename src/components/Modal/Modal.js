@@ -95,10 +95,7 @@ class Modal extends React.Component {
         {okLabel}
       </OkButton>
     ];
-    if (fullWidthActionButtons || align !== 'left') {
-      return buttons;
-    }
-    return buttons.reverse();
+    return fullWidthActionButtons || align !== 'left' ? buttons : buttons.reverse();
   };
 
   setFocus(elem) {
