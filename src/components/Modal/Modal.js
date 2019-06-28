@@ -128,7 +128,7 @@ class Modal extends React.Component {
             onClose();
           }
         }}
-        onKeyDown={(e) => {
+        onKeyUp={(e) => {
           if (closeOnEscape && e.key === 'Escape') {
             onClose();
           }
