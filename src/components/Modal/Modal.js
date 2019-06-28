@@ -88,10 +88,10 @@ class Modal extends React.Component {
   getOrderedButtons = () => {
     const { fullWidthActionButtons, align, okLabel, onOk, onCancel, cancelLabel } = this.props;
     const buttons = [
-      <CancelButton key="cancelButton" onClick={onCancel} ref={this.setFocus} tabIndex="1">
+      <CancelButton key="cancelButton" onClick={onCancel} ref={this.setFocus} tabIndex={1}>
         {cancelLabel}
       </CancelButton>,
-      <OkButton key="okButton" onClick={onOk} tabIndex="2">
+      <OkButton key="okButton" onClick={onOk} tabIndex={2}>
         {okLabel}
       </OkButton>
     ];
@@ -133,7 +133,7 @@ class Modal extends React.Component {
             onClose();
           }
         }}
-        tabIndex="-1"
+        tabIndex={-1}
       >
         {shade && <Shade />}
         <ModalBody onClick={(e) => e.stopPropagation()}>
