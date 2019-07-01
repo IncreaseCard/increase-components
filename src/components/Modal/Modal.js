@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
+import { RemoveScrollBar } from 'react-remove-scroll-bar';
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
 import ModalFooter from './ModalFooter';
@@ -133,6 +133,7 @@ class Modal extends React.Component {
         tabIndex={-1}
       >
         {shade && <Shade />}
+        <RemoveScrollBar />
         <ModalBody onClick={(e) => e.stopPropagation()}>
           <CloseButton onClick={onClose} />
           <ModalHeader align={align}>{headerText}</ModalHeader>
