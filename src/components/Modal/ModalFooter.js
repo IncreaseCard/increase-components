@@ -9,15 +9,12 @@ const alignments = {
 const Container = styled.div`
   display: flex;
   justify-content: ${(props) => alignments[props.align]};
-  & > * {
-    flex-grow: ${(props) => (props.fullWidthActionButtons ? 1 : 'unset')};
-    justify-content: center;
-  }
   margin: ${(props) => (props.fullWidthActionButtons ? '30px 0 0 0' : '15px 20px')};
   ${(props) => {
     return props.fullWidthActionButtons
       ? `
         & > * {
+          flex-grow: 1;
           border: 1px solid white;
         }
         & > *:first-child {
