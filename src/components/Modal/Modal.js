@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { RemoveScrollBar } from 'react-remove-scroll-bar';
+import { Transition, CSSTransition } from 'react-transition-group';
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
 import ModalFooter from './ModalFooter';
@@ -51,6 +52,20 @@ const Shade = styled.div`
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  .modal-enter & {
+    opacity: 0;
+  }
+  .modal-enter-active & {
+    opacity: 1;
+    transition: opacity 150ms linear;
+  }
+  .modal-exit & {
+    opacity: 1;
+  }
+  .modal-exit-active & {
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+  }
 `;
 
 const ModalBody = styled.div`
@@ -62,6 +77,26 @@ const ModalBody = styled.div`
   max-width: calc(100vw - 30px);
   background-color: white;
   border-radius: 3px;
+  .modal-enter & {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+  .modal-enter-active & {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: opacity 200ms, transform 200ms;
+    transition-timing-function: ease-out;
+  }
+  .modal-exit & {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  .modal-exit-active & {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    transition: opacity 200ms, transform 200ms;
+    transition-timing-function: ease-out;
+  }
 `;
 
 const Icon = styled(IconWrapper)`
@@ -118,35 +153,40 @@ class Modal extends React.Component {
       shade,
       visible
     } = this.props;
-    return visible ? (
-      <ModalWrapper
-        onClick={() => {
-          if (shadeClosable) {
-            onClose();
-          }
-        }}
-        onKeyUp={(e) => {
-          if (closeOnEscape && e.key === 'Escape') {
-            onClose();
-          }
-        }}
-        tabIndex={-1}
-      >
-        {shade && <Shade />}
-        <RemoveScrollBar />
-        <ModalBody onClick={(e) => e.stopPropagation()}>
-          <CloseButton onClick={onClose} />
-          <ModalHeader align={align}>{headerText}</ModalHeader>
-          <ModalContent align={align}>
-            {description}
-            {children}
-          </ModalContent>
-          <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
-            {customFooter || this.getOrderedButtons()}
-          </ModalFooter>
-        </ModalBody>
-      </ModalWrapper>
-    ) : null;
+    return (
+      <CSSTransition classNames="modal" in={visible} mountOnEnter timeout={200} unmountOnExit>
+        {(transitionState) => (
+          <ModalWrapper
+            onClick={() => {
+              if (shadeClosable) {
+                onClose();
+              }
+            }}
+            onKeyUp={(e) => {
+              if (closeOnEscape && e.key === 'Escape') {
+                onClose();
+              }
+            }}
+            tabIndex={-1}
+            transitionState={transitionState}
+          >
+            {shade && <Shade />}
+            <RemoveScrollBar />
+            <ModalBody onClick={(e) => e.stopPropagation()} transitionState={transitionState}>
+              <CloseButton onClick={onClose} />
+              <ModalHeader align={align}>{headerText}</ModalHeader>
+              <ModalContent align={align}>
+                {description}
+                {children}
+              </ModalContent>
+              <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
+                {customFooter || this.getOrderedButtons()}
+              </ModalFooter>
+            </ModalBody>
+          </ModalWrapper>
+        )}
+      </CSSTransition>
+    );
   }
 }
 
