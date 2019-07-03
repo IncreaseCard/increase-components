@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { RemoveScrollBar } from 'react-remove-scroll-bar';
-import { Transition, CSSTransition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
 import ModalFooter from './ModalFooter';
