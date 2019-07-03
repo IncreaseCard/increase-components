@@ -18,16 +18,10 @@ const Container = styled.div`
           border: 1px solid white;
         }
         & > *:first-child {
-          border-top-left-radius: 0px;
-          border-top-right-radius: 0px;
-          border-bottom-right-radius: 0px;
-          border-bottom-left-radius: 3px;
+          border-radius: 0 0 0 3px;
         }
         & > *:last-child {
-          border-top-left-radius: 0px;
-          border-top-right-radius: 0px;
-          border-bottom-right-radius: 3px;
-          border-bottom-left-radius: 0px;
+          border-radius: 0 0 3px 0;
         }`
       : '';
   }};
