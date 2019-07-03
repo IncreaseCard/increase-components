@@ -10,12 +10,16 @@ const Container = styled.div`
   display: flex;
   justify-content: ${(props) => alignments[props.align]};
   margin: ${(props) => (props.fullWidthActionButtons ? '30px 0 0 0' : '15px 20px')};
+  & button:not(:last-child) {
+    margin-right: 4px;
+  }
   ${(props) => {
     return props.fullWidthActionButtons
       ? `
         & > * {
           flex-grow: 1;
           border: 1px solid white;
+          margin: 0;
         }
         & > *:first-child {
           border-radius: 0 0 0 3px;
