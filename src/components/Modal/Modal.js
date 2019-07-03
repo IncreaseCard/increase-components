@@ -57,14 +57,14 @@ const Shade = styled.div`
   }
   .modal-enter-active & {
     opacity: 1;
-    transition: opacity 150ms linear;
+    transition: opacity 200ms ease-out;
   }
   .modal-exit & {
     opacity: 1;
   }
   .modal-exit-active & {
     opacity: 0;
-    transition: opacity 150ms ease-out;
+    transition: opacity 200ms ease-out;
   }
 `;
 
@@ -174,7 +174,7 @@ class Modal extends React.Component {
               <CloseButton onClick={onClose} />
               <ModalHeader align={align}>{headerText}</ModalHeader>
               <ModalContent align={align}>
-                {description}
+                <p>{description}</p>
                 {children}
               </ModalContent>
               <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
