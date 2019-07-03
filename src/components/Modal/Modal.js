@@ -153,36 +153,33 @@ class Modal extends React.Component {
     } = this.props;
     return (
       <CSSTransition classNames="modal" in={visible} mountOnEnter timeout={200} unmountOnExit>
-        {(transitionState) => (
-          <ModalWrapper
-            onClick={() => {
-              if (shadeClosable) {
-                onClose();
-              }
-            }}
-            onKeyUp={(e) => {
-              if (closeOnEscape && e.key === 'Escape') {
-                onClose();
-              }
-            }}
-            tabIndex={-1}
-            transitionState={transitionState}
-          >
-            {shade && <Shade />}
-            <RemoveScrollBar />
-            <ModalBody onClick={(e) => e.stopPropagation()} transitionState={transitionState}>
-              <CloseButton onClick={onClose} />
-              <ModalHeader align={align}>{headerText}</ModalHeader>
-              <ModalContent align={align}>
-                <p>{description}</p>
-                {children}
-              </ModalContent>
-              <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
-                {customFooter || this.getOrderedButtons()}
-              </ModalFooter>
-            </ModalBody>
-          </ModalWrapper>
-        )}
+        <ModalWrapper
+          onClick={() => {
+            if (shadeClosable) {
+              onClose();
+            }
+          }}
+          onKeyUp={(e) => {
+            if (closeOnEscape && e.key === 'Escape') {
+              onClose();
+            }
+          }}
+          tabIndex={-1}
+        >
+          {shade && <Shade />}
+          <RemoveScrollBar />
+          <ModalBody onClick={(e) => e.stopPropagation()}>
+            <CloseButton onClick={onClose} />
+            <ModalHeader align={align}>{headerText}</ModalHeader>
+            <ModalContent align={align}>
+              <p>{description}</p>
+              {children}
+            </ModalContent>
+            <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
+              {customFooter || this.getOrderedButtons()}
+            </ModalFooter>
+          </ModalBody>
+        </ModalWrapper>
       </CSSTransition>
     );
   }
