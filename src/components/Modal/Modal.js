@@ -84,8 +84,7 @@ const ModalBody = styled.div`
   .modal-enter-active & {
     opacity: 1;
     transform: translate(-50%, -50%);
-    transition: opacity 200ms, transform 200ms;
-    transition-timing-function: ease-out;
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
   }
   .modal-exit & {
     opacity: 1;
@@ -94,8 +93,7 @@ const ModalBody = styled.div`
   .modal-exit-active & {
     opacity: 0;
     transform: translate(-50%, -100%);
-    transition: opacity 200ms, transform 200ms;
-    transition-timing-function: ease-out;
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
   }
 `;
 
