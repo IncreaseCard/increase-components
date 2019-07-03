@@ -7,8 +7,7 @@ import { CSSTransition } from 'react-transition-group';
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
 import ModalFooter from './ModalFooter';
-import IconWrapper from '../../icons/Icon';
-import { Close as closeIcon } from '../../icons/icons';
+import { Close as CloseIcon } from 'styled-icons/material/Close';
 
 import OkButton from '../Button/BlueButton';
 import CancelButton from '../Button/ButtonBase';
@@ -97,22 +96,17 @@ const ModalBody = styled.div`
   }
 `;
 
-const Icon = styled(IconWrapper)`
-  display: block;
-`;
-
 const IconButton = styled.button`
   cursor: pointer;
   position: absolute;
-  margin: 10px;
-  top: 4px;
-  right: 4px;
+  top: 9px;
+  right: 9px;
 `;
 
 const CloseButton = ({ onClick }) => {
   return (
     <IconButton as="a" onClick={onClick}>
-      <Icon src={closeIcon} />
+      <CloseIcon size={24} />
     </IconButton>
   );
 };
