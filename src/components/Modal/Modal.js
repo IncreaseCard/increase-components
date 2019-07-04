@@ -115,7 +115,7 @@ const CloseButton = ({ onClick }) => {
 };
 
 class Modal extends React.Component {
-  getOrderedButtons = () => {
+  getOrderedButtons() {
     const { fullWidthActionButtons, align, okLabel, onOk, onCancel, cancelLabel } = this.props;
     const buttons = [
       <CancelButton key="cancelButton" onClick={onCancel} ref={this.setFocus} tabIndex={1}>
@@ -126,25 +126,35 @@ class Modal extends React.Component {
       </OkButton>
     ];
     return fullWidthActionButtons || align !== 'left' ? buttons : buttons.reverse();
-  };
+  }
 
-  setFocus(elem) {
+  setFocus = (elem) => {
     if (elem) {
       elem.focus();
     }
-  }
+  };
+
+  handleShadeClick = () => {
+    if (this.props.shadeClosable) {
+      this.props.onClose();
+    }
+  };
+
+  handleEscKey = (e) => {
+    if (e.key === 'Escape' && this.props.closeOnEscape) {
+      this.props.onClose();
+    }
+  };
 
   render() {
     const {
       align,
       children,
       onClose,
-      closeOnEscape,
       customFooter,
       description,
       fullWidthActionButtons,
       headerText,
-      shadeClosable,
       shade,
       visible
     } = this.props;
@@ -152,16 +162,8 @@ class Modal extends React.Component {
       <CSSTransition classNames="modal" in={visible} mountOnEnter timeout={200} unmountOnExit>
         <ThemeProvider theme={newTheme}>
           <ModalWrapper
-            onClick={() => {
-              if (shadeClosable) {
-                onClose();
-              }
-            }}
-            onKeyUp={(e) => {
-              if (closeOnEscape && e.key === 'Escape') {
-                onClose();
-              }
-            }}
+            onClick={this.handleShadeClick}
+            onKeyUp={(e) => this.handleEscKey(e)}
             tabIndex={-1}
           >
             {shade && <Shade />}
