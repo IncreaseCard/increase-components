@@ -101,6 +101,9 @@ const IconButton = styled.button`
   position: absolute;
   top: 9px;
   right: 9px;
+  & svg {
+    fill: ${(props) => props.theme.colors.whiteShade};
+  }
 `;
 
 const CloseButton = ({ onClick }) => {
