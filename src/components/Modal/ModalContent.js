@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import newTheme from '../../themes/new';
 
 const Container = styled.div`
   text-align: ${(props) => props.align};
@@ -10,9 +9,6 @@ const Container = styled.div`
   line-height: ${(props) => props.theme.typography.bodyLineHeights[0]};
   font-weight: 400;
 `;
-Container.defaultProps = {
-  theme: newTheme
-};
 
 const ModalContent = ({ align, children }) => {
   return <Container align={align}>{children}</Container>;
