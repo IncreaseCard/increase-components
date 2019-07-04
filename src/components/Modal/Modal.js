@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { RemoveScrollBar } from 'react-remove-scroll-bar';
 import { CSSTransition } from 'react-transition-group';
 import ModalHeader from './ModalHeader';
 import ModalContent from './ModalContent';
 import ModalFooter from './ModalFooter';
 import { Close as CloseIcon } from 'styled-icons/material/Close';
-
+import newTheme from '../../themes/new';
 import OkButton from '../Button/BlueButton';
 import CancelButton from '../Button/ButtonBase';
 
@@ -150,33 +150,35 @@ class Modal extends React.Component {
     } = this.props;
     return (
       <CSSTransition classNames="modal" in={visible} mountOnEnter timeout={200} unmountOnExit>
-        <ModalWrapper
-          onClick={() => {
-            if (shadeClosable) {
-              onClose();
-            }
-          }}
-          onKeyUp={(e) => {
-            if (closeOnEscape && e.key === 'Escape') {
-              onClose();
-            }
-          }}
-          tabIndex={-1}
-        >
-          {shade && <Shade />}
-          <RemoveScrollBar />
-          <ModalBody onClick={(e) => e.stopPropagation()}>
-            <CloseButton onClick={onClose} />
-            <ModalHeader align={align}>{headerText}</ModalHeader>
-            <ModalContent align={align}>
-              <p>{description}</p>
-              {children}
-            </ModalContent>
-            <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
-              {customFooter || this.getOrderedButtons()}
-            </ModalFooter>
-          </ModalBody>
-        </ModalWrapper>
+        <ThemeProvider theme={newTheme}>
+          <ModalWrapper
+            onClick={() => {
+              if (shadeClosable) {
+                onClose();
+              }
+            }}
+            onKeyUp={(e) => {
+              if (closeOnEscape && e.key === 'Escape') {
+                onClose();
+              }
+            }}
+            tabIndex={-1}
+          >
+            {shade && <Shade />}
+            <RemoveScrollBar />
+            <ModalBody onClick={(e) => e.stopPropagation()}>
+              <CloseButton onClick={onClose} />
+              <ModalHeader align={align}>{headerText}</ModalHeader>
+              <ModalContent align={align}>
+                <p>{description}</p>
+                {children}
+              </ModalContent>
+              <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
+                {customFooter || this.getOrderedButtons()}
+              </ModalFooter>
+            </ModalBody>
+          </ModalWrapper>
+        </ThemeProvider>
       </CSSTransition>
     );
   }
