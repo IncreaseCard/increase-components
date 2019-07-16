@@ -14,7 +14,7 @@ const ContextNavWrapper = styled.div`
     margin: 0 8px;
     font-size: 13px;
     line-height: 21px;
-    color: ${(props) => props.Color};
+    color: ${(props) => props.color};
     text-decoration: none;
     border: none;
     white-space: nowrap;
@@ -24,7 +24,7 @@ const ContextNavWrapper = styled.div`
       padding-right: 16px;
     }
     &:hover {
-      color: ${(props) => props.Color};
+      color: ${(props) => props.color};
     }
     &.active::before,
     &:hover::before {
@@ -34,7 +34,7 @@ const ContextNavWrapper = styled.div`
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: ${(props) => props.Ascent};
+      background-color: ${(props) => props.ascent};
       animation-duration: 0.25s;
       animation-name: linkAnimation;
     }
@@ -112,7 +112,7 @@ const ContextNavChildren = styled.nav`
   }
 `;
 
-const ContextNav = ({ children, bgColor, Color, Ascent }) => {
+const ContextNav = ({ ascent, bgColor, children, color }) => {
   const handleScroll = (e) => {
     const currentScroll = e.target.scrollLeft;
     const maxScroll = e.target.scrollWidth - e.target.offsetWidth;
@@ -128,7 +128,7 @@ const ContextNav = ({ children, bgColor, Color, Ascent }) => {
   const [scroll, setScroll] = useState('right');
 
   return (
-    <ContextNavWrapper Ascent={Ascent} bgColor={bgColor} className={scroll} Color={Color}>
+    <ContextNavWrapper ascent={ascent} bgColor={bgColor} className={scroll} color={color}>
       <ContextNavChildren onScroll={handleScroll.bind(this)}>{children}</ContextNavChildren>
     </ContextNavWrapper>
   );
