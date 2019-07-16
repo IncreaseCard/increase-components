@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import NewTheme from '../../themes/new';
 
@@ -6,12 +6,12 @@ const ContextNavWrapper = styled.div`
   display: flex;
   background: ${(props) => props.bgColor};
   border-bottom: 1px solid ${(props) => props.theme.colors.whiteTone};
-  padding: 0 1rem;
   justify-content: center;
+  position: relative;
   a {
     position: relative;
-    padding: 18px 0;
-    margin-right: 15px;
+    padding: 18px 8px;
+    margin: 0 8px;
     font-size: 15px;
     line-height: 21px;
     color: ${(props) => props.Color};
@@ -20,6 +20,7 @@ const ContextNavWrapper = styled.div`
     white-space: nowrap;
     &:last-of-type {
       margin-right: 0;
+      padding-right: 16px;
     }
     &:hover {
       color: ${(props) => props.Color};
@@ -51,6 +52,46 @@ const ContextNavWrapper = styled.div`
       transform: scaleX(1);
     }
   }
+  /* scroll indicators */
+  &::before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+  &::after {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 3rem;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
+  }
+  &.right {
+    &::after {
+      display: block;
+      transition: 0.25s;
+    }
+  }
+  &.both {
+    &::before {
+      display: block;
+    }
+    &::after {
+      display: block;
+    }
+  }
+  &.left {
+    &::before {
+      display: block;
+    }
+  }
 `;
 ContextNavWrapper.defaultProps = { theme: NewTheme };
 
@@ -60,9 +101,23 @@ const ContextNavChildren = styled.nav`
 `;
 
 const ContextNav = ({ children, bgColor, Color, Ascent }) => {
+  var handleScroll = (e) => {
+    const currentScroll = e.target.scrollLeft;
+    const maxScroll = e.target.scrollLeftMax;
+    if (currentScroll == maxScroll) {
+      setScroll('left');
+    } else if (currentScroll > 0 && currentScroll < maxScroll) {
+      setScroll('both');
+    } else {
+      setScroll('right');
+    }
+  };
+
+  const [scroll, setScroll] = useState('right');
+
   return (
-    <ContextNavWrapper bgColor={bgColor} Color={Color} Ascent={Ascent}>
-      <ContextNavChildren>{children}</ContextNavChildren>
+    <ContextNavWrapper bgColor={bgColor} Color={Color} Ascent={Ascent} className={scroll}>
+      <ContextNavChildren onScroll={handleScroll.bind(this)}>{children}</ContextNavChildren>
     </ContextNavWrapper>
   );
 };
