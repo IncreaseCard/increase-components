@@ -12,12 +12,13 @@ const ContextNavWrapper = styled.div`
     position: relative;
     padding: 18px 8px;
     margin: 0 8px;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 21px;
     color: ${(props) => props.Color};
     text-decoration: none;
     border: none;
     white-space: nowrap;
+    text-transform: uppercase;
     &:last-of-type {
       margin-right: 0;
       padding-right: 16px;
@@ -29,19 +30,14 @@ const ContextNavWrapper = styled.div`
     &:hover::before {
       position: absolute;
       content: '';
-      width: 100%;
       height: 4px;
+      right: 0;
       bottom: 0;
+      left: 0;
       background-color: ${(props) => props.Ascent};
       animation-duration: 0.25s;
       animation-name: linkAnimation;
     }
-  }
-
-  @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
-    justify-content: center;
-    overflow: initial;
-    margin: none;
   }
 
   @keyframes linkAnimation {
@@ -52,6 +48,7 @@ const ContextNavWrapper = styled.div`
       transform: scaleX(1);
     }
   }
+
   /* scroll indicators */
   &::before {
     content: '';
@@ -62,6 +59,7 @@ const ContextNavWrapper = styled.div`
     bottom: 0;
     width: 3rem;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
   }
   &::after {
     content: '';
@@ -72,11 +70,11 @@ const ContextNavWrapper = styled.div`
     bottom: 0;
     width: 3rem;
     background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
+    pointer-events: none;
   }
   &.right {
     &::after {
       display: block;
-      transition: 0.25s;
     }
   }
   &.both {
@@ -92,18 +90,32 @@ const ContextNavWrapper = styled.div`
       display: block;
     }
   }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.medium}) {
+    justify-content: center;
+    overflow: initial;
+    margin: none;
+    &.left::before,
+    &.right::after {
+      display: none;
+    }
+  }
 `;
 ContextNavWrapper.defaultProps = { theme: NewTheme };
 
 const ContextNavChildren = styled.nav`
   overflow: auto;
   display: flex;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const ContextNav = ({ children, bgColor, Color, Ascent }) => {
   var handleScroll = (e) => {
-    const currentScroll = e.target.scrollLeft;
-    const maxScroll = e.target.scrollLeftMax;
+    let currentScroll = e.target.scrollLeft;
+    const maxScroll = e.target.scrollWidth - e.target.offsetWidth;
     if (currentScroll == maxScroll) {
       setScroll('left');
     } else if (currentScroll > 0 && currentScroll < maxScroll) {
