@@ -17,20 +17,20 @@ const propTypes = {
   disabled: PropTypes.bool,
   format: PropTypes.array.isRequired,
   messages: PropTypes.shape({
-    step_1: PropTypes.string,
-    step_2: PropTypes.string,
+    step_1: PropTypes.string, // eslint-disable-line @typescript-eslint/camelcase
+    step_2: PropTypes.string, // eslint-disable-line @typescript-eslint/camelcase
     modal: PropTypes.string,
-    action_text_1: PropTypes.string,
-    action_text_2: PropTypes.string,
+    action_text_1: PropTypes.string, // eslint-disable-line @typescript-eslint/camelcase
+    action_text_2: PropTypes.string, // eslint-disable-line @typescript-eslint/camelcase
     link: PropTypes.string,
-    drag_here: PropTypes.string,
+    drag_here: PropTypes.string, // eslint-disable-line @typescript-eslint/camelcase
     or: PropTypes.string,
-    click_here: PropTypes.string,
-    manual_text: PropTypes.string,
+    click_here: PropTypes.string, // eslint-disable-line @typescript-eslint/camelcase
+    manual_text: PropTypes.string, // eslint-disable-line @typescript-eslint/camelcase
     uploading: PropTypes.string,
-    upload_success: PropTypes.string,
-    upload_failure: PropTypes.string,
-    format_error: PropTypes.string,
+    upload_success: PropTypes.string, // eslint-disable-line @typescript-eslint/camelcase
+    upload_failure: PropTypes.string, // eslint-disable-line @typescript-eslint/camelcase
+    format_error: PropTypes.string, // eslint-disable-line @typescript-eslint/camelcase
     retry: PropTypes.string
   }),
   onDropAccepted: PropTypes.func,
@@ -46,20 +46,20 @@ const propTypes = {
 
 const defaultProps = {
   messages: {
-    step_1: '1. Elegí la procesadora',
-    step_2: '2. Subí tu archivo',
+    step_1: '1. Elegí la procesadora', // eslint-disable-line @typescript-eslint/camelcase
+    step_2: '2. Subí tu archivo', // eslint-disable-line @typescript-eslint/camelcase
     modal: 'Conocé los formatos permitidos',
-    action_text_1: 'Arrastrá acá el archivo',
-    action_text_2: 'o hace click acá y subilo manualmente',
+    action_text_1: 'Arrastrá acá el archivo', // eslint-disable-line @typescript-eslint/camelcase
+    action_text_2: 'o hace click acá y subilo manualmente', // eslint-disable-line @typescript-eslint/camelcase
     link: 'Conocé los formatos permitidos',
-    drag_here: 'Arrastrá acá el archivo',
+    drag_here: 'Arrastrá acá el archivo', // eslint-disable-line @typescript-eslint/camelcase
     or: 'o hace ',
-    click_here: 'click acá',
-    manual_text: ' y subilo manualmente',
+    click_here: 'click acá', // eslint-disable-line @typescript-eslint/camelcase
+    manual_text: ' y subilo manualmente', // eslint-disable-line @typescript-eslint/camelcase
     uploading: 'Subiendo archivo',
-    upload_success: 'Archivo subido',
-    upload_failure: 'El archivo no subió correctamente',
-    format_error: 'El tipo de archivo no es valido',
+    upload_success: 'Archivo subido', // eslint-disable-line @typescript-eslint/camelcase
+    upload_failure: 'El archivo no subió correctamente', // eslint-disable-line @typescript-eslint/camelcase
+    format_error: 'El tipo de archivo no es valido', // eslint-disable-line @typescript-eslint/camelcase
     retry: 'Intentar de nuevo'
   },
   providers: [],

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'styled-components';
 
 import TableRow from './TableRow';
 import Expandable from './Expandable';
@@ -38,11 +37,7 @@ const Wrapper = styled(TableRow)`
     height: 16px;
     width: 16px;
     background-image: url(data:image/svg+xml;base64PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMTUyIDg5NnEwIDI2LTE5IDQ1bC00NDggNDQ4cS0xOSAxOS00NSAxOXQtNDUtMTktMTktNDV2LTg5NnEwLTI2IDE5LTQ1dDQ1LTE5IDQ1IDE5bDQ0OCA0NDhxMTkgMTkgMTkgNDV6Ii8+PC9zdmc+);
-    ${(props) =>
-      props.expanded &&
-      css`
-        transform: rotate(90deg);
-      `};
+    transform: ${(props) => (props.expanded ? 'rotate(90deg)' : 'rotate(0)')};
   }
 `;
 

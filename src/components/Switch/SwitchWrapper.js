@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 
 import newTheme from '../../themes/new';
 
+const borderColor = (props) =>
+  props.value ? props.theme.colors.brandGreenRegular : props.theme.colors.whiteTone;
+
+const bgColor = (props) =>
+  props.value ? props.theme.colors.brandGreenRegular : props.theme.colors.whiteRegular;
+
 const SwitchWrapper = styled.div`
   position: relative;
   height: 15px;
   width: 25px;
-  border: 1px solid
-    ${(props) =>
-      props.value ? props.theme.colors.brandGreenRegular : props.theme.colors.whiteTone};
-  background-color: ${(props) =>
-    props.value ? props.theme.colors.brandGreenRegular : props.theme.colors.whiteRegular};
+  border: 1px solid ${borderColor};
+  background-color: ${bgColor};
   border-radius: 8px;
   box-sizing: border-box;
   margin: 1px;

@@ -35,8 +35,11 @@ function TaxesTable({ taxes, className, currency, language }) {
 
   const groupedTaxes = groupBy(taxes, (tax) => tax.categories[1]);
   const groupedTaxesRowSpan = {};
+  // TODO Do not use a map! The returned value is being discarded. Use forEach instead.
+  // eslint-disable-next-line array-callback-return
   Object.keys(groupedTaxes).map((category) => {
     groupedTaxesRowSpan[category] = groupedTaxes[category].length;
+    // eslint-disable-next-line array-callback-return
     groupedTaxes[category].map((tax) => {
       if (tax['regions']) {
         groupedTaxesRowSpan[category] += Object.keys(tax['regions']).length;

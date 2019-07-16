@@ -7,8 +7,10 @@ const InsetTableData = styled.td`
 `;
 
 export function TaxesRegions({ regions, currency, language }) {
+  // eslint-disable-next-line @typescript-eslint/camelcase
   let regions_table = null;
   if (regions !== undefined) {
+    // eslint-disable-next-line @typescript-eslint/camelcase
     regions_table = Object.keys(regions).map((name, index) => (
       <tr key={index}>
         <InsetTableData>{name}</InsetTableData>
@@ -18,5 +20,6 @@ export function TaxesRegions({ regions, currency, language }) {
       </tr>
     ));
   }
+  // eslint-disable-next-line @typescript-eslint/camelcase
   return regions_table;
 }

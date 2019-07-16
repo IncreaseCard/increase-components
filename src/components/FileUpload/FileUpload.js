@@ -46,35 +46,6 @@ const CenterDiv = styled.div`
   text-align: center;
 `;
 
-FileUpload.EMPTY = 'EMPTY';
-FileUpload.UPLOADING = 'UPLOADING';
-FileUpload.COMPLETED = 'COMPLETED';
-FileUpload.UPLOAD_ERROR = 'UPLOAD_ERROR';
-FileUpload.FILE_TYPE_ERROR = 'FILE_TYPE_ERROR';
-
-const propTypes = {
-  disabled: PropTypes.bool,
-  format: PropTypes.array.isRequired,
-  messages: PropTypes.objectOf(PropTypes.string).isRequired,
-  onDropAccepted: PropTypes.func.isRequired,
-  onDropRejected: PropTypes.func.isRequired,
-  onRetry: PropTypes.func.isRequired,
-  progress: PropTypes.number.isRequired,
-  status: PropTypes.oneOf([
-    FileUpload.COMPLETED,
-    FileUpload.EMPTY,
-    FileUpload.UPLOADING,
-    FileUpload.UPLOAD_ERROR,
-    FileUpload.FILE_TYPE_ERROR
-  ]).isRequired
-};
-
-const defaultProps = {
-  format: [],
-  progress: 0,
-  status: FileUpload.EMPTY
-};
-
 function FileUpload({
   messages,
   disabled,
@@ -175,7 +146,37 @@ function FileUpload({
   }
 }
 
-FileUpload.propTypes = propTypes;
+const defaultProps = {
+  format: [],
+  progress: 0,
+  status: FileUpload.EMPTY
+};
+
 FileUpload.defaultProps = defaultProps;
+
+FileUpload.EMPTY = 'EMPTY';
+FileUpload.UPLOADING = 'UPLOADING';
+FileUpload.COMPLETED = 'COMPLETED';
+FileUpload.UPLOAD_ERROR = 'UPLOAD_ERROR';
+FileUpload.FILE_TYPE_ERROR = 'FILE_TYPE_ERROR';
+
+const propTypes = {
+  disabled: PropTypes.bool,
+  format: PropTypes.array.isRequired,
+  messages: PropTypes.objectOf(PropTypes.string).isRequired,
+  onDropAccepted: PropTypes.func.isRequired,
+  onDropRejected: PropTypes.func.isRequired,
+  onRetry: PropTypes.func.isRequired,
+  progress: PropTypes.number.isRequired,
+  status: PropTypes.oneOf([
+    FileUpload.COMPLETED,
+    FileUpload.EMPTY,
+    FileUpload.UPLOADING,
+    FileUpload.UPLOAD_ERROR,
+    FileUpload.FILE_TYPE_ERROR
+  ]).isRequired
+};
+
+FileUpload.propTypes = propTypes;
 
 export default FileUpload;

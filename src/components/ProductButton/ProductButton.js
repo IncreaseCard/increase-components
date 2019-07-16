@@ -5,6 +5,12 @@ import NewTheme from '../../themes/new';
 import Link from '../Link/Link';
 import increaseIsotype from '../../icons/increase-isotype.svg';
 
+const increaseTextColor = (props) =>
+  props.disabled ? props.theme.colors.whiteTone : props.theme.colors.blackShade;
+
+const productColor = (props) =>
+  props.disabled ? props.theme.colors.whiteTone : props.theme.colors.brandBlueRegular;
+
 const ButtonWrapper = styled.div`
   .logoWrapper {
     display: flex;
@@ -17,15 +23,13 @@ const ButtonWrapper = styled.div`
     .text {
       margin-left: 12px;
       .increase {
-        color: ${(props) =>
-          props.disabled ? props.theme.colors.whiteTone : props.theme.colors.blackShade};
+        color: ${increaseTextColor};
         font-size: 0.5rem;
         font-weight: 600;
         text-transform: uppercase;
       }
       .product {
-        color: ${(props) =>
-          props.disabled ? props.theme.colors.whiteTone : props.theme.colors.brandBlueRegular};
+        color: ${productColor};
         font-size: 1.5rem;
         font-weight: 600;
       }
@@ -44,7 +48,7 @@ const ProductButton = ({ productName, CTA, linkCTA, disabled }) => {
   return (
     <ButtonWrapper disabled={disabled}>
       <div className="logoWrapper">
-        <img src={increaseIsotype} />
+        <img alt="Increase Logo" src={increaseIsotype} />
         <div className="text">
           <div className="increase">Increase</div>
           <div className="product">{productName}</div>

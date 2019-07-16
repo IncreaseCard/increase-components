@@ -3,13 +3,15 @@ import styled from 'styled-components';
 
 import newTheme from '../../themes/new';
 
+const borderBottomColor = (props) =>
+  props.active ? props.theme.colors.lightBlueRegular : 'transparent';
+
 export const Tab = styled.button`
   box-sizing: border-box;
   background: transparent;
   border: none;
   border-top: 4px solid transparent;
-  border-bottom: 4px solid
-    ${(props) => (props.active ? props.theme.colors.lightBlueRegular : 'transparent')};
+  border-bottom: 4px solid ${borderBottomColor};
   display: flex;
   align-items: center;
   font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
@@ -26,7 +28,9 @@ export const Tab = styled.button`
     margin-left: 15px;
   }
 
-  ${(props) => (props.disabled ? null : `cursor: pointer;`)} ${(props) => {
+  ${(props) => (props.disabled ? null : `cursor: pointer;`)}
+
+  ${(props) => {
     const colors = props.theme.colors;
     if (props.disabled) {
       return `color: ${colors.grayShade};`;
