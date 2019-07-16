@@ -113,10 +113,10 @@ const ContextNavChildren = styled.nav`
 `;
 
 const ContextNav = ({ children, bgColor, Color, Ascent }) => {
-  var handleScroll = (e) => {
-    let currentScroll = e.target.scrollLeft;
+  const handleScroll = (e) => {
+    const currentScroll = e.target.scrollLeft;
     const maxScroll = e.target.scrollWidth - e.target.offsetWidth;
-    if (currentScroll == maxScroll) {
+    if (currentScroll === maxScroll) {
       setScroll('left');
     } else if (currentScroll > 0 && currentScroll < maxScroll) {
       setScroll('both');
@@ -128,7 +128,7 @@ const ContextNav = ({ children, bgColor, Color, Ascent }) => {
   const [scroll, setScroll] = useState('right');
 
   return (
-    <ContextNavWrapper bgColor={bgColor} Color={Color} Ascent={Ascent} className={scroll}>
+    <ContextNavWrapper Ascent={Ascent} bgColor={bgColor} className={scroll} Color={Color}>
       <ContextNavChildren onScroll={handleScroll.bind(this)}>{children}</ContextNavChildren>
     </ContextNavWrapper>
   );
