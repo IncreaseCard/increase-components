@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import NewTheme from '../../themes/new';
 
-const ContextNavWrapper = styled.div`
+const ContextNavContainer = styled.div`
   display: flex;
   background: ${(props) => props.bgColor};
   border-bottom: 1px solid ${(props) => props.theme.colors.whiteTone};
@@ -34,7 +34,7 @@ const ContextNavWrapper = styled.div`
       right: 0;
       bottom: 0;
       left: 0;
-      background-color: ${(props) => props.ascent};
+      background-color: ${(props) => props.accentColor};
       animation-duration: 0.25s;
       animation-name: linkAnimation;
     }
@@ -101,7 +101,7 @@ const ContextNavWrapper = styled.div`
     }
   }
 `;
-ContextNavWrapper.defaultProps = { theme: NewTheme };
+ContextNavContainer.defaultProps = { theme: NewTheme };
 
 const ContextNavChildren = styled.nav`
   overflow: auto;
@@ -112,7 +112,7 @@ const ContextNavChildren = styled.nav`
   }
 `;
 
-const ContextNav = ({ ascent, bgColor, children, color }) => {
+const ContextNav = ({ accentColor, bgColor, children, color }) => {
   const handleScroll = (e) => {
     const currentScroll = e.target.scrollLeft;
     const maxScroll = e.target.scrollWidth - e.target.offsetWidth;
@@ -128,9 +128,14 @@ const ContextNav = ({ ascent, bgColor, children, color }) => {
   const [scroll, setScroll] = useState('right');
 
   return (
-    <ContextNavWrapper ascent={ascent} bgColor={bgColor} className={scroll} color={color}>
+    <ContextNavContainer
+      accentColor={accentColor}
+      bgColor={bgColor}
+      className={scroll}
+      color={color}
+    >
       <ContextNavChildren onScroll={handleScroll.bind(this)}>{children}</ContextNavChildren>
-    </ContextNavWrapper>
+    </ContextNavContainer>
   );
 };
 

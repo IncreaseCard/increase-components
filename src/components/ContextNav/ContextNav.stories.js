@@ -7,7 +7,7 @@ storiesOf('ContextNav', module)
     return (
       <div>
         <ContextNav
-          ascent={'rgb(59, 134, 255);'}
+          accentColor={'rgb(59, 134, 255);'}
           bgColor={'rgb(242, 242, 242)'}
           color={'rgb(36, 53, 104);'}
         >
@@ -24,7 +24,7 @@ storiesOf('ContextNav', module)
   .add('Conciliation', () => {
     return (
       <div>
-        <ContextNav ascent={'#0d4'} bgColor={'rgb(58, 65, 86)'} color={'#fff'}>
+        <ContextNav accentColor={'#0d4'} bgColor={'rgb(58, 65, 86)'} color={'#fff'}>
           <a href="#">Menu a</a>
           <a href="#">Menu b</a>
           <a href="#">Menu c</a>
@@ -38,7 +38,7 @@ storiesOf('ContextNav', module)
   .add('Card', () => {
     return (
       <div>
-        <ContextNav ascent={'#0d4'} bgColor={'#236'} color={'#fff'}>
+        <ContextNav accentColor={'#0d4'} bgColor={'#236'} color={'#fff'}>
           <a href="#">Menu a</a>
           <a href="#">Menu b</a>
           <a href="#">Menu c</a>
