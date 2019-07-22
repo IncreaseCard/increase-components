@@ -65,9 +65,7 @@ export default function MenuProfile({ userName }) {
         <Link href="https://platform.increase.app">Ajustes de cuenta</Link>
         <hr />
         <Link href="https://soporte.increasecard.com/hc/es">Ayuda y Soporte</Link>
-        <Link href="https://soporte.increasecard.com/hc/es/community/topics">
-          Comunidad Increase
-        </Link>
+        <Link href="https://www.facebook.com/groups/ComunidadIncrease/">Comunidad Increase</Link>
         <Link href="https://increase.app/blog">Novedades</Link>
         <hr />
         <Link href="https://auth.increase.app/logout">Cerrar Sesión</Link>
