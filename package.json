@@ -1,10 +1,11 @@
 {
   "name": "@increase/components",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "React component library for Increase design system",
   "sideEffects": false,
-  "main": "index.js",
-  "module": "index.js",
+  "main": "dist/bundle.cjs.js",
+  "jsnext:main": "dist/bundle.esm.js",
+  "module": "dist/bundle.esm.js",
   "files": [
     "dist",
     "README.md",

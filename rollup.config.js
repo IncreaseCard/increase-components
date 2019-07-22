@@ -6,30 +6,35 @@ import commonjs from 'rollup-plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
 
-module.exports = {
+const cjs = {
+  exports: 'named',
+  format: 'cjs',
+  sourcemap: true,
+  file: 'dist/bundle.cjs.js'
+};
+
+const esm = {
+  format: 'esm',
+  sourcemap: true,
+  file: 'dist/bundle.esm.js'
+};
+
+const plugins = [
+  css(),
+  url(),
+  babel({
+    exclude: 'node_modules/**',
+    runtimeHelpers: true
+  }),
+  resolve(),
+  commonjs({
+    include: ['node_modules/**']
+  }),
+  external()
+];
+
+export default {
   input: 'src/index.js',
-  plugins: [
-    css(),
-    url(),
-    babel({
-      exclude: 'node_modules/**',
-      runtimeHelpers: true
-    }),
-    resolve({
-      module: true, // Default: true
-      main: true, // Default: true
-      extensions: ['.mjs', '.js', '.jsx', '.json'], // Default: [ '.mjs', '.js', '.json', '.node' ]
-      preferBuiltins: false // Default: true
-    }),
-    commonjs({
-      include: ['node_modules/**']
-    }),
-    external(),
-    terser()
-  ],
-  output: {
-    file: 'dist/bundle.js',
-    name: 'IncreaseComponents',
-    format: 'umd'
-  }
+  plugins,
+  output: [cjs, esm]
 };

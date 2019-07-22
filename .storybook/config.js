@@ -3,7 +3,7 @@ import '../src/styles/base.css';
 import React from 'react';
 import { configure, addDecorator, setAddon } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { checkA11y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
 
 addDecorator(withInfo);
 addDecorator((story) => (
@@ -20,7 +20,7 @@ addDecorator((story) => (
     {story()}
   </div>
 ));
-addDecorator(checkA11y);
+addDecorator(withA11y);
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /.stories.js$/);
