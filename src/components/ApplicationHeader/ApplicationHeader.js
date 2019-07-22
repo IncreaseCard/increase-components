@@ -8,6 +8,10 @@ import MenuProfile from './MenuProfile';
 import Icon from '../../icons/Icon';
 import { LogoVerde, ArrowDown, ArrowUp } from '../../icons/icons';
 
+const ApplicationHeaderContainer = styled.div`
+  position: relative;
+`;
+
 const ApplicationHeaderWrapper = styled.div`
   background: ${(props) => props.theme.colors.whiteRegular};
   position: relative;
@@ -93,7 +97,7 @@ export default function ApplicationHeader({
   const handleClick = () => setOpen((open) => !open);
 
   return (
-    <React.Fragment>
+    <ApplicationHeaderContainer>
       <ApplicationHeaderWrapper>
         <ApplicationHeaderContent>
           <div className="logo">
@@ -119,7 +123,7 @@ export default function ApplicationHeader({
         sidebar={sidebar}
         visible={isOpen}
       />
-    </React.Fragment>
+    </ApplicationHeaderContainer>
   );
 }
 
