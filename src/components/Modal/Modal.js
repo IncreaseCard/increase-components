@@ -61,6 +61,9 @@ const OkButton = styled(ButtonBase)`
   &:hover {
     background: ${(props) => props.theme.colors.skyBold};
   }
+  &:focus {
+    outline: none;
+  }
 `;
 
 const CancelButton = styled(ButtonBase)`
@@ -68,6 +71,9 @@ const CancelButton = styled(ButtonBase)`
   color: ${(props) => props.theme.colors.brandBlackRegular};
   &:hover {
     background: ${(props) => props.theme.colors.brandWhiteMedium};
+  }
+  &:focus {
+    outline: none;
   }
 `;
 
