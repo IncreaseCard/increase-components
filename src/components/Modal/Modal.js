@@ -109,6 +109,7 @@ const ModalBody = styled.div`
   max-width: calc(100vw - 30px);
   background-color: white;
   border-radius: 3px;
+  color: ${(props) => props.theme.colors.brandBlackRegular};
   .modal-enter & {
     opacity: 0;
     transform: translate(-50%, -100%);
