@@ -9,8 +9,6 @@ import ModalContent from './ModalContent';
 import ModalFooter from './ModalFooter';
 import { Close as CloseIcon } from 'styled-icons/material/Close';
 import newTheme from '../../themes/new';
-import OkButton from '../Button/BlueButton';
-import CancelButton from '../Button/ButtonBase';
 
 const propTypes = {
   align: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
@@ -44,6 +42,35 @@ const ModalWrapper = styled.div`
   height: 100%;
   width: 100%;
 `;
+
+const ButtonBase = styled.button`
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.25s;
+  font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
+  border: none;
+  margin: 0;
+`;
+
+const OkButton = styled(ButtonBase)`
+  background: ${(props) => props.theme.colors.nightSkyRegular};
+  color: ${(props) => props.theme.colors.brandWhiteRegular};
+  &:hover {
+    background: ${(props) => props.theme.colors.skyBold};
+  }
+`;
+
+const CancelButton = styled(ButtonBase)`
+  background: ${(props) => props.theme.colors.brandWhiteLight};
+  color: ${(props) => props.theme.colors.brandBlackRegular};
+  &:hover {
+    background: ${(props) => props.theme.colors.brandWhiteMedium};
+  }
+`;
+
 const Shade = styled.div`
   position: absolute;
   top: 0;

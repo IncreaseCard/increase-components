@@ -9,25 +9,29 @@ const alignments = {
 const Container = styled.div`
   display: flex;
   justify-content: ${(props) => alignments[props.align]};
-  margin: ${(props) => (props.fullWidthActionButtons ? '30px 0 0 0' : '15px 20px')};
+  padding: ${(props) => (props.fullWidthActionButtons ? '30px 0 0 0' : '15px 20px')};
   & button:not(:last-child) {
-    margin-right: 4px;
+    margin-right: 0.5rem;
   }
   ${(props) => {
     return props.fullWidthActionButtons
       ? `
+        margin: 1px;
+        & button:not(:last-child) {
+          margin-right: 1px;
+        }
         & > * {
           flex-grow: 1;
-          border: 1px solid white;
-          margin: 0;
         }
         & > *:first-child {
           border-radius: 0 0 0 3px;
+          border-right: 0;
+          margin: 0;
         }
         & > *:last-child {
           border-radius: 0 0 3px 0;
         }`
-      : '';
+      : 'margin-right: 4px;';
   }};
 `;
 

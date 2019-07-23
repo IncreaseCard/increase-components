@@ -3,7 +3,7 @@ export default {
   titleFontFamily: 'neue-haas-unica, sans-serif',
   titleFontSizes: ['25px'],
   titleLineHeights: ['31px'],
-  bodyFontSizes: ['15px', '12px'],
+  bodyFontSizes: ['16px', '12px'],
   bodyLineHeights: ['21px', '18px'],
   // Based on powers of 1.3
   headingFontSizes: ['2.85rem', '2.2rem', '1.7rem', '1.3rem', '1rem', '0.75rem'],
