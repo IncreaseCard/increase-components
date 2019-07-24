@@ -53,6 +53,12 @@ const ButtonBase = styled.button`
   font-size: ${(props) => props.theme.typography.bodyFontSizes[0]};
   border: none;
   margin: 0;
+  &:focus {
+    outline: none;
+  }
+  ::-moz-focus-inner {
+    border: 0;
+  }
 `;
 
 const OkButton = styled(ButtonBase)`
@@ -61,9 +67,6 @@ const OkButton = styled(ButtonBase)`
   &:hover {
     background: ${(props) => props.theme.colors.skyBold};
   }
-  &:focus {
-    outline: none;
-  }
 `;
 
 const CancelButton = styled(ButtonBase)`
@@ -71,9 +74,6 @@ const CancelButton = styled(ButtonBase)`
   color: ${(props) => props.theme.colors.brandBlackRegular};
   &:hover {
     background: ${(props) => props.theme.colors.brandWhiteMedium};
-  }
-  &:focus {
-    outline: none;
   }
 `;
 
