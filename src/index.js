@@ -36,6 +36,7 @@ import Tag from './components/Tag/Tag';
 import TaxesTable from './components/TaxesTable/TaxesTable';
 import TextInput from './components/TextInput/TextInput';
 import Tooltip from './components/Tooltip/Tooltip';
+import Modal from './components/Modal/Modal';
 
 import newTheme from './themes/new/index';
 import currentTheme from './themes/current/index';
@@ -81,6 +82,7 @@ export {
   TaxesTable,
   TextInput,
   Tooltip,
+  Modal,
   colorPalette,
   themes
 };
