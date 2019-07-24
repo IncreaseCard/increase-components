@@ -1,12 +1,12 @@
 export const defaultSidebarLinks = [
   {
     label: 'Más Productos',
-    url: 'https://increase.app',
+    url: 'https://platform.increase.app/',
     blank: false
   },
   {
     label: 'Ajustes',
-    url: 'https://increase.app',
+    url: 'https://platform.increase.app/settings/',
     blank: false
   },
   {
@@ -16,7 +16,7 @@ export const defaultSidebarLinks = [
   },
   {
     label: 'Comunidad',
-    url: 'https://increasecard.com/comunidad/',
+    url: 'https://www.facebook.com/groups/ComunidadIncrease/',
     blank: true
   }
 ];

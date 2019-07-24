@@ -1,9 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import styled from 'styled-components';
 
 import ApplicationHeader from './ApplicationHeader';
 import { defaultProducts } from './defaultProducts';
 import { defaultSidebarLinks } from './defaultSidebarLinks';
+
+const Notification = styled.div`
+  position: relative;
+  background: #eee;
+  color: #333;
+  padding: 1rem;
+  z-index: 1100;
+`;
 
 const user = {
   userName: 'Juan Pérez',
@@ -29,55 +38,68 @@ const customSidebarLinks = [
 
 storiesOf('ApplicationHeader', module)
   .add('in platform ecuador', () => (
-    <div style={{ width: '1000px' }}>
-      <ApplicationHeader
-        activeProducts={user.activeProducts}
-        country="ecuador"
-        currentProduct=""
-        products={defaultProducts}
-        sidebar={defaultSidebarLinks}
-        userName={user.userName}
-      />
-    </div>
+    <ApplicationHeader
+      activeProducts={user.activeProducts}
+      country="ecuador"
+      currentProduct=""
+      products={defaultProducts}
+      sidebar={defaultSidebarLinks}
+      userName={user.userName}
+    />
   ))
   .add('in platform argentina', () => (
-    <div style={{ width: '1000px' }}>
-      <ApplicationHeader
-        activeProducts={{ argentina: ['card'] }}
-        country="argentina"
-        currentProduct=""
-        products={defaultProducts}
-        sidebar={defaultSidebarLinks}
-        userName={user.userName}
-      />
-    </div>
+    <ApplicationHeader
+      activeProducts={{ argentina: ['card'] }}
+      country="argentina"
+      currentProduct=""
+      products={defaultProducts}
+      sidebar={defaultSidebarLinks}
+      userName={user.userName}
+    />
   ))
   .add('in platform dominicana (no products)', () => (
-    <div style={{ width: '1000px' }}>
-      <ApplicationHeader
-        activeProducts={user.activeProducts}
-        country="dominicana"
-        currentProduct=""
-        products={defaultProducts}
-        sidebar={defaultSidebarLinks}
-        userName={user.userName}
-      />
-    </div>
+    <ApplicationHeader
+      activeProducts={user.activeProducts}
+      country="dominicana"
+      currentProduct=""
+      products={defaultProducts}
+      sidebar={defaultSidebarLinks}
+      userName={user.userName}
+    />
   ))
   .add('in card argentina', () => (
-    <div style={{ width: '1000px' }}>
-      <ApplicationHeader
-        activeProducts={user.activeProducts}
-        country="argentina"
-        currentProduct="card"
-        products={defaultProducts}
-        sidebar={defaultSidebarLinks}
-        userName={user.userName}
-      />
-    </div>
+    <ApplicationHeader
+      activeProducts={user.activeProducts}
+      country="argentina"
+      currentProduct="card"
+      products={defaultProducts}
+      sidebar={defaultSidebarLinks}
+      userName={user.userName}
+    />
   ))
   .add('in conciliation argentina', () => (
-    <div style={{ width: '1000px' }}>
+    <ApplicationHeader
+      activeProducts={user.activeProducts}
+      country="argentina"
+      currentProduct="conciliation"
+      products={defaultProducts}
+      sidebar={defaultSidebarLinks}
+      userName={user.userName}
+    />
+  ))
+  .add('custom sidebar links', () => (
+    <ApplicationHeader
+      activeProducts={user.activeProducts}
+      country="argentina"
+      currentProduct="conciliation"
+      products={defaultProducts}
+      sidebar={customSidebarLinks}
+      userName={user.userName}
+    />
+  ))
+  .add('With notification', () => (
+    <React.Fragment>
+      <Notification>Notificación de pruebas</Notification>
       <ApplicationHeader
         activeProducts={user.activeProducts}
         country="argentina"
@@ -86,17 +108,5 @@ storiesOf('ApplicationHeader', module)
         sidebar={defaultSidebarLinks}
         userName={user.userName}
       />
-    </div>
-  ))
-  .add('custom sidebar links', () => (
-    <div style={{ width: '1000px' }}>
-      <ApplicationHeader
-        activeProducts={user.activeProducts}
-        country="argentina"
-        currentProduct="conciliation"
-        products={defaultProducts}
-        sidebar={customSidebarLinks}
-        userName={user.userName}
-      />
-    </div>
+    </React.Fragment>
   ));
