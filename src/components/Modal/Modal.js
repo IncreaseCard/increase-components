@@ -105,8 +105,12 @@ const ModalBody = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  padding: 1em 1.3em;
+  display: flex;
+  flex-direction: column;
   width: 600px;
   max-width: calc(100vw - 30px);
+  max-height: calc(100vh - 30px);
   background-color: white;
   border-radius: 3px;
   color: ${(props) => props.theme.colors.brandBlackRegular};
@@ -209,7 +213,7 @@ class Modal extends React.Component {
               <CloseButton onClick={onClose} />
               <ModalHeader align={align}>{headerText}</ModalHeader>
               <ModalContent align={align}>
-                <span>{description}</span>
+                <p>{description}</p>
                 {children}
               </ModalContent>
               <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
