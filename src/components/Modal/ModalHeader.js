@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Heading } from '../Heading/Heading';
 
 const Container = styled.div`
-  margin: 15px 20px;
+  margin-bottom: 1em;
   text-align: ${(props) => props.align};
 `;
 

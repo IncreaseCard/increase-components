@@ -9,14 +9,15 @@ const alignments = {
 const Container = styled.div`
   display: flex;
   justify-content: ${(props) => alignments[props.align]};
-  padding: ${(props) => (props.fullWidthActionButtons ? '30px 0 0 0' : '15px 20px')};
+  margin-top: 1em;
   & button:not(:last-child) {
     margin-right: 0.5rem;
   }
   ${(props) => {
     return props.fullWidthActionButtons
       ? `
-        margin: 1px;
+        margin: 30px -1.3em -1em -1.3em;
+        border: 1px solid white;
         & button:not(:last-child) {
           margin-right: 1px;
         }
