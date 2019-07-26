@@ -41,6 +41,7 @@ const ModalWrapper = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
+  z-index: 10000;
 `;
 
 const ButtonBase = styled.button`
