@@ -21,7 +21,7 @@ const ModalLauncher = () => {
       <Button onClick={toggleC2A}>C2A modal</Button>
       <Modal
         align="left"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunts ut labore et dolore magna aliqua."
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunts ut labore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunts ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunts ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunts ut labore et dolore magna aliqua.et dolore magna aliqua."
         headerText="Este es el header"
         onCancel={toggleStandard}
         onClose={toggleStandard}

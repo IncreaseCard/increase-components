@@ -41,6 +41,7 @@ const ModalWrapper = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
+  z-index: 10000;
 `;
 
 const ButtonBase = styled.button`
@@ -105,8 +106,12 @@ const ModalBody = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  padding: 1em 1.3em;
+  display: flex;
+  flex-direction: column;
   width: 600px;
   max-width: calc(100vw - 30px);
+  max-height: calc(100vh - 30px);
   background-color: white;
   border-radius: 3px;
   color: ${(props) => props.theme.colors.brandBlackRegular};
@@ -149,6 +154,13 @@ const CloseButton = ({ onClick }) => {
 };
 
 class Modal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.setFocus = this.setFocus.bind(this);
+    this.handleShadeClick = this.handleShadeClick.bind(this);
+    this.handleEscKey = this.handleEscKey.bind(this);
+  }
+
   getOrderedButtons() {
     const { fullWidthActionButtons, align, okLabel, onOk, onCancel, cancelLabel } = this.props;
     const buttons = [
@@ -162,23 +174,23 @@ class Modal extends React.Component {
     return fullWidthActionButtons || align !== 'left' ? buttons : buttons.reverse();
   }
 
-  setFocus = (elem) => {
+  setFocus(elem) {
     if (elem) {
       elem.focus();
     }
-  };
+  }
 
-  handleShadeClick = () => {
+  handleShadeClick() {
     if (this.props.shadeClosable) {
       this.props.onClose();
     }
-  };
+  }
 
-  handleEscKey = (e) => {
+  handleEscKey(e) {
     if (e.key === 'Escape' && this.props.closeOnEscape) {
       this.props.onClose();
     }
-  };
+  }
 
   render() {
     const {
@@ -195,11 +207,7 @@ class Modal extends React.Component {
     return (
       <CSSTransition classNames="modal" in={visible} mountOnEnter timeout={200} unmountOnExit>
         <ThemeProvider theme={newTheme}>
-          <ModalWrapper
-            onClick={this.handleShadeClick}
-            onKeyUp={(e) => this.handleEscKey(e)}
-            tabIndex={-1}
-          >
+          <ModalWrapper onClick={this.handleShadeClick} onKeyUp={this.handleEscKey} tabIndex={-1}>
             {shade && <Shade />}
             <RemoveScrollBar />
             <ModalBody onClick={(e) => e.stopPropagation()}>
