@@ -214,7 +214,7 @@ class Modal extends React.Component {
       shade,
       visible
     } = this.props;
-    return (
+    return ReactDOM.createPortal(
       <CSSTransition classNames="modal" in={visible} mountOnEnter timeout={200} unmountOnExit>
         <ThemeProvider theme={newTheme}>
           <ModalWrapper onClick={this.handleShadeClick} onKeyUp={this.handleEscKey} tabIndex={-1}>
@@ -222,18 +222,25 @@ class Modal extends React.Component {
             <RemoveScrollBar />
             <ModalBody onClick={(e) => e.stopPropagation()}>
               <CloseButton onClick={onClose} />
-              <ModalHeader align={align}>{headerText}</ModalHeader>
-              <ModalContent align={align}>
-                <p>{description}</p>
-                {children}
-              </ModalContent>
-              <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
-                {customFooter || this.getOrderedButtons()}
-              </ModalFooter>
+              {children ? (
+                children
+              ) : (
+                <React.Fragment>
+                  <ModalHeader align={align}>{headerText}</ModalHeader>
+                  <ModalContent align={align}>
+                    {description && <p>{description}</p>}
+                    {children}
+                  </ModalContent>
+                  <ModalFooter align={align} fullWidthActionButtons={fullWidthActionButtons}>
+                    {customFooter || this.getOrderedButtons()}
+                  </ModalFooter>
+                </React.Fragment>
+              )}
             </ModalBody>
           </ModalWrapper>
         </ThemeProvider>
-      </CSSTransition>
+      </CSSTransition>,
+      document.body
     );
   }
 }
@@ -242,6 +249,4 @@ Modal.defaultProps = defaultProps;
 
 Modal.propTypes = propTypes;
 
-export default (props) => {
-  return ReactDOM.createPortal(<Modal {...props} />, document.body);
-};
+export default Modal;
