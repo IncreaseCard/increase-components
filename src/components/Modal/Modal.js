@@ -154,6 +154,16 @@ const CloseButton = ({ onClick }) => {
 };
 
 class Modal extends React.Component {
+  static Header({ children, ...rest }) {
+    return <ModalHeader {...rest}>{children}</ModalHeader>;
+  }
+  static Content({ children, ...rest }) {
+    return <ModalContent {...rest}>{children}</ModalContent>;
+  }
+  static Footer({ children, ...rest }) {
+    return <ModalFooter {...rest}>{children}</ModalFooter>;
+  }
+
   constructor(props) {
     super(props);
     this.setFocus = this.setFocus.bind(this);
