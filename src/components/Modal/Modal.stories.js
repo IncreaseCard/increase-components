@@ -24,8 +24,11 @@ const ModalLauncher = () => {
     <React.Fragment>
       <Button onClick={toggleStandard}>Standard modal</Button>
       <Button onClick={toggleC2A}>C2A modal</Button>
-      <Button onClick={toggleCustom}>Custom modal</Button>
+      <Button onClick={toggleCustom}>Custom modal with scroll</Button>
       <Modal
+        align="left"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        headerText="Este es el header"
         onCancel={toggleStandard}
         onClose={toggleStandard}
         onOk={toggleStandard}
@@ -47,8 +50,8 @@ const ModalLauncher = () => {
         onOk={toggleCustom}
         visible={showCustom}
       >
-        <Modal.Header>Cabeza de modal</Modal.Header>
-        <Modal.Content scrollable>
+        <Modal.Header align="center">Header</Modal.Header>
+        <Modal.Content align="right" scrollable>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit,
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit
