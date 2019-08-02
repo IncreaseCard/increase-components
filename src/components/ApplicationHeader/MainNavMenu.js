@@ -90,11 +90,16 @@ export default function MainNavMenu({
   activeProducts,
   country,
   currentProduct,
+  onProductAcquire,
   products,
   secondLevel,
   sidebar,
   visible
 }) {
+  const handleProductAcquire = (product) => (event) => {
+    event.preventDefault();
+    onProductAcquire(product.name);
+  };
   return (
     <NavMenu visible={visible}>
       <div className="container">
@@ -106,10 +111,11 @@ export default function MainNavMenu({
             return (
               <ButtonDrawer
                 enabled={enabled}
-                href={product[enabled ? 'uri' : 'acquire_uri']}
+                href={enabled ? product.uri : '#'}
                 image={product.logo}
                 key={product.name}
                 name={product.display_name}
+                onClick={!enabled ? handleProductAcquire(product) : undefined}
                 selected={currentProduct === product.name}
               />
             );
