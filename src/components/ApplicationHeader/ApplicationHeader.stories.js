@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { actions } from '@storybook/addon-actions';
 import styled from 'styled-components';
 
 import ApplicationHeader from './ApplicationHeader';
@@ -36,6 +37,8 @@ const customSidebarLinks = [
   }
 ];
 
+const actionHandlers = actions('onProductAcquire');
+
 storiesOf('ApplicationHeader', module)
   .add('in platform ecuador', () => (
     <ApplicationHeader
@@ -45,6 +48,7 @@ storiesOf('ApplicationHeader', module)
       products={defaultProducts}
       sidebar={defaultSidebarLinks}
       userName={user.userName}
+      {...actionHandlers}
     />
   ))
   .add('in platform argentina', () => (
@@ -55,6 +59,7 @@ storiesOf('ApplicationHeader', module)
       products={defaultProducts}
       sidebar={defaultSidebarLinks}
       userName={user.userName}
+      {...actionHandlers}
     />
   ))
   .add('in platform dominicana (no products)', () => (
@@ -65,6 +70,7 @@ storiesOf('ApplicationHeader', module)
       products={defaultProducts}
       sidebar={defaultSidebarLinks}
       userName={user.userName}
+      {...actionHandlers}
     />
   ))
   .add('in card argentina', () => (
@@ -75,6 +81,7 @@ storiesOf('ApplicationHeader', module)
       products={defaultProducts}
       sidebar={defaultSidebarLinks}
       userName={user.userName}
+      {...actionHandlers}
     />
   ))
   .add('in conciliation argentina', () => (
@@ -85,6 +92,7 @@ storiesOf('ApplicationHeader', module)
       products={defaultProducts}
       sidebar={defaultSidebarLinks}
       userName={user.userName}
+      {...actionHandlers}
     />
   ))
   .add('custom sidebar links', () => (
@@ -95,6 +103,7 @@ storiesOf('ApplicationHeader', module)
       products={defaultProducts}
       sidebar={customSidebarLinks}
       userName={user.userName}
+      {...actionHandlers}
     />
   ))
   .add('With notification', () => (
@@ -107,6 +116,7 @@ storiesOf('ApplicationHeader', module)
         products={defaultProducts}
         sidebar={defaultSidebarLinks}
         userName={user.userName}
+        {...actionHandlers}
       />
     </React.Fragment>
   ));

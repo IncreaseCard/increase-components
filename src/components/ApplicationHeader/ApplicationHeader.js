@@ -86,6 +86,7 @@ export default function ApplicationHeader({
   activeProducts,
   country,
   currentProduct,
+  onProductAcquire,
   products,
   secondLevel,
   sidebar,
@@ -118,6 +119,7 @@ export default function ApplicationHeader({
         activeProducts={activeProducts}
         country={country}
         currentProduct={currentProduct}
+        onProductAcquire={onProductAcquire}
         products={products}
         secondLevel={secondLevel}
         sidebar={sidebar}
