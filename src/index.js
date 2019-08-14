@@ -14,6 +14,7 @@ import Calendar from './components/Calendar/Calendar';
 import Checkbox from './components/Checkbox/Checkbox';
 import ClearingsUploader from './components/ClearingsUploader/ClearingsUploader';
 import Currency from './components/Currency/Currency';
+import FloatingAlert from './components/FloatingAlert/FloatingAlert';
 import Heading from './components/Heading/Heading';
 import Link from './components/Link/Link';
 import Loading from './components/Loading/Loading';
@@ -54,6 +55,7 @@ export {
   ClearingsUploader,
   Checkbox,
   Currency,
+  FloatingAlert,
   Heading,
   Link,
   Loading,
