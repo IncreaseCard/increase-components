@@ -4,7 +4,7 @@ import NewTheme from '../../themes/new';
 import ButtonDrawer from './ButtonDrawer';
 import SideBarLinks from './SideBarLinks';
 import Icon from '../../icons/Icon';
-import { defaultSecondLevelActions } from './defaultSecondLevelActions';
+import { getSecondLevelLinks } from '../CountryBasedLinks/SecondLevelLinks';
 
 const NavMenu = styled.div`
   background: ${(props) => props.theme.colors.whiteRegular};
@@ -137,5 +137,5 @@ export default function MainNavMenu({
 }
 
 MainNavMenu.defaultProps = {
-  secondLevel: defaultSecondLevelActions
+  secondLevel: getSecondLevelLinks()
 };

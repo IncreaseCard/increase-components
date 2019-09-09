@@ -5,6 +5,7 @@ import Link from '../Link/Link';
 import NewTheme from '../../themes/new';
 import { Account } from '../../icons/icons';
 import Icon from '../../icons/Icon';
+import { getProfileLinks } from '../CountryBasedLinks/ProfileLinks';
 
 const ProfileButton = styled.button`
   cursor: pointer;
@@ -48,7 +49,8 @@ const PopupMenu = styled.div`
 `;
 PopupMenu.defaultProps = { theme: NewTheme };
 
-export default function MenuProfile({ userName }) {
+export default function MenuProfile({ profileLinks, userName }) {
+  const links = profileLinks || getProfileLinks();
   return (
     <Popup
       closeOnDocumentClick
@@ -63,10 +65,13 @@ export default function MenuProfile({ userName }) {
       <PopupMenu>
         <div className="user">{userName}</div>
         <Link href="https://platform.increase.app">Ajustes de cuenta</Link>
-        <hr />
-        <Link href="https://soporte.increasecard.com/hc/es">Ayuda y Soporte</Link>
-        <Link href="https://www.facebook.com/groups/ComunidadIncrease/">Comunidad Increase</Link>
-        <Link href="https://increase.app/blog">Novedades</Link>
+        {links.length > 0 && <hr />}
+        {links.length > 0 &&
+          links.map((link) => (
+            <Link href={link.url} key={link.url} target={link.blank ? '_blank' : '_self'}>
+              {link.label}
+            </Link>
+          ))}
         <hr />
         <Link href="https://auth.increase.app/logout">Cerrar Sesión</Link>
       </PopupMenu>

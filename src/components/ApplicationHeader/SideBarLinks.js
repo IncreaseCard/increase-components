@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from '../Link/Link';
 import NewTheme from '../../themes/new';
-import { defaultSidebarLinks } from './defaultSidebarLinks';
+import { getSidebarLinks } from '../CountryBasedLinks/SidebarLinks';
 
 const SidebarStyled = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.colors.whiteTone};
@@ -70,7 +70,7 @@ const SideBarLinks = ({ sidebar }) => {
 };
 
 SideBarLinks.defaultProps = {
-  sidebar: defaultSidebarLinks
+  sidebar: getSidebarLinks()
 };
 
 export default SideBarLinks;

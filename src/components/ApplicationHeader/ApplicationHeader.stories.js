@@ -5,7 +5,10 @@ import styled from 'styled-components';
 
 import ApplicationHeader from './ApplicationHeader';
 import { defaultProducts } from './defaultProducts';
-import { defaultSidebarLinks } from './defaultSidebarLinks';
+import { getSidebarLinks } from '../CountryBasedLinks/SidebarLinks';
+import { getSecondLevelLinks } from '../CountryBasedLinks/SecondLevelLinks';
+import { getProfileLinks } from '../CountryBasedLinks/ProfileLinks';
+import { Country } from '../CountryBasedLinks/Country';
 
 const Notification = styled.div`
   position: relative;
@@ -46,7 +49,7 @@ storiesOf('ApplicationHeader', module)
       country="ecuador"
       currentProduct=""
       products={defaultProducts}
-      sidebar={defaultSidebarLinks}
+      sidebar={getSidebarLinks(Country.ECUADOR)}
       userName={user.userName}
       {...actionHandlers}
     />
@@ -57,18 +60,20 @@ storiesOf('ApplicationHeader', module)
       country="argentina"
       currentProduct=""
       products={defaultProducts}
-      sidebar={defaultSidebarLinks}
+      sidebar={getSidebarLinks(Country.ARGENTINA)}
       userName={user.userName}
       {...actionHandlers}
     />
   ))
-  .add('in platform dominicana (no products)', () => (
+  .add('in platform dominicana (no products, no links)', () => (
     <ApplicationHeader
       activeProducts={user.activeProducts}
       country="dominicana"
       currentProduct=""
       products={defaultProducts}
-      sidebar={defaultSidebarLinks}
+      profileLinks={getProfileLinks(Country.DOMINICANA)}
+      secondLevel={getSecondLevelLinks(Country.DOMINICANA)}
+      sidebar={getSidebarLinks(Country.DOMINICANA)}
       userName={user.userName}
       {...actionHandlers}
     />
@@ -79,7 +84,7 @@ storiesOf('ApplicationHeader', module)
       country="argentina"
       currentProduct="card"
       products={defaultProducts}
-      sidebar={defaultSidebarLinks}
+      sidebar={getSidebarLinks(Country.ARGENTINA)}
       userName={user.userName}
       {...actionHandlers}
     />
@@ -90,7 +95,7 @@ storiesOf('ApplicationHeader', module)
       country="argentina"
       currentProduct="conciliation"
       products={defaultProducts}
-      sidebar={defaultSidebarLinks}
+      sidebar={getSidebarLinks(Country.ARGENTINA)}
       userName={user.userName}
       {...actionHandlers}
     />
@@ -114,7 +119,7 @@ storiesOf('ApplicationHeader', module)
         country="argentina"
         currentProduct="conciliation"
         products={defaultProducts}
-        sidebar={defaultSidebarLinks}
+        sidebar={getSidebarLinks(Country.ARGENTINA)}
         userName={user.userName}
         {...actionHandlers}
       />
