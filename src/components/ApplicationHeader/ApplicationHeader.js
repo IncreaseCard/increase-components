@@ -90,6 +90,7 @@ export default function ApplicationHeader({
   products,
   secondLevel,
   sidebar,
+  profileLinks,
   userName
 }) {
   const [isOpen, setOpen] = useState(false);
@@ -110,7 +111,7 @@ export default function ApplicationHeader({
           </div>
           <RightContent>
             <div className="account">
-              <MenuProfile userName={userName} />
+              <MenuProfile profileLinks={profileLinks} userName={userName} />
             </div>
           </RightContent>
         </ApplicationHeaderContent>
