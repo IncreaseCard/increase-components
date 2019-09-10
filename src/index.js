@@ -38,6 +38,10 @@ import TaxesTable from './components/TaxesTable/TaxesTable';
 import TextInput from './components/TextInput/TextInput';
 import Tooltip from './components/Tooltip/Tooltip';
 import Modal from './components/Modal/Modal';
+import { Country } from './components/CountryBasedLinks/Country';
+import { getProfileLinks } from './components/CountryBasedLinks/ProfileLinks';
+import { getSecondLevelLinks } from './components/CountryBasedLinks/SecondLevelLinks';
+import { getSidebarLinks } from './components/CountryBasedLinks/SidebarLinks';
 
 import newTheme from './themes/new/index';
 import currentTheme from './themes/current/index';
@@ -86,5 +90,9 @@ export {
   Tooltip,
   Modal,
   colorPalette,
-  themes
+  themes,
+  getProfileLinks,
+  getSecondLevelLinks,
+  getSidebarLinks,
+  Country
 };
