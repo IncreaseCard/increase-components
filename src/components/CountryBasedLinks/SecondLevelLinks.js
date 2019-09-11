@@ -1,4 +1,5 @@
 import { Help } from '../../icons/icons';
+import { Country } from './Country';
 
 const SecondLevelLinks = {};
 
@@ -10,6 +11,9 @@ SecondLevelLinks.default = [
     url: 'https://soporte.increasecard.com/hc/es'
   }
 ];
+
+SecondLevelLinks[Country.ECUADOR] = [];
+SecondLevelLinks[Country.DOMINICANA] = [];
 
 export function getSecondLevelLinks(countryName) {
   return countryName && SecondLevelLinks[countryName]
