@@ -4,4 +4,5 @@ import { Loading } from './Loading';
 
 storiesOf('Loading', module)
   .add('normal', () => <Loading />)
-  .add('small', () => <Loading small />);
+  .add('small', () => <Loading size={'small'} />)
+  .add('custom color', () => <Loading color="black" />);
