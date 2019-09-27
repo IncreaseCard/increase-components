@@ -13,15 +13,19 @@ const rotate360Forever = keyframes`
   }
 `;
 
+const height = (size) => (size === 'small' ? '16px' : '32px');
+const width = height;
+const borderWidth = (size) => (size === 'small' ? '2px' : '3px');
+
 const LoadingBar = styled.div`
   position: absolute;
-  border-width: ${(props) => (props.small ? '2px' : '4px')};
-  border-color: ${(props) => props.theme.colors.blackShade} transparent transparent transparent;
+  border-width: ${(props) => borderWidth(props.size)};
+  border-color: ${(props) => props.color || '#00D246'} transparent transparent transparent;
   border-style: solid;
   border-radius: 50%;
 
-  width: ${(props) => (props.small ? '15px' : '32px')};
-  height: ${(props) => (props.small ? '15px' : '32px')};
+  width: ${(props) => width(props.size)};
+  height: ${(props) => height(props.size)};
 
   animation: ${rotate360Forever} 1.2s infinite cubic-bezier(0.5, 0, 0.5, 1);
   animation-delay: ${(props) => props.animationDelay};
@@ -39,13 +43,16 @@ LoadingBar.defaultProps = {
   small: false
 };
 
-export const Loading = ({ small }) => {
+export const Loading = ({ color, size = 'large', style = {}, ...rest }) => {
   return (
-    <div style={{ position: 'relative' }}>
-      <LoadingBar animationDelay="0" small={small} />
-      <LoadingBar animationDelay="-0.15s" small={small} />
-      <LoadingBar animationDelay="-0.3s" small={small} />
-      <LoadingBar animationDelay="-0.45s" small={small} />
+    <div
+      style={{ ...style, position: 'relative', height: height(size), width: width(size) }}
+      {...rest}
+    >
+      <LoadingBar animationDelay="0" size={size} color={color} />
+      <LoadingBar animationDelay="-0.15s" size={size} color={color} />
+      <LoadingBar animationDelay="-0.3s" size={size} color={color} />
+      <LoadingBar animationDelay="-0.45s" size={size} color={color} />
     </div>
   );
 };
