@@ -30,7 +30,8 @@ const plugins = [
   commonjs({
     include: ['node_modules/**']
   }),
-  external()
+  external(),
+  terser()
 ];
 
 export default {
