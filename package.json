@@ -1,6 +1,6 @@
 {
   "name": "@increase/components",
-  "version": "0.5.2",
+  "version": "0.6.0-0",
   "description": "React component library for Increase design system",
   "sideEffects": false,
   "main": "dist/bundle.cjs.js",
