@@ -1,6 +1,6 @@
 export default {
-  bodyFontFamily: 'neue-haas-unica, sans-serif',
-  titleFontFamily: 'neue-haas-unica, sans-serif',
+  bodyFontFamily: 'Inter var, sans-serif',
+  titleFontFamily: 'Inter var, sans-serif',
   titleFontSizes: ['25px'],
   titleLineHeights: ['31px'],
   bodyFontSizes: ['16px', '12px'],
