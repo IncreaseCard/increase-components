@@ -49,6 +49,7 @@ const ModalLauncher = () => {
         onClose={toggleCustom}
         onOk={toggleCustom}
         visible={showCustom}
+        width={900}
       >
         <Modal.Header align="center">Header</Modal.Header>
         <Modal.Content align="right" scrollable>
