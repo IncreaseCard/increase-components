@@ -22,7 +22,8 @@ const propTypes = {
   onClose: PropTypes.func.isRequired,
   onOk: PropTypes.func,
   shade: PropTypes.bool,
-  shadeClosable: PropTypes.bool
+  shadeClosable: PropTypes.bool,
+  width: PropTypes.number
 };
 
 const defaultProps = {
@@ -32,7 +33,8 @@ const defaultProps = {
   closeOnEscape: true,
   fullWidthActionButtons: false,
   shadeClosable: true,
-  shade: true
+  shade: true,
+  width: 600
 };
 
 const ModalWrapper = styled.div`
@@ -109,7 +111,7 @@ const ModalBody = styled.div`
   padding: 1em 1.3em;
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: ${({ width }) => width}px;
   max-width: calc(100vw - 30px);
   max-height: calc(100vh - 30px);
   background-color: white;
@@ -212,7 +214,8 @@ class Modal extends React.Component {
       fullWidthActionButtons,
       headerText,
       shade,
-      visible
+      visible,
+      width
     } = this.props;
     return ReactDOM.createPortal(
       <CSSTransition classNames="modal" in={visible} mountOnEnter timeout={200} unmountOnExit>
@@ -220,7 +223,7 @@ class Modal extends React.Component {
           <ModalWrapper onClick={this.handleShadeClick} onKeyUp={this.handleEscKey} tabIndex={-1}>
             {shade && <Shade />}
             <RemoveScrollBar />
-            <ModalBody onClick={(e) => e.stopPropagation()}>
+            <ModalBody onClick={(e) => e.stopPropagation()} width={width}>
               <CloseButton onClick={onClose} />
               {children ? (
                 children

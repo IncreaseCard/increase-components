@@ -1,6 +1,6 @@
 export default {
-  bodyFontFamily: 'neue-haas-unica, sans-serif',
-  titleFontFamily: 'neue-haas-unica, sans-serif',
+  bodyFontFamily: 'Inter var, sans-serif',
+  titleFontFamily: 'Inter var, sans-serif',
   bodyFontSizes: ['16px', '13px'],
   bodyLineHeights: ['21px', '19px'],
   // Based on powers of 1.3
