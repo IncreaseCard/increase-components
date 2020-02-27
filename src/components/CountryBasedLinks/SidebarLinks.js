@@ -73,21 +73,21 @@ SidebarLinks.staging[Country.ECUADOR] = [
 ];
 
 // This will change soon, as we define proper links for each country.
-SidebarLinks[Env.PROD][Country.ARGENTINA] = [...SidebarLinks.default];
-SidebarLinks[Env.PROD][Country.CHILE] = [...SidebarLinks.default];
-SidebarLinks[Env.PROD][Country.URUGUAY] = [...SidebarLinks.default];
-SidebarLinks[Env.PROD][Country.COLOMBIA] = [...SidebarLinks.default];
-SidebarLinks[Env.PROD][Country.PARAGUAY] = [...SidebarLinks.default];
+SidebarLinks[Env.PROD][Country.ARGENTINA] = SidebarLinks.prod.default;
+SidebarLinks[Env.PROD][Country.CHILE] = SidebarLinks.prod.default;
+SidebarLinks[Env.PROD][Country.URUGUAY] = SidebarLinks.prod.default;
+SidebarLinks[Env.PROD][Country.COLOMBIA] = SidebarLinks.prod.default;
+SidebarLinks[Env.PROD][Country.PARAGUAY] = SidebarLinks.prod.default;
 
-SidebarLinks[Env.PROD][Country.DOMINICANA] = [...SidebarLinks[Country.ECUADOR]];
+SidebarLinks[Env.PROD][Country.DOMINICANA] = SidebarLinks.prod[Country.ECUADOR];
 
-SidebarLinks[Env.STAGING][Country.ARGENTINA] = [...SidebarLinks.default];
-SidebarLinks[Env.STAGING][Country.CHILE] = [...SidebarLinks.default];
-SidebarLinks[Env.STAGING][Country.URUGUAY] = [...SidebarLinks.default];
-SidebarLinks[Env.STAGING][Country.COLOMBIA] = [...SidebarLinks.default];
-SidebarLinks[Env.STAGING][Country.PARAGUAY] = [...SidebarLinks.default];
+SidebarLinks[Env.STAGING][Country.ARGENTINA] = SidebarLinks.staging.default;
+SidebarLinks[Env.STAGING][Country.CHILE] = SidebarLinks.staging.default;
+SidebarLinks[Env.STAGING][Country.URUGUAY] = SidebarLinks.staging.default;
+SidebarLinks[Env.STAGING][Country.COLOMBIA] = SidebarLinks.staging.default;
+SidebarLinks[Env.STAGING][Country.PARAGUAY] = SidebarLinks.staging.default;
 
-SidebarLinks[Env.STAGING][Country.DOMINICANA] = [...SidebarLinks[Country.ECUADOR]];
+SidebarLinks[Env.STAGING][Country.DOMINICANA] = SidebarLinks.staging[Country.ECUADOR];
 
 export function getSidebarLinks(countryName, env = 'prod') {
   return countryName && SidebarLinks[env][countryName]
